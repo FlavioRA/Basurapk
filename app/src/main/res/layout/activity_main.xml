@@ -23,8 +23,14 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_marginBottom="323dp"
-        android:text="Aqui Flvio"
+        android:text="Flavio"
         tools:layout_editor_absoluteX="165dp"
         tools:layout_editor_absoluteY="422dp" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TextView" />
 
 </RelativeLayout>
