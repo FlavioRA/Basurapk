@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -7,4 +7,80 @@
     android:background="@drawable/verde2"
     tools:context=".infoRutas">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="262dp"
+        android:layout_marginBottom="628dp"
+        android:text="Informaciòn de rutas" />
+
+    <Button
+        android:id="@+id/Ruta5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="305dp"
+        android:layout_marginBottom="142dp"
+        android:text="Button" />
+
+    <Button
+        android:id="@+id/Ruta2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="305dp"
+        android:layout_marginBottom="440dp"
+        android:text="Button" />
+
+    <Button
+        android:id="@+id/Ruta3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="305dp"
+        android:layout_marginBottom="320dp"
+        android:text="Button" />
+
+    <Button
+        android:id="@+id/Ruta4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="305dp"
+        android:layout_marginBottom="200dp"
+        android:text="Button" />
+
+    <Button
+        android:id="@+id/Ruta1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="305dp"
+        android:layout_marginBottom="560dp"
+        android:text="Button" />
+
+    <Button
+        android:id="@+id/button1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="135dp"
+        android:layout_marginBottom="35dp"
+        android:background="#002196F3"
+        android:drawableLeft="@android:drawable/btn_star_big_on"
+        android:text="Ruta 1\n
+Calle Melchor Ocampo, Av 2\n
+Horarios Aprox. 7am - 12pm\n
+Dìas: Lunes - Martes - Viernes" />
+
+
+</RelativeLayout>
