@@ -3,27 +3,37 @@ package com.example.basurapk;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.media.MediaPlayer;
 import android.os.Bundle;
-import android.os.Handler;
+import android.widget.VideoView;
 
 public class splash extends AppCompatActivity {
+
+
+    VideoView videoView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash);
 
-        new Handler().postDelayed(new Runnable() {
+        videoView=(VideoView)findViewById(R.id.videoView);
+        videoView.setVideoPath("android.resource://"+getPackageName()+"/"+R.raw.anim1);
+
+        videoView.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
             @Override
-            public void run() {
+            public void onCompletion(MediaPlayer mediaPlayer) {
+                if(isFinishing())
+                    return;
 
-
-                Intent intent = new Intent(splash.this,MainActivity.class);
-        startActivity(intent);
-        finish();
+                startActivity(new Intent(splash.this,MainActivity.class));
+                finish();
 
             }
-        },1800);
+        });
+
+
+        videoView.start();
 
     }
 }
