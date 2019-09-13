@@ -10,6 +10,8 @@
     <string name="ruta_4">Ruta 4</string>
     <string name="ruta_5">Ruta 5</string>
     <string name="ruta_1">Ruta 1</string>
-    <string name="informaci_n_de_rutas">Información de rutas</string><string name="calle_melchor_ocampo_av_2_n_horarios_aprox_7am_12pm_n_d_as_lunes_martes_viernescalle_melchor_ocampo_av_2_n_horarios_apr">calle_melchor_ocampo_av_2_n_horarios_aprox_7am_12pm_n_d_as_lunes_martes_viernescalle_melchor_ocampo_av_2_n_horarios_apr</string>
+    <string name="informaci_n_de_rutas">Información de rutas</string>
+    <string name="calle_melchor_ocampo_av_2_n_horarios_aprox_7am_12pm_n_d_as_lunes_martes_viernescalle_melchor_ocampo_av_2_n_horarios_apr">calle_melchor_ocampo_av_2_n_horarios_aprox_7am_12pm_n_d_as_lunes_martes_viernescalle_melchor_ocampo_av_2_n_horarios_apr</string>
     <string name="dghdghndghndghndghn">dghdghndghndghndghn</string>
+    <string name="title_activity_mapa">Map</string>
 </resources>
