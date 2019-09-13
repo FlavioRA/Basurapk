@@ -98,7 +98,7 @@
         android:layout_marginBottom="30dp"
         android:background="#002196F3"
         android:drawableStart="@drawable/tracking"
-        android:text="@string/Ruta4" />
+        android:text="@string/Ruta3" />
 
     <Button
         android:id="@+id/Ruta5"
