@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/verde2"
+    android:background="@drawable/fondo1"
     tools:context=".infoRutas">
 
     <TextView
@@ -60,7 +60,7 @@
         android:layout_marginEnd="60dp"
         android:layout_marginBottom="522dp"
         android:background="#002196F3"
-        android:drawableLeft="@mipmap/tracking"
+        android:drawableLeft="@drawable/tracking"
         android:text="Calle Melchor Ocampo, Av 2\n
 Horarios Aprox. 7am - 12pm\n
 Dìas: Lunes - Martes - Viernes" />
@@ -74,7 +74,7 @@ Dìas: Lunes - Martes - Viernes" />
         android:layout_marginEnd="60dp"
         android:layout_marginBottom="405dp"
         android:background="#002196F3"
-        android:drawableLeft="@mipmap/tracking"
+        android:drawableLeft="@drawable/tracking"
         android:text="Calle Melchor Ocampo, Av 2\n
 Horarios Aprox. 7am - 12pm\n
 Dìas: Lunes - Martes - Viernes" />
@@ -88,7 +88,7 @@ Dìas: Lunes - Martes - Viernes" />
         android:layout_marginEnd="60dp"
         android:layout_marginBottom="285dp"
         android:background="#002196F3"
-        android:drawableLeft="@mipmap/tracking"
+        android:drawableLeft="@drawable/tracking"
         android:text="Calle Melchor Ocampo, Av 2\n
 Horarios Aprox. 7am - 12pm\n
 Dìas: Lunes - Martes - Viernes" />
@@ -102,7 +102,7 @@ Dìas: Lunes - Martes - Viernes" />
         android:layout_marginEnd="60dp"
         android:layout_marginBottom="150dp"
         android:background="#002196F3"
-        android:drawableLeft="@mipmap/tracking"
+        android:drawableLeft="@drawable/tracking"
         android:text="Calle Melchor Ocampo, Av 2\n
 Horarios Aprox. 7am - 12pm\n
 Dìas: Lunes - Martes - Viernes" />
@@ -116,7 +116,7 @@ Dìas: Lunes - Martes - Viernes" />
         android:layout_marginEnd="60dp"
         android:layout_marginBottom="31dp"
         android:background="#002196F3"
-        android:drawableLeft="@mipmap/tracking"
+        android:drawableLeft="@drawable/tracking"
         android:text="Calle Melchor Ocampo, Av 2\n
 Horarios Aprox. 7am - 12pm\n
 Dìas: Lunes - Martes - Viernes" />
