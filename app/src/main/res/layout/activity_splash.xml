@@ -4,5 +4,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colorAccent"
-    tools:context=".splash" />
+    android:background="@color/colorPrimaryDark"
+    tools:context=".splash" >
+
+    <VideoView
+        android:id="@+id/videoView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+</RelativeLayout>
