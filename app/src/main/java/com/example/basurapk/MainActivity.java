@@ -45,6 +45,32 @@ public class MainActivity extends AppCompatActivity {
         });
 
 
+        Button btnNotificacion = (Button)findViewById(R.id.btnNotificacion);
+
+        btnNotificacion.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                Intent intent3= new Intent(view.getContext(),notificaciones.class);
+                startActivityForResult(intent3, 0);
+
+            }
+        });
+
+
+
+        Button btnContacto = (Button)findViewById(R.id.btnContacto);
+
+        btnContacto.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                Intent intent4= new Intent(view.getContext(),contacto.class);
+                startActivityForResult(intent4, 0);
+
+            }
+        });
+
 
 
     }
