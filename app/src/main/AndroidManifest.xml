@@ -9,14 +9,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.Light.NoActionBar">
-        <activity android:name=".contactoL">
-
-
-
-
-        </activity>
-        <activity android:name=".contacto"></activity>
-        <activity android:name=".notificaciones"></activity>
+        <activity android:name=".infoRutas"></activity>
+        <activity android:name=".contactoL"></activity>
+        <activity android:name=".contacto" />
+        <activity android:name=".notificaciones" />
         <!--
              The API key for Google Maps-based APIs is defined as a string resource.
              (See the file "res/values/google_maps_api.xml").
@@ -29,15 +25,12 @@
             android:name=".mapa"
             android:label="@string/title_activity_mapa" />
         <activity android:name=".splash">
-
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-
         </activity>
-        <activity android:name=".infoRutas" />
         <activity android:name=".MainActivity" />
 
         <meta-data
@@ -45,9 +38,9 @@
             android:value="@string/google_maps_key" />
     </application>
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
-    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.INTERNET" />
-
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
 
 </manifest>
