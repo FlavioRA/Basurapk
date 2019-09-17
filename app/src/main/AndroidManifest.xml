@@ -10,11 +10,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.Light.NoActionBar">
         <activity android:name=".contactoL"></activity>
-        <activity android:name=".contacto">
-
-
-
-        </activity>
+        <activity android:name=".contacto"></activity>
         <activity android:name=".notificaciones"></activity>
         <!--
              The API key for Google Maps-based APIs is defined as a string resource.
