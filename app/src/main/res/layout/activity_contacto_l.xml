@@ -7,4 +7,124 @@
     android:background="@drawable/fondo1"
     tools:context=".contactoL">
 
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="67dp"
+        android:layout_height="77dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="7dp"
+        android:layout_marginEnd="2dp"
+        app:srcCompat="@drawable/logonegro" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="268dp"
+        android:layout_height="82dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="68dp"
+        android:layout_marginTop="93dp"
+        android:layout_marginEnd="75dp"
+        android:fontFamily="sans-serif-medium"
+        android:gravity="center"
+        android:text="Agenda Telefonica"
+        android:textSize="24sp" />
+
+    <TextView
+        android:id="@+id/textView9"
+        android:layout_width="187dp"
+        android:layout_height="44dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="209dp"
+        android:layout_marginEnd="194dp"
+        android:text="Emergencias"
+        android:textSize="18sp" />
+
+    <TextView
+        android:id="@+id/textView13"
+        android:layout_width="188dp"
+        android:layout_height="39dp"
+        android:layout_alignStart="@+id/textView10"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="2dp"
+        android:layout_marginTop="388dp"
+        android:layout_marginEnd="195dp"
+        android:text="BasurapK"
+        android:textSize="18sp" />
+
+    <TextView
+        android:id="@+id/textView14"
+        android:layout_width="237dp"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/textView13"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="6dp"
+        android:layout_marginTop="479dp"
+        android:layout_marginEnd="140dp"
+        android:text="H. Ayuntamiento"
+        android:textSize="18sp" />
+
+    <TextView
+        android:id="@+id/textView10"
+        android:layout_width="195dp"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/textView9"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="-1dp"
+        android:layout_marginTop="285dp"
+        android:layout_marginEnd="198dp"
+        android:text="Depto. Aseo Publico"
+        android:textSize="18sp" />
+
+    <Button
+        android:id="@+id/btnEmergencias"
+        style="@style/Widget.AppCompat.Button.Colored"
+        android:layout_width="104dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="199dp"
+        android:layout_marginEnd="23dp"
+        android:text="Llamar" />
+
+    <Button
+        android:id="@+id/btnAseo"
+        style="@style/Widget.AppCompat.Button.Colored"
+        android:layout_width="104dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="288dp"
+        android:layout_marginEnd="23dp"
+        android:text="Llamar" />
+
+    <Button
+        android:id="@+id/btnBasurapk"
+        style="@style/Widget.AppCompat.Button.Colored"
+        android:layout_width="104dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="382dp"
+        android:layout_marginEnd="23dp"
+        android:text="Llamar" />
+
+    <Button
+        android:id="@+id/btnAyuntamiento"
+        style="@style/Widget.AppCompat.Button.Colored"
+        android:layout_width="104dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="462dp"
+        android:layout_marginEnd="23dp"
+        android:text="Llamar" />
 </RelativeLayout>
