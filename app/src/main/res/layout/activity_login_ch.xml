@@ -5,7 +5,9 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/fondo1"
-    tools:context=".LoginAd">
+    tools:context=".LoginCh">
+
+
 
     <ImageView
         android:id="@+id/imageView4"
@@ -20,7 +22,7 @@
         app:srcCompat="@drawable/logonegro" />
 
     <EditText
-        android:id="@+id/edtUsuario"
+        android:id="@+id/edtRuta"
         android:layout_width="353dp"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
@@ -29,7 +31,7 @@
         android:layout_marginEnd="5dp"
         android:ems="10"
         android:gravity="center"
-        android:hint="Usuario"
+        android:hint="Ruta"
         android:inputType="textPersonName" />
 
     <EditText
@@ -69,4 +71,7 @@
         android:backgroundTint="@android:color/holo_red_light"
         android:fontFamily="sans-serif-medium"
         android:text="Salir" />
+
+
+
 </RelativeLayout>
