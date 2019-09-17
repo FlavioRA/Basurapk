@@ -4,160 +4,42 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/fondo1"
     tools:context=".infoRutas">
 
 
+    <Button
+        android:id="@+id/btnR1"
+        android:layout_width="358dp"
+        android:layout_height="72dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="138dp"
+        android:layout_marginEnd="6dp"
+        android:drawableLeft="@drawable/tracking"
+        android:text="Rector Hidalgo - Benito Juarez" />
 
+    <Button
+        android:id="@+id/btnR"
+        android:layout_width="358dp"
+        android:layout_height="72dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="138dp"
+        android:layout_marginEnd="6dp"
+        android:drawableLeft="@drawable/tracking"
+        android:text="Rector Hidalgo - Benito Juarez" />
 
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="@drawable/fondo1"
-        android:orientation="vertical">
-
-
-        <TextView
-            android:id="@+id/textView2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_above="@+id/btnR1"
-            android:layout_alignParentEnd="true"
-            android:layout_marginEnd="320dp"
-            android:layout_marginBottom="10dp"
-            android:text="Ruta 11"
-            android:textAppearance="@style/TextAppearance.AppCompat.Large" />
-
-        <Button
-            android:id="@+id/btnR1"
-            android:layout_width="280dp"
-            android:layout_height="60dp"
-            android:layout_above="@+id/textView3"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentEnd="true"
-            android:layout_marginStart="30dp"
-            android:layout_marginEnd="98dp"
-            android:layout_marginBottom="10dp"
-            android:drawableLeft="@drawable/tracking"
-            android:text="Rector Hidalgo - Benito Juarez" />
-
-        <TextView
-            android:id="@+id/textView3"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_above="@+id/button2"
-            android:layout_alignParentEnd="true"
-            android:layout_marginEnd="320dp"
-            android:layout_marginBottom="10dp"
-            android:text="Ruta 2"
-            android:textAppearance="@style/TextAppearance.AppCompat.Large" />
-
-        <Button
-            android:id="@+id/button2"
-            android:layout_width="280dp"
-            android:layout_height="60dp"
-            android:layout_above="@+id/textView8"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentEnd="true"
-            android:layout_marginStart="30dp"
-            android:layout_marginEnd="95dp"
-            android:layout_marginBottom="10dp"
-            android:drawableLeft="@drawable/tracking"
-            android:text="5 de mayo - Jose Maria y Morelos" />
-
-        <TextView
-            android:id="@+id/textView8"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_above="@+id/button3"
-            android:layout_alignParentEnd="true"
-            android:layout_marginEnd="318dp"
-            android:layout_marginBottom="10dp"
-            android:text="Ruta 3"
-            android:textAppearance="@style/TextAppearance.AppCompat.Large" />
-
-        <Button
-            android:id="@+id/button3"
-            android:layout_width="302dp"
-            android:layout_height="57dp"
-            android:layout_above="@+id/textView9"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentEnd="true"
-            android:layout_marginStart="30dp"
-            android:layout_marginEnd="79dp"
-            android:layout_marginBottom="-469dp"
-            android:drawableLeft="@drawable/tracking"
-            android:text="Jose Maria y Morelos - Primer rector" />
-
-        <TextView
-            android:id="@+id/textView9"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentEnd="true"
-            android:layout_marginEnd="321dp"
-            android:layout_marginBottom="10dp"
-            android:text="Ruta 4"
-            android:textAppearance="@style/TextAppearance.AppCompat.Large" />
-
-        <Button
-            android:id="@+id/button4"
-            android:layout_width="wrap_content"
-            android:layout_height="60dp"
-            android:layout_above="@+id/textView10"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentEnd="true"
-            android:layout_marginStart="30dp"
-            android:layout_marginEnd="77dp"
-            android:layout_marginBottom="10dp"
-            android:drawableLeft="@drawable/tracking"
-            android:text="Infonavit - Nuevo horizonte - Lotes y Servicios" />
-
-        <TextView
-            android:id="@+id/textView10"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_above="@+id/button5"
-            android:layout_alignParentEnd="true"
-            android:layout_marginEnd="318dp"
-            android:layout_marginBottom="10dp"
-            android:text="Ruta 5"
-            android:textAppearance="@style/TextAppearance.AppCompat.Large" />
-
-        <Button
-            android:id="@+id/button5"
-            android:layout_width="216dp"
-            android:layout_height="60dp"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentBottom="true"
-            android:layout_marginStart="30dp"
-            android:layout_marginEnd="176dp"
-            android:layout_marginBottom="48dp"
-            android:drawableLeft="@drawable/tracking"
-            android:text="600 casas" />
-
-        <Button
-            android:id="@+id/Btnret"
-            android:layout_width="107dp"
-            android:layout_height="wrap_content"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentBottom="true"
-            android:layout_marginEnd="304dp"
-            android:layout_marginBottom="684dp"
-            android:background="#FD000000"
-            android:drawableLeft="@drawable/back"
-            android:text="Return"
-            android:textColor="@color/colorPrimary" />
-
-        <Button
-            android:id="@+id/button7"
-            style="@style/Widget.AppCompat.Button.Colored"
-            android:layout_width="304dp"
-            android:layout_height="wrap_content"
-            android:layout_alignParentEnd="true"
-            android:layout_marginEnd="0dp"
-            android:background="@color/colorAccent"
-            android:text="Informacion de rutas"
-            android:textColor="@color/colorPrimary" />
-    </RelativeLayout>
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="290dp"
+        android:layout_height="45dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="96dp"
+        android:layout_marginEnd="68dp"
+        android:fontFamily="sans-serif-medium"
+        android:text="Ruta 1"
+        android:textSize="24sp" />
 
 </RelativeLayout>
