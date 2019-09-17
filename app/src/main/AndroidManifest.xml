@@ -33,6 +33,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".MainActivity" />
+        <activity android:name=".pop_up1"/>
 
         <meta-data
             android:name="com.google.android.geo.API_KEY"

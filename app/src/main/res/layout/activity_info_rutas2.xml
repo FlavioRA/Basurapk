@@ -9,7 +9,7 @@
 
 
     <Button
-        android:id="@+id/btnR2"
+        android:id="@+id/btnR1"
         android:layout_width="354dp"
         android:layout_height="51dp"
         android:layout_alignParentTop="true"
@@ -133,5 +133,15 @@
         android:layout_marginEnd="15dp"
         android:text="Informacion de rutas"
         android:textAppearance="@style/TextAppearance.AppCompat.Display1" />
+
+    <ImageView
+        android:id="@+id/imageView4"
+        android:layout_width="184dp"
+        android:layout_height="110dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="35dp"
+        android:layout_marginEnd="-38dp"
+        app:srcCompat="@drawable/logonegro" />
 
 </RelativeLayout>
