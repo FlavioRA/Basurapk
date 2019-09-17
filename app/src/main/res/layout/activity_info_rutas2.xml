@@ -14,7 +14,7 @@
         android:layout_height="51dp"
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
-        android:layout_marginTop="192dp"
+        android:layout_marginTop="143dp"
         android:layout_marginEnd="9dp"
         android:drawableLeft="@drawable/tracking"
         android:text="Rector Hidalgo - Benito Juarez" />
@@ -25,8 +25,8 @@
         android:layout_height="51dp"
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
-        android:layout_marginTop="313dp"
-        android:layout_marginEnd="9dp"
+        android:layout_marginTop="259dp"
+        android:layout_marginEnd="7dp"
         android:drawableLeft="@drawable/tracking"
         android:text="Rector Hidalgo - Benito Juarez" />
 
@@ -36,8 +36,8 @@
         android:layout_height="51dp"
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
-        android:layout_marginTop="429dp"
-        android:layout_marginEnd="9dp"
+        android:layout_marginTop="376dp"
+        android:layout_marginEnd="5dp"
         android:drawableLeft="@drawable/tracking"
         android:text="Rector Hidalgo - Benito Juarez" />
 
@@ -47,8 +47,8 @@
         android:layout_height="51dp"
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
-        android:layout_marginTop="539dp"
-        android:layout_marginEnd="9dp"
+        android:layout_marginTop="490dp"
+        android:layout_marginEnd="5dp"
         android:drawableLeft="@drawable/tracking"
         android:text="Rector Hidalgo - Benito Juarez" />
 
@@ -58,8 +58,8 @@
         android:layout_height="51dp"
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
-        android:layout_marginTop="656dp"
-        android:layout_marginEnd="10dp"
+        android:layout_marginTop="597dp"
+        android:layout_marginEnd="6dp"
         android:drawableLeft="@drawable/tracking"
         android:text="600 casas" />
 
@@ -69,8 +69,8 @@
         android:layout_height="45dp"
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
-        android:layout_marginTop="134dp"
-        android:layout_marginEnd="70dp"
+        android:layout_marginTop="92dp"
+        android:layout_marginEnd="73dp"
         android:fontFamily="sans-serif-medium"
         android:text="Ruta 1"
         android:textSize="24sp" />
@@ -81,7 +81,7 @@
         android:layout_height="45dp"
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
-        android:layout_marginTop="255dp"
+        android:layout_marginTop="204dp"
         android:layout_marginEnd="73dp"
         android:fontFamily="sans-serif-medium"
         android:text="Ruta 2"
@@ -93,7 +93,7 @@
         android:layout_height="45dp"
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
-        android:layout_marginTop="373dp"
+        android:layout_marginTop="321dp"
         android:layout_marginEnd="70dp"
         android:fontFamily="sans-serif-medium"
         android:text="Ruta 3"
@@ -105,8 +105,8 @@
         android:layout_height="45dp"
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
-        android:layout_marginTop="486dp"
-        android:layout_marginEnd="70dp"
+        android:layout_marginTop="439dp"
+        android:layout_marginEnd="67dp"
         android:fontFamily="sans-serif-medium"
         android:text="Ruta 4"
         android:textSize="24sp" />
@@ -117,8 +117,8 @@
         android:layout_height="45dp"
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
-        android:layout_marginTop="602dp"
-        android:layout_marginEnd="70dp"
+        android:layout_marginTop="552dp"
+        android:layout_marginEnd="72dp"
         android:fontFamily="sans-serif-medium"
         android:text="Ruta 5"
         android:textSize="24sp" />
@@ -129,19 +129,19 @@
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
-        android:layout_marginTop="70dp"
-        android:layout_marginEnd="15dp"
+        android:layout_marginTop="14dp"
+        android:layout_marginEnd="18dp"
         android:text="Informacion de rutas"
         android:textAppearance="@style/TextAppearance.AppCompat.Display1" />
 
     <ImageView
         android:id="@+id/imageView4"
-        android:layout_width="184dp"
-        android:layout_height="110dp"
+        android:layout_width="159dp"
+        android:layout_height="82dp"
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
-        android:layout_marginTop="35dp"
-        android:layout_marginEnd="-38dp"
+        android:layout_marginTop="14dp"
+        android:layout_marginEnd="-36dp"
         app:srcCompat="@drawable/logonegro" />
 
 </RelativeLayout>
