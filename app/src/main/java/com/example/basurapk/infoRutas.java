@@ -10,9 +10,5 @@ import androidx.appcompat.app.AppCompatActivity;
 public class infoRutas extends AppCompatActivity {
 
 
-    Button Return;
-
-
-
 
 }
