@@ -8,12 +8,14 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 
-public class LoginAd extends AppCompatActivity {
+public class LoginCh extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_login_ad);
+        setContentView(R.layout.activity_login_ch);
+
+
 
         ImageView imageView4 = (ImageView)findViewById(R.id.imageView4);
         imageView4.setOnClickListener(new View.OnClickListener() {
@@ -28,36 +30,37 @@ public class LoginAd extends AppCompatActivity {
         });
 
 
-        Button btnEntrar = (Button)findViewById(R.id.btnEntrarCh);
+        Button btnEntrarCh = (Button)findViewById(R.id.btnEntrarCh);
 
-        btnEntrar.setOnClickListener(new View.OnClickListener() {
+        btnEntrarCh.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
-                Intent intent4 = new Intent(view.getContext(),administrador.class);
-                startActivityForResult(intent4, 0);
+
+                Intent intent8 = new Intent(view.getContext(),chofer.class);
+                startActivityForResult(intent8, 0);
 
             }
         });
 
 
 
+        Button btnSalirCh = (Button)findViewById(R.id.btnSalirCh);
 
-        Button btnSalir = (Button)findViewById(R.id.btnSalirCh);
-
-        btnSalir.setOnClickListener(new View.OnClickListener() {
+        btnSalirCh.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
-                Intent intent5 = new Intent(view.getContext(),MainActivity.class);
-                startActivityForResult(intent5, 0);
+                Intent intent9 = new Intent(view.getContext(),MainActivity.class);
+                startActivityForResult(intent9, 0);
+
 
             }
         });
-
-
-
 
 
     }
+
+
+
 }
