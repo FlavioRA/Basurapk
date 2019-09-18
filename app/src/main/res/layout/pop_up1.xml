@@ -9,12 +9,14 @@
 
     <TextView
         android:id="@+id/textView5"
-        android:layout_width="wrap_content"
+        android:layout_width="188dp"
         android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
-        android:layout_marginTop="366dp"
-        android:layout_marginEnd="130dp"
+        android:layout_marginStart="134dp"
+        android:layout_marginTop="312dp"
+        android:layout_marginEnd="89dp"
         android:text="Ruta 1 (Amarilla)"
         android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
 
@@ -22,20 +24,25 @@
         android:id="@+id/imageView5"
         android:layout_width="142dp"
         android:layout_height="152dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginEnd="125dp"
-        android:layout_marginBottom="370dp"
+        android:layout_marginStart="142dp"
+        android:layout_marginTop="133dp"
+        android:layout_marginEnd="142dp"
         app:srcCompat="@drawable/ruta1" />
 
     <TextView
         android:id="@+id/textView6"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginEnd="117dp"
-        android:layout_marginBottom="312dp"
+        android:layout_marginStart="89dp"
+        android:layout_marginTop="351dp"
+        android:layout_marginEnd="89dp"
+        android:gravity="center"
         android:text="Hrs. Aprox. 5 AM - 10AM"
         android:textAppearance="@style/TextAppearance.AppCompat.Small" />
 
@@ -43,10 +50,13 @@
         android:id="@+id/textView21"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginEnd="93dp"
-        android:layout_marginBottom="286dp"
+        android:layout_marginStart="115dp"
+        android:layout_marginTop="383dp"
+        android:layout_marginEnd="96dp"
+        android:gravity="center"
         android:text="Dias: Lunes, miercoles y viernes"
         android:textAppearance="@style/TextAppearance.AppCompat.Small" />
 
@@ -54,10 +64,13 @@
         android:id="@+id/textView25"
         android:layout_width="312dp"
         android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginEnd="36dp"
-        android:layout_marginBottom="247dp"
+        android:layout_marginStart="58dp"
+        android:layout_marginTop="422dp"
+        android:layout_marginEnd="41dp"
+        android:gravity="center"
         android:text="Calle esa la mole, Emiliano Zapata, 5 de mayo, etc etc etc"
         android:textAppearance="@style/TextAppearance.AppCompat.Small" />
 </RelativeLayout>
