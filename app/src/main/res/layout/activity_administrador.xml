@@ -4,13 +4,132 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".administrador">
+    android:background="@drawable/fondo1"
+    tools:context=".administrador" >
 
     <TextView
-        android:id="@+id/textView4"
+        android:id="@+id/textView6"
+        android:layout_width="206dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="206dp"
+        android:layout_marginEnd="103dp"
+        android:fontFamily="sans-serif-medium"
+        android:gravity="center"
+        android:text="Administrador"
+        android:textSize="18sp" />
+
+    <ImageView
+        android:id="@+id/imageView5"
+        android:layout_width="150dp"
+        android:layout_height="180dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="13dp"
+        android:layout_marginEnd="134dp"
+        app:srcCompat="@drawable/logonegro" />
+
+    <ImageView
+        android:id="@+id/imgNotif"
+        android:layout_width="71dp"
+        android:layout_height="50dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="6dp"
+        android:layout_marginEnd="8dp"
+        app:srcCompat="@drawable/email" />
+
+    <TextView
+        android:id="@+id/textView20"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Administrador"
-        tools:layout_editor_absoluteX="249dp"
-        tools:layout_editor_absoluteY="228dp" />
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="65dp"
+        android:layout_marginEnd="354dp"
+        android:text="Buzón"
+        android:textSize="18sp" />
+
+    <TextView
+        android:id="@+id/textView21"
+        android:layout_width="90dp"
+        android:layout_height="35dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="58dp"
+        android:layout_marginEnd="0dp"
+        android:gravity="center"
+        android:text="Crear Notificación" />
+
+    <ImageView
+        android:id="@+id/imgBuzon"
+        android:layout_width="60dp"
+        android:layout_height="62dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="2dp"
+        android:layout_marginEnd="346dp"
+        app:srcCompat="@drawable/mailbox" />
+
+    <RadioButton
+        android:id="@+id/rbRuta1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="275dp"
+        android:layout_marginEnd="325dp"
+        android:text="Ruta1" />
+
+    <RadioButton
+        android:id="@+id/rbRuta2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="275dp"
+        android:layout_marginEnd="250dp"
+        android:text="Ruta2" />
+
+    <RadioButton
+        android:id="@+id/rbRuta3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="275dp"
+        android:layout_marginEnd="176dp"
+        android:text="Ruta3" />
+
+    <RadioButton
+        android:id="@+id/rbRuta4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="275dp"
+        android:layout_marginEnd="100dp"
+        android:text="Ruta4" />
+
+    <RadioButton
+        android:id="@+id/rbRuta5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="275dp"
+        android:layout_marginEnd="20dp"
+        android:text="Ruta4" />
+
+    <TextView
+        android:id="@+id/txtTabla"
+        android:layout_width="362dp"
+        android:layout_height="363dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="326dp"
+        android:layout_marginEnd="29dp"
+        android:background="@android:color/white" />
+
 </RelativeLayout>

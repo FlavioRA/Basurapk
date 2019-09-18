@@ -9,10 +9,13 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.Light.NoActionBar">
-        <activity android:name=".LoginCh"></activity>
+        <activity android:name=".Formulario"></activity>
+        <activity android:name=".NuevaNotificacion" />
+        <activity android:name=".Buzon" />
+        <activity android:name=".LoginCh" />
         <activity android:name=".chofer" />
         <activity android:name=".administrador" />
-        <activity android:name=".LoginAd"></activity>
+        <activity android:name=".LoginAd" />
         <activity android:name=".infoRutas" />
         <activity android:name=".contactoL" />
         <activity android:name=".contacto" />
@@ -36,16 +39,16 @@
             </intent-filter>
         </activity>
         <activity android:name=".MainActivity" />
-        <activity android:name=".pop_up1"/>
+        <activity android:name=".pop_up1" />
 
         <meta-data
             android:name="com.google.android.geo.API_KEY"
             android:value="@string/google_maps_key" />
     </application>
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
-    <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
 </manifest>
