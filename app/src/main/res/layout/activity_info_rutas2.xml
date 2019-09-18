@@ -20,7 +20,7 @@
         android:text="Rector Hidalgo - Benito Juarez" />
 
     <Button
-        android:id="@+id/btnR5"
+        android:id="@+id/btnR2"
         android:layout_width="354dp"
         android:layout_height="51dp"
         android:layout_alignParentTop="true"
@@ -31,7 +31,7 @@
         android:text="Rector Hidalgo - Benito Juarez" />
 
     <Button
-        android:id="@+id/btnR6"
+        android:id="@+id/btnR3"
         android:layout_width="354dp"
         android:layout_height="51dp"
         android:layout_alignParentTop="true"
@@ -42,7 +42,7 @@
         android:text="Rector Hidalgo - Benito Juarez" />
 
     <Button
-        android:id="@+id/btnR7"
+        android:id="@+id/btnR4"
         android:layout_width="354dp"
         android:layout_height="51dp"
         android:layout_alignParentTop="true"
@@ -53,7 +53,7 @@
         android:text="Rector Hidalgo - Benito Juarez" />
 
     <Button
-        android:id="@+id/btnR8"
+        android:id="@+id/btnR5"
         android:layout_width="354dp"
         android:layout_height="51dp"
         android:layout_alignParentTop="true"

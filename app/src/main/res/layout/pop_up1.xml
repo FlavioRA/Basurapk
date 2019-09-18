@@ -13,8 +13,8 @@
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
-        android:layout_marginTop="409dp"
-        android:layout_marginEnd="77dp"
+        android:layout_marginTop="366dp"
+        android:layout_marginEnd="71dp"
         android:text="Ruta 1 (Amarilla)"
         android:textAppearance="@style/TextAppearance.AppCompat.Display1" />
 
@@ -24,8 +24,8 @@
         android:layout_height="315dp"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginEnd="56dp"
-        android:layout_marginBottom="343dp"
+        android:layout_marginEnd="50dp"
+        android:layout_marginBottom="376dp"
         app:srcCompat="@drawable/ruta1" />
 
     <TextView
@@ -34,8 +34,8 @@
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginEnd="108dp"
-        android:layout_marginBottom="240dp"
+        android:layout_marginEnd="96dp"
+        android:layout_marginBottom="286dp"
         android:text="Hrs. Aprox. 5 AM - 10AM"
         android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
 
@@ -45,9 +45,19 @@
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginEnd="75dp"
-        android:layout_marginBottom="198dp"
+        android:layout_marginEnd="76dp"
+        android:layout_marginBottom="252dp"
         android:text="Dias: Lunes, miercoles y viernes"
         android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
 
+    <TextView
+        android:id="@+id/textView25"
+        android:layout_width="312dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="36dp"
+        android:layout_marginBottom="196dp"
+        android:text="Calle esa la mole, Emiliano Zapata, 5 de mayo, etc etc etc"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
 </RelativeLayout>
