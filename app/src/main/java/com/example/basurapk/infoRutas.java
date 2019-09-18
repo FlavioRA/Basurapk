@@ -1,6 +1,5 @@
 package com.example.basurapk;
 
-import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -17,9 +16,13 @@ public class infoRutas extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_info_rutas2);
 
-        Button b = (Button) findViewById(R.id.btnR1);
+        Button r1 = (Button) findViewById(R.id.btnR1);
+        Button r2 = (Button) findViewById(R.id.btnR2);
+        Button r3 = (Button) findViewById(R.id.btnR3);
+        Button r4 = (Button) findViewById(R.id.btnR4);
+        Button r5 = (Button) findViewById(R.id.btnR2);
 
-        b.setOnClickListener(new View.OnClickListener(){
+        r1.setOnClickListener(new View.OnClickListener(){
 
             @Override
 
@@ -28,6 +31,43 @@ public class infoRutas extends AppCompatActivity {
             }
         });
 
+        r2.setOnClickListener(new View.OnClickListener(){
+
+            @Override
+
+            public void onClick(View v) {
+                startActivity(new Intent(infoRutas.this,pop_up1.class));
+            }
+        });
+
+        r3.setOnClickListener(new View.OnClickListener(){
+
+            @Override
+
+            public void onClick(View v) {
+                startActivity(new Intent(infoRutas.this,pop_up1.class));
+            }
+        });
+
+        r4.setOnClickListener(new View.OnClickListener(){
+
+            @Override
+
+            public void onClick(View v) {
+                startActivity(new Intent(infoRutas.this,pop_up1.class));
+            }
+        });
+
+        r5.setOnClickListener(new View.OnClickListener(){
+
+            @Override
+
+            public void onClick(View v) {
+                startActivity(new Intent(infoRutas.this,pop_up1.class));
+            }
+        });
     }
 
 }
+
+
