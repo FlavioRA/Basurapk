@@ -15,18 +15,6 @@ public class administrador extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_administrador);
 
-        ImageView imgBuzon =(ImageView)findViewById(R.id.imgBuzon);
-
-        imgBuzon.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-
-                Intent intent5= new Intent(view.getContext(),Buzon.class);
-                startActivityForResult(intent5, 0);
-
-
-            }
-        });
 
 
 
@@ -42,6 +30,18 @@ public class administrador extends AppCompatActivity {
             }
         });
 
+
+
+        ImageView imgBuzon = (ImageView)findViewById(R.id.imgBuzon);
+        imgBuzon.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                Intent intent9= new Intent(view.getContext(),Buzon.class);
+                startActivityForResult(intent9, 0);
+
+            }
+        });
 
 
         ImageView imageView5 = (ImageView)findViewById(R.id.imageView5);
