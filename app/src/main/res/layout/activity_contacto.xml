@@ -91,44 +91,47 @@
         android:inputType="textEmailAddress" />
 
     <TextView
-        android:id="@+id/textView18"
-        android:layout_width="363dp"
-        android:layout_height="105dp"
-        android:layout_alignStart="@+id/edtEmail"
-        android:layout_alignTop="@+id/imageView10"
-        android:layout_alignEnd="@+id/edtEmail"
-        android:layout_marginStart="-53dp"
-        android:layout_marginTop="301dp"
-        android:layout_marginEnd="-55dp"
-        android:background="@color/colorPrimaryDark"
-        android:hint="Escribe tu mensaje aqui..." />
-
-    <TextView
         android:id="@+id/textView19"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignStart="@+id/textView18"
+        android:layout_height="68dp"
         android:layout_alignTop="@+id/imageView10"
-        android:layout_alignEnd="@+id/textView18"
-        android:layout_marginStart="17dp"
-        android:layout_marginTop="422dp"
-        android:layout_marginEnd="18dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="35dp"
+        android:layout_marginTop="419dp"
+        android:layout_marginEnd="35dp"
         android:fontFamily="sans-serif-medium"
         android:gravity="center"
         android:text="Ojo! Si no escribes tus datos de contacto de forma correcta no podremos contactarte."
         android:textColor="@android:color/holo_red_dark" />
+
+    <EditText
+        android:id="@+id/edtMensaje"
+        android:layout_width="329dp"
+        android:layout_height="89dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="41dp"
+        android:layout_marginTop="298dp"
+        android:layout_marginEnd="41dp"
+        android:background="@color/colorPrimaryDark"
+        android:ems="10"
+        android:gravity="start|top"
+        android:hint="Escribir mensaje..."
+        android:inputType="textMultiLine" />
 
     <Button
         android:id="@+id/btnEnviar"
         style="@style/Widget.AppCompat.Button.Colored"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignStart="@+id/textView19"
-        android:layout_alignEnd="@+id/textView19"
+        android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:layout_marginStart="76dp"
-        android:layout_marginTop="492dp"
-        android:layout_marginEnd="78dp"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="115dp"
+        android:layout_marginTop="503dp"
+        android:layout_marginEnd="124dp"
         android:text="Enviar" />
 
 </RelativeLayout>
