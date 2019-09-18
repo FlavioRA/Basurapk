@@ -26,7 +26,7 @@
         android:layout_alignParentBottom="true"
         android:layout_marginEnd="56dp"
         android:layout_marginBottom="343dp"
-        app:srcCompat="@drawable/Ruta1" />
+        app:srcCompat="@drawable/ruta1" />
 
     <TextView
         android:id="@+id/textView6"
