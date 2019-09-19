@@ -2,9 +2,13 @@ package com.example.basurapk;
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
 
+import android.Manifest;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -32,7 +36,6 @@ public class contacto extends AppCompatActivity {
         });
 
 
-
         ImageView imageView11 = (ImageView)findViewById(R.id.imageView11);
         imageView11.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -45,6 +48,8 @@ public class contacto extends AppCompatActivity {
             }
         });
 
+
+        //----------------------------------------------------------
         mAlertBtn = (Button) findViewById(R.id.btnEnviar);
 
         mAlertBtn.setOnClickListener(new View.OnClickListener(){
@@ -58,7 +63,7 @@ public class contacto extends AppCompatActivity {
                             @Override
                             public void onClick(DialogInterface dialog, int which) {
 
-                                finish();
+                                //Falta el enviar
                             }
 
                         })
@@ -70,12 +75,11 @@ public class contacto extends AppCompatActivity {
                             }
                         });
                 AlertDialog titulo = alerta.create();
-                titulo.setTitle("salida");
+                titulo.setTitle("Enviar queja o sugerencia");
                 titulo.show();
-
-
 
     }
 });
+
     }
 }
