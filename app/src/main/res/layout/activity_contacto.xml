@@ -4,40 +4,21 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/fondoo"
     tools:context=".contacto">
 
-    <TextView
-        android:id="@+id/textView11"
-        android:layout_width="318dp"
+    <Button
+        android:id="@+id/btnEnviar"
+        style="@style/Widget.AppCompat.Button.Colored"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
-        android:layout_marginStart="56dp"
-        android:layout_marginTop="88dp"
-        android:layout_marginEnd="37dp"
-        android:fontFamily="sans-serif-black"
-        android:gravity="center"
-        android:text="Quejas Y Sugerencias"
-        android:textSize="20sp" />
-
-    <ImageView
-        android:id="@+id/imageView11"
-        android:layout_width="59dp"
-        android:layout_height="75dp"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginTop="6dp"
-        android:layout_marginEnd="2dp"
-        app:srcCompat="@drawable/logonegro" />
-
-    <TextView
-        android:id="@+id/textView12"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_marginTop="71dp"
-        android:text="Contacto" />
+        android:layout_marginStart="115dp"
+        android:layout_marginTop="503dp"
+        android:layout_marginEnd="124dp"
+        android:text="Enviar" />
 
     <EditText
         android:id="@+id/edtNombre"
@@ -81,21 +62,6 @@
         android:hint="Correo Electronico"
         android:inputType="textEmailAddress" />
 
-    <TextView
-        android:id="@+id/textView19"
-        android:layout_width="wrap_content"
-        android:layout_height="68dp"
-        android:layout_alignTop="@+id/imageView10"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginStart="35dp"
-        android:layout_marginTop="419dp"
-        android:layout_marginEnd="35dp"
-        android:fontFamily="sans-serif-medium"
-        android:gravity="center"
-        android:text="Ojo! Si no escribes tus datos de contacto de forma correcta no podremos contactarte."
-        android:textColor="@android:color/holo_red_dark" />
-
     <EditText
         android:id="@+id/edtMensaje"
         android:layout_width="380dp"
@@ -112,18 +78,15 @@
         android:hint="Escribir mensaje..."
         android:inputType="textMultiLine" />
 
-    <Button
-        android:id="@+id/btnEnviar"
-        style="@style/Widget.AppCompat.Button.Colored"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
+    <ImageView
+        android:id="@+id/imageView11"
+        android:layout_width="59dp"
+        android:layout_height="75dp"
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
-        android:layout_marginStart="115dp"
-        android:layout_marginTop="503dp"
-        android:layout_marginEnd="124dp"
-        android:text="Enviar" />
+        android:layout_marginTop="6dp"
+        android:layout_marginEnd="2dp"
+        app:srcCompat="@drawable/logonegro" />
 
     <ImageView
         android:id="@+id/imageView10"
@@ -132,5 +95,43 @@
         android:layout_alignParentTop="true"
         android:layout_marginTop="4dp"
         app:srcCompat="@drawable/agenda" />
+
+    <TextView
+        android:id="@+id/textView11"
+        android:layout_width="318dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="56dp"
+        android:layout_marginTop="88dp"
+        android:layout_marginEnd="37dp"
+        android:fontFamily="sans-serif-black"
+        android:gravity="center"
+        android:text="Quejas Y Sugerencias"
+        android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/textView12"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="71dp"
+        android:text="Contacto" />
+
+    <TextView
+        android:id="@+id/textView19"
+        android:layout_width="wrap_content"
+        android:layout_height="68dp"
+        android:layout_alignTop="@+id/imageView10"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="35dp"
+        android:layout_marginTop="419dp"
+        android:layout_marginEnd="35dp"
+        android:fontFamily="sans-serif-medium"
+        android:gravity="center"
+        android:text="Ojo! Si no escribes tus datos de contacto de forma correcta no podremos contactarte."
+        android:textColor="@android:color/holo_red_dark" />
 
 </RelativeLayout>
