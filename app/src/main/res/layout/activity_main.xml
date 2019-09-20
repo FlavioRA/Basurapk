@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colorPrimaryDark"
+    android:background="@color/colorGreen"
     tools:context=".MainActivity">
 
     <Button
@@ -97,12 +97,42 @@
 
     <ImageView
         android:id="@+id/imageView18"
-        android:layout_width="51dp"
+        android:layout_width="54dp"
         android:layout_height="54dp"
-        android:layout_alignParentEnd="true"
+        android:layout_alignParentStart="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginEnd="331dp"
-        android:layout_marginBottom="240dp"
+        android:layout_marginStart="26dp"
+        android:layout_marginBottom="248dp"
         app:srcCompat="@drawable/map" />
+
+    <ImageView
+        android:id="@+id/imageView6"
+        android:layout_width="50dp"
+        android:layout_height="48dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="31dp"
+        android:layout_marginBottom="190dp"
+        app:srcCompat="@drawable/bell" />
+
+    <ImageView
+        android:id="@+id/imageView7"
+        android:layout_width="49dp"
+        android:layout_height="45dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="31dp"
+        android:layout_marginBottom="135dp"
+        app:srcCompat="@drawable/destination" />
+
+    <ImageView
+        android:id="@+id/imageView8"
+        android:layout_width="42dp"
+        android:layout_height="38dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="39dp"
+        android:layout_marginBottom="85dp"
+        app:srcCompat="@drawable/communication" />
 
 </RelativeLayout>
