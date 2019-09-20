@@ -9,10 +9,12 @@ import android.widget.ImageView;
 
 public class contacto extends AppCompatActivity {
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_contacto);
+
 
         ImageView imageView10 = (ImageView)findViewById(R.id.imageView10);
         imageView10.setOnClickListener(new View.OnClickListener() {
@@ -22,8 +24,10 @@ public class contacto extends AppCompatActivity {
 
                 Intent intent3 = new Intent(view.getContext(),contactoL.class);
                 startActivityForResult(intent3, 0);
+
             }
         });
+
 
 
         ImageView imageView11 = (ImageView)findViewById(R.id.imageView11);
@@ -31,10 +35,14 @@ public class contacto extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
+
                 Intent intent3 = new Intent(view.getContext(),MainActivity.class);
                 startActivityForResult(intent3, 0);
+
             }
         });
+
+
 
     }
 }
