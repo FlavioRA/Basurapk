@@ -4,7 +4,19 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Formulario" >
+    android:background="@drawable/fondoo"
+    tools:context=".Formulario">
+
+    <Button
+        android:id="@+id/btnEnviar"
+        style="@style/Widget.AppCompat.Button.Colored"
+        android:layout_width="307dp"
+        android:layout_height="61dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="626dp"
+        android:layout_marginEnd="48dp"
+        android:text="Enviar" />
 
     <TextView
         android:id="@+id/textView23"
@@ -18,15 +30,4 @@
         android:gravity="center"
         android:text="Llenar Formulario"
         android:textSize="24sp" />
-
-    <Button
-        android:id="@+id/btnEnviar"
-        style="@style/Widget.AppCompat.Button.Colored"
-        android:layout_width="307dp"
-        android:layout_height="61dp"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginTop="626dp"
-        android:layout_marginEnd="48dp"
-        android:text="Enviar" />
 </RelativeLayout>
