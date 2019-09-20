@@ -1,9 +1,12 @@
 package com.example.basurapk;
 
+import androidx.core.app.ActivityCompat;
 import androidx.fragment.app.FragmentActivity;
 
+import android.Manifest;
 import android.app.Activity;
 import android.app.Dialog;
+import android.content.pm.PackageManager;
 import android.os.Bundle;
 
 import com.google.android.gms.common.ConnectionResult;
@@ -53,31 +56,32 @@ public class mapa extends FragmentActivity implements OnMapReadyCallback {
      * it inside the SupportMapFragment. This method will only be triggered once the user has
      * installed Google Play services and returned to the app.
      */
+
+
     @Override
     public void onMapReady(GoogleMap googleMap) {
         mMap = googleMap;
-
 
         mMap.setMapType(GoogleMap.MAP_TYPE_NORMAL);
 
         UiSettings uiSettings = mMap.getUiSettings();
         uiSettings.setZoomControlsEnabled(true);
 
-
-
         // Add a marker in Sydney and move the camera
-        LatLng Contenedor2 = new LatLng(17.962325, -102.198053);
-        mMap.addMarker(new MarkerOptions().position(Contenedor2).title("Ruta 1 Contenedor 1").icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_GREEN)));
-        float zoomlevelR1=16;
-        mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(Contenedor2,zoomlevelR1));
 
         LatLng Contenedor1 = new LatLng(17.961513, -102.203879);
-        mMap.addMarker(new MarkerOptions().position(Contenedor1).title("Ruta 1 Contenedor 3").icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_GREEN)));
+        mMap.addMarker(new MarkerOptions().position(Contenedor1).title("Ruta 1 Contenedor 1").icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_GREEN)));
         float zoomlevelR2=16;
         mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(Contenedor1,zoomlevelR2));
 
+        LatLng Contenedor2 = new LatLng(17.962325, -102.198053);
+        mMap.addMarker(new MarkerOptions().position(Contenedor2).title("Ruta 1 Contenedor 2").icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_GREEN)));
+        float zoomlevelR1=16;
+        mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(Contenedor2,zoomlevelR1));
+
+
         LatLng Contenedor3 = new LatLng(17.961420, -102.201770);
-        mMap.addMarker(new MarkerOptions().position(Contenedor3).title("Ruta 1 Contenedor 2").icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_GREEN)));
+        mMap.addMarker(new MarkerOptions().position(Contenedor3).title("Ruta 1 Contenedor 3").icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_GREEN)));
         float zoomlevelR3=16;
         mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(Contenedor3,zoomlevelR3));
 
