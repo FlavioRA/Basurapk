@@ -5,9 +5,11 @@
     android:layout_height="match_parent"
     android:layout_marginLeft="5dp"
     android:layout_marginRight="5dp"
+    android:background="@drawable/fondoo"
     android:gravity="center">
 
     <ImageView
+        android:id="@+id/exit"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:src="@drawable/ic_delete"
@@ -41,6 +43,7 @@
 
 
                 <TextView
+                    android:id="@+id/Titulo"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="20dp"
@@ -52,15 +55,16 @@
 
 
                 <ImageView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_width="265dp"
+                    android:layout_height="150dp"
                     android:layout_marginLeft="20dp"
                     android:layout_marginRight="20dp"
                     android:layout_marginBottom="10dp"
+                    android:layout_gravity="center"
                     android:src="@drawable/ic_timelapse_black_24dp" />
 
-
                 <TextView
+                    android:id="@+id/Calles"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="20dp"
@@ -68,9 +72,10 @@
                     android:layout_marginBottom="20dp"
                     android:text="Av. Melchor Ocampo - 600 casas"
                     android:textAlignment="center"
-                    android:textSize="18dp" />
+                    android:textSize="18sp" />
 
                 <TextView
+                    android:id="@+id/Dias"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="20dp"
@@ -78,7 +83,7 @@
                     android:layout_marginBottom="20dp"
                     android:text="Días: Lunes, Miercoles y Viernes"
                     android:textAlignment="center"
-                    android:textSize="18dp" />
+                    android:textSize="18sp" />
 
             </LinearLayout>
 
