@@ -7,6 +7,7 @@
     android:background="@drawable/fondoo"
     tools:context=".MainActivity">
 
+
     <Button
         android:id="@+id/btnMapa"
         style="@style/Widget.AppCompat.Button.Colored"

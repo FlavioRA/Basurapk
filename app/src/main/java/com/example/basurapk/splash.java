@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.media.MediaPlayer;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.VideoView;
 
 public class splash extends AppCompatActivity {
@@ -18,7 +19,9 @@ public class splash extends AppCompatActivity {
         setContentView(R.layout.activity_splash);
 
         videoView=(VideoView)findViewById(R.id.videoView);
-        videoView.setVideoPath("android.resource://"+getPackageName()+"/"+R.raw.anim1);
+        videoView.setVideoPath("android.resource://"+getPackageName()+"/"+R.raw.anim4);
+
+
 
         videoView.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
             @Override
@@ -31,7 +34,6 @@ public class splash extends AppCompatActivity {
 
             }
         });
-
 
         videoView.start();
 
