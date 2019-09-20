@@ -47,7 +47,7 @@
                     android:layout_marginRight="20dp"
                     android:text="Ruta 1 (Ruta Amarilla)"
                     android:textAlignment="center"
-                    android:textSize="25dp"
+                    android:textSize="24dp"
                     android:textStyle="bold" />
 
 
