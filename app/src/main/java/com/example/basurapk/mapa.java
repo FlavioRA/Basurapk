@@ -17,6 +17,7 @@ import com.google.android.gms.maps.model.BitmapDescriptor;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
+import com.google.android.gms.maps.model.PolylineOptions;
 
 public class mapa extends FragmentActivity implements OnMapReadyCallback {
 
@@ -62,10 +63,25 @@ public class mapa extends FragmentActivity implements OnMapReadyCallback {
         UiSettings uiSettings = mMap.getUiSettings();
         uiSettings.setZoomControlsEnabled(true);
 
+
+
         // Add a marker in Sydney and move the camera
-        LatLng sydney = new LatLng(17.962325, -102.198053);
-        mMap.addMarker(new MarkerOptions().position(sydney).title("Hola BasurapK").icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_GREEN)));
-        float zoomlevel=16;
-        mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(sydney,zoomlevel));
+        LatLng Contenedor2 = new LatLng(17.962325, -102.198053);
+        mMap.addMarker(new MarkerOptions().position(Contenedor2).title("Ruta 1 Contenedor 1").icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_GREEN)));
+        float zoomlevelR1=16;
+        mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(Contenedor2,zoomlevelR1));
+
+        LatLng Contenedor1 = new LatLng(17.961513, -102.203879);
+        mMap.addMarker(new MarkerOptions().position(Contenedor1).title("Ruta 1 Contenedor 3").icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_GREEN)));
+        float zoomlevelR2=16;
+        mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(Contenedor1,zoomlevelR2));
+
+        LatLng Contenedor3 = new LatLng(17.961420, -102.201770);
+        mMap.addMarker(new MarkerOptions().position(Contenedor3).title("Ruta 1 Contenedor 2").icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_GREEN)));
+        float zoomlevelR3=16;
+        mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(Contenedor3,zoomlevelR3));
+
+
+
     }
 }
