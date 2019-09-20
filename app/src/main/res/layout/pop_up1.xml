@@ -3,60 +3,78 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:layout_marginLeft="5dp"
+    android:layout_marginRight="5dp"
+    android:gravity="center">
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_delete"
+        android:layout_marginTop="7dp"
+        android:layout_marginRight="7dp"
+        android:elevation="5dp"
+        android:layout_alignParentRight="true"/>
+
+<androidx.cardview.widget.CardView
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:cardCornerRadius="15dp"
+    app:cardBackgroundColor="@color/colorPrimary"
+    android:layout_alignParentTop="true"
+    android:layout_alignParentLeft="true"
+    android:layout_alignParentStart="true">
+
+
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
     android:orientation="vertical">
 
 
-    <TextView
-        android:id="@+id/textView5"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginTop="366dp"
-        android:layout_marginEnd="71dp"
-        android:text="Ruta 1 (Amarilla)"
-        android:textAppearance="@style/TextAppearance.AppCompat.Display1" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_marginTop="25dp"
+        android:layout_marginBottom="25dp">
 
-    <ImageView
-        android:id="@+id/imageView5"
-        android:layout_width="290dp"
-        android:layout_height="315dp"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginEnd="50dp"
-        android:layout_marginBottom="376dp"
-        app:srcCompat="@drawable/ruta1" />
 
-    <TextView
-        android:id="@+id/textView6"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginEnd="96dp"
-        android:layout_marginBottom="286dp"
-        android:text="Hrs. Aprox. 5 AM - 10AM"
-        android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:textAlignment="center"
+            android:textStyle="bold"
+            android:textSize="25dp"
+            android:text="Like a Boss"/>
 
-    <TextView
-        android:id="@+id/textView21"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginEnd="76dp"
-        android:layout_marginBottom="252dp"
-        android:text="Dias: Lunes, miercoles y viernes"
-        android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
 
-    <TextView
-        android:id="@+id/textView25"
-        android:layout_width="312dp"
-        android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginEnd="36dp"
-        android:layout_marginBottom="196dp"
-        android:text="Calle esa la mole, Emiliano Zapata, 5 de mayo, etc etc etc"
-        android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginBottom="10dp"
+            android:src="@drawable/ic_timelapse_black_24dp"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginBottom="20dp"
+            android:textAlignment="center"
+            android:textSize="18dp"
+            android:text="Pui Pui Pui Pui Pui Pui Pui "/>
+
+        </LinearLayout>
+
+</LinearLayout>
+
+
+</androidx.cardview.widget.CardView>
+
+
 </RelativeLayout>
