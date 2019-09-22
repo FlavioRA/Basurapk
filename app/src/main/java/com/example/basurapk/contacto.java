@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 
 public class contacto extends AppCompatActivity {
@@ -14,6 +15,7 @@ public class contacto extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_contacto);
+
 
 
         ImageView imageView10 = (ImageView)findViewById(R.id.imageView10);
@@ -44,5 +46,26 @@ public class contacto extends AppCompatActivity {
 
 
 
+        Button btnEnviar = findViewById(R.id.btnEnviar);
+
+        btnEnviar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+
+
+                openDialog();
+            }
+        });
+
     }
+
+public void openDialog(){
+
+        ExampleDialog exampleDialog = new ExampleDialog();
+        exampleDialog.show(getSupportFragmentManager(),"Ejemplo Administrador");
+
+    }
+
+
 }

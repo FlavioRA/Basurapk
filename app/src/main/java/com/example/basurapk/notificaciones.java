@@ -30,5 +30,31 @@ public class notificaciones extends AppCompatActivity {
 
 
 
+        ImageView imgRefresca =findViewById(R.id.imgRefresca);
+
+        imgRefresca.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+
+
+
+                openDialogRegresh();
+
+            }
+        });
+
+
+
     }
+
+    public void openDialogRegresh(){
+
+        DialogoRefresh dialogoRefresh = new DialogoRefresh();
+
+        dialogoRefresh.show(getSupportFragmentManager(),"Ejemplo Notificación");
+
+    }
+
+
 }

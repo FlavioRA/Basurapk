@@ -136,4 +136,21 @@
         android:gravity="center"
         android:text="Buzón" />
 
+    <ImageView
+        android:id="@+id/imgActualiza"
+        android:layout_width="84dp"
+        android:layout_height="70dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="103dp"
+        app:srcCompat="@drawable/location" />
+
+    <TextView
+        android:id="@+id/textView18"
+        android:layout_width="85dp"
+        android:layout_height="25dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="176dp"
+        android:gravity="center"
+        android:text="Actualizar" />
+
 </RelativeLayout>
