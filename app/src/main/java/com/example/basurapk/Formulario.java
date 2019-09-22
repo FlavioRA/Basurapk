@@ -22,6 +22,9 @@ public class Formulario extends AppCompatActivity {
             public void onClick(View view) {
 
 
+                Intent intent4 = new Intent(view.getContext(),MainActivity.class);
+                startActivityForResult(intent4, 0);
+
             }
         });
 
