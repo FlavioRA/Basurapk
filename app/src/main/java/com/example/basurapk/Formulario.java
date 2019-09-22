@@ -2,6 +2,7 @@ package com.example.basurapk;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -21,25 +22,13 @@ public class Formulario extends AppCompatActivity {
             public void onClick(View view) {
 
 
-
-
-                openDialogFormulario();
             }
         });
 
 
 
-
-
-
-
-
     }
 
-    public void openDialogFormulario(){
-        DialogFormulario exampleDialog = new DialogFormulario();
-        exampleDialog.show(getSupportFragmentManager(),"Ejemplo Administrador");
-    }
 
 
 }
