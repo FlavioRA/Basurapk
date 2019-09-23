@@ -24,6 +24,7 @@ public class administrador extends AppCompatActivity {
         textview = (TextView) findViewById(R.id.txtTabla);
 
 
+
         textview.setMovementMethod(new ScrollingMovementMethod());
 
 
