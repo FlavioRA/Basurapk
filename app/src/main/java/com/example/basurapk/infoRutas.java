@@ -40,8 +40,7 @@ public class infoRutas extends AppCompatActivity {
                 @Override
                 public void onClick(View view) {
 
-                    Intent intent3 = new Intent(view.getContext(),RutaUno.class);
-                    startActivityForResult(intent3, 0);
+
 
                 }
             });
