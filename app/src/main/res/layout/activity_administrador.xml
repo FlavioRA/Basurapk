@@ -7,6 +7,8 @@
     android:background="@drawable/fondoo"
     tools:context=".administrador">
 
+
+
     <ImageView
         android:id="@+id/imageView5"
         android:layout_width="150dp"

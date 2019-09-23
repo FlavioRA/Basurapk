@@ -4,12 +4,14 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.method.ScrollingMovementMethod;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.Spinner;
+import android.widget.TextView;
 
 public class administrador extends AppCompatActivity {
 
@@ -18,6 +20,11 @@ public class administrador extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_administrador);
 
+        TextView textview;
+        textview = (TextView) findViewById(R.id.txtTabla);
+
+
+        textview.setMovementMethod(new ScrollingMovementMethod());
 
 
 
