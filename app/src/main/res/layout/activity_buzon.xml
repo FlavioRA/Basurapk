@@ -7,6 +7,8 @@
     android:background="@drawable/fondoo"
     tools:context=".Buzon">
 
+
+
     <Button
         android:id="@+id/idBorrarB"
         style="@style/Widget.AppCompat.Button.Colored"
@@ -20,6 +22,7 @@
         android:layout_marginEnd="126dp"
         android:text="Limpiar" />
 
+
     <ImageView
         android:id="@+id/imglogo"
         android:layout_width="179dp"
@@ -32,6 +35,7 @@
         android:layout_marginEnd="116dp"
         app:srcCompat="@drawable/logonegro" />
 
+
     <TextView
         android:id="@+id/textView26"
         android:layout_width="wrap_content"
@@ -43,6 +47,8 @@
         android:layout_marginTop="319dp"
         android:layout_marginEnd="37dp"
         android:background="@color/colorPrimaryDark" />
+
+
 
     <TextView
         android:id="@+id/textView25"
@@ -57,6 +63,13 @@
         android:fontFamily="sans-serif-medium"
         android:gravity="center"
         android:text="Mesajes Recibidos"
-        android:textSize="24sp" />;
-    android:text="Mensajes Recibidos" />
+        android:textSize="24sp" />
+
+
+
+
 </RelativeLayout>
+
+
+
+
