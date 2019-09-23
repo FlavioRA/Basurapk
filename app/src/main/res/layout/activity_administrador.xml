@@ -7,56 +7,6 @@
     android:background="@drawable/fondoo"
     tools:context=".administrador">
 
-    <CheckBox
-        android:id="@+id/cbRuta1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginTop="248dp"
-        android:layout_marginEnd="176dp"
-        android:text="Ruta 1" />
-
-    <CheckBox
-        android:id="@+id/cbRuta2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginTop="247dp"
-        android:layout_marginEnd="97dp"
-        android:text="Ruta 2" />
-
-    <CheckBox
-        android:id="@+id/cbRuta3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginTop="284dp"
-        android:layout_marginEnd="215dp"
-        android:text="Ruta 3" />
-
-    <CheckBox
-        android:id="@+id/cbRuta4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginTop="284dp"
-        android:layout_marginEnd="137dp"
-        android:text="Ruta 4" />
-
-    <CheckBox
-        android:id="@+id/cbRuta5"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginTop="285dp"
-        android:layout_marginEnd="61dp"
-        android:text="Ruta 5" />
-
     <ImageView
         android:id="@+id/imageView5"
         android:layout_width="150dp"
@@ -152,5 +102,17 @@
         android:layout_marginTop="176dp"
         android:gravity="center"
         android:text="Actualizar" />
+
+    <Spinner
+        android:id="@+id/spRutas"
+        android:layout_width="362dp"
+        android:layout_height="47dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="249dp"
+        android:layout_marginEnd="9dp"
+        android:background="@android:color/holo_blue_dark"
+        android:gravity="center"
+        android:popupBackground="@android:color/darker_gray" />
 
 </RelativeLayout>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+<string-array name="rutas">
+
+
+    <item>R1 --> Rector Hidalgo - Venustiano C.</item>
+    <item>R2 --> 5 de mayo - Jose M. Morelos</item>
+    <item>R3 --> Jose M. Morelos - Primer Rector </item>
+    <item>R4 --> Infonavit Nuevo H. - Lotes y Serv.</item>
+    <item>R5 --> 600 Casas</item>
+
+
+</string-array>
+
+
+
+
+</resources>

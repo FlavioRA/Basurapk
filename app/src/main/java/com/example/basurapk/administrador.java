@@ -5,8 +5,11 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.ListView;
+import android.widget.Spinner;
 
 public class administrador extends AppCompatActivity {
 
@@ -72,6 +75,13 @@ public class administrador extends AppCompatActivity {
 
             }
         });
+
+
+        Spinner spRutas=findViewById(R.id.spRutas);
+        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this, R.array.rutas, android.R.layout.simple_spinner_item);
+        spRutas.setAdapter(adapter);
+
+
 
 
 
