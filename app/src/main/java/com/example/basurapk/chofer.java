@@ -45,11 +45,9 @@ public class chofer extends AppCompatActivity {
         btnCancelar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent3 = new Intent(view.getContext(), Formulario.class);
-                startActivityForResult(intent3, 0);
 
 
-
+                openDialogInicio();
             }
         });
 
@@ -58,10 +56,9 @@ public class chofer extends AppCompatActivity {
         btnFinalizar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent4 = new Intent(view.getContext(), Formulario.class);
-                startActivityForResult(intent4, 0);
 
 
+                openDialogInicio();
             }
         });
 
@@ -71,7 +68,7 @@ public class chofer extends AppCompatActivity {
     }
 
     public void openDialogInicio(){
-        DialogIniciado exampleDialog = new DialogIniciado();
+        DialogCancelaFinaliza exampleDialog = new DialogCancelaFinaliza();
         exampleDialog.show(getSupportFragmentManager(),"Ejemplo Administrador");
  }
 
