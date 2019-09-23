@@ -34,50 +34,11 @@ public class infoRutas extends AppCompatActivity {
         Button r4 = (Button) findViewById(R.id.btnR4);
         Button r5 = (Button) findViewById(R.id.btnR2);
 
-        r1.setOnClickListener(new View.OnClickListener(){
 
-            @Override
 
-            public void onClick(View v) {
-                startActivity(new Intent(infoRutas.this,pop_up1.class));
-            }
-        });
 
-        r2.setOnClickListener(new View.OnClickListener(){
 
-            @Override
 
-            public void onClick(View v) {
-                startActivity(new Intent(infoRutas.this,pop_up1.class));
-            }
-        });
-
-        r3.setOnClickListener(new View.OnClickListener(){
-
-            @Override
-
-            public void onClick(View v) {
-                startActivity(new Intent(infoRutas.this,pop_up1.class));
-            }
-        });
-
-        r4.setOnClickListener(new View.OnClickListener(){
-
-            @Override
-
-            public void onClick(View v) {
-                startActivity(new Intent(infoRutas.this,pop_up1.class));
-            }
-        });
-
-        r5.setOnClickListener(new View.OnClickListener(){
-
-            @Override
-
-            public void onClick(View v) {
-                startActivity(new Intent(infoRutas.this,pop_up1.class));
-            }
-        });
     }
 
 }

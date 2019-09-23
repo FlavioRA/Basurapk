@@ -1,5 +1,6 @@
 package com.example.basurapk;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -21,16 +22,20 @@ public class Formulario extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-
-                Intent intent4 = new Intent(view.getContext(),MainActivity.class);
-                startActivityForResult(intent4, 0);
+                openDialogInicio();
 
             }
         });
 
 
-
     }
+
+
+    public void openDialogInicio(){
+        DialogCancelar exampleDialog = new DialogCancelar();
+        exampleDialog.show(getSupportFragmentManager(),"Ejemplo Administrador");
+    }
+
 
 
 
