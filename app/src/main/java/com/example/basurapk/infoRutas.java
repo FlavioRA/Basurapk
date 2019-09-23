@@ -36,7 +36,13 @@ public class infoRutas extends AppCompatActivity {
 
 
 
+            r1.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
 
+
+                }
+            });
 
 
     }
