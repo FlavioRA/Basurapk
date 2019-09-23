@@ -34,7 +34,7 @@ public class chofer extends AppCompatActivity {
         btnIniciar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                openDialogInicio();
+                openDialogInicio2();
 
 
             }
@@ -73,7 +73,10 @@ public class chofer extends AppCompatActivity {
  }
 
 
-
+    public void openDialogInicio2(){
+        DialogIniciado exampleDialog = new DialogIniciado();
+        exampleDialog.show(getSupportFragmentManager(),"Ejemplo Administrador");
+    }
 
 
 
