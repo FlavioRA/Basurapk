@@ -18,18 +18,17 @@ public class splash extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash);
 
-        videoView=(VideoView)findViewById(R.id.videoView);
-        videoView.setVideoPath("android.resource://"+getPackageName()+"/"+R.raw.anim4);
-
+        videoView = (VideoView) findViewById(R.id.videoView);
+        videoView.setVideoPath("android.resource://" + getPackageName() + "/" + R.raw.anim4);
 
 
         videoView.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
             @Override
             public void onCompletion(MediaPlayer mediaPlayer) {
-                if(isFinishing())
+                if (isFinishing())
                     return;
 
-                startActivity(new Intent(splash.this,MainActivity.class));
+                startActivity(new Intent(splash.this, MainActivity.class));
                 finish();
 
             }

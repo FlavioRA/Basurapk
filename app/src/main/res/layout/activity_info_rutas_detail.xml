@@ -62,19 +62,19 @@
         android:layout_marginTop="53dp"
         android:text="Regresar" />
 
-    <ImageView
-        android:id="@+id/imageView9"
-        android:layout_width="409dp"
-        android:layout_height="286dp"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginStart="-1dp"
-        android:layout_marginTop="154dp"
-        android:layout_marginEnd="2dp"
-        app:srcCompat="@drawable/rutarh" />
+            <ImageView
+                android:id="@+id/imageView9"
+                android:layout_width="412dp"
+                android:layout_height="373dp"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginStart="-1dp"
+                android:layout_marginTop="86dp"
+                android:layout_marginEnd="0dp"
+                app:srcCompat="@drawable/rutarh" />
 
-    <TextView
+            <TextView
         android:id="@+id/txtCalles"
         android:layout_width="363dp"
         android:layout_height="wrap_content"
