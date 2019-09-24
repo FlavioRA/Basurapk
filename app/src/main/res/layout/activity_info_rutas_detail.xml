@@ -8,77 +8,99 @@
 
 
     <TextView
-        android:id="@+id/textView32"
-        android:layout_width="306dp"
-        android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginEnd="43dp"
-        android:layout_marginBottom="165dp"
-        android:text="Rector Hidalgo - Venustiano Carranza y Francisco Villa"
-        android:textAppearance="@style/TextAppearance.AppCompat.Large" />
-
-    <TextView
-        android:id="@+id/textView28"
+        android:id="@+id/txtNombreRuta"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="84dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginEnd="121dp"
-        android:layout_marginBottom="561dp"
+        android:layout_marginStart="73dp"
+        android:layout_marginTop="62dp"
+        android:layout_marginEnd="73dp"
+        android:gravity="center"
         android:text="Ruta 1"
-        android:textAppearance="@style/TextAppearance.AppCompat.Display3" />
-
-    <TextView
-        android:id="@+id/textView30"
-        android:layout_width="306dp"
-        android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginEnd="49dp"
-        android:layout_marginBottom="120dp"
-        android:text="Dias: Lunes, Martes y Viernes"
-        android:textAppearance="@style/TextAppearance.AppCompat.Large" />
-
-    <TextView
-        android:id="@+id/textView31"
-        android:layout_width="222dp"
-        android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginEnd="91dp"
-        android:layout_marginBottom="74dp"
-        android:text="Horario: 4AM - 10AM"
-        android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+        android:textAppearance="@style/TextAppearance.AppCompat.Display3"
+        android:textSize="36sp" />
 
     <ImageView
-        android:id="@+id/imageView20"
-        android:layout_width="370dp"
-        android:layout_height="310dp"
+        android:id="@+id/imgLogo"
+        android:layout_width="112dp"
+        android:layout_height="64dp"
+        android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginEnd="16dp"
-        android:layout_marginBottom="247dp"
-        app:srcCompat="@drawable/ruta1" />
-
-    <ImageView
-        android:id="@+id/imageView21"
-        android:layout_width="133dp"
-        android:layout_height="81dp"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginEnd="-3dp"
-        android:layout_marginBottom="634dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="-31dp"
         app:srcCompat="@drawable/logonegro" />
 
     <ImageView
-        android:id="@+id/imageView9"
-        android:layout_width="40dp"
-        android:layout_height="39dp"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginEnd="342dp"
-        android:layout_marginBottom="670dp"
+        android:id="@+id/imgBacKK"
+        android:layout_width="49dp"
+        android:layout_height="41dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="11dp"
+        android:layout_marginTop="12dp"
         app:srcCompat="@drawable/leftarrow" />
+
+    <TextView
+        android:id="@+id/Regresar"
+        android:layout_width="77dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="53dp"
+        android:text="Regresar" />
+
+    <ImageView
+        android:id="@+id/imageView9"
+        android:layout_width="409dp"
+        android:layout_height="286dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="-1dp"
+        android:layout_marginTop="154dp"
+        android:layout_marginEnd="2dp"
+        app:srcCompat="@drawable/imgruta" />
+
+    <TextView
+        android:id="@+id/txtCalles"
+        android:layout_width="363dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="457dp"
+        android:layout_marginEnd="27dp"
+        android:fontFamily="sans-serif-medium"
+        android:gravity="center"
+        android:text="Rector Hidalgo - Venustiano Carranza"
+        android:textSize="24sp" />
+
+    <TextView
+        android:id="@+id/txtCalles2"
+        android:layout_width="363dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="534dp"
+        android:layout_marginEnd="27dp"
+        android:fontFamily="sans-serif-medium"
+        android:gravity="center"
+        android:text="Lunes,Miercoles,Viernes"
+        android:textSize="24sp" />
+
+    <TextView
+        android:id="@+id/txtCalles3"
+        android:layout_width="363dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="584dp"
+        android:layout_marginEnd="27dp"
+        android:fontFamily="sans-serif-medium"
+        android:gravity="center"
+        android:text="5:00 Am - 10:00Am"
+        android:textSize="24sp" />
 
 </RelativeLayout>

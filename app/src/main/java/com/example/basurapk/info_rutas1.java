@@ -33,58 +33,50 @@ public class info_rutas1 extends AppCompatActivity {
         Button btnR5 = (Button) findViewById(R.id.btnR5);
 
 
-
-
         btnR1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
-                Intent intent = new Intent (info_rutas1.this, InfoRutasDetail.class);
-                startActivityForResult(intent, 0);
-
-
+                Intent intent3 = new Intent(view.getContext(),InfoRutasDetail.class);
+                startActivityForResult(intent3, 0);
             }
         });
+
 
         btnR2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
-                Intent intent = new Intent (view.getContext(), InfoRutasDetail.class);
-                startActivityForResult(intent, 0);
-
+                Intent intent3 = new Intent(view.getContext(),InfoRutasDetail.class);
+                startActivityForResult(intent3, 0);
             }
         });
 
         btnR3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
-                Intent intent = new Intent (view.getContext(), InfoRutasDetail.class);
-                startActivityForResult(intent, 0);
-
+                Intent intent3 = new Intent(view.getContext(),InfoRutasDetail.class);
+                startActivityForResult(intent3, 0);
             }
         });
 
         btnR4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
-                Intent intent = new Intent (view.getContext(), InfoRutasDetail.class);
-                startActivityForResult(intent, 0);
-
+                Intent intent3 = new Intent(view.getContext(),InfoRutasDetail.class);
+                startActivityForResult(intent3, 0);
             }
         });
 
         btnR5.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
-                Intent intent = new Intent (view.getContext(), InfoRutasDetail.class);
-                startActivityForResult(intent, 0);
-
+                Intent intent3 = new Intent(view.getContext(),InfoRutasDetail.class);
+                startActivityForResult(intent3, 0);
             }
         });
+
+
+
+
 
     }
 

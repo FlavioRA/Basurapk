@@ -16,7 +16,16 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.Light.NoActionBar">
         <activity android:name=".info_rutas1"></activity>
-        <activity android:name=".InfoRutasDetail" />
+        <activity android:name=".InfoRutasDetail">
+
+
+
+
+        </activity>
+
+
+
+
         <activity android:name=".Formulario" />
         <activity android:name=".NuevaNotificacion" />
         <activity android:name=".Buzon" />
@@ -39,11 +48,14 @@
             android:name=".mapa"
             android:label="@string/title_activity_mapa" />
         <activity android:name=".splash">
+
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+
         </activity>
         <activity android:name=".MainActivity" />
 

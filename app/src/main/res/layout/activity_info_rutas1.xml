@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".infoRutas">
+    >
 
 
     <ScrollView
@@ -42,23 +42,23 @@
 
             <Button
                 android:id="@+id/btnR3"
-                android:layout_width="354dp"
-                android:layout_height="51dp"
+                android:layout_width="358dp"
+                android:layout_height="56dp"
                 android:layout_alignParentTop="true"
                 android:layout_alignParentEnd="true"
                 android:layout_marginTop="376dp"
-                android:layout_marginEnd="5dp"
+                android:layout_marginEnd="0dp"
                 android:drawableLeft="@drawable/tracking"
                 android:text="Jose M. Morelos - Primer Rector" />
 
             <Button
                 android:id="@+id/btnR4"
-                android:layout_width="354dp"
-                android:layout_height="51dp"
+                android:layout_width="358dp"
+                android:layout_height="58dp"
                 android:layout_alignParentTop="true"
                 android:layout_alignParentEnd="true"
                 android:layout_marginTop="490dp"
-                android:layout_marginEnd="5dp"
+                android:layout_marginEnd="0dp"
                 android:drawableLeft="@drawable/tracking"
                 android:text="Infonavit N. Horizonte - Lotes y Serv." />
 
