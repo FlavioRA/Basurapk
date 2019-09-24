@@ -25,7 +25,7 @@ public class MainActivity extends AppCompatActivity {
           @Override
           public void onClick(View view) {
 
-              Intent intent = new Intent (view.getContext(), infoRutas.class);
+              Intent intent = new Intent (view.getContext(), info_rutas1.class);
               startActivityForResult(intent, 0);
 
           }

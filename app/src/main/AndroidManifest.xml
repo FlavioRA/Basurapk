@@ -15,7 +15,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.Light.NoActionBar">
-        <activity android:name=".InfoRutasDetail"></activity>
+        <activity android:name=".info_rutas1"></activity>
+        <activity android:name=".InfoRutasDetail" />
         <activity android:name=".Formulario" />
         <activity android:name=".NuevaNotificacion" />
         <activity android:name=".Buzon" />
@@ -23,7 +24,6 @@
         <activity android:name=".chofer" />
         <activity android:name=".administrador" />
         <activity android:name=".LoginAd" />
-        <activity android:name=".infoRutas" />
         <activity android:name=".contactoL" />
         <activity android:name=".contacto" />
         <activity android:name=".notificaciones" />
