@@ -32,7 +32,7 @@
         android:layout_marginStart="2dp"
         android:layout_marginEnd="-2dp"
         android:layout_marginBottom="190dp"
-        android:text="Notificaciones" />
+        android:text="Noticias" />
 
     <Button
         android:id="@+id/btnInfoRuta"

@@ -14,8 +14,8 @@
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
-        android:layout_marginTop="199dp"
-        android:layout_marginEnd="23dp"
+        android:layout_marginTop="197dp"
+        android:layout_marginEnd="1dp"
         android:text="Llamar" />
 
     <Button
@@ -25,8 +25,8 @@
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
-        android:layout_marginTop="288dp"
-        android:layout_marginEnd="23dp"
+        android:layout_marginTop="277dp"
+        android:layout_marginEnd="2dp"
         android:text="Llamar" />
 
     <Button
@@ -36,8 +36,8 @@
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
-        android:layout_marginTop="382dp"
-        android:layout_marginEnd="23dp"
+        android:layout_marginTop="349dp"
+        android:layout_marginEnd="1dp"
         android:text="Llamar" />
 
     <Button
@@ -47,8 +47,8 @@
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
-        android:layout_marginTop="469dp"
-        android:layout_marginEnd="23dp"
+        android:layout_marginTop="422dp"
+        android:layout_marginEnd="-1dp"
         android:text="Llamar" />
 
     <ImageView
@@ -57,8 +57,8 @@
         android:layout_height="43dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:layout_marginStart="14dp"
-        android:layout_marginTop="477dp"
+        android:layout_marginStart="13dp"
+        android:layout_marginTop="426dp"
         app:srcCompat="@drawable/call" />
 
     <ImageView
@@ -67,8 +67,8 @@
         android:layout_height="43dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:layout_marginStart="14dp"
-        android:layout_marginTop="388dp"
+        android:layout_marginStart="13dp"
+        android:layout_marginTop="353dp"
         app:srcCompat="@drawable/call" />
 
     <ImageView
@@ -87,8 +87,8 @@
         android:layout_height="43dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:layout_marginStart="14dp"
-        android:layout_marginTop="210dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="201dp"
         app:srcCompat="@drawable/call" />
 
     <ImageView
@@ -98,23 +98,23 @@
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:layout_marginStart="14dp"
-        android:layout_marginTop="285dp"
+        android:layout_marginTop="281dp"
         app:srcCompat="@drawable/call" />
 
     <TextView
         android:id="@+id/textView3"
-        android:layout_width="268dp"
-        android:layout_height="82dp"
+        android:layout_width="374dp"
+        android:layout_height="90dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
-        android:layout_marginStart="68dp"
-        android:layout_marginTop="93dp"
-        android:layout_marginEnd="75dp"
+        android:layout_marginStart="18dp"
+        android:layout_marginTop="56dp"
+        android:layout_marginEnd="18dp"
         android:fontFamily="sans-serif-medium"
         android:gravity="center"
         android:text="Agenda Telefonica"
-        android:textSize="24sp" />
+        android:textSize="30sp" />
 
     <TextView
         android:id="@+id/textView9"
@@ -123,22 +123,22 @@
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
-        android:layout_marginStart="64dp"
-        android:layout_marginTop="210dp"
-        android:layout_marginEnd="160dp"
+        android:layout_marginStart="75dp"
+        android:layout_marginTop="199dp"
+        android:layout_marginEnd="149dp"
         android:text="Emergencias"
         android:textSize="18sp" />
 
     <TextView
         android:id="@+id/textView13"
-        android:layout_width="188dp"
+        android:layout_width="198dp"
         android:layout_height="39dp"
         android:layout_alignStart="@+id/textView10"
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
-        android:layout_marginStart="2dp"
-        android:layout_marginTop="388dp"
-        android:layout_marginEnd="195dp"
+        android:layout_marginStart="-3dp"
+        android:layout_marginTop="354dp"
+        android:layout_marginEnd="141dp"
         android:text="BasurapK"
         android:textSize="18sp" />
 
@@ -149,9 +149,9 @@
         android:layout_alignStart="@+id/textView13"
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
-        android:layout_marginStart="6dp"
-        android:layout_marginTop="479dp"
-        android:layout_marginEnd="127dp"
+        android:layout_marginStart="-1dp"
+        android:layout_marginTop="435dp"
+        android:layout_marginEnd="134dp"
         android:text="H. Ayuntamiento"
         android:textSize="18sp" />
 
@@ -163,9 +163,25 @@
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
         android:layout_marginStart="-1dp"
-        android:layout_marginTop="285dp"
+        android:layout_marginTop="273dp"
         android:layout_marginEnd="152dp"
         android:text="Depto. Aseo Publico"
         android:textSize="18sp" />
+
+    <TextView
+        android:id="@+id/textView29"
+        android:layout_width="367dp"
+        android:layout_height="75dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="22dp"
+        android:layout_marginTop="497dp"
+        android:layout_marginEnd="22dp"
+        android:fontFamily="sans-serif-medium"
+        android:gravity="center"
+        android:text="! Se necesita saldo en tu dispositivo para poder realizar la llamada !"
+        android:textColor="@android:color/holo_red_dark"
+        android:textSize="14sp" />
 
 </RelativeLayout>
