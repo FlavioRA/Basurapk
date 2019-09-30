@@ -19,7 +19,7 @@ import android.widget.Toast;
 
 public class contactoL extends AppCompatActivity {
 
-    private Button btnEmergencias;
+    private Button btnEmergencias,btnBasurapk,btnAseo,btnAyuntamiento;
     String phoneNumber;
 
     private final int PhONE_CALL_CODE = 100;
@@ -31,7 +31,7 @@ public class contactoL extends AppCompatActivity {
 
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
 
-//Llamar
+//Llamar Emergencias
 
         btnEmergencias = findViewById(R.id.btnEmergencias);
         btnEmergencias.setOnClickListener(new View.OnClickListener() {
@@ -49,9 +49,56 @@ public class contactoL extends AppCompatActivity {
 
         });
 
+//Llamar Aseo publico
+
+        btnAseo = findViewById(R.id.btnAseo);
+        btnAseo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+                    phoneNumber="5310604";
+                    requestPermissions(new String[]{Manifest.permission.CALL_PHONE}, PhONE_CALL_CODE);
+
+                }
 
 
+            }
+        });
 
+//Llamar BasurapK
+
+
+        btnBasurapk=findViewById(R.id.btnBasurapk);
+        btnBasurapk.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+                    phoneNumber="7531480751";
+                    requestPermissions(new String[]{Manifest.permission.CALL_PHONE}, PhONE_CALL_CODE);
+
+                }
+
+            }
+        });
+
+
+//Llamar H.Ayuntamiento
+
+        btnAyuntamiento=findViewById(R.id.btnAyuntamiento);
+        btnAyuntamiento.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+                    phoneNumber="7535403300";
+                    requestPermissions(new String[]{Manifest.permission.CALL_PHONE}, PhONE_CALL_CODE);
+
+                }
+
+            }
+        });
 
 
         //--------------------
