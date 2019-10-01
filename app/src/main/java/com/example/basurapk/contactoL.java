@@ -57,10 +57,11 @@ public class contactoL extends AppCompatActivity {
             public void onClick(View view) {
 
                 if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-                    phoneNumber="5310604";
+                    phoneNumber="5372281";
                     requestPermissions(new String[]{Manifest.permission.CALL_PHONE}, PhONE_CALL_CODE);
 
                 }
+
 
 
             }
