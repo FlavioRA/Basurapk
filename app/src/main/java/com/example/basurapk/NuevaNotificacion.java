@@ -61,9 +61,11 @@ public class NuevaNotificacion extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                ejecutarServicio("http://192.168.23.2:8888/wsbasurapk/crearNoticia.php");
-                edtFecha.setText("");
-                edtNuevaNoticia.setText("");
+            if (edtNuevaNoticia.getText().toString().isEmpty() || edtFecha.getText().toString().isEmpty()) {
+                     CamposVacios();
+            }else {
+                ejecutarServicio("http://192.168.43.249:8888/wsbasurapk/crearNoticia.php");
+            }
             }
         });
 
@@ -78,8 +80,24 @@ public class NuevaNotificacion extends AppCompatActivity {
         DialogNoticia dialognoticia = new DialogNoticia();
         dialognoticia.show(getSupportFragmentManager(),"Ejemplo Administrador");
 
+        edtNuevaNoticia.setText("");
+        edtFecha.setText("");
+
     }
 
+    public void CamposVacios(){
+
+        dialogoCamposVacios dialogoCamposVacios = new dialogoCamposVacios();
+        dialogoCamposVacios.show(getSupportFragmentManager(),"Ejemplo Administrador");
+
+    }
+
+
+    public void dialogonoEnvio(){
+
+        MensajeNoEnviado mensajeNoEnviado = new MensajeNoEnviado();
+        mensajeNoEnviado.show(getSupportFragmentManager(),"Ejemplo Administrador");
+    }
 
 
     private void ejecutarServicio(String URL){
@@ -94,7 +112,9 @@ public class NuevaNotificacion extends AppCompatActivity {
         }, new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError error) {
-                Toast.makeText(getApplicationContext(),"Noticia NO publicada  revisa tu conexión", Toast.LENGTH_SHORT).show();
+
+                dialogonoEnvio();
+
             }
         }){
 

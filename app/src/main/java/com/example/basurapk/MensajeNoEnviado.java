@@ -7,8 +7,7 @@ import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatDialogFragment;
 
-public class ExampleDialog extends AppCompatDialogFragment {
-
+public class MensajeNoEnviado extends AppCompatDialogFragment {
 
 
 
@@ -16,21 +15,20 @@ public class ExampleDialog extends AppCompatDialogFragment {
     public Dialog onCreateDialog(Bundle savedInstanceState) {
 
         AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
-        builder .setTitle("Aviso BasurapK").setMessage("Mensaje Enviado")
-        .setPositiveButton("Ok", new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialogInterface, int i) {
+        builder .setTitle("Aviso BasurapK").setMessage("Mensaje NO Enviado Revisa tu conexión a internet")
+                .setPositiveButton("Ok", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
 
 
 
-
-
-            }
-        });
+                    }
+                });
 
         return builder.create();
 
     }
+
 
 
 

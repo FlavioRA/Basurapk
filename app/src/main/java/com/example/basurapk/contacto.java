@@ -47,12 +47,20 @@ public class contacto extends AppCompatActivity {
 //Envio de datos
 
 
-
-
         btnEnviar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                 ejecutarServicio("http://192.168.23.2:8888/wsbasurapk/mandarMensaje.php");
+
+
+                if(edtNombre.getText().toString().isEmpty() || edtMensaje.getText().toString().isEmpty() || edtTelefono.getText().toString().isEmpty() || edtEmail.getText().toString().isEmpty() ){
+
+                    CamposVacios();
+
+                }else {
+
+                    ejecutarServicio("http://192.168.43.249:8888/wsbasurapk/mandarMensaje.php");
+                }
+
 
             }
         });
@@ -86,18 +94,42 @@ public class contacto extends AppCompatActivity {
             }
         });
 
-
-
-
-
     }
+
+
+
+
+
 
 public void openDialog(){
 
         ExampleDialog exampleDialog = new ExampleDialog();
         exampleDialog.show(getSupportFragmentManager(),"Ejemplo Administrador");
+    edtNombre.setText("");
+    edtTelefono.setText("");
+    edtEmail.setText("");
+    edtMensaje.setText("");
 
+}
+
+
+        public void CamposVacios(){
+
+        dialogoCamposVacios dialogoCamposVacios = new dialogoCamposVacios();
+        dialogoCamposVacios.show(getSupportFragmentManager(),"Ejemplo Administrador");
+
+        }
+
+
+
+    public void dialogonoEnvio(){
+
+        MensajeNoEnviado mensajeNoEnviado = new MensajeNoEnviado();
+        mensajeNoEnviado.show(getSupportFragmentManager(),"Ejemplo Administrador");
     }
+
+
+
 
     private void ejecutarServicio(String URL){
 
@@ -113,9 +145,8 @@ public void openDialog(){
         }, new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError error) {
-                Toast.makeText(getApplicationContext(),"Mensaje NO Enviado Revisa tu conexión", Toast.LENGTH_SHORT).show();
 
-
+                dialogonoEnvio();
 
             }
         }){
@@ -137,6 +168,7 @@ public void openDialog(){
         RequestQueue requestQueue = Volley.newRequestQueue(this );
         requestQueue.add(stringRequest);
     }
+
 
 
 
