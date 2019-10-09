@@ -21,6 +21,7 @@ public class DialogNoticia extends AppCompatDialogFragment {
 
 
 
+
                     }
                 });
 

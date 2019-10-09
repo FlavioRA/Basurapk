@@ -36,7 +36,14 @@
         <activity android:name=".administrador" />
         <activity android:name=".LoginAd" />
         <activity android:name=".contactoL" />
-        <activity android:name=".contacto" />
+        <activity android:name=".contacto" >
+
+
+
+        </activity>
+
+
+
         <activity android:name=".notificaciones" />
         <!--
              The API key for Google Maps-based APIs is defined as a string resource.
