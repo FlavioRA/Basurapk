@@ -7,11 +7,15 @@ import android.content.pm.ActivityInfo;
 import android.media.Image;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.EditText;
 import android.widget.ImageView;
 
 
 public class InfoRutasDetail extends AppCompatActivity {
 
+
+    EditText edtNumero;
+    String Horarios,Dias,Calles,Numero,Color;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,6 +54,17 @@ public class InfoRutasDetail extends AppCompatActivity {
         });
 
 
-        
+
+        //Recibir datos
+
+        Bundle extras = getIntent().getExtras();
+        Numero=extras.getString("Numero");
+
+
+
+        //Fin Recibir datos
+
+
+
     }
 }

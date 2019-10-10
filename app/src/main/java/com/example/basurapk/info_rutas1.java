@@ -60,11 +60,11 @@ public class info_rutas1 extends AppCompatActivity {
         btnRuta9.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent3 = new Intent(view.getContext(),InfoRutasDetail.class);
-                startActivityForResult(intent3, 0);
 
                 buscarRutas("http://192.168.23.2:8888/wsbasurapk/informacionRutasDetail.php?numeroR=9");
 
+                Intent intent3 = new Intent(view.getContext(),InfoRutasDetail.class);
+                startActivityForResult(intent3, 0);
 
             }
         });
@@ -112,12 +112,19 @@ public class info_rutas1 extends AppCompatActivity {
 
                     try {
 
+                        Intent z = new Intent(info_rutas1.this , InfoRutasDetail.class);
+
                         jsonObject = response.getJSONObject(i);
                         Horarios = jsonObject.getString("RHorarios");
                         Color = jsonObject.getString("RColor");
                         Dias = jsonObject.getString("RDias");
                         Calles = jsonObject.getString("RCalles");
                         Numero = jsonObject.getString("Numero");
+
+                        z.putExtra("Numero",Numero);
+
+
+
 
                     } catch (JSONException e) {
 
