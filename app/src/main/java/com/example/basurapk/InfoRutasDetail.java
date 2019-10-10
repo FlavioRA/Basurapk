@@ -12,7 +12,6 @@ import android.widget.ImageView;
 
 public class InfoRutasDetail extends AppCompatActivity {
 
-    String Horarios,Dias,Calles,Numero,Color;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,10 +31,6 @@ public class InfoRutasDetail extends AppCompatActivity {
                 startActivityForResult(intent3, 0);
 
 
-
-
-
-
             }
         });
 
@@ -53,9 +48,6 @@ public class InfoRutasDetail extends AppCompatActivity {
 
             }
         });
-
-
-
 
 
         

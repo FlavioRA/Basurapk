@@ -8,8 +8,23 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.Toast;
+
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.JsonArrayRequest;
+import com.android.volley.toolbox.JsonObjectRequest;
+import com.android.volley.toolbox.Volley;
+
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
 
 public class info_rutas1 extends AppCompatActivity {
+
+    String Horarios,Dias,Calles,Numero,Color;
+    RequestQueue requestQueue;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,12 +49,28 @@ public class info_rutas1 extends AppCompatActivity {
 
 
 
-        Button btnR1 = (Button) findViewById(R.id.btnR1);
-        Button btnR2 = (Button) findViewById(R.id.btnR2);
-        Button btnR3 = (Button) findViewById(R.id.btnR3);
+        Button btnRuta9 = (Button) findViewById(R.id.btnRuta9);
+        Button btnRuta10 = (Button) findViewById(R.id.btnRuta10);
+        Button btnRuta11 = (Button) findViewById(R.id.btnRuta11);
 
 
-        btnR1.setOnClickListener(new View.OnClickListener() {
+
+        //Guardar informacion para ser enviada
+
+        btnRuta9.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent3 = new Intent(view.getContext(),InfoRutasDetail.class);
+                startActivityForResult(intent3, 0);
+
+                buscarRutas("http://192.168.23.2:8888/wsbasurapk/informacionRutasDetail.php?numeroR=9");
+
+
+            }
+        });
+
+
+        btnRuta10.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent3 = new Intent(view.getContext(),InfoRutasDetail.class);
@@ -47,32 +78,70 @@ public class info_rutas1 extends AppCompatActivity {
 
 
 
-
             }
         });
 
-
-        btnR2.setOnClickListener(new View.OnClickListener() {
+        btnRuta11.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent3 = new Intent(view.getContext(),InfoRutasDetail.class);
                 startActivityForResult(intent3, 0);
-            }
-        });
 
-        btnR3.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent3 = new Intent(view.getContext(),InfoRutasDetail.class);
-                startActivityForResult(intent3, 0);
+
             }
         });
 
 
-
+        //Guardar información para ser enviada FIN
 
 
 
     }
+
+
+    //Metodo buscar datos
+
+    private void buscarRutas(String URL){
+
+        JsonArrayRequest jsonArrayRequest= new JsonArrayRequest(URL, new Response.Listener<JSONArray>() {
+            @Override
+            public void onResponse(JSONArray response) {
+                JSONObject jsonObject = null;
+
+                for (int i = 0; i < response.length(); i++) {
+
+                    try {
+
+                        jsonObject = response.getJSONObject(i);
+                        Horarios = jsonObject.getString("RHorarios");
+                        Color = jsonObject.getString("RColor");
+                        Dias = jsonObject.getString("RDias");
+                        Calles = jsonObject.getString("RCalles");
+                        Numero = jsonObject.getString("Numero");
+
+                    } catch (JSONException e) {
+
+                        Toast.makeText(getApplicationContext(), e.getMessage(), Toast.LENGTH_SHORT).show();
+
+                    }
+                }//for
+            }
+        }
+                , new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                Toast.makeText(getApplicationContext(),"Error de conexion", Toast.LENGTH_SHORT).show();
+            }
+        }
+
+        );
+
+
+        requestQueue = Volley.newRequestQueue(this );
+        requestQueue.add(jsonArrayRequest);
+
+    }
+
+
 
 }
