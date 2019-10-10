@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.os.Bundle;
+import android.text.format.Time;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -29,7 +30,7 @@ public class contacto extends AppCompatActivity {
     EditText edtEmail;
     EditText edtMensaje;
     Button btnEnviar;
-
+    String FechaHoy;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -58,15 +59,36 @@ public class contacto extends AppCompatActivity {
 
                 }else {
 
-                    ejecutarServicio("http://192.168.43.249:8888/wsbasurapk/mandarMensaje.php");
+                    ejecutarServicio("http://192.168.1.67:8888/wsbasurapk/mandarMensaje.php");
                 }
-
-
             }
         });
 
 
-//Fin envio de datos
+        //Fin envio de datos
+
+
+
+        //Sacar Fecha
+
+
+
+        Time today = new Time(Time.getCurrentTimezone());
+        today.setToNow();
+        int monthDay = today.monthDay;
+        int month = today.month;
+        int Year = today.year;
+
+        String dia =String.valueOf(monthDay);
+        String mes=String.valueOf(month);
+        String year=String.valueOf(Year);
+
+        FechaHoy=year + "-" + mes +"-" + dia;
+
+        //Fin Sacar Fecha
+
+
+
 
         ImageView imageView10 = (ImageView)findViewById(R.id.imageView10);
         imageView10.setOnClickListener(new View.OnClickListener() {
@@ -159,7 +181,7 @@ public void openDialog(){
                 parametros.put("Telefono",edtTelefono.getText().toString());
                 parametros.put("Email",edtEmail.getText().toString());
                 parametros.put("Mensaje",edtMensaje.getText().toString());
-
+                parametros.put("Fecha",FechaHoy);
 
                 return parametros;
             }
