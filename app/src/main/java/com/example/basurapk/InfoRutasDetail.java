@@ -9,7 +9,10 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
 
+
 public class InfoRutasDetail extends AppCompatActivity {
+
+    String Horarios,Dias,Calles,Numero,Color;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,6 +30,10 @@ public class InfoRutasDetail extends AppCompatActivity {
 
                 Intent intent3 = new Intent(view.getContext(),info_rutas1.class);
                 startActivityForResult(intent3, 0);
+
+
+
+
 
 
             }

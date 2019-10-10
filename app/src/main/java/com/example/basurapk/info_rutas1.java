@@ -20,20 +20,23 @@ public class info_rutas1 extends AppCompatActivity {
 
         ImageView imageView = (ImageView)findViewById(R.id.imageView4);
 
+
         imageView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
                 Intent intent4 = new Intent(view.getContext(),MainActivity.class);
                 startActivityForResult(intent4, 0);
-
             }
         });
+
+
+
+
+
         Button btnR1 = (Button) findViewById(R.id.btnR1);
         Button btnR2 = (Button) findViewById(R.id.btnR2);
         Button btnR3 = (Button) findViewById(R.id.btnR3);
-        Button btnR4 = (Button) findViewById(R.id.btnR4);
-        Button btnR5 = (Button) findViewById(R.id.btnR5);
 
 
         btnR1.setOnClickListener(new View.OnClickListener() {
@@ -41,6 +44,10 @@ public class info_rutas1 extends AppCompatActivity {
             public void onClick(View view) {
                 Intent intent3 = new Intent(view.getContext(),InfoRutasDetail.class);
                 startActivityForResult(intent3, 0);
+
+
+
+
             }
         });
 
@@ -61,21 +68,6 @@ public class info_rutas1 extends AppCompatActivity {
             }
         });
 
-        btnR4.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent3 = new Intent(view.getContext(),InfoRutasDetail.class);
-                startActivityForResult(intent3, 0);
-            }
-        });
-
-        btnR5.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent3 = new Intent(view.getContext(),InfoRutasDetail.class);
-                startActivityForResult(intent3, 0);
-            }
-        });
 
 
 

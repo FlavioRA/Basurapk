@@ -7,33 +7,6 @@
     android:orientation="vertical">
 
 
-    <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@drawable/fondoo"
-            android:orientation="vertical">
-
-            <TextView
-                android:id="@+id/txtNombreRuta"
-                android:layout_width="wrap_content"
-                android:layout_height="84dp"
-                android:layout_alignParentStart="true"
-                android:layout_alignParentTop="true"
-                android:layout_alignParentEnd="true"
-                android:layout_marginStart="73dp"
-                android:layout_marginTop="62dp"
-                android:textColor="#ffffff"
-                android:layout_marginEnd="73dp"
-                android:fontFamily="sans-serif-medium"
-                android:gravity="center"
-                android:text="Ruta 1"
-                android:textAppearance="@style/TextAppearance.AppCompat.Display3"
-                android:textSize="42sp" />
-
     <ImageView
         android:id="@+id/imgLogo"
         android:layout_width="112dp"
@@ -64,79 +37,83 @@
         android:layout_marginTop="53dp"
         android:text="Regresar" />
 
-            <ImageView
-                android:id="@+id/imageView9"
-                android:layout_width="315dp"
-                android:layout_height="311dp"
-                android:layout_alignParentStart="true"
-                android:layout_alignParentTop="true"
-                android:layout_alignParentEnd="true"
-                android:layout_marginStart="48dp"
-                android:layout_marginTop="62dp"
-                android:layout_marginEnd="48dp"
-                app:srcCompat="@drawable/rutarh" />
+    <ImageView
+        android:id="@+id/imageView9"
+        android:layout_width="315dp"
+        android:layout_height="311dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="55dp"
+        android:layout_marginTop="416dp"
+        android:layout_marginEnd="41dp"
+        app:srcCompat="@drawable/rutarh" />
 
-            <TextView
-                android:id="@+id/txtCalles"
-                android:layout_width="363dp"
-                android:layout_height="wrap_content"
-                android:layout_alignParentStart="true"
-                android:layout_alignParentTop="true"
-                android:layout_alignParentEnd="true"
-                android:layout_marginStart="24dp"
-                android:layout_marginTop="311dp"
-                android:layout_marginEnd="24dp"
-                android:fontFamily="sans-serif-medium"
-                android:gravity="center"
-                android:text="Rector Hidalgo - Venustiano Carranza"
-                android:textSize="24sp" />
+    <EditText
+        android:id="@+id/edtNumero"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="79dp"
+        android:layout_marginEnd="96dp"
+        android:hint="Numero Ruta"
+        android:gravity="center"
+        android:ems="10"
+        android:inputType="textPersonName" />
 
-            <TextView
-                android:id="@+id/txtCalles2"
-                android:layout_width="wrap_content"
-                android:layout_height="39dp"
-                android:layout_alignParentStart="true"
-                android:layout_alignParentTop="true"
-                android:layout_alignParentEnd="true"
-                android:layout_marginStart="18dp"
-                android:layout_marginTop="470dp"
-                android:layout_marginEnd="30dp"
-                android:fontFamily="sans-serif-medium"
-                android:gravity="center"
-                android:text="Lunes,Miercoles,Viernes"
-                android:textSize="18sp" />
+    <EditText
+        android:id="@+id/edtHorarios"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="258dp"
+        android:layout_marginEnd="98dp"
+        android:ems="10"
+        android:gravity="center"
+        android:hint="Horarios Aprox"
+        android:inputType="textPersonName" />
 
-            <TextView
-                android:id="@+id/txtCalles3"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentStart="true"
-                android:layout_alignParentTop="true"
-                android:layout_alignParentEnd="true"
-                android:layout_marginStart="18dp"
-                android:layout_marginTop="443dp"
-                android:layout_marginEnd="30dp"
-                android:fontFamily="sans-serif-medium"
-                android:gravity="center"
-                android:text="5:00 Am - 10:00 Am"
-                android:textSize="18sp" />
+    <EditText
+        android:id="@+id/edtDias"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="334dp"
+        android:layout_marginEnd="101dp"
+        android:ems="10"
+        android:gravity="center"
+        android:hint="Dias que pasa"
+        android:inputType="textPersonName" />
 
-            <TextView
-                android:id="@+id/textView28"
-                android:layout_width="361dp"
-                android:layout_height="41dp"
-                android:layout_alignParentStart="true"
-                android:layout_alignParentTop="true"
-                android:layout_alignParentEnd="true"
-                android:layout_marginStart="18dp"
-                android:layout_marginTop="394dp"
-                android:gravity="center"
-                android:layout_marginEnd="30dp"
-                android:fontFamily="sans-serif-black"
-                android:text="Horarios Aprox:"
-                android:textColor="#ffffff"
-                android:textSize="18sp" />
+    <EditText
+        android:id="@+id/edtColor"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="123dp"
+        android:layout_marginEnd="96dp"
+        android:ems="10"
+        android:gravity="center"
+        android:hint="Color"
+        android:inputType="textPersonName" />
 
-        </RelativeLayout>
-    </ScrollView>
+    <EditText
+        android:id="@+id/edtCalles"
+        android:layout_width="367dp"
+        android:layout_height="71dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="22dp"
+        android:layout_marginTop="178dp"
+        android:layout_marginEnd="22dp"
+        android:ems="10"
+        android:hint="calles"
+        android:gravity="start|top"
+        android:inputType="textMultiLine" />
+
 </RelativeLayout>

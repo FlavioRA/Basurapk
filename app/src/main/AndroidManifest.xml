@@ -17,13 +17,22 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.Light.NoActionBar">
-        <activity android:name=".info_rutas1"></activity>
-        <activity android:name=".InfoRutasDetail">
+        <activity android:name=".info_rutas1">
 
+
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
 
 
 
         </activity>
+
+
+
+        <activity android:name=".InfoRutasDetail"></activity>
 
 
 
@@ -58,12 +67,6 @@
             android:label="@string/title_activity_mapa" />
         <activity android:name=".splash">
 
-
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
 
         </activity>
         <activity android:name=".MainActivity" />
