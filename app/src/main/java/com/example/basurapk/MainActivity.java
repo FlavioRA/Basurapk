@@ -8,8 +8,12 @@ import android.os.Bundle;
 import android.view.View;
 import android.view.Window;
 import android.widget.Button;
+import android.widget.ImageView;
 
 public class MainActivity extends AppCompatActivity {
+
+
+    ImageView imgMapa,imgNoticias,imgRutas,imgContacto;
 
 
     @Override
@@ -19,7 +23,50 @@ public class MainActivity extends AppCompatActivity {
 
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
 
-      Button btnInfoRuta=(Button)findViewById(R.id.btnInfoRuta);
+
+        imgMapa=findViewById(R.id.imgMapa);
+        imgNoticias=findViewById(R.id.imgNoticias);
+        imgRutas=findViewById(R.id.imgRutas);
+        imgContacto=findViewById(R.id.imgContacto);
+
+
+        imgMapa.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent3 = new Intent(view.getContext(),mapa.class);
+                startActivityForResult(intent3, 0);
+            }
+        });
+
+        imgNoticias.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent3 = new Intent(view.getContext(),notificaciones.class);
+                startActivityForResult(intent3, 0);
+            }
+        });
+
+        imgRutas.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent3 = new Intent(view.getContext(),info_rutas1.class);
+                startActivityForResult(intent3, 0);
+            }
+        });
+
+        imgContacto.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent3 = new Intent(view.getContext(),contacto.class);
+                startActivityForResult(intent3, 0);
+            }
+        });
+
+
+
+
+
+        Button btnInfoRuta=(Button)findViewById(R.id.btnInfoRuta);
 
       btnInfoRuta.setOnClickListener(new View.OnClickListener() {
           @Override

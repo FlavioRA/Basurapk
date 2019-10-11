@@ -61,9 +61,7 @@ public class info_rutas1 extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                buscarRutas("http://192.168.23.2:8888/wsbasurapk/informacionRutasDetail.php?numeroR=9");
-
-                Intent intent3 = new Intent(view.getContext(),InfoRutasDetail.class);
+                Intent intent3 = new Intent(view.getContext(),infoRutaDetail9.class);
                 startActivityForResult(intent3, 0);
 
             }
@@ -73,10 +71,8 @@ public class info_rutas1 extends AppCompatActivity {
         btnRuta10.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent3 = new Intent(view.getContext(),InfoRutasDetail.class);
+                Intent intent3 = new Intent(view.getContext(),infoRutaDetail10.class);
                 startActivityForResult(intent3, 0);
-
-
 
             }
         });
@@ -84,7 +80,7 @@ public class info_rutas1 extends AppCompatActivity {
         btnRuta11.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent3 = new Intent(view.getContext(),InfoRutasDetail.class);
+                Intent intent3 = new Intent(view.getContext(),infoRutaDetail11.class);
                 startActivityForResult(intent3, 0);
 
 
@@ -95,57 +91,6 @@ public class info_rutas1 extends AppCompatActivity {
         //Guardar información para ser enviada FIN
 
 
-
-    }
-
-
-    //Metodo buscar datos
-
-    private void buscarRutas(String URL){
-
-        JsonArrayRequest jsonArrayRequest= new JsonArrayRequest(URL, new Response.Listener<JSONArray>() {
-            @Override
-            public void onResponse(JSONArray response) {
-                JSONObject jsonObject = null;
-
-                for (int i = 0; i < response.length(); i++) {
-
-                    try {
-
-                        Intent z = new Intent(info_rutas1.this , InfoRutasDetail.class);
-
-                        jsonObject = response.getJSONObject(i);
-                        Horarios = jsonObject.getString("RHorarios");
-                        Color = jsonObject.getString("RColor");
-                        Dias = jsonObject.getString("RDias");
-                        Calles = jsonObject.getString("RCalles");
-                        Numero = jsonObject.getString("Numero");
-
-                        z.putExtra("Numero",Numero);
-
-
-
-
-                    } catch (JSONException e) {
-
-                        Toast.makeText(getApplicationContext(), e.getMessage(), Toast.LENGTH_SHORT).show();
-
-                    }
-                }//for
-            }
-        }
-                , new Response.ErrorListener() {
-            @Override
-            public void onErrorResponse(VolleyError error) {
-                Toast.makeText(getApplicationContext(),"Error de conexion", Toast.LENGTH_SHORT).show();
-            }
-        }
-
-        );
-
-
-        requestQueue = Volley.newRequestQueue(this );
-        requestQueue.add(jsonArrayRequest);
 
     }
 
