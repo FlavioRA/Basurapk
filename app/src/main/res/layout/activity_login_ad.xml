@@ -46,7 +46,7 @@
         android:inputType="textPersonName" />
 
     <EditText
-        android:id="@+id/edtContraseña"
+        android:id="@+id/edtContrasena"
         android:layout_width="353dp"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
