@@ -21,8 +21,6 @@ public class dialogoLogin extends AppCompatDialogFragment {
                     public void onClick(DialogInterface dialogInterface, int i) {
 
 
-                        Intent intent4 = new Intent(getContext(), LoginAd.class);
-                        startActivityForResult(intent4, 0);
 
 
                     }
