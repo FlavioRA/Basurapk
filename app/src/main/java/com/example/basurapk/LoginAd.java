@@ -3,13 +3,17 @@ package com.example.basurapk;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
@@ -22,14 +26,15 @@ public class LoginAd extends AppCompatActivity {
 
     EditText edtUsuario;
     EditText edtContrasena;
-
+    ImageView imgContactos;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login_ad);
 
-
+            ConnectivityManager nuevo = (ConnectivityManager) getApplicationContext().getSystemService(Context.CONNECTIVITY_SERVICE);
+            final NetworkInfo networkInfo = nuevo.getActiveNetworkInfo();
 
         edtContrasena=findViewById(R.id.edtContrasena);
         edtUsuario=findViewById(R.id.edtUsuario);
@@ -47,7 +52,21 @@ public class LoginAd extends AppCompatActivity {
             }
         });
 
+        imgContactos = findViewById(R.id.imgContactos);
+
+        imgContactos.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                Intent intent3 = new Intent(view.getContext(),contactoL.class);
+                startActivityForResult(intent3, 0);
+
+            }
+        });
+
+
         //Boton Entrar
+
 
         Button btnEntrar = (Button)findViewById(R.id.btnEntrarCh);
         btnEntrar.setOnClickListener(new View.OnClickListener() {
@@ -59,7 +78,15 @@ public class LoginAd extends AppCompatActivity {
                     openDialogInicio2();
 
                 }else{
-                         AccesarUsuario();
+
+                    if(networkInfo != null && networkInfo.isConnected()){
+                        AccesarUsuario();
+                    }else{
+
+                        Toast.makeText(getApplicationContext(),"Sin acceso a internet verifique la conexión y vuelva a entrar a la aplcación" , Toast.LENGTH_SHORT).show();
+
+                    }
+
                 }
             }
         });

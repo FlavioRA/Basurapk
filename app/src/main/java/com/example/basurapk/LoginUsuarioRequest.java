@@ -1,5 +1,7 @@
 package com.example.basurapk;
 
+import android.os.Bundle;
+
 import com.android.volley.Request;
 import com.android.volley.Response;
 import com.android.volley.toolbox.StringRequest;
@@ -7,9 +9,12 @@ import com.android.volley.toolbox.StringRequest;
 import java.util.HashMap;
 import java.util.Map;
 
-        public class LoginUsuarioRequest extends StringRequest {
+import androidx.appcompat.app.AppCompatActivity;
 
-        private static final String ruta = "http://192.168.43.249:8888/wsbasurapk/loginEncargado.php";
+public class LoginUsuarioRequest extends StringRequest {
+
+
+        private static final String ruta = "http://192.168.1.67:8888/wsbasurapk/loginEncargado.php";
 
         private Map<String, String> parametros;
 
@@ -22,6 +27,7 @@ import java.util.Map;
         protected Map<String, String> getParams() {
             return parametros;
         }
+
     }
 
 

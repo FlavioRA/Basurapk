@@ -3,8 +3,11 @@ package com.example.basurapk;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -22,10 +25,15 @@ import org.json.JSONObject;
 public class LoginCh extends AppCompatActivity {
 
     EditText edtRuta, edtContrasenas;
+    ImageView imgContactos;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login_ch);
+
+        ConnectivityManager nuevo = (ConnectivityManager) getApplicationContext().getSystemService(Context.CONNECTIVITY_SERVICE);
+        final NetworkInfo networkInfo = nuevo.getActiveNetworkInfo();
 
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
 
@@ -36,6 +44,19 @@ public class LoginCh extends AppCompatActivity {
 
 
                 Intent intent3 = new Intent(view.getContext(),MainActivity.class);
+                startActivityForResult(intent3, 0);
+
+            }
+        });
+
+
+        imgContactos = findViewById(R.id.imgContactos);
+
+        imgContactos.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                Intent intent3 = new Intent(view.getContext(),contactoL.class);
                 startActivityForResult(intent3, 0);
 
             }
@@ -58,7 +79,13 @@ public class LoginCh extends AppCompatActivity {
 
                 }else{
 
-                    AccesarUsuarioch();
+                    if(networkInfo != null && networkInfo.isConnected()){
+                        AccesarUsuarioch();
+                    }else{
+
+                        Toast.makeText(getApplicationContext(),"Sin acceso a internet verifique la conexión y vuelva a entrar a la aplcación" , Toast.LENGTH_SHORT).show();
+
+                    }
 
                 }
 

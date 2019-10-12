@@ -25,6 +25,8 @@ import java.util.Map;
 
 public class contacto extends AppCompatActivity {
 
+
+
     EditText edtNombre;
     EditText edtTelefono;
     EditText edtEmail;
@@ -36,6 +38,8 @@ public class contacto extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_contacto);
+
+
 
         edtNombre=findViewById(R.id.edtNombre);
         edtTelefono=findViewById(R.id.edtTelefono);
@@ -59,7 +63,7 @@ public class contacto extends AppCompatActivity {
 
                 }else {
 
-                    ejecutarServicio("http:// 192.168.43.249:8888/wsbasurapk/mandarMensaje.php");
+                    ejecutarServicio("http://192.168.1.67:8888/wsbasurapk/mandarMensaje.php");
                 }
             }
         });
