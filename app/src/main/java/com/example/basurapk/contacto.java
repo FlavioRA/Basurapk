@@ -165,8 +165,6 @@ public void openDialog(){
 
                 openDialog();
 
-
-
             }
         }, new Response.ErrorListener() {
             @Override

@@ -16,6 +16,7 @@ public class LoginUsuarioRequest extends StringRequest {
 
         private static final String ruta = "http://192.168.1.67:8888/wsbasurapk/loginEncargado.php";
 
+
         private Map<String, String> parametros;
 
         public LoginUsuarioRequest(String usuario, String contra, Response.Listener<String> listener){

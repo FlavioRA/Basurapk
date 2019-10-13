@@ -118,6 +118,9 @@ public class LoginCh extends AppCompatActivity {
         final  String Pw = edtContrasenas.getText().toString();
 
         Response.Listener<String> respuesta = new Response.Listener<String>() {
+
+
+
             @Override
             public void onResponse(String response) {
                 JSONObject jsonRespuesta = null;
@@ -125,6 +128,7 @@ public class LoginCh extends AppCompatActivity {
                 try {
                     jsonRespuesta = new JSONObject(response);
                     boolean ok = jsonRespuesta.getBoolean("success");
+
                     if (ok == true){
                         AccesoPerfilSinMantenerSesionIniciada();
                     }else{
@@ -133,15 +137,20 @@ public class LoginCh extends AppCompatActivity {
                         alerta.setMessage("Usuario o Contraseña incorrecta").setNegativeButton("Reintentar", null).create().show();
 
                     }
+
+
                 } catch (JSONException e) {
                     e.getMessage();
+
                 }
             }
+
         };
 
         LoginUsuarioRequest2 r = new LoginUsuarioRequest2(User.trim(),Pw.trim(),respuesta);
         RequestQueue cola = Volley.newRequestQueue(LoginCh.this);
         cola.add(r);
+
     }
 
     private void AccesoPerfilSinMantenerSesionIniciada(){
