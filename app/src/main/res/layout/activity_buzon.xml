@@ -8,46 +8,17 @@
     tools:context=".Buzon">
 
 
-
-    <Button
-        android:id="@+id/idBorrarB"
-        style="@style/Widget.AppCompat.Button.Colored"
-        android:layout_width="156dp"
-        android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginStart="127dp"
-        android:layout_marginTop="519dp"
-        android:layout_marginEnd="126dp"
-        android:text="Limpiar" />
-
-
     <ImageView
         android:id="@+id/imglogo"
-        android:layout_width="179dp"
-        android:layout_height="244dp"
+        android:layout_width="121dp"
+        android:layout_height="148dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
-        android:layout_marginStart="116dp"
-        android:layout_marginTop="18dp"
-        android:layout_marginEnd="116dp"
+        android:layout_marginStart="144dp"
+        android:layout_marginTop="6dp"
+        android:layout_marginEnd="144dp"
         app:srcCompat="@drawable/logonegro" />
-
-
-    <TextView
-        android:id="@+id/textView26"
-        android:layout_width="wrap_content"
-        android:layout_height="189dp"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginStart="51dp"
-        android:layout_marginTop="319dp"
-        android:layout_marginEnd="37dp"
-        android:background="@color/colorPrimaryDark" />
-
 
 
     <TextView
@@ -65,7 +36,17 @@
         android:text="Mesajes Recibidos"
         android:textSize="24sp" />
 
-
+    <ListView
+        android:id="@+id/lvLista1"
+        android:layout_width="390dp"
+        android:layout_height="405dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="14dp"
+        android:layout_marginTop="224dp"
+        android:layout_marginEnd="14dp"
+        android:background="@color/cardview_light_background" />
 
 
 </RelativeLayout>

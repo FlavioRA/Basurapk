@@ -2,13 +2,17 @@ package com.example.basurapk;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.os.Bundle;
 import android.view.View;
 import android.view.Window;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -22,6 +26,11 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
+
+        ConnectivityManager nuevo = (ConnectivityManager) getApplicationContext().getSystemService(Context.CONNECTIVITY_SERVICE);
+        final NetworkInfo networkInfo = nuevo.getActiveNetworkInfo();
+
+
 
 
         imgMapa=findViewById(R.id.imgMapa);
@@ -41,8 +50,17 @@ public class MainActivity extends AppCompatActivity {
         imgNoticias.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent3 = new Intent(view.getContext(),notificaciones.class);
-                startActivityForResult(intent3, 0);
+
+
+                if(networkInfo != null && networkInfo.isConnected()){
+                    Intent intent3 = new Intent(view.getContext(),notificaciones.class);
+                    startActivityForResult(intent3, 0);
+                }else{
+
+                    Toast.makeText(getApplicationContext(),"Verifica tu conexón a internet para obtener las noticias mas recientes" , Toast.LENGTH_SHORT).show();
+                }
+
+
             }
         });
 
@@ -98,8 +116,14 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                Intent intent3= new Intent(view.getContext(),notificaciones.class);
-                startActivityForResult(intent3, 0);
+                if(networkInfo != null && networkInfo.isConnected()){
+                    Intent intent3 = new Intent(view.getContext(),notificaciones.class);
+                    startActivityForResult(intent3, 0);
+                }else{
+
+                    Toast.makeText(getApplicationContext(),"Verifica tu conexón a internet para obtener las noticias mas recientes" , Toast.LENGTH_SHORT).show();
+                }
+
 
             }
         });

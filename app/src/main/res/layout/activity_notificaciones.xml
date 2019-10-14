@@ -9,16 +9,14 @@
 
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="226dp"
-        android:layout_height="343dp"
+        android:layout_width="145dp"
+        android:layout_height="199dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginStart="93dp"
-        android:layout_marginTop="30dp"
-        android:layout_marginEnd="92dp"
-        android:layout_marginBottom="357dp"
+        android:layout_marginStart="130dp"
+        android:layout_marginTop="7dp"
+        android:layout_marginEnd="134dp"
         android:gravity="center"
         app:srcCompat="@drawable/logonegro" />
 
@@ -27,27 +25,15 @@
         android:layout_width="323dp"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginStart="45dp"
-        android:layout_marginEnd="43dp"
-        android:layout_marginBottom="298dp"
+        android:layout_marginStart="44dp"
+        android:layout_marginTop="212dp"
+        android:layout_marginEnd="44dp"
         android:fontFamily="sans-serif-black"
         android:gravity="center"
-        android:text=" Notificaciones"
+        android:text="Noticias"
         android:textAppearance="@style/TextAppearance.AppCompat.Large" />
-
-    <TextView
-        android:id="@+id/textView8"
-        android:layout_width="367dp"
-        android:layout_height="262dp"
-        android:layout_alignStart="@+id/textView2"
-        android:layout_alignEnd="@+id/textView2"
-        android:layout_alignParentBottom="true"
-        android:layout_marginStart="-25dp"
-        android:layout_marginEnd="-19dp"
-        android:layout_marginBottom="19dp"
-        android:background="#CEF7CE" />
 
     <ImageView
         android:id="@+id/imgRefresca"
@@ -70,5 +56,17 @@
         android:layout_marginEnd="4dp"
         android:fontFamily="sans-serif-medium"
         android:text="Actualizar" />
+
+    <ListView
+        android:id="@+id/lvLista"
+        android:layout_width="361dp"
+        android:layout_height="385dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="26dp"
+        android:layout_marginTop="252dp"
+        android:layout_marginEnd="25dp"
+        android:background="@color/cardview_light_background" />
 
 </RelativeLayout>
