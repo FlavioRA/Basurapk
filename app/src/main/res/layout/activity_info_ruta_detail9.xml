@@ -23,8 +23,9 @@
         android:textColor="@color/cardview_light_background"
         android:textSize="28sp" />
 
-    <ImageView
-        android:id="@+id/imageView19"
+
+
+    <com.davemorrissey.labs.subscaleview.SubsamplingScaleImageView
         android:layout_width="348dp"
         android:layout_height="257dp"
         android:layout_alignParentStart="true"
@@ -33,7 +34,19 @@
         android:layout_marginStart="35dp"
         android:layout_marginTop="42dp"
         android:layout_marginEnd="35dp"
-        app:srcCompat="@drawable/rutarh" />
+        />
+
+    <com.zolad.zoominimageview.ZoomInImageView
+        android:layout_width="348dp"
+        android:layout_height="257dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="35dp"
+        android:layout_marginTop="42dp"
+        android:layout_marginEnd="35dp"
+        android:src="@drawable/rutarh"
+        />
 
     <TextView
         android:id="@+id/textView31"
