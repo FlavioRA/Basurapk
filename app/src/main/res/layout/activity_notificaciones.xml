@@ -27,13 +27,14 @@
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
-        android:layout_marginStart="44dp"
-        android:layout_marginTop="212dp"
-        android:layout_marginEnd="44dp"
+        android:layout_marginStart="46dp"
+        android:layout_marginTop="216dp"
+        android:layout_marginEnd="46dp"
         android:fontFamily="sans-serif-black"
         android:gravity="center"
-        android:text="Noticias"
-        android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+        android:text="<--- Noticias  --->"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:textSize="24sp" />
 
     <ImageView
         android:id="@+id/imgRefresca"
@@ -59,14 +60,14 @@
 
     <ListView
         android:id="@+id/lvLista"
-        android:layout_width="361dp"
-        android:layout_height="385dp"
+        android:layout_width="388dp"
+        android:layout_height="390dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
-        android:layout_marginStart="26dp"
-        android:layout_marginTop="252dp"
-        android:layout_marginEnd="25dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="261dp"
+        android:layout_marginEnd="10dp"
         android:background="@color/cardview_light_background" />
 
 </RelativeLayout>

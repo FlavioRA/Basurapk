@@ -48,6 +48,12 @@
         android:layout_marginEnd="14dp"
         android:background="@color/cardview_light_background" />
 
+    <ImageView
+        android:id="@+id/imgBack"
+        android:layout_width="65dp"
+        android:layout_height="60dp"
+        app:srcCompat="@drawable/leftarrow" />
+
 
 </RelativeLayout>
 
