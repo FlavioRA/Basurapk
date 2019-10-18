@@ -129,6 +129,8 @@ public class LoginCh extends AppCompatActivity {
                     jsonRespuesta = new JSONObject(response);
                     boolean ok = jsonRespuesta.getBoolean("success");
 
+                    String numeroRuta = jsonRespuesta.getString("IDEquipoRT");
+                    
                     if (ok == true){
                         AccesoPerfilSinMantenerSesionIniciada();
                     }else{
