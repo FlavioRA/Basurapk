@@ -68,21 +68,16 @@
         android:text="Actualizar" />
 
 
-
+        </RelativeLayout>
+    </ScrollView>
 
     <ListView
         android:id="@+id/lvLista"
         android:layout_width="388dp"
         android:layout_height="390dp"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
         android:layout_marginStart="10dp"
         android:layout_marginTop="261dp"
         android:layout_marginEnd="10dp"
         android:background="@color/cardview_light_background" />
-
-    </RelativeLayout>
-    </ScrollView>
 
 </RelativeLayout>

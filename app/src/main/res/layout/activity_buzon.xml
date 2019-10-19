@@ -36,38 +36,33 @@
         app:srcCompat="@drawable/logonegro" />
 
 
-    <TextView
-        android:id="@+id/textView25"
-        android:layout_width="340dp"
-        android:layout_height="46dp"
-        android:layout_below="@+id/imglogo"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginStart="36dp"
-        android:layout_marginTop="-4dp"
-        android:layout_marginEnd="35dp"
-        android:fontFamily="sans-serif-medium"
-        android:gravity="center"
-        android:text="Mesajes Recibidos"
-        android:textSize="24sp" />
+            <TextView
+                android:id="@+id/textView25"
+                android:layout_width="340dp"
+                android:layout_height="46dp"
+                android:layout_below="@+id/imglogo"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginStart="36dp"
+                android:layout_marginTop="-4dp"
+                android:layout_marginEnd="35dp"
+                android:fontFamily="sans-serif-medium"
+                android:gravity="center"
+                android:text="Mesajes Recibidos"
+                android:textSize="24sp" />
 
+
+        </RelativeLayout>
+    </ScrollView>
 
     <ListView
         android:id="@+id/lvLista1"
         android:layout_width="390dp"
         android:layout_height="405dp"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
         android:layout_marginStart="14dp"
         android:layout_marginTop="224dp"
         android:layout_marginEnd="14dp"
         android:background="@color/cardview_light_background" />
-
-    </RelativeLayout>
-    </ScrollView>
-
-
 
 
 </RelativeLayout>
