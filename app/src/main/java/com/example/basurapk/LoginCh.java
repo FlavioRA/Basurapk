@@ -26,6 +26,7 @@ public class LoginCh extends AppCompatActivity {
 
     EditText edtRuta, edtContrasenas;
     ImageView imgContactos;
+    String numeroRuta;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -129,10 +130,13 @@ public class LoginCh extends AppCompatActivity {
                     jsonRespuesta = new JSONObject(response);
                     boolean ok = jsonRespuesta.getBoolean("success");
 
-                    String numeroRuta = jsonRespuesta.getString("IDEquipoRT");
+                    numeroRuta = jsonRespuesta.getString("IDEquipoRT");
+
+
                     
                     if (ok == true){
                         AccesoPerfilSinMantenerSesionIniciada();
+
                     }else{
                         //validaciodeusercontradb(User,username);
                         AlertDialog.Builder alerta = new AlertDialog.Builder(LoginCh.this);

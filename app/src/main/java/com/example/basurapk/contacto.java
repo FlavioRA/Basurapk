@@ -80,7 +80,7 @@ public class contacto extends AppCompatActivity {
         Time today = new Time(Time.getCurrentTimezone());
         today.setToNow();
         int monthDay = today.monthDay;
-        int month = today.month;
+        int month = (today.month)+1;
         int Year = today.year;
 
         String dia =String.valueOf(monthDay);

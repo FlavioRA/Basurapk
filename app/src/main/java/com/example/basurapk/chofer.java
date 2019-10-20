@@ -9,12 +9,19 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 public class chofer extends AppCompatActivity {
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_chofer);
+
+
+
 
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
 
@@ -38,8 +45,9 @@ public class chofer extends AppCompatActivity {
         btnIniciar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                openDialogInicio2();
 
+
+                openDialogInicio2();
 
             }
         });
@@ -51,7 +59,16 @@ public class chofer extends AppCompatActivity {
             public void onClick(View view) {
 
 
-                openDialogInicio();
+                Bundle extras = getIntent().getExtras();
+                String horaInicio =extras.getString("HoraInicio");
+                String Equipo=extras.getString("Equipo");
+
+                Intent j = new Intent(chofer.this,Formulario.class);
+                j.putExtra("HoraInicios",horaInicio);
+                j.putExtra("Equipo",Equipo);
+                startActivity(j);
+
+
             }
         });
 
@@ -61,8 +78,13 @@ public class chofer extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
+                Bundle extras = getIntent().getExtras();
+                String horaInicio =extras.getString("HoraInicio");
 
-                openDialogInicio();
+
+                Intent j = new Intent(chofer.this,Formulario.class);
+                j.putExtra("HoraInicios",horaInicio);
+                startActivity(j);
             }
         });
 
@@ -72,6 +94,8 @@ public class chofer extends AppCompatActivity {
     }
 
     public void openDialogInicio(){
+
+
         DialogCancelaFinaliza exampleDialog = new DialogCancelaFinaliza();
         exampleDialog.show(getSupportFragmentManager(),"Ejemplo Administrador");
  }
