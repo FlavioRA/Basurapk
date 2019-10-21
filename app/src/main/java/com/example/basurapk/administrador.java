@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 import android.text.method.ScrollingMovementMethod;
+import android.util.Log;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
@@ -14,7 +15,21 @@ import android.widget.ListView;
 import android.widget.Spinner;
 import android.widget.TextView;
 
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.StringRequest;
+import com.android.volley.toolbox.Volley;
+
+import org.json.JSONArray;
+import org.json.JSONException;
+
+import java.util.ArrayList;
+
 public class administrador extends AppCompatActivity {
+
+    ListView idLista;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,14 +37,6 @@ public class administrador extends AppCompatActivity {
         setContentView(R.layout.activity_administrador);
 
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
-
-
-        TextView textview;
-        textview = (TextView) findViewById(R.id.txtTabla);
-
-
-
-        textview.setMovementMethod(new ScrollingMovementMethod());
 
 
 
@@ -89,6 +96,16 @@ public class administrador extends AppCompatActivity {
         });
 
 
+        //Mandar a llamar los datos;
+
+        idLista = findViewById(R.id.idLista);
+
+        String consulta="http://192.168.23.3:8888/wsbasurapk/bajarRecorridos.php";
+
+        EnviarRecibirDatos(consulta);
+
+
+
         Spinner spRutas=findViewById(R.id.spRutas);
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this, R.array.rutas, android.R.layout.simple_spinner_item);
         spRutas.setAdapter(adapter);
@@ -107,6 +124,68 @@ public class administrador extends AppCompatActivity {
         dialogoRefresh.show(getSupportFragmentManager(),"Ejemplo Notificación");
 
     }
+
+
+
+    public void EnviarRecibirDatos(String URL){
+
+
+        RequestQueue queue = Volley.newRequestQueue(this);
+        StringRequest stringRequest = new StringRequest(Request.Method.GET, URL, new Response.Listener<String>() {
+            @Override
+            public void onResponse(String response) {
+
+                response = response.replace("][",",");
+                if (response.length()>0){
+                    try {
+                        JSONArray ja = new JSONArray(response);
+                        Log.i("sizejson",""+ja.length());
+                        CargarListView(ja);
+                    } catch (JSONException e) {
+                        e.printStackTrace();
+                    }
+
+                }
+
+            }
+        }, new Response.ErrorListener(){
+            @Override
+            public void onErrorResponse(VolleyError error) {
+
+            }
+        });
+
+        queue.add(stringRequest);
+
+    }
+
+    public void CargarListView(JSONArray ja){
+
+        ArrayList<String> lista = new ArrayList<>();
+
+        for(int i=0;i<ja.length();i+=7){
+
+            try {
+
+                lista.add("\n"+ja.getString(i)+"\n"+ja.getString(i+1)+"\n"+ja.getString(i+2)+"\n"+ja.getString(i+3)+"\n"
+                +ja.getString(i+4)+"\n"+ja.getString(i+5)+"\n"+ja.getString(i+6));
+            } catch (JSONException e) {
+                e.printStackTrace();
+            }
+
+        }
+
+
+        ArrayAdapter<String> adaptador = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, lista);
+        idLista.setAdapter(adaptador);
+
+
+
+    }
+
+
+
+
 
 
 }
