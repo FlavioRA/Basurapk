@@ -52,15 +52,16 @@ public class chofer extends AppCompatActivity {
         });
 
 
-        Button btnIniciar = findViewById(R.id.btnIniciar);
-        Button btnCancelar=findViewById(R.id.btnCancelar);
-        Button btnFinalizar=findViewById(R.id.btnFinalizar);
+        final Button btnIniciar=findViewById(R.id.btnIniciar);
+        final Button btnCancelar=findViewById(R.id.btnCancelar);
+        final Button btnFinalizar=findViewById(R.id.btnFinalizar);
 
+        btnCancelar.setEnabled(false);
+        btnFinalizar.setEnabled(false);
 
         btnIniciar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
 
 
                 SimpleDateFormat h = new SimpleDateFormat("h:mm a");
@@ -75,6 +76,7 @@ public class chofer extends AppCompatActivity {
                 startActivity(j);
 
 
+
             }
         });
 
@@ -84,8 +86,6 @@ public class chofer extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-
-
                 String horaInicio =extras.getString("HoraInicio");
                 String Equipos =extras.getString("EquipoEnv");
 
@@ -94,7 +94,8 @@ public class chofer extends AppCompatActivity {
                 j.putExtra("Equipo",Equipos);
                 startActivity(j);
 
-
+                btnIniciar.setEnabled(true);
+                btnFinalizar.setEnabled(false);
             }
         });
 
@@ -112,6 +113,8 @@ public class chofer extends AppCompatActivity {
                 j.putExtra("Equipo",Equipos);
                 startActivity(j);
 
+                btnCancelar.setEnabled(false);
+                btnFinalizar.setEnabled(false);
 
             }
         });
