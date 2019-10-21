@@ -167,8 +167,15 @@ public class administrador extends AppCompatActivity {
 
             try {
 
-                lista.add("\n"+ja.getString(i)+"\n"+ja.getString(i+1)+"\n"+ja.getString(i+2)+"\n"+ja.getString(i+3)+"\n"
-                +ja.getString(i+4)+"\n"+ja.getString(i+5)+"\n"+ja.getString(i+6));
+                lista.add("\n"+ja.getString(i)+"\n"+
+                        "Hrs: "+ja.getString(i+1)+" a "+ja.getString(i+2)+"\n"+
+                        "Chofer Sust? "+ja.getString(i+3)+"\n"+
+                        "Camion Sust? "+ja.getString(i+4)+"\n"+
+                        "Comentarios: "+ja.getString(i+5)+"\n"+
+                        "Equipo: "+ja.getString(i+6)+"\n" );
+
+
+
             } catch (JSONException e) {
                 e.printStackTrace();
             }

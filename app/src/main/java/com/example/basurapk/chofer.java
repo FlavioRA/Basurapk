@@ -29,6 +29,8 @@ public class chofer extends AppCompatActivity {
     EditText edtPrueba;
     String Equipo;
     String HoraInicio;
+    boolean Verdad;
+    boolean Falso;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -56,15 +58,12 @@ public class chofer extends AppCompatActivity {
         final Button btnCancelar=findViewById(R.id.btnCancelar);
         final Button btnFinalizar=findViewById(R.id.btnFinalizar);
 
-        btnCancelar.setEnabled(false);
-        btnFinalizar.setEnabled(false);
+
 
         btnIniciar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
-                btnCancelar.setEnabled(true);
-                btnFinalizar.setEnabled(true);
 
                 SimpleDateFormat h = new SimpleDateFormat("h:mm a");
                 HoraInicio = h.format(date);
@@ -96,8 +95,9 @@ public class chofer extends AppCompatActivity {
                 j.putExtra("Equipo",Equipos);
                 startActivity(j);
 
-                btnIniciar.setEnabled(true);
-                btnFinalizar.setEnabled(false);
+                btnIniciar.setEnabled(false);
+                btnCancelar.setEnabled(true);
+                btnFinalizar.setEnabled(true);
             }
         });
 
@@ -115,8 +115,9 @@ public class chofer extends AppCompatActivity {
                 j.putExtra("Equipo",Equipos);
                 startActivity(j);
 
-                btnCancelar.setEnabled(false);
-                btnFinalizar.setEnabled(false);
+                btnIniciar.setEnabled(false);
+                btnCancelar.setEnabled(true);
+                btnFinalizar.setEnabled(true);
 
             }
         });

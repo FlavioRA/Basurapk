@@ -115,7 +115,7 @@ public class Formulario extends AppCompatActivity {
                 }
 
 
-                ejecutarServicio("http://192.168.1.67:8888/wsbasurapk/crearRecorrido.php");
+                ejecutarServicio("http://192.168.23.3:8888/wsbasurapk/crearRecorrido.php");
 
 
 
