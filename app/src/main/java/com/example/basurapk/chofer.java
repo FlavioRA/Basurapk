@@ -70,6 +70,7 @@ public class chofer extends AppCompatActivity {
                 btnFinalizar.setEnabled(true);
 
 
+
             }
         });
 
