@@ -14,7 +14,7 @@ import androidx.appcompat.app.AppCompatDialogFragment;
 
 public class DialogIniciado extends AppCompatDialogFragment {
 
-    String HoraInicio;
+
 
     @Override
     public Dialog onCreateDialog(Bundle savedInstanceState) {
@@ -24,19 +24,12 @@ public class DialogIniciado extends AppCompatDialogFragment {
                 .setPositiveButton("Ok", new DialogInterface.OnClickListener() {
 
 
-                    final Date date = new Date();
+
 
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
 
 
-                        SimpleDateFormat h = new SimpleDateFormat("h:mm a");
-                        HoraInicio = h.format(date);
-
-
-                        Intent j = new Intent(getContext(),chofer.class);
-                        j.putExtra("HoraInicio",HoraInicio);
-                        startActivity(j);
 
 
                     }

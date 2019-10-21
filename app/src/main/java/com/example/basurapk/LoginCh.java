@@ -15,12 +15,19 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Toast;
 
+import com.android.volley.AuthFailureError;
+import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 
 import org.json.JSONException;
 import org.json.JSONObject;
+
+import java.util.HashMap;
+import java.util.Map;
 
 public class LoginCh extends AppCompatActivity {
 
@@ -132,10 +139,14 @@ public class LoginCh extends AppCompatActivity {
 
                     numeroRuta = jsonRespuesta.getString("IDEquipoRT");
 
+                    Intent j = new Intent(getApplication(),chofer.class);
+                    j.putExtra("EquipoAc",numeroRuta);
 
-                    
+
+
                     if (ok == true){
                         AccesoPerfilSinMantenerSesionIniciada();
+                        startActivity(j);
 
                     }else{
                         //validaciodeusercontradb(User,username);
@@ -170,6 +181,9 @@ public class LoginCh extends AppCompatActivity {
         dialogoLogin exampleDialog = new dialogoLogin();
         exampleDialog.show(getSupportFragmentManager(),"Ejemplo Administrador");
     }
+
+
+
 
 
 

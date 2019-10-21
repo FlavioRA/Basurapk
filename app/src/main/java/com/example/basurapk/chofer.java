@@ -7,21 +7,36 @@ import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.Toast;
+
+import com.android.volley.AuthFailureError;
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.StringRequest;
+import com.android.volley.toolbox.Volley;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.HashMap;
+import java.util.Map;
 
 public class chofer extends AppCompatActivity {
 
+    EditText edtPrueba;
+    String Equipo;
+    String HoraInicio;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_chofer);
+        final Date date = new Date();
 
-
-
+        final Bundle extras = getIntent().getExtras();
 
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
 
@@ -47,7 +62,18 @@ public class chofer extends AppCompatActivity {
             public void onClick(View view) {
 
 
-                openDialogInicio2();
+
+                SimpleDateFormat h = new SimpleDateFormat("h:mm a");
+                HoraInicio = h.format(date);
+
+                String EquipoCan =extras.getString("EquipoAc");
+
+
+                Intent j = new Intent(getApplication(),chofer.class);
+                j.putExtra("HoraInicio",HoraInicio);
+                j.putExtra("EquipoEnv",EquipoCan);
+                startActivity(j);
+
 
             }
         });
@@ -59,13 +85,13 @@ public class chofer extends AppCompatActivity {
             public void onClick(View view) {
 
 
-                Bundle extras = getIntent().getExtras();
+
                 String horaInicio =extras.getString("HoraInicio");
-                String Equipo=extras.getString("Equipo");
+                String Equipos =extras.getString("EquipoEnv");
 
                 Intent j = new Intent(chofer.this,Formulario.class);
                 j.putExtra("HoraInicios",horaInicio);
-                j.putExtra("Equipo",Equipo);
+                j.putExtra("Equipo",Equipos);
                 startActivity(j);
 
 
@@ -78,13 +104,15 @@ public class chofer extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                Bundle extras = getIntent().getExtras();
                 String horaInicio =extras.getString("HoraInicio");
-
+                String Equipos =extras.getString("EquipoEnv");
 
                 Intent j = new Intent(chofer.this,Formulario.class);
                 j.putExtra("HoraInicios",horaInicio);
+                j.putExtra("Equipo",Equipos);
                 startActivity(j);
+
+
             }
         });
 
@@ -105,6 +133,7 @@ public class chofer extends AppCompatActivity {
         DialogIniciado exampleDialog = new DialogIniciado();
         exampleDialog.show(getSupportFragmentManager(),"Ejemplo Administrador");
     }
+
 
 
 

@@ -33,14 +33,17 @@ public class Formulario extends AppCompatActivity {
     String FechaHoy;
     EditText edtComentarios;
     String Hora;
+    String EquipoDios;
     String horaInicio;
-    String Equipos;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_formulario);
 
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
+
+
+
 
 
         final Date date = new Date();
@@ -55,7 +58,7 @@ public class Formulario extends AppCompatActivity {
        final RadioButton rbNoChofer = findViewById(R.id.rbNoChofer);
 
 
-
+        Bundle extras = getIntent().getExtras();
 
 
         //Sacar Fecha
@@ -80,8 +83,6 @@ public class Formulario extends AppCompatActivity {
 
 
 
-
-        Bundle extras = getIntent().getExtras();
         horaInicio =extras.getString("HoraInicios");
 
         SimpleDateFormat h = new SimpleDateFormat("h:mm a");
@@ -90,6 +91,7 @@ public class Formulario extends AppCompatActivity {
         //Sacar Fin Horarios
 
 
+        EquipoDios=extras.getString("Equipo");
 
         btnEnviar.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -115,6 +117,10 @@ public class Formulario extends AppCompatActivity {
 
                 ejecutarServicio("http://192.168.1.67:8888/wsbasurapk/crearRecorrido.php");
 
+
+
+
+
             }
         });
 
@@ -137,6 +143,8 @@ public class Formulario extends AppCompatActivity {
             public void onResponse(String response) {
 
                 Toast.makeText(getApplicationContext(),"Se an eviado Correctamente", Toast.LENGTH_SHORT).show();
+                Intent intent4= new Intent(getApplicationContext(),MainActivity.class);
+                startActivityForResult(intent4, 0);
 
             }
         }, new Response.ErrorListener() {
@@ -158,6 +166,7 @@ public class Formulario extends AppCompatActivity {
                 parametros.put("Comentario",edtComentarios.getText().toString());
                 parametros.put("HoraFinal",Hora);
                 parametros.put("HoraInicio",horaInicio);
+                parametros.put("EquipoRT",EquipoDios);
 
 
                 return parametros;

@@ -72,4 +72,5 @@
         android:gravity="center"
         android:text="Bienvendido Ruta 1"
         android:textSize="18sp" />
+
 </RelativeLayout>
