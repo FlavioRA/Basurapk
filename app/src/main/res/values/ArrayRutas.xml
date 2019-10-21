@@ -4,11 +4,10 @@
 <string-array name="rutas">
 
 
-    <item>R1 --> Rector Hidalgo - Venustiano C.</item>
-    <item>R2 --> 5 de mayo - Jose M. Morelos</item>
-    <item>R3 --> Jose M. Morelos - Primer Rector </item>
-    <item>R4 --> Infonavit Nuevo H. - Lotes y Serv.</item>
-    <item>R5 --> 600 Casas</item>
+    <item>(Zona Centro) Ruta 9</item>
+    <item>(Zona Centro) Ruta 10 </item>
+    <item>(Zona Centro) Ruta 11</item>
+
 
 
 </string-array>

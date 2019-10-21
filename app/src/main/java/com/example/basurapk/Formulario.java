@@ -142,7 +142,7 @@ public class Formulario extends AppCompatActivity {
             @Override
             public void onResponse(String response) {
 
-                Toast.makeText(getApplicationContext(),"Se an eviado Correctamente", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getApplicationContext(),"Envio de datos realizados correctamente.", Toast.LENGTH_SHORT).show();
                 Intent intent4= new Intent(getApplicationContext(),MainActivity.class);
                 startActivityForResult(intent4, 0);
 
@@ -151,7 +151,7 @@ public class Formulario extends AppCompatActivity {
             @Override
             public void onErrorResponse(VolleyError error) {
 
-                Toast.makeText(getApplicationContext(),"FALLO SE APROXIMAN PROBLEMAS", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getApplicationContext(),"No es posible enviar los datos, Verifica Conexión.", Toast.LENGTH_SHORT).show();
 
             }
         }){
