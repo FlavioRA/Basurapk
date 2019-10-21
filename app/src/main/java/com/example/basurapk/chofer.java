@@ -63,6 +63,8 @@ public class chofer extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
+                btnCancelar.setEnabled(true);
+                btnFinalizar.setEnabled(true);
 
                 SimpleDateFormat h = new SimpleDateFormat("h:mm a");
                 HoraInicio = h.format(date);
