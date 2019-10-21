@@ -26,15 +26,19 @@ import com.android.volley.toolbox.Volley;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 
 public class LoginCh extends AppCompatActivity {
 
+    String HoraInicio;
+
     EditText edtRuta, edtContrasenas;
     ImageView imgContactos;
     String numeroRuta;
-
+    final Date date = new Date();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -122,8 +126,14 @@ public class LoginCh extends AppCompatActivity {
 
     private void AccesarUsuarioch(){
 
+
+        SimpleDateFormat h = new SimpleDateFormat("h:mm a");
+        HoraInicio = h.format(date);
+
+
         final  String User = edtRuta.getText().toString();
         final  String Pw = edtContrasenas.getText().toString();
+
 
         Response.Listener<String> respuesta = new Response.Listener<String>() {
 
@@ -141,7 +151,7 @@ public class LoginCh extends AppCompatActivity {
 
                     Intent j = new Intent(getApplication(),chofer.class);
                     j.putExtra("EquipoAc",numeroRuta);
-
+                    j.putExtra("HoraInicio",HoraInicio);
 
 
                     if (ok == true){

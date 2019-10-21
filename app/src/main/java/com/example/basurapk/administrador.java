@@ -8,6 +8,8 @@ import android.os.Bundle;
 import android.text.method.ScrollingMovementMethod;
 import android.util.Log;
 import android.view.View;
+import android.widget.Adapter;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -15,6 +17,7 @@ import android.widget.ListView;
 import android.widget.Spinner;
 import android.widget.TextView;
 
+import com.android.volley.AuthFailureError;
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
@@ -26,10 +29,13 @@ import org.json.JSONArray;
 import org.json.JSONException;
 
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 
-public class administrador extends AppCompatActivity {
+public class administrador extends AppCompatActivity{
 
     ListView idLista;
+    String Ruta;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -96,14 +102,6 @@ public class administrador extends AppCompatActivity {
         });
 
 
-        //Mandar a llamar los datos;
-
-        idLista = findViewById(R.id.idLista);
-
-        String consulta="http://192.168.23.3:8888/wsbasurapk/bajarRecorridos.php";
-
-        EnviarRecibirDatos(consulta);
-
 
 
         Spinner spRutas=findViewById(R.id.spRutas);
@@ -111,6 +109,16 @@ public class administrador extends AppCompatActivity {
         spRutas.setAdapter(adapter);
 
 
+
+
+
+        //Mandar a llamar los datos;
+
+        idLista = findViewById(R.id.idLista);
+
+        String consulta="http://192.168.23.3:8888/wsbasurapk/bajarRecorridos.php";
+
+        EnviarRecibirDatos(consulta);
 
 
 
@@ -173,9 +181,6 @@ public class administrador extends AppCompatActivity {
                         "Camion Sust? "+ja.getString(i+4)+"\n"+
                         "Comentarios: "+ja.getString(i+5)+"\n"+
                         "Equipo: "+ja.getString(i+6)+"\n" );
-
-
-
             } catch (JSONException e) {
                 e.printStackTrace();
             }
@@ -187,12 +192,6 @@ public class administrador extends AppCompatActivity {
         idLista.setAdapter(adaptador);
 
 
-
     }
-
-
-
-
-
 
 }

@@ -26,19 +26,17 @@ import java.util.Map;
 
 public class chofer extends AppCompatActivity {
 
-    EditText edtPrueba;
-    String Equipo;
-    String HoraInicio;
-    boolean Verdad;
-    boolean Falso;
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_chofer);
-        final Date date = new Date();
+
 
         final Bundle extras = getIntent().getExtras();
+
 
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
 
@@ -59,23 +57,17 @@ public class chofer extends AppCompatActivity {
         final Button btnFinalizar=findViewById(R.id.btnFinalizar);
 
 
+        btnCancelar.setEnabled(false);
+        btnFinalizar.setEnabled(false);
 
         btnIniciar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
-
-                SimpleDateFormat h = new SimpleDateFormat("h:mm a");
-                HoraInicio = h.format(date);
-
-                String EquipoCan =extras.getString("EquipoAc");
-
-
-                Intent j = new Intent(getApplication(),chofer.class);
-                j.putExtra("HoraInicio",HoraInicio);
-                j.putExtra("EquipoEnv",EquipoCan);
-                startActivity(j);
-
+                Toast.makeText(getApplicationContext(),"Recorrido iniciado.", Toast.LENGTH_SHORT).show();
+                btnIniciar.setEnabled(false);
+                btnCancelar.setEnabled(true);
+                btnFinalizar.setEnabled(true);
 
 
             }
@@ -87,37 +79,35 @@ public class chofer extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
+                String EquipoCan =extras.getString("EquipoAc");
                 String horaInicio =extras.getString("HoraInicio");
-                String Equipos =extras.getString("EquipoEnv");
+
+
 
                 Intent j = new Intent(chofer.this,Formulario.class);
                 j.putExtra("HoraInicios",horaInicio);
-                j.putExtra("Equipo",Equipos);
+                j.putExtra("EquipoEnv",EquipoCan);
+
                 startActivity(j);
 
-                btnIniciar.setEnabled(false);
-                btnCancelar.setEnabled(true);
-                btnFinalizar.setEnabled(true);
             }
         });
-
 
 
         btnFinalizar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
+                btnIniciar.setEnabled(false);
+
                 String horaInicio =extras.getString("HoraInicio");
                 String Equipos =extras.getString("EquipoEnv");
+
 
                 Intent j = new Intent(chofer.this,Formulario.class);
                 j.putExtra("HoraInicios",horaInicio);
                 j.putExtra("Equipo",Equipos);
                 startActivity(j);
-
-                btnIniciar.setEnabled(false);
-                btnCancelar.setEnabled(true);
-                btnFinalizar.setEnabled(true);
 
             }
         });

@@ -91,7 +91,7 @@ public class Formulario extends AppCompatActivity {
         //Sacar Fin Horarios
 
 
-        EquipoDios=extras.getString("Equipo");
+        EquipoDios=extras.getString("EquipoEnv");
 
         btnEnviar.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -114,11 +114,7 @@ public class Formulario extends AppCompatActivity {
                     CamionDecide="Si";
                 }
 
-
                 ejecutarServicio("http://192.168.23.3:8888/wsbasurapk/crearRecorrido.php");
-
-
-
 
 
             }
