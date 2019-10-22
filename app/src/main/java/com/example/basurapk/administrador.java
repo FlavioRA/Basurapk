@@ -14,8 +14,10 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.ListView;
+import android.widget.RadioButton;
 import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.android.volley.AuthFailureError;
 import com.android.volley.Request;
@@ -35,7 +37,7 @@ import java.util.Map;
 public class administrador extends AppCompatActivity{
 
     ListView idLista;
-    String Ruta;
+    String Ruta="9";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,8 +45,6 @@ public class administrador extends AppCompatActivity{
         setContentView(R.layout.activity_administrador);
 
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
-
-
 
 
         ImageView imgNotif = (ImageView)findViewById(R.id.imgNotif);
@@ -57,7 +57,6 @@ public class administrador extends AppCompatActivity{
 
             }
         });
-
 
 
         ImageView imgBuzon = (ImageView)findViewById(R.id.imgBuzon);
@@ -88,6 +87,7 @@ public class administrador extends AppCompatActivity{
 
 
 
+
         ImageView imgActualiza =findViewById(R.id.imgActualiza);
 
         imgActualiza.setOnClickListener(new View.OnClickListener() {
@@ -95,8 +95,8 @@ public class administrador extends AppCompatActivity{
             public void onClick(View view) {
 
 
-
                 openDialogRegresh();
+
 
             }
         });
@@ -104,19 +104,18 @@ public class administrador extends AppCompatActivity{
 
 
 
-        Spinner spRutas=findViewById(R.id.spRutas);
-        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this, R.array.rutas, android.R.layout.simple_spinner_item);
-        spRutas.setAdapter(adapter);
 
-
-
+        //Spinner spRutas=findViewById(R.id.spRutas);
+        //ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this, R.array.rutas, android.R.layout.simple_spinner_item);
+        //spRutas.setAdapter(adapter);
 
 
         //Mandar a llamar los datos;
-
         idLista = findViewById(R.id.idLista);
         String consulta="http://192.168.23.4:8888/wsbasurapk/bajarRecorridos.php";
         EnviarRecibirDatos(consulta);
+
+
     }
 
 
@@ -133,8 +132,11 @@ public class administrador extends AppCompatActivity{
     public void EnviarRecibirDatos(String URL){
 
 
+
         RequestQueue queue = Volley.newRequestQueue(this);
         StringRequest stringRequest = new StringRequest(Request.Method.GET, URL, new Response.Listener<String>() {
+
+
             @Override
             public void onResponse(String response) {
 
@@ -158,8 +160,8 @@ public class administrador extends AppCompatActivity{
             }
         });
 
-        queue.add(stringRequest);
 
+        queue.add(stringRequest);
     }
 
     public void CargarListView(JSONArray ja){
@@ -188,5 +190,8 @@ public class administrador extends AppCompatActivity{
 
 
     }
+
+
+
 
 }

@@ -18,7 +18,17 @@
         <activity android:name=".Buzon" />
         <activity android:name=".LoginCh" />
         <activity android:name=".chofer" />
-        <activity android:name=".administrador" />
+
+        <activity android:name=".administrador">
+
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+
+        </activity>
+
         <activity android:name=".LoginAd" />
         <activity android:name=".contactoL" />
         <activity android:name=".contacto" />
@@ -35,11 +45,7 @@
             android:name=".mapa"
             android:label="@string/title_activity_mapa" />
         <activity android:name=".splash">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <activity android:name=".MainActivity" />
 

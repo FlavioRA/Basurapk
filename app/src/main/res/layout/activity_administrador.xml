@@ -94,20 +94,6 @@
         android:gravity="center"
         android:text="Actualizar" />
 
-    <Spinner
-        android:id="@+id/spRutas"
-        android:layout_width="294dp"
-        android:layout_height="51dp"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginStart="98dp"
-        android:layout_marginTop="199dp"
-        android:layout_marginEnd="19dp"
-        android:background="@android:color/holo_blue_dark"
-        android:gravity="center"
-        android:popupBackground="@android:color/darker_gray" />
-
     <TextView
         android:id="@+id/textView27"
         android:layout_width="273dp"
