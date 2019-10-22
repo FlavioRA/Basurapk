@@ -63,7 +63,7 @@ public class contacto extends AppCompatActivity {
 
                 }else {
 
-                    ejecutarServicio("http://192.168.1.67:8888/wsbasurapk/mandarMensaje.php");
+                    ejecutarServicio("http://192.168.43.249:8888/wsbasurapk/mandarMensaje.php");
                 }
             }
         });

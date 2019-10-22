@@ -7,6 +7,7 @@ import android.Manifest;
 import android.app.Activity;
 import android.app.Dialog;
 import android.content.pm.PackageManager;
+import android.graphics.Color;
 import android.os.Bundle;
 
 import com.google.android.gms.common.ConnectionResult;
@@ -20,6 +21,7 @@ import com.google.android.gms.maps.model.BitmapDescriptor;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
+import com.google.android.gms.maps.model.Polyline;
 import com.google.android.gms.maps.model.PolylineOptions;
 
 public class mapa extends FragmentActivity implements OnMapReadyCallback {
@@ -74,18 +76,10 @@ public class mapa extends FragmentActivity implements OnMapReadyCallback {
         float zoomlevelR2=16;
         mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(Contenedor1,zoomlevelR2));
 
-        LatLng Contenedor2 = new LatLng(17.962325, -102.198053);
-        mMap.addMarker(new MarkerOptions().position(Contenedor2).title("Ruta 1 Contenedor 2").icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_GREEN)));
-        float zoomlevelR1=16;
-        mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(Contenedor2,zoomlevelR1));
 
-
-        LatLng Contenedor3 = new LatLng(17.961420, -102.201770);
-        mMap.addMarker(new MarkerOptions().position(Contenedor3).title("Ruta 1 Contenedor 3").icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_GREEN)));
-        float zoomlevelR3=16;
-        mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(Contenedor3,zoomlevelR3));
-
-
-
+        Polyline line = mMap.addPolyline(new PolylineOptions()
+                .add(new LatLng(17.962277, -102.197078), new LatLng(17.962836, -102.196326 ))
+                .width(5)
+                .color(Color.RED));
     }
 }

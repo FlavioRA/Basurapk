@@ -26,11 +26,6 @@ public class DialogCancelaFinaliza extends AppCompatDialogFragment {
                         startActivityForResult(intent4, 0);
 
 
-
-
-
-
-
                     }
                 });
 
