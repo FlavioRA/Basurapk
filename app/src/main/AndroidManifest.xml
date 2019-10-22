@@ -19,15 +19,7 @@
         <activity android:name=".LoginCh" />
         <activity android:name=".chofer" />
 
-        <activity android:name=".administrador">
-
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-
-        </activity>
+        <activity android:name=".administrador"> </activity>
 
         <activity android:name=".LoginAd" />
         <activity android:name=".contactoL" />
@@ -46,6 +38,16 @@
             android:label="@string/title_activity_mapa" />
         <activity android:name=".splash">
 
+
+
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+
+
+
         </activity>
         <activity android:name=".MainActivity" />
 
@@ -57,7 +59,6 @@
     <uses-permission android:name="android.permission.CALL_PHONE" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
-
-    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
 
 </manifest>
