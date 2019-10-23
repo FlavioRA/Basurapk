@@ -113,24 +113,32 @@ public class mapa extends FragmentActivity implements OnMapReadyCallback {
         //Ingresar rutas
 
 
-     ruta9();
+
     ruta10();
 
 
     }
 
+
     public void ruta9(){
         Polyline r9 = mMap.addPolyline(new PolylineOptions()
-                .add(new LatLng(17.962277, -102.197078), new LatLng(17.962836, -102.196326 ))
-                .add(new LatLng(17.962836, -102.196326), new LatLng(17.962117, -102.195807 ))
-                .width(13)
+                .add(new LatLng(17.961144, -102.199327), new LatLng(17.960099, -102.198574 ))
+                .width(15)
                 .color(Color.GREEN));
     }
 
+
+
     public void ruta10(){
        Polyline r10 = mMap.addPolyline(new PolylineOptions()
-               .add(new LatLng(17.962580, -102.198732), new LatLng(17.963142, -102.197927 ))
-               .width(13)
+               .add(new LatLng(17.963133, -102.199515), new LatLng(17.962793, -102.199246 ))
+               .add(new LatLng(17.962793, -102.199246 ), new LatLng(17.962568, -102.199059 ))
+               .add(new LatLng(17.962568, -102.199059 ), new LatLng(17.962358, -102.198877 ))
+               .add(new LatLng(17.962358, -102.198877 ), new LatLng(17.962178, -102.198722 ))
+               .add(new LatLng(17.962178, -102.198722 ), new LatLng(17.962160, -102.198696 ))
+               .add(new LatLng(17.962160, -102.198696 ), new LatLng(17.960223, -102.197155 ))
+               .add(new LatLng(17.960223, -102.197155 ), new LatLng(17.958992, -102.196197 ))
+               .width(15)
                .color(Color.RED));
     }
 

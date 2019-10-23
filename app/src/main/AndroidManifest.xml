@@ -36,6 +36,8 @@
         <activity
             android:name=".mapa"
             android:label="@string/title_activity_mapa" >
+
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -46,7 +48,11 @@
 
 
 
-        <activity android:name=".splash"></activity>
+        <activity android:name=".splash">
+
+
+
+        </activity>
         <activity android:name=".MainActivity" />
 
         <meta-data
