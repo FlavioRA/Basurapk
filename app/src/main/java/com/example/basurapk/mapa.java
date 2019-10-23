@@ -101,22 +101,46 @@ public class mapa extends FragmentActivity implements OnMapReadyCallback {
         UiSettings uiSettings = mMap.getUiSettings();
         uiSettings.setZoomControlsEnabled(true);
 
+
+
+
         LatLng Contenedor1 = new LatLng(17.961513, -102.203879);
         mMap.addMarker(new MarkerOptions().position(Contenedor1).title("Ruta 1 Contenedor 1").icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_GREEN)));
         float zoomlevelR2=16;
         mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(Contenedor1,zoomlevelR2));
 
 
-        Polyline line = mMap.addPolyline(new PolylineOptions()
-                .add(new LatLng(17.962277, -102.197078), new LatLng(17.962836, -102.196326 ))
-                .add(new LatLng(17.962836, -102.196326), new LatLng(17.962117, -102.195807 ))
-                .width(10)
-                .color(Color.RED));
+        //Ingresar rutas
 
 
+     ruta9();
+    ruta10();
 
 
     }
+
+    public void ruta9(){
+        Polyline r9 = mMap.addPolyline(new PolylineOptions()
+                .add(new LatLng(17.962277, -102.197078), new LatLng(17.962836, -102.196326 ))
+                .add(new LatLng(17.962836, -102.196326), new LatLng(17.962117, -102.195807 ))
+                .width(13)
+                .color(Color.GREEN));
+    }
+
+    public void ruta10(){
+       Polyline r10 = mMap.addPolyline(new PolylineOptions()
+               .add(new LatLng(17.962580, -102.198732), new LatLng(17.963142, -102.197927 ))
+               .width(13)
+               .color(Color.RED));
+    }
+
+
+  //  public void ruta11(){
+  //      Polyline line = mMap.addPolyline(new PolylineOptions()
+  //              .add(new LatLng(17.962277, -102.197078), new LatLng(17.962836, -102.196326 ))
+  //              .width(10)
+  //              .color(Color.BLUE));
+  //  }
 
 
 

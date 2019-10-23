@@ -35,20 +35,18 @@
         -->
         <activity
             android:name=".mapa"
-            android:label="@string/title_activity_mapa" />
-        <activity android:name=".splash">
-
-
-
+            android:label="@string/title_activity_mapa" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
 
-
-
         </activity>
+
+
+
+        <activity android:name=".splash"></activity>
         <activity android:name=".MainActivity" />
 
         <meta-data
