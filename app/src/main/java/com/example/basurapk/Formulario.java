@@ -114,7 +114,7 @@ public class Formulario extends AppCompatActivity {
                     CamionDecide="Si";
                 }
 
-                ejecutarServicio("http://192.168.43.249:8888/wsbasurapk/crearRecorrido.php");
+                ejecutarServicio("http://192.168.23.2:8888/wsbasurapk/crearRecorrido.php");
 
 
             }

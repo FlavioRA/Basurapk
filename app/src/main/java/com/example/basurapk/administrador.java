@@ -112,7 +112,7 @@ public class administrador extends AppCompatActivity{
 
         //Mandar a llamar los datos;
         idLista = findViewById(R.id.idLista);
-        String consulta="http://192.168.23.4:8888/wsbasurapk/bajarRecorridos.php";
+        String consulta="http://192.168.23.2:8888/wsbasurapk/bajarRecorridos.php";
         EnviarRecibirDatos(consulta);
 
 

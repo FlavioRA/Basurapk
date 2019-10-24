@@ -394,7 +394,6 @@ public class mapa extends FragmentActivity implements OnMapReadyCallback {
                 .color(Color.BLUE));
 
         Polyline r114 = mMap.addPolyline(new PolylineOptions()
-                .add(new LatLng(17.962718, -102.190656), new LatLng(17.966440, -102.201223))
                 .add(new LatLng(17.966440, -102.201223), new LatLng(17.966483, -102.201086))
                 .add(new LatLng(17.966483, -102.201086), new LatLng(17.966557, -102.201046))
                 .add(new LatLng(17.966557, -102.201046), new LatLng(17.966845, -102.200888))
@@ -438,6 +437,33 @@ public class mapa extends FragmentActivity implements OnMapReadyCallback {
 
         Polyline r117 = mMap.addPolyline(new PolylineOptions()
                 .add(new LatLng(17.959389, -102.190786), new LatLng(17.963240, -102.193743))
+                .width(15)
+                .color(Color.BLUE));
+
+        Polyline r1178 = mMap.addPolyline(new PolylineOptions()
+                .add(new LatLng(17.965272, -102.193854), new LatLng(17.964706, -102.193929))
+                .add(new LatLng(17.964706, -102.193929), new LatLng(17.964520, -102.193890))
+                .add(new LatLng(17.964520, -102.193890), new LatLng(17.964298, -102.193917))
+                .add(new LatLng(17.964298, -102.193917), new LatLng(17.963961, -102.194102))
+                .add(new LatLng(17.963961, -102.194102), new LatLng(17.963468, -102.194182))
+
+                .width(15)
+                .color(Color.BLUE));
+
+
+        Polyline r119 = mMap.addPolyline(new PolylineOptions()
+                .add(new LatLng(17.965241, -102.195739), new LatLng(17.964759, -102.195821))
+                .add(new LatLng(17.964759, -102.195821), new LatLng(17.964610, -102.195829))
+                .add(new LatLng(17.964610, -102.195829), new LatLng(17.964237, -102.195799))
+                .add(new LatLng(17.964237, -102.195799), new LatLng(17.963728, -102.195856))
+                .width(15)
+                .color(Color.BLUE));
+
+
+        Polyline r1110 = mMap.addPolyline(new PolylineOptions()
+                .add(new LatLng(17.963038, -102.191707), new LatLng(17.964509, -102.191410))
+                .add(new LatLng(17.964509, -102.191410), new LatLng(17.964488, -102.191265))
+                .add(new LatLng(17.964488, -102.191265), new LatLng(17.964788, -102.191212))
                 .width(15)
                 .color(Color.BLUE));
 
