@@ -7,6 +7,18 @@
     android:background="@drawable/fondoo"
     tools:context=".infoRutaDetail9">
 
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+
+
+
+
     <TextView
         android:id="@+id/textView28"
         android:layout_width="420dp"
@@ -168,4 +180,8 @@
         android:layout_width="45dp"
         android:layout_height="45dp"
         app:srcCompat="@drawable/leftarrow" />
+
+        </RelativeLayout>
+    </ScrollView>
+
 </RelativeLayout>
