@@ -37,7 +37,7 @@ import java.util.Map;
 public class administrador extends AppCompatActivity{
 
     ListView idLista;
-    String Ruta="9";
+    String Ruta;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -87,15 +87,15 @@ public class administrador extends AppCompatActivity{
 
 
 
-
         ImageView imgActualiza =findViewById(R.id.imgActualiza);
 
         imgActualiza.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
-
-                openDialogRegresh();
+                idLista = findViewById(R.id.idLista);
+                String consulta="http://192.168.1.67:8888/wsbasurapk/bajarRecorridos.php";
+                EnviarRecibirDatos(consulta);
 
 
             }
@@ -103,17 +103,12 @@ public class administrador extends AppCompatActivity{
 
 
 
-
-
-        //Spinner spRutas=findViewById(R.id.spRutas);
-        //ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this, R.array.rutas, android.R.layout.simple_spinner_item);
-        //spRutas.setAdapter(adapter);
-
-
-        //Mandar a llamar los datos;
         idLista = findViewById(R.id.idLista);
-        String consulta="http://192.168.23.2:8888/wsbasurapk/bajarRecorridos.php";
+        String consulta="http://192.168.1.67:8888/wsbasurapk/bajarRecorridos.php";
         EnviarRecibirDatos(consulta);
+
+
+
 
 
     }
@@ -190,6 +185,9 @@ public class administrador extends AppCompatActivity{
 
 
     }
+
+
+
 
 
 

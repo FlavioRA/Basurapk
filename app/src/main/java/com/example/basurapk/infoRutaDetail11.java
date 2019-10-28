@@ -29,8 +29,6 @@ public class infoRutaDetail11 extends AppCompatActivity {
             }
         });
 
-
-
         Button idMapa = findViewById(R.id.idMapa);
 
         idMapa.setOnClickListener(new View.OnClickListener() {

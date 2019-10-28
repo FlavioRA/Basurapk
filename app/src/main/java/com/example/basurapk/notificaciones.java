@@ -60,20 +60,15 @@ public class notificaciones extends AppCompatActivity {
         imgRefresca.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String Consulta="http://192.168.23.2:8888/wsbasurapk/bajarNoticias.php";
-                EnviarRecibirDatos(Consulta);
-
 
                 openDialogRegresh();
+                String Consulta="http://192.168.1.67:8888/wsbasurapk/bajarNoticias.php";
+                EnviarRecibirDatos(Consulta);
 
             }
         });
 
-
-
-
-
-        String Consulta="http://192.168.43.249:8888/wsbasurapk/bajarNoticias.php";
+        String Consulta="http://192.168.1.67:8888/wsbasurapk/bajarNoticias.php";
         EnviarRecibirDatos(Consulta);
 
 

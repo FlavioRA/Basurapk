@@ -62,7 +62,7 @@ public class Buzon extends AppCompatActivity {
             }
         });
 
-        String consulta="http://192.168.23.2:8888/wsbasurapk/bajarBuzon.php";
+        String consulta="http://192.168.1.67:8888/wsbasurapk/bajarBuzon.php";
 
         EnviarRecibirDatos(consulta);
 

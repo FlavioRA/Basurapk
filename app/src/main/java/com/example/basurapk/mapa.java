@@ -32,6 +32,7 @@ import com.google.android.gms.maps.model.PolylineOptions;
 public class mapa extends FragmentActivity implements OnMapReadyCallback {
     SupportMapFragment mapFrag;
     private GoogleMap mMap;
+    
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

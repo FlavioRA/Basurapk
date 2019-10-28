@@ -28,12 +28,16 @@ public class chofer extends AppCompatActivity {
 
 
 
-
+String latitud="20";
+String longitud="300";
+String EquipoCan;
+boolean meter ;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_chofer);
 
+        meter = false;
 
         final Bundle extras = getIntent().getExtras();
 
@@ -56,9 +60,12 @@ public class chofer extends AppCompatActivity {
         final Button btnCancelar=findViewById(R.id.btnCancelar);
         final Button btnFinalizar=findViewById(R.id.btnFinalizar);
 
+        EquipoCan =extras.getString("EquipoAc");
 
         btnCancelar.setEnabled(false);
         btnFinalizar.setEnabled(false);
+
+        //----------------
 
         btnIniciar.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -69,10 +76,11 @@ public class chofer extends AppCompatActivity {
                 btnCancelar.setEnabled(true);
                 btnFinalizar.setEnabled(true);
 
-
+                ejecutarServicio("http://192.168.23.2:8888/wsbasurapk/mandarUbicacion.php");
 
             }
         });
+
 
 
 
@@ -80,9 +88,10 @@ public class chofer extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                String EquipoCan =extras.getString("EquipoAc");
-                String horaInicio =extras.getString("HoraInicio");
+                btnIniciar.setEnabled(false);
 
+
+                String horaInicio =extras.getString("HoraInicio");
 
 
                 Intent j = new Intent(chofer.this,Formulario.class);
@@ -102,13 +111,16 @@ public class chofer extends AppCompatActivity {
                 btnIniciar.setEnabled(false);
 
                 String horaInicio =extras.getString("HoraInicio");
-                String Equipos =extras.getString("EquipoEnv");
+
+
 
 
                 Intent j = new Intent(chofer.this,Formulario.class);
                 j.putExtra("HoraInicios",horaInicio);
-                j.putExtra("Equipo",Equipos);
+                j.putExtra("EquipoEnv",EquipoCan);
+
                 startActivity(j);
+
 
             }
         });
@@ -116,19 +128,45 @@ public class chofer extends AppCompatActivity {
 
 
 
+
     }
 
-    public void openDialogInicio(){
 
 
-        DialogCancelaFinaliza exampleDialog = new DialogCancelaFinaliza();
-        exampleDialog.show(getSupportFragmentManager(),"Ejemplo Administrador");
- }
+    private void ejecutarServicio(String URL){
+
+        StringRequest stringRequest = new StringRequest(Request.Method.POST, URL, new Response.Listener<String>() {
+            @Override
+            public void onResponse(String response) {
+
+                Toast.makeText(getApplicationContext(),"UPDATE CORRECTO", Toast.LENGTH_SHORT).show();
 
 
-    public void openDialogInicio2(){
-        DialogIniciado exampleDialog = new DialogIniciado();
-        exampleDialog.show(getSupportFragmentManager(),"Ejemplo Administrador");
+            }
+        }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+
+                Toast.makeText(getApplicationContext(),"UPDATE INCORRECTO", Toast.LENGTH_SHORT).show();
+
+            }
+        }){
+
+            @Override
+            protected Map<String, String> getParams() throws AuthFailureError {
+                Map<String,String> parametros = new HashMap<String,String>();
+
+                parametros.put("longitud",longitud);
+                parametros.put("latitud",latitud);
+                parametros.put("camion",EquipoCan);
+
+
+                return parametros;
+            }
+        };
+
+        RequestQueue requestQueue = Volley.newRequestQueue(this );
+        requestQueue.add(stringRequest);
     }
 
 

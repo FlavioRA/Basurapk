@@ -64,7 +64,7 @@ public class NuevaNotificacion extends AppCompatActivity {
             if (edtNuevaNoticia.getText().toString().isEmpty() || edtFecha.getText().toString().isEmpty()) {
                      CamposVacios();
             }else {
-                ejecutarServicio("http://192.168.23.2:8888/wsbasurapk/crearNoticia.php");
+                ejecutarServicio("http://192.168.1.67:8888/wsbasurapk/crearNoticia.php");
             }
             }
         });
