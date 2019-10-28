@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.location.Location;
 import android.os.Bundle;
+import android.os.CountDownTimer;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -84,7 +85,6 @@ String EquipoCan;
 
 
 
-
             }
         });
 
@@ -92,25 +92,34 @@ String EquipoCan;
         //---------------
 
 
+        fusedLocationClient.getLastLocation()
+                .addOnSuccessListener(this, new OnSuccessListener<Location>() {
+                    @Override
+                    public void onSuccess(final Location location) {
 
 
-    fusedLocationClient.getLastLocation()
-            .addOnSuccessListener(this, new OnSuccessListener<Location>() {
-                @Override
-                public void onSuccess(Location location) {
+                        new CountDownTimer(10000000, 10000) {
 
-                    latitud = location.getLatitude();
-                    longitud = location.getLongitude();
-                    ejecutarServicio("http://192.168.23.2:8888/wsbasurapk/mandarUbicacion.php");
+                            public void onTick(long millisUntilFinished) {
 
-                    if (location != null) {
+                                latitud = location.getLatitude();
+                                longitud = location.getLongitude();
+                                ejecutarServicio("http://192.168.23.3:8888/wsbasurapk/mandarUbicacion.php");
+                                Toast.makeText(getApplicationContext(),"PUNTOS ACTUALIZADOS", Toast.LENGTH_SHORT).show();
+                            }
 
+                            public void onFinish() {
+
+                                Toast.makeText(getApplicationContext(),"PUNTOS NO ACTUALIZADOS", Toast.LENGTH_SHORT).show();
+
+                            }
+                        }.start();
+
+                        if (location != null) {
+
+                        }
                     }
-                }
-            });
-
-
-
+                });
 
 
         //---------------
@@ -125,7 +134,7 @@ String EquipoCan;
                 latitud=17.961404;
                 longitud=-102.197151;
 
-                ejecutarServicio("http://192.168.23.2:8888/wsbasurapk/mandarUbicacion.php");
+                ejecutarServicio("http://192.168.23.3:8888/wsbasurapk/mandarUbicacion.php");
 
 
                 String horaInicio =extras.getString("HoraInicio");
@@ -151,7 +160,7 @@ String EquipoCan;
                 latitud=17.961404;
                 longitud=-102.197151;
 
-                ejecutarServicio("http://192.168.23.2:8888/wsbasurapk/mandarUbicacion.php");
+                ejecutarServicio("http://192.168.23.3:8888/wsbasurapk/mandarUbicacion.php");
 
 
                 String horaInicio =extras.getString("HoraInicio");
@@ -181,7 +190,6 @@ String EquipoCan;
             @Override
             public void onResponse(String response) {
 
-                Toast.makeText(getApplicationContext(),"transmitiendo", Toast.LENGTH_SHORT).show();
 
 
             }
