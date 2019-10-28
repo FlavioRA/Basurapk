@@ -114,6 +114,7 @@ public class mapa extends FragmentActivity implements OnMapReadyCallback {
         mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(ContenedorI,zoomlevelR2));
 
 
+
         //Ingresar rutas
 
 
@@ -478,11 +479,70 @@ public class mapa extends FragmentActivity implements OnMapReadyCallback {
 
     public void contenedorRuta9(){
 
-        LatLng Contenedor1 = new LatLng(17.962878, -102.199368);
-        mMap.addMarker(new MarkerOptions().position(Contenedor1).title("Ruta 9 Contenedor # ").icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_RED)));
+        LatLng Contenedor1 = new LatLng(17.953134, -102.195945);
+        mMap.addMarker(new MarkerOptions().position(Contenedor1).title("Ruta 9 Contenedor #067 ").icon(BitmapDescriptorFactory.fromResource(R.mipmap.ic_cont_red)).anchor(0.0f, 1.0f));
 
-        LatLng Contenedor2 = new LatLng(17.962364, -102.198935);
-        mMap.addMarker(new MarkerOptions().position(Contenedor2).title("Ruta 9 Contenedor # ").icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_RED)));
+        LatLng Contenedor2 = new LatLng(17.953732, -102.196682);
+        mMap.addMarker(new MarkerOptions().position(Contenedor2).title("Ruta 9 Contenedor #079 ").icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_RED)));
+
+        LatLng Contenedor3 = new LatLng(17.56762, -102.195811);
+        mMap.addMarker(new MarkerOptions().position(Contenedor3).title("Ruta 9 Contenedor #077 ").icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_RED)));
+
+        LatLng Contenedor4 = new LatLng(17.955960, -102.195267);
+        mMap.addMarker(new MarkerOptions().position(Contenedor4).title("Ruta 9 Contenedor #074 ").icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_RED)));
+
+        LatLng Contenedor5 = new LatLng(17.955543, -102.794870);
+        mMap.addMarker(new MarkerOptions().position(Contenedor5).title("Ruta 9 Contenedor #073 ").icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_RED)));
+
+        LatLng Contenedor6 = new LatLng(170954535, -102.194095);
+        mMap.addMarker(new MarkerOptions().position(Contenedor6).title("Ruta 9 Contenedor #069 ").icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_RED)));
+
+        LatLng Contenedor7 = new LatLng(17.953593, -102.193411);
+        mMap.addMarker(new MarkerOptions().position(Contenedor7).title("Ruta 9 Contenedor #065 ").icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_RED)));
+
+        LatLng Contenedor8 = new LatLng(17.952636, -102.192239);
+        mMap.addMarker(new MarkerOptions().position(Contenedor8).title("Ruta 9 Contenedor #064 ").icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_RED)));
+
+        LatLng Contenedor9 = new LatLng(17.953101, -102.194686);
+        mMap.addMarker(new MarkerOptions().position(Contenedor9).title("Ruta 9 Contenedor #066 ").icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_RED)));
+
+        LatLng Contenedor10 = new LatLng(17.954333, -102.195541);
+        mMap.addMarker(new MarkerOptions().position(Contenedor10).title("Ruta 9 Contenedor # ").icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_RED)));
+
+        LatLng Contenedor11 = new LatLng(17.954925, -102.196123);
+        mMap.addMarker(new MarkerOptions().position(Contenedor11).title("Ruta 9 Contenedor #072 ").icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_RED)));
+
+        LatLng Contenedor12 = new LatLng(17.955387, -102.196398);
+        mMap.addMarker(new MarkerOptions().position(Contenedor12).title("Ruta 9 Contenedor #075 ").icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_RED)));
+
+        LatLng Contenedor13 = new LatLng(17.956267, -102.197105);
+        mMap.addMarker(new MarkerOptions().position(Contenedor13).title("Ruta 9 Contenedor #076 ").icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_RED)));
+
+        LatLng Contenedor14 = new LatLng(17.956820, -102.197662);
+        mMap.addMarker(new MarkerOptions().position(Contenedor14).title("Ruta 9 Contenedor #078 ").icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_RED)));
+
+        LatLng Contenedor15 = new LatLng(17.958006, -102.198510);
+        mMap.addMarker(new MarkerOptions().position(Contenedor15).title("Ruta 9 Contenedor #080 ").icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_RED)));
+
+        LatLng Contenedor16 = new LatLng(17.958318, -102.198616);
+        mMap.addMarker(new MarkerOptions().position(Contenedor16).title("Ruta 9 Contenedor #082 ").icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_RED)));
+
+        LatLng Contenedor17 = new LatLng(17.958802, -102.199022);
+        mMap.addMarker(new MarkerOptions().position(Contenedor17).title("Ruta 9 Contenedor #083 ").icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_RED)));
+
+        LatLng Contenedor18 = new LatLng(17.959235, -102.199353);
+        mMap.addMarker(new MarkerOptions().position(Contenedor18).title("Ruta 9 Contenedor #084 ").icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_RED)));
+
+        LatLng Contenedor19 = new LatLng(17.959807, -102.199789);
+        mMap.addMarker(new MarkerOptions().position(Contenedor19).title("Ruta 9 Contenedor #085 ").icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_RED)));
+
+        LatLng Contenedor20 = new LatLng(17.960363, -102.200586);
+        mMap.addMarker(new MarkerOptions().position(Contenedor20).title("Ruta 9 Contenedor #086 ").icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_RED)));
+
+        LatLng Contenedor21 = new LatLng(17.960694, -102.200234);
+        mMap.addMarker(new MarkerOptions().position(Contenedor21).title("Ruta 9 Contenedor # ").icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_RED)));
+
+
 
     }
 
