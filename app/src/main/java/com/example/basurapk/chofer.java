@@ -28,18 +28,17 @@ public class chofer extends AppCompatActivity {
 
 
 
-String latitud="20";
-String longitud="300";
+String latitud="2.123";
+String longitud="3.12412";
 String EquipoCan;
-boolean meter ;
+int prueba;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_chofer);
 
-        meter = false;
-
         final Bundle extras = getIntent().getExtras();
+
 
 
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
@@ -76,11 +75,11 @@ boolean meter ;
                 btnCancelar.setEnabled(true);
                 btnFinalizar.setEnabled(true);
 
-                ejecutarServicio("http://192.168.23.2:8888/wsbasurapk/mandarUbicacion.php");
+
+                prueba =0;
 
             }
         });
-
 
 
 
@@ -113,8 +112,6 @@ boolean meter ;
                 String horaInicio =extras.getString("HoraInicio");
 
 
-
-
                 Intent j = new Intent(chofer.this,Formulario.class);
                 j.putExtra("HoraInicios",horaInicio);
                 j.putExtra("EquipoEnv",EquipoCan);
@@ -126,6 +123,9 @@ boolean meter ;
         });
 
 
+        if (prueba == 0) {
+            ejecutarServicio("http://192.168.23.2:8888/wsbasurapk/mandarUbicacion.php");
+        }
 
 
 

@@ -95,6 +95,9 @@ public class mapa extends FragmentActivity implements OnMapReadyCallback {
         } else {
 
             mMap.setMyLocationEnabled(true);
+
+
+
 }
 
         mMap.setMapType(GoogleMap.MAP_TYPE_NORMAL);
@@ -105,16 +108,19 @@ public class mapa extends FragmentActivity implements OnMapReadyCallback {
 
 
 
-        LatLng Contenedor1 = new LatLng(17.961513, -102.203879);
-        mMap.addMarker(new MarkerOptions().position(Contenedor1).title("Ruta 1 Contenedor 1").icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_GREEN)));
-        float zoomlevelR2=17;
-        mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(Contenedor1,zoomlevelR2));
+        LatLng ContenedorI = new LatLng(17.961532, -102.196813);
+        mMap.addMarker(new MarkerOptions().position(ContenedorI).title("PALACIO MUNICIPAL INICIO").icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_VIOLET)));
+        float zoomlevelR2=14;
+        mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(ContenedorI,zoomlevelR2));
 
 
         //Ingresar rutas
 
 
     ruta9();
+    contenedorRuta9();
+
+
     ruta11();
     ruta10();
 
@@ -470,7 +476,15 @@ public class mapa extends FragmentActivity implements OnMapReadyCallback {
 
     }
 
+    public void contenedorRuta9(){
 
+        LatLng Contenedor1 = new LatLng(17.962878, -102.199368);
+        mMap.addMarker(new MarkerOptions().position(Contenedor1).title("Ruta 9 Contenedor # ").icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_RED)));
+
+        LatLng Contenedor2 = new LatLng(17.962364, -102.198935);
+        mMap.addMarker(new MarkerOptions().position(Contenedor2).title("Ruta 9 Contenedor # ").icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_RED)));
+
+    }
 
     public static final int MY_PERMISSIONS_REQUEST_LOCATION = 99;
 
