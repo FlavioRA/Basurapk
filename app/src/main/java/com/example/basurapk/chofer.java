@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
+import android.location.Location;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -18,6 +19,9 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
+import com.google.android.gms.location.FusedLocationProviderClient;
+import com.google.android.gms.location.LocationServices;
+import com.google.android.gms.tasks.OnSuccessListener;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -28,18 +32,22 @@ public class chofer extends AppCompatActivity {
 
 
 
-String latitud="2.123";
-String longitud="3.12412";
+Double latitud;
+Double longitud;
+int i;
 String EquipoCan;
-int prueba;
+    private FusedLocationProviderClient fusedLocationClient;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_chofer);
 
+
+        fusedLocationClient = LocationServices.getFusedLocationProviderClient(this);
+
+
         final Bundle extras = getIntent().getExtras();
-
-
 
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
 
@@ -70,17 +78,42 @@ int prueba;
             @Override
             public void onClick(View view) {
 
-                Toast.makeText(getApplicationContext(),"Recorrido iniciado.", Toast.LENGTH_SHORT).show();
                 btnIniciar.setEnabled(false);
                 btnCancelar.setEnabled(true);
                 btnFinalizar.setEnabled(true);
 
 
-                prueba =0;
+
 
             }
         });
 
+
+        //---------------
+
+
+
+
+    fusedLocationClient.getLastLocation()
+            .addOnSuccessListener(this, new OnSuccessListener<Location>() {
+                @Override
+                public void onSuccess(Location location) {
+
+                    latitud = location.getLatitude();
+                    longitud = location.getLongitude();
+                    ejecutarServicio("http://192.168.23.2:8888/wsbasurapk/mandarUbicacion.php");
+
+                    if (location != null) {
+
+                    }
+                }
+            });
+
+
+
+
+
+        //---------------
 
 
         btnCancelar.setOnClickListener(new View.OnClickListener() {
@@ -88,6 +121,11 @@ int prueba;
             public void onClick(View view) {
 
                 btnIniciar.setEnabled(false);
+
+                latitud=17.961404;
+                longitud=-102.197151;
+
+                ejecutarServicio("http://192.168.23.2:8888/wsbasurapk/mandarUbicacion.php");
 
 
                 String horaInicio =extras.getString("HoraInicio");
@@ -109,6 +147,13 @@ int prueba;
 
                 btnIniciar.setEnabled(false);
 
+
+                latitud=17.961404;
+                longitud=-102.197151;
+
+                ejecutarServicio("http://192.168.23.2:8888/wsbasurapk/mandarUbicacion.php");
+
+
                 String horaInicio =extras.getString("HoraInicio");
 
 
@@ -123,9 +168,6 @@ int prueba;
         });
 
 
-        if (prueba == 0) {
-            ejecutarServicio("http://192.168.23.2:8888/wsbasurapk/mandarUbicacion.php");
-        }
 
 
 
@@ -139,7 +181,7 @@ int prueba;
             @Override
             public void onResponse(String response) {
 
-                Toast.makeText(getApplicationContext(),"UPDATE CORRECTO", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getApplicationContext(),"transmitiendo", Toast.LENGTH_SHORT).show();
 
 
             }
@@ -156,8 +198,11 @@ int prueba;
             protected Map<String, String> getParams() throws AuthFailureError {
                 Map<String,String> parametros = new HashMap<String,String>();
 
-                parametros.put("longitud",longitud);
-                parametros.put("latitud",latitud);
+                String longitudD = Double.toString(longitud);
+                String latitudD = Double.toString(latitud);
+
+                parametros.put("longitud",longitudD);
+                parametros.put("latitud",latitudD);
                 parametros.put("camion",EquipoCan);
 
 
