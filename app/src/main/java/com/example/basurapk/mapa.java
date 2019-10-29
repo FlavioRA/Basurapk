@@ -520,6 +520,30 @@ public class mapa extends FragmentActivity implements OnMapReadyCallback {
         mMap.addMarker(new MarkerOptions().position(Contenedor20).title("Ruta 9 Contenedor #086 ").icon(BitmapDescriptorFactory.fromResource(R.drawable.contre)));
         LatLng Contenedor21 = new LatLng(17.960694, -102.200234);
         mMap.addMarker(new MarkerOptions().position(Contenedor21).title("Ruta 9 Contenedor # ").icon(BitmapDescriptorFactory.fromResource(R.drawable.contre)));
+        LatLng Contenedor22 = new LatLng(17.953074, -102.193858);
+        mMap.addMarker(new MarkerOptions().position(Contenedor22).title("Ruta 9 Contenedor # ").icon(BitmapDescriptorFactory.fromResource(R.drawable.contre)));
+        LatLng Contenedor23 = new LatLng(17.955776, -102.195921);
+        mMap.addMarker(new MarkerOptions().position(Contenedor23).title("Ruta 9 Contenedor # ").icon(BitmapDescriptorFactory.fromResource(R.drawable.contre)));
+        LatLng Contenedor24 = new LatLng();
+        mMap.addMarker(new MarkerOptions().position(Contenedor24).title("Ruta 9 Contenedor # ").icon(BitmapDescriptorFactory.fromResource(R.drawable.contre)));
+        LatLng Contenedor25 = new LatLng();
+        mMap.addMarker(new MarkerOptions().position(Contenedor25).title("Ruta 9 Contenedor # ").icon(BitmapDescriptorFactory.fromResource(R.drawable.contre)));
+        LatLng Contenedor26 = new LatLng();
+        mMap.addMarker(new MarkerOptions().position(Contenedor26).title("Ruta 9 Contenedor # ").icon(BitmapDescriptorFactory.fromResource(R.drawable.contre)));
+        LatLng Contenedor27 = new LatLng();
+        mMap.addMarker(new MarkerOptions().position(Contenedor27).title("Ruta 9 Contenedor # ").icon(BitmapDescriptorFactory.fromResource(R.drawable.contre)));
+        LatLng Contenedor28 = new LatLng();
+        mMap.addMarker(new MarkerOptions().position(Contenedor28).title("Ruta 9 Contenedor # ").icon(BitmapDescriptorFactory.fromResource(R.drawable.contre)));
+        LatLng Contenedor29 = new LatLng();
+        mMap.addMarker(new MarkerOptions().position(Contenedor29).title("Ruta 9 Contenedor # ").icon(BitmapDescriptorFactory.fromResource(R.drawable.contre)));
+        LatLng Contenedor30 = new LatLng();
+        mMap.addMarker(new MarkerOptions().position(Contenedor30).title("Ruta 9 Contenedor # ").icon(BitmapDescriptorFactory.fromResource(R.drawable.contre)));
+        LatLng Contenedor31 = new LatLng();
+        mMap.addMarker(new MarkerOptions().position(Contenedor31).title("Ruta 9 Contenedor # ").icon(BitmapDescriptorFactory.fromResource(R.drawable.contre)));
+        LatLng Contenedor32 = new LatLng();
+        mMap.addMarker(new MarkerOptions().position(Contenedor32).title("Ruta 9 Contenedor # ").icon(BitmapDescriptorFactory.fromResource(R.drawable.contre)));
+        LatLng Contenedor33 = new LatLng();
+        mMap.addMarker(new MarkerOptions().position(Contenedor33).title("Ruta 9 Contenedor # ").icon(BitmapDescriptorFactory.fromResource(R.drawable.contre)));
 
 
     }
