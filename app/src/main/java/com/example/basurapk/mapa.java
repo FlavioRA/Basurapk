@@ -115,13 +115,16 @@ public class mapa extends FragmentActivity implements OnMapReadyCallback {
 
         //Ingresar rutas
 
-
+    //Ruta9
     ruta9();
     contenedorRuta9();
 
-
-    ruta11();
+    //Ruta 10
     ruta10();
+    contenedorRuta10();
+
+    //Ruta11
+    ruta11();
 
 
     }
@@ -172,7 +175,6 @@ public class mapa extends FragmentActivity implements OnMapReadyCallback {
                 .color(Color.GREEN));
 
     }
-
 
     public void ruta10(){
        Polyline r10 = mMap.addPolyline(new PolylineOptions()
@@ -349,7 +351,6 @@ public class mapa extends FragmentActivity implements OnMapReadyCallback {
 
     }
 
-
     public void ruta11(){
         Polyline line = mMap.addPolyline(new PolylineOptions()
                 .add(new LatLng(17.962718, -102.190656), new LatLng(17.960490, -102.189021))
@@ -480,6 +481,14 @@ public class mapa extends FragmentActivity implements OnMapReadyCallback {
         LatLng Contenedor1 = new LatLng(17.953134, -102.195945);
         mMap.addMarker(new MarkerOptions().position(Contenedor1).title("Ruta 9 Contenedor #067 ").icon(BitmapDescriptorFactory.fromResource(R.drawable.contre)));
 
+
+    }
+
+    public void contenedorRuta10(){
+
+        LatLng Contenedor1 = new LatLng(17.953134, -102.195945);
+        mMap.addMarker(new MarkerOptions().position(Contenedor1).title("Ruta 9 Contenedor #067 ").icon(BitmapDescriptorFactory.fromResource(R.drawable.contre)));
+
         LatLng Contenedor2 = new LatLng(17.953732, -102.196682);
         mMap.addMarker(new MarkerOptions().position(Contenedor2).title("Ruta 9 Contenedor #079 ").icon(BitmapDescriptorFactory.fromResource(R.drawable.contre)));
         LatLng Contenedor3 = new LatLng(17.56762, -102.195811);
@@ -547,6 +556,11 @@ public class mapa extends FragmentActivity implements OnMapReadyCallback {
 
 
     }
+
+    public void contenedorRuta11(){}
+
+
+
 
     public static final int MY_PERMISSIONS_REQUEST_LOCATION = 99;
 
