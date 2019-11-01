@@ -125,11 +125,8 @@ public class contactoL extends AppCompatActivity {
     @RequiresApi(api = Build.VERSION_CODES.M)
     @Override
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
-
         switch (requestCode) {
-
             case PhONE_CALL_CODE:
-
                 String permission = permissions[0];
                 int result = grantResults[0];
 
@@ -137,29 +134,24 @@ public class contactoL extends AppCompatActivity {
                     //Comprobar si ah sido aceptado o denegada la peticion de permiso
                     if (result == PackageManager.PERMISSION_GRANTED) {
                         //Acepto permisos
-
                         Intent intentCall = new Intent(Intent.ACTION_CALL, Uri.parse("tel:" + phoneNumber));
-
                         if (checkSelfPermission(Manifest.permission.CALL_PHONE) != PackageManager.PERMISSION_GRANTED) {
-
-                            return;
-                        }
+                            return; }
                         startActivity(intentCall);
                     }else{
                         //No Acepto permiso
                         Toast.makeText(contactoL.this,"Rechazaste los permisos",Toast.LENGTH_SHORT).show();
                     }
-
                 }
-
-
-               break;
+                break;
             default:
                 super.onRequestPermissionsResult(requestCode, permissions, grantResults);break;
         }
 
-
     }
+
+
+
 
     private boolean CheckPermission(String permission){
         int result = this.checkCallingOrSelfPermission(permission);
