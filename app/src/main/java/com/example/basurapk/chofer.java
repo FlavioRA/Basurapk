@@ -35,14 +35,19 @@ public class chofer extends AppCompatActivity {
 
 Double latitud;
 Double longitud;
-int i;
 String EquipoCan;
+int i;
+
+    private CountDownTimer MCountDownTimer;
+
     private FusedLocationProviderClient fusedLocationClient;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_chofer);
+
 
 
         fusedLocationClient = LocationServices.getFusedLocationProviderClient(this);
@@ -79,11 +84,13 @@ String EquipoCan;
             @Override
             public void onClick(View view) {
 
-                btnIniciar.setEnabled(false);
+                i=1;
+
+
+                mandarDAtos();
+
                 btnCancelar.setEnabled(true);
                 btnFinalizar.setEnabled(true);
-
-
 
             }
         });
@@ -92,34 +99,6 @@ String EquipoCan;
         //---------------
 
 
-        fusedLocationClient.getLastLocation()
-                .addOnSuccessListener(this, new OnSuccessListener<Location>() {
-                    @Override
-                    public void onSuccess(final Location location) {
-
-
-                        new CountDownTimer(10000000, 10000) {
-
-                            public void onTick(long millisUntilFinished) {
-
-                                latitud = location.getLatitude();
-                                longitud = location.getLongitude();
-                                ejecutarServicio("http://192.168.23.3:8888/wsbasurapk/mandarUbicacion.php");
-                                Toast.makeText(getApplicationContext(),"PUNTOS ACTUALIZADOS", Toast.LENGTH_SHORT).show();
-                            }
-
-                            public void onFinish() {
-
-                                Toast.makeText(getApplicationContext(),"PUNTOS NO ACTUALIZADOS", Toast.LENGTH_SHORT).show();
-
-                            }
-                        }.start();
-
-                        if (location != null) {
-
-                        }
-                    }
-                });
 
 
         //---------------
@@ -131,10 +110,13 @@ String EquipoCan;
 
                 btnIniciar.setEnabled(false);
 
+                cancela();
+
                 latitud=17.961404;
                 longitud=-102.197151;
 
-                ejecutarServicio("http://192.168.23.3:8888/wsbasurapk/mandarUbicacion.php");
+                ejecutarServicio("http://192.168.1.67:8888/wsbasurapk/mandarUbicacion.php");
+
 
 
                 String horaInicio =extras.getString("HoraInicio");
@@ -157,10 +139,12 @@ String EquipoCan;
                 btnIniciar.setEnabled(false);
 
 
+                cancela();
+
                 latitud=17.961404;
                 longitud=-102.197151;
 
-                ejecutarServicio("http://192.168.23.3:8888/wsbasurapk/mandarUbicacion.php");
+                ejecutarServicio("http://192.168.1.67:8888/wsbasurapk/mandarUbicacion.php");
 
 
                 String horaInicio =extras.getString("HoraInicio");
@@ -223,6 +207,54 @@ String EquipoCan;
     }
 
 
+    public void mandarDAtos() {
 
+        if (i == 1) {
+
+            fusedLocationClient.getLastLocation()
+                    .addOnSuccessListener(this, new OnSuccessListener<Location>() {
+
+
+                        ///Cronometro
+
+                        @Override
+                        public void onSuccess(final Location location) {
+
+                           MCountDownTimer = new CountDownTimer(10000000, 10000) {
+
+                                public void onTick(long millisUntilFinished) {
+
+                                    latitud = location.getLatitude();
+                                    longitud = location.getLongitude();
+                                    ejecutarServicio("http://192.168.1.67:8888/wsbasurapk/mandarUbicacion.php");
+                                    Toast.makeText(getApplicationContext(), "PUNTOS ACTUALIZADOS", Toast.LENGTH_SHORT).show();
+
+                                }
+
+                                public void onFinish() {
+
+                                }
+                            }.start();
+
+                            //Fin cronometro
+
+                            if (location != null) {
+                            }
+                        }
+                    });
+
+        }else{
+
+
+            Toast.makeText(getApplicationContext(), "Se dejo de enviar datos", Toast.LENGTH_SHORT).show();
+        }
+
+    }
+
+    public void cancela(){
+        MCountDownTimer.cancel();
+        Toast.makeText(getApplicationContext(), "Se ha dejado de mandar posicion actual", Toast.LENGTH_SHORT).show();
+
+}
 
 }

@@ -18,6 +18,7 @@
         android:layout_marginStart="39dp"
         android:layout_marginTop="325dp"
         android:layout_marginEnd="42dp"
+        android:onClick="controlDios"
         android:text="Iniciar Recorrido" />
 
     <Button

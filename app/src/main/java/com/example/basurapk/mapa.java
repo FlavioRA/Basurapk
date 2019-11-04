@@ -9,13 +9,23 @@ import android.app.Activity;
 import android.app.Dialog;
 import android.content.pm.PackageManager;
 import android.graphics.Color;
+import android.location.Location;
 import android.os.Build;
 import android.os.Bundle;
+import android.os.CountDownTimer;
+import android.view.View;
 import android.widget.Toast;
 
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.JsonArrayRequest;
+import com.android.volley.toolbox.Volley;
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.GooglePlayServicesUtil;
 import com.google.android.gms.common.api.GoogleApiClient;
+import com.google.android.gms.location.FusedLocationProviderClient;
 import com.google.android.gms.location.LocationServices;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
@@ -28,11 +38,25 @@ import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 import com.google.android.gms.maps.model.Polyline;
 import com.google.android.gms.maps.model.PolylineOptions;
+import com.google.android.gms.tasks.OnSuccessListener;
+
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
 
 public class mapa extends FragmentActivity implements OnMapReadyCallback {
     SupportMapFragment mapFrag;
     private GoogleMap mMap;
-    
+
+
+    String LatitudRojo,LongitudRojo;
+    Double DLatitud;
+    Double DLongitud;
+    String LatitudAzul,LongitudAzul;
+    String LatitudVerde,LongitudVerde;
+    private FusedLocationProviderClient fusedLocationClient;
+    RequestQueue requestQueue;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -97,7 +121,6 @@ public class mapa extends FragmentActivity implements OnMapReadyCallback {
             mMap.setMyLocationEnabled(true);
 
 
-
 }
 
         mMap.setMapType(GoogleMap.MAP_TYPE_NORMAL);
@@ -105,11 +128,17 @@ public class mapa extends FragmentActivity implements OnMapReadyCallback {
         UiSettings uiSettings = mMap.getUiSettings();
         uiSettings.setZoomControlsEnabled(true);
 
-
+        fusedLocationClient = LocationServices.getFusedLocationProviderClient(this);
 
         LatLng ContenedorI = new LatLng(17.961532, -102.196813);
         float zoomlevelR2=14;
         mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(ContenedorI,zoomlevelR2));
+
+        //Llamada de datos Camion Rojo
+
+
+        //----------
+
 
 
 
@@ -128,6 +157,9 @@ public class mapa extends FragmentActivity implements OnMapReadyCallback {
     contenedorRuta11();
 
     }
+
+
+
 
 
     public void ruta9(){
@@ -792,6 +824,52 @@ public class mapa extends FragmentActivity implements OnMapReadyCallback {
 
     }
 
+    public void buscarRojo (String URL){
+
+        JsonArrayRequest jsonArrayRequest = new JsonArrayRequest(URL, new Response.Listener<JSONArray>() {
+            @Override
+            public void onResponse(JSONArray response) {
+
+                JSONObject jsonObject = null;
+                for (int i = 0; i < response.length(); i++) {
+
+                    try {
+
+                        jsonObject = response.getJSONObject(i);
+                        LatitudRojo = jsonObject.getString("PLatitud");
+                        LongitudRojo = jsonObject.getString("PLongitud");
+
+                       DLatitud = Double.parseDouble(LatitudRojo);
+
+                       DLongitud =Double.parseDouble(LongitudRojo);
+
+
+                       LatLng CamionRojo = new LatLng(DLatitud, DLongitud);
+                       mMap.addMarker(new MarkerOptions().position(CamionRojo).title("Camion Rojo ").icon(BitmapDescriptorFactory.fromResource(R.drawable.bell)));
+
+                    } catch (JSONException e) {
+
+                        Toast.makeText(getApplicationContext(), e.getMessage(), Toast.LENGTH_SHORT).show();
+
+                    }
+
+
+                }
+
+            }
+        }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                Toast.makeText(getApplicationContext(),"Error en la conexion",Toast.LENGTH_SHORT).show();
+            }
+        }
+
+        );
+
+        requestQueue= Volley.newRequestQueue(this);
+        requestQueue.add(jsonArrayRequest);
+
+    }
 
 
 
