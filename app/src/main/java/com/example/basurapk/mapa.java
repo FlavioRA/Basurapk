@@ -48,15 +48,28 @@ public class mapa extends FragmentActivity implements OnMapReadyCallback {
     SupportMapFragment mapFrag;
     private GoogleMap mMap;
 
+    //VerdeCamion
 
     String LatitudRojo,LongitudRojo;
     Double DLatitud;
     Double DLongitud;
+
+    //RojoCamion
+
+    Double DLatitudrojo;
+    Double DLongitudrojo;
+    String LatitudRojos,LongitudRojos;
+
+    //AzulCamion
+
+    Double DLatitudAzul;
+    Double DLongitudAzul;
     String LatitudAzul,LongitudAzul;
-    String LatitudVerde,LongitudVerde;
+
+
     private FusedLocationProviderClient fusedLocationClient;
     RequestQueue requestQueue;
-
+    private CountDownTimer MapaCountDownTimer;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -134,17 +147,73 @@ public class mapa extends FragmentActivity implements OnMapReadyCallback {
         float zoomlevelR2=14;
         mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(ContenedorI,zoomlevelR2));
 
-        //Llamada de datos Camion Rojo
 
 
-        //----------
+
+        //Llamada de datos CamionES
+
+
+            MapaCountDownTimer = new CountDownTimer(1000000000, 5000) {
+
+                public void onTick(long millisUntilFinished) {
+
+                    buscarVerde("http://192.168.23.4:8888/wsbasurapk/bajarCoordenadasVerde.php");
+                    buscarRojo("http://192.168.23.4:8888/wsbasurapk/bajarCoordenadasRojo.php");
+                    buscarAzul("http://192.168.23.4:8888/wsbasurapk/bajarCoordenadasAzul.php");
+
+                    if (DLongitud==null ){
+
+                        Toast.makeText(getApplicationContext(), "Esperando Camion Verde", Toast.LENGTH_SHORT).show();
+
+                    }else{
+
+                        LatLng CamionVerde = new LatLng(DLatitud, DLongitud);
+                        mMap.addMarker(new MarkerOptions().position(CamionVerde).title("Camion Verde 9").icon(BitmapDescriptorFactory.fromResource(R.drawable.camiverde)));
+
+                    }
+
+                    if (DLongitudrojo==null){
+                        Toast.makeText(getApplicationContext(), "Esperando Camion Rojo", Toast.LENGTH_SHORT).show();
+
+                    }else{
+
+                        LatLng CamionRojo = new LatLng(DLatitudrojo, DLongitudrojo);
+                        mMap.addMarker(new MarkerOptions().position(CamionRojo).title("Camion Rojo 10").icon(BitmapDescriptorFactory.fromResource(R.drawable.camirojo)));
+
+                    }
+
+
+                    if (DLongitudAzul==null){
+                        Toast.makeText(getApplicationContext(), "Esperando Camion Azul", Toast.LENGTH_SHORT).show();
+
+                    }else{
+
+                        LatLng CamionAzul = new LatLng(DLatitudAzul, DLongitudAzul);
+                        mMap.addMarker(new MarkerOptions().position(CamionAzul).title("Camion Azul 11").icon(BitmapDescriptorFactory.fromResource(R.drawable.camiazul)));
+
+                    }
+
+
+
+                }
+
+                public void onFinish() {
+
+                }
+            }.start();
+
+
+            //Fin rojo
+
+
+
 
 
 
 
         //Ingresar rutas
 
-    //Ruta9
+    //Ruta9 Verde
     ruta9();
     contenedorRuta9();
 
@@ -840,7 +909,8 @@ public class mapa extends FragmentActivity implements OnMapReadyCallback {
 
     }
 
-    public void buscarRojo (String URL){
+    public void buscarVerde (String URL){
+
 
         JsonArrayRequest jsonArrayRequest = new JsonArrayRequest(URL, new Response.Listener<JSONArray>() {
             @Override
@@ -856,12 +926,8 @@ public class mapa extends FragmentActivity implements OnMapReadyCallback {
                         LongitudRojo = jsonObject.getString("PLongitud");
 
                        DLatitud = Double.parseDouble(LatitudRojo);
-
                        DLongitud =Double.parseDouble(LongitudRojo);
 
-
-                       LatLng CamionRojo = new LatLng(DLatitud, DLongitud);
-                       mMap.addMarker(new MarkerOptions().position(CamionRojo).title("Camion Rojo ").icon(BitmapDescriptorFactory.fromResource(R.drawable.bell)));
 
                     } catch (JSONException e) {
 
@@ -886,6 +952,95 @@ public class mapa extends FragmentActivity implements OnMapReadyCallback {
         requestQueue.add(jsonArrayRequest);
 
     }
+
+    public void buscarRojo (String URL){
+
+
+        JsonArrayRequest jsonArrayRequest = new JsonArrayRequest(URL, new Response.Listener<JSONArray>() {
+            @Override
+            public void onResponse(JSONArray response) {
+
+                JSONObject jsonObject = null;
+                for (int i = 0; i < response.length(); i++) {
+
+                    try {
+
+                        jsonObject = response.getJSONObject(i);
+                        LatitudRojos = jsonObject.getString("PLatitud");
+                        LongitudRojos = jsonObject.getString("PLongitud");
+
+                        DLatitudrojo = Double.parseDouble(LatitudRojos);
+                        DLongitudrojo =Double.parseDouble(LongitudRojos);
+
+
+                    } catch (JSONException e) {
+
+                        Toast.makeText(getApplicationContext(), e.getMessage(), Toast.LENGTH_SHORT).show();
+
+                    }
+
+
+                }
+
+            }
+        }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                Toast.makeText(getApplicationContext(),"Error en la conexion",Toast.LENGTH_SHORT).show();
+            }
+        }
+
+        );
+
+        requestQueue= Volley.newRequestQueue(this);
+        requestQueue.add(jsonArrayRequest);
+
+    }
+
+    public void buscarAzul (String URL){
+
+
+        JsonArrayRequest jsonArrayRequest = new JsonArrayRequest(URL, new Response.Listener<JSONArray>() {
+            @Override
+            public void onResponse(JSONArray response) {
+
+                JSONObject jsonObject = null;
+                for (int i = 0; i < response.length(); i++) {
+
+                    try {
+
+                        jsonObject = response.getJSONObject(i);
+                        LatitudAzul = jsonObject.getString("PLatitud");
+                        LongitudAzul = jsonObject.getString("PLongitud");
+
+                        DLatitudAzul = Double.parseDouble(LatitudAzul);
+                        DLongitudAzul =Double.parseDouble(LongitudAzul);
+
+
+                    } catch (JSONException e) {
+
+                        Toast.makeText(getApplicationContext(), e.getMessage(), Toast.LENGTH_SHORT).show();
+
+                    }
+
+
+                }
+
+            }
+        }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                Toast.makeText(getApplicationContext(),"Error en la conexion",Toast.LENGTH_SHORT).show();
+            }
+        }
+
+        );
+
+        requestQueue= Volley.newRequestQueue(this);
+        requestQueue.add(jsonArrayRequest);
+
+    }
+
 
 
 

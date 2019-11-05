@@ -27,6 +27,7 @@ public class LoginAd extends AppCompatActivity {
     EditText edtUsuario;
     EditText edtContrasena;
     ImageView imgContactos;
+    String Encargado;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -120,14 +121,26 @@ public class LoginAd extends AppCompatActivity {
 
                 try {
                     jsonRespuesta = new JSONObject(response);
+
                     boolean ok = jsonRespuesta.getBoolean("success");
+                    Encargado = jsonRespuesta.getString("IDEncargado");
+
+
+                    Intent j = new Intent(getApplication(),administrador.class);
+                    j.putExtra("EncargadoID",Encargado);
+
+
+
                     if (ok == true){
                         AccesoPerfilSinMantenerSesionIniciada();
+                        startActivity(j);
+                        Toast.makeText(getApplicationContext(), "Acceso Correcto", Toast.LENGTH_SHORT).show();
+
                     }else{
                         //validaciodeusercontradb(User,username);
                         AlertDialog.Builder alerta = new AlertDialog.Builder(LoginAd.this);
                         alerta.setMessage("Usuario o Contraseña incorrecta").setNegativeButton("Reintentar", null).create().show();
-
+                        Toast.makeText(getApplicationContext(), "Contraseña y/o Usuario  incorrecto", Toast.LENGTH_SHORT).show();
                     }
                 } catch (JSONException e) {
                     e.getMessage();

@@ -27,11 +27,18 @@ public class NuevaNotificacion extends AppCompatActivity {
 
     EditText edtFecha;
     EditText edtNuevaNoticia;
+    String Encargados;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_nueva_notificacion);
+
+
+        final Bundle extras = getIntent().getExtras();
+
+        Encargados =extras.getString("EncargadoIDs");
+
 
 
         edtFecha=findViewById(R.id.edtFecha);
@@ -52,7 +59,6 @@ public class NuevaNotificacion extends AppCompatActivity {
             }
         });
 
-
         //inicio Captura de datos
 
         Button btnEnviarN = findViewById(R.id.btnEnviarN);
@@ -63,6 +69,7 @@ public class NuevaNotificacion extends AppCompatActivity {
 
             if (edtNuevaNoticia.getText().toString().isEmpty() || edtFecha.getText().toString().isEmpty()) {
                      CamposVacios();
+
             }else {
                 ejecutarServicio("http://192.168.1.67:8888/wsbasurapk/crearNoticia.php");
             }
@@ -70,8 +77,6 @@ public class NuevaNotificacion extends AppCompatActivity {
         });
 
         //Fin Captura de datos
-
-
 
     }
 
@@ -124,6 +129,7 @@ public class NuevaNotificacion extends AppCompatActivity {
 
                 parametros.put("Fecha",edtFecha.getText().toString());
                 parametros.put("Noticia",edtNuevaNoticia.getText().toString());
+                parametros.put("Encargado",Encargados);
 
 
                 return parametros;

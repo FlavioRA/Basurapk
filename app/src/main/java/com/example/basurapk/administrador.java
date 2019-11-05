@@ -37,7 +37,9 @@ import java.util.Map;
 public class administrador extends AppCompatActivity{
 
     ListView idLista;
-    String Ruta;
+    String Equipo="9";
+    String EncargadoI;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,6 +48,13 @@ public class administrador extends AppCompatActivity{
 
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
 
+        final Bundle extras = getIntent().getExtras();
+
+        EncargadoI =extras.getString("EncargadoID");
+
+
+
+
 
         ImageView imgNotif = (ImageView)findViewById(R.id.imgNotif);
         imgNotif.setOnClickListener(new View.OnClickListener() {
@@ -53,7 +62,11 @@ public class administrador extends AppCompatActivity{
             public void onClick(View view) {
 
                 Intent intent6= new Intent(view.getContext(),NuevaNotificacion.class);
+
+                intent6.putExtra("EncargadoIDs",EncargadoI);
+
                 startActivityForResult(intent6, 0);
+
 
             }
         });
@@ -94,7 +107,7 @@ public class administrador extends AppCompatActivity{
             public void onClick(View view) {
 
                 idLista = findViewById(R.id.idLista);
-                String consulta="http://192.168.1.67:8888/wsbasurapk/bajarRecorridos.php";
+                String consulta="http://192.168.23.4:8888/wsbasurapk/bajarRecorridos.php";
                 EnviarRecibirDatos(consulta);
 
 
@@ -104,23 +117,14 @@ public class administrador extends AppCompatActivity{
 
 
         idLista = findViewById(R.id.idLista);
-        String consulta="http://192.168.1.67:8888/wsbasurapk/bajarRecorridos.php";
+        String consulta="http://192.168.23.4:8888/wsbasurapk/bajarRecorridos.php";
         EnviarRecibirDatos(consulta);
 
 
 
-
-
     }
 
 
-    public void openDialogRegresh(){
-
-        DialogoRefresh dialogoRefresh = new DialogoRefresh();
-
-        dialogoRefresh.show(getSupportFragmentManager(),"Ejemplo Notificación");
-
-    }
 
 
 
@@ -159,6 +163,9 @@ public class administrador extends AppCompatActivity{
         queue.add(stringRequest);
     }
 
+
+
+
     public void CargarListView(JSONArray ja){
 
         ArrayList<String> lista = new ArrayList<>();
@@ -189,6 +196,13 @@ public class administrador extends AppCompatActivity{
 
 
 
+    @Override
+    public void onBackPressed (){
+
+        Intent intent2= new Intent(getApplicationContext(),MainActivity.class);
+        startActivityForResult(intent2, 0);
+
+    }
 
 
 

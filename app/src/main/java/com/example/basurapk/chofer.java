@@ -49,7 +49,6 @@ int i;
         setContentView(R.layout.activity_chofer);
 
 
-
         fusedLocationClient = LocationServices.getFusedLocationProviderClient(this);
 
 
@@ -91,6 +90,7 @@ int i;
 
                 btnCancelar.setEnabled(true);
                 btnFinalizar.setEnabled(true);
+                btnIniciar.setEnabled(false);
 
             }
         });
@@ -115,7 +115,7 @@ int i;
                 latitud=17.961404;
                 longitud=-102.197151;
 
-                ejecutarServicio("http://192.168.1.67:8888/wsbasurapk/mandarUbicacion.php");
+                ejecutarServicio("http://192.168.23.4:8888/wsbasurapk/mandarUbicacion.php");
 
 
 
@@ -144,7 +144,7 @@ int i;
                 latitud=17.961404;
                 longitud=-102.197151;
 
-                ejecutarServicio("http://192.168.1.67:8888/wsbasurapk/mandarUbicacion.php");
+                ejecutarServicio("http://192.168.23.4:8888/wsbasurapk/mandarUbicacion.php");
 
 
                 String horaInicio =extras.getString("HoraInicio");
@@ -209,7 +209,6 @@ int i;
 
     public void mandarDAtos() {
 
-        if (i == 1) {
 
             fusedLocationClient.getLastLocation()
                     .addOnSuccessListener(this, new OnSuccessListener<Location>() {
@@ -220,41 +219,43 @@ int i;
                         @Override
                         public void onSuccess(final Location location) {
 
-                           MCountDownTimer = new CountDownTimer(10000000, 10000) {
-
-                                public void onTick(long millisUntilFinished) {
-
-                                    latitud = location.getLatitude();
-                                    longitud = location.getLongitude();
-                                    ejecutarServicio("http://192.168.1.67:8888/wsbasurapk/mandarUbicacion.php");
-                                    Toast.makeText(getApplicationContext(), "PUNTOS ACTUALIZADOS", Toast.LENGTH_SHORT).show();
-
-                                }
-
-                                public void onFinish() {
-
-                                }
-                            }.start();
-
-                            //Fin cronometro
 
                             if (location != null) {
+
+                                MCountDownTimer = new CountDownTimer(1000000000, 20000) {
+
+                                    public void onTick(long millisUntilFinished) {
+
+                                        latitud = location.getLatitude();
+                                        longitud = location.getLongitude();
+                                        ejecutarServicio("http://192.168.23.4:8888/wsbasurapk/mandarUbicacion.php");
+                                        Toast.makeText(getApplicationContext(), "Mandando coordenadas actuales", Toast.LENGTH_SHORT).show();
+
+                                    }
+
+                                    public void onFinish() {
+
+                                    }
+                                }.start();
+
+                            }else{
+                                Toast.makeText(getApplicationContext(), "Activa la localizzación en tu dispositivo y vuelve a entrar", Toast.LENGTH_SHORT).show();
+
                             }
+
+
                         }
                     });
 
-        }else{
-
-
-            Toast.makeText(getApplicationContext(), "Se dejo de enviar datos", Toast.LENGTH_SHORT).show();
-        }
 
     }
 
     public void cancela(){
         MCountDownTimer.cancel();
-        Toast.makeText(getApplicationContext(), "Se ha dejado de mandar posicion actual", Toast.LENGTH_SHORT).show();
+        Toast.makeText(getApplicationContext(), "Se ha dejado de mandar posición actual", Toast.LENGTH_SHORT).show();
 
 }
+
+
 
 }
