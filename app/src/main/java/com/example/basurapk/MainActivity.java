@@ -17,7 +17,7 @@ import android.widget.Toast;
 public class MainActivity extends AppCompatActivity {
 
 
-    ImageView imgMapa,imgNoticias,imgRutas,imgContacto;
+    ImageView imgMapa,imgNoticias,imgRutas,imgContacto,imgSalir;
 
 
     @Override
@@ -31,12 +31,22 @@ public class MainActivity extends AppCompatActivity {
         final NetworkInfo networkInfo = nuevo.getActiveNetworkInfo();
 
 
-
-
         imgMapa=findViewById(R.id.imgMapa);
         imgNoticias=findViewById(R.id.imgNoticias);
         imgRutas=findViewById(R.id.imgRutas);
         imgContacto=findViewById(R.id.imgContacto);
+        imgSalir=findViewById(R.id.imgSALIR);
+
+
+        imgSalir.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                finish();
+                System.exit(0);
+
+            }
+        });
 
 
         imgMapa.setOnClickListener(new View.OnClickListener() {

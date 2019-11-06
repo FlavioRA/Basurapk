@@ -140,7 +140,7 @@ public class LoginAd extends AppCompatActivity {
                         //validaciodeusercontradb(User,username);
                         AlertDialog.Builder alerta = new AlertDialog.Builder(LoginAd.this);
                         alerta.setMessage("Usuario o Contraseña incorrecta").setNegativeButton("Reintentar", null).create().show();
-                        Toast.makeText(getApplicationContext(), "Contraseña y/o Usuario  incorrecto", Toast.LENGTH_SHORT).show();
+
                     }
                 } catch (JSONException e) {
                     e.getMessage();

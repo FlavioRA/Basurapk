@@ -115,7 +115,7 @@ int i;
                 latitud=17.961404;
                 longitud=-102.197151;
 
-                ejecutarServicio("http://192.168.23.4:8888/wsbasurapk/mandarUbicacion.php");
+                ejecutarServicio("http://192.168.43.249:8888/wsbasurapk/mandarUbicacion.php");
 
 
 
@@ -144,7 +144,7 @@ int i;
                 latitud=17.961404;
                 longitud=-102.197151;
 
-                ejecutarServicio("http://192.168.23.4:8888/wsbasurapk/mandarUbicacion.php");
+                ejecutarServicio("http://192.168.43.249:8888/wsbasurapk/mandarUbicacion.php");
 
 
                 String horaInicio =extras.getString("HoraInicio");
@@ -159,9 +159,6 @@ int i;
 
             }
         });
-
-
-
 
 
     }
@@ -223,28 +220,23 @@ int i;
                             if (location != null) {
 
                                 MCountDownTimer = new CountDownTimer(1000000000, 20000) {
-
                                     public void onTick(long millisUntilFinished) {
 
                                         latitud = location.getLatitude();
                                         longitud = location.getLongitude();
-                                        ejecutarServicio("http://192.168.23.4:8888/wsbasurapk/mandarUbicacion.php");
+                                        ejecutarServicio("http://192.168.43.249:8888/wsbasurapk/mandarUbicacion.php");
                                         Toast.makeText(getApplicationContext(), "Mandando coordenadas actuales", Toast.LENGTH_SHORT).show();
-
                                     }
-
                                     public void onFinish() {
 
                                     }
                                 }.start();
 
                             }else{
-                                Toast.makeText(getApplicationContext(), "Activa la localizzación en tu dispositivo y vuelve a entrar", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(getApplicationContext(), "Activa la localización en tu dispositivo y vuelve a entrar", Toast.LENGTH_SHORT).show();
 
                             }
-
-
-                        }
+    }
                     });
 
 
@@ -255,6 +247,15 @@ int i;
         Toast.makeText(getApplicationContext(), "Se ha dejado de mandar posición actual", Toast.LENGTH_SHORT).show();
 
 }
+
+
+    @Override
+    public void onBackPressed (){
+
+        Intent intent2= new Intent(getApplicationContext(),MainActivity.class);
+        startActivityForResult(intent2, 0);
+
+    }
 
 
 

@@ -7,6 +7,7 @@ import androidx.fragment.app.FragmentActivity;
 import android.Manifest;
 import android.app.Activity;
 import android.app.Dialog;
+import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.Color;
 import android.location.Location;
@@ -14,6 +15,7 @@ import android.os.Build;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.view.View;
+import android.widget.Button;
 import android.widget.Toast;
 
 import com.android.volley.Request;
@@ -67,14 +69,17 @@ public class mapa extends FragmentActivity implements OnMapReadyCallback {
     String LatitudAzul,LongitudAzul;
 
 
+
     private FusedLocationProviderClient fusedLocationClient;
     RequestQueue requestQueue;
-    private CountDownTimer MapaCountDownTimer;
+    private CountDownTimer MapaCountDownTimerr;
+    int cc=0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_mapa);
+
 
         int status= GooglePlayServicesUtil.isGooglePlayServicesAvailable(getApplicationContext());
 
@@ -105,6 +110,7 @@ public class mapa extends FragmentActivity implements OnMapReadyCallback {
 
 
 
+
     /**
      * Manipulates the map once available.
      * This callback is triggered when the map is ready to be used.
@@ -117,10 +123,11 @@ public class mapa extends FragmentActivity implements OnMapReadyCallback {
 
 
     @Override
-    public void onMapReady(GoogleMap googleMap) {
-
+    public void onMapReady(GoogleMap googleMap){
 
         mMap = googleMap;
+
+
 
 
         if (android.os.Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
@@ -147,71 +154,11 @@ public class mapa extends FragmentActivity implements OnMapReadyCallback {
         float zoomlevelR2=14;
         mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(ContenedorI,zoomlevelR2));
 
-
-
-
-        //Llamada de datos CamionES
-
-
-            MapaCountDownTimer = new CountDownTimer(1000000000, 5000) {
-
-                public void onTick(long millisUntilFinished) {
-
-                    buscarVerde("http://192.168.23.4:8888/wsbasurapk/bajarCoordenadasVerde.php");
-                    buscarRojo("http://192.168.23.4:8888/wsbasurapk/bajarCoordenadasRojo.php");
-                    buscarAzul("http://192.168.23.4:8888/wsbasurapk/bajarCoordenadasAzul.php");
-
-                    if (DLongitud==null ){
-
-                        Toast.makeText(getApplicationContext(), "Esperando Camion Verde", Toast.LENGTH_SHORT).show();
-
-                    }else{
-
-                        LatLng CamionVerde = new LatLng(DLatitud, DLongitud);
-                        mMap.addMarker(new MarkerOptions().position(CamionVerde).title("Camion Verde 9").icon(BitmapDescriptorFactory.fromResource(R.drawable.camiverde)));
-
-                    }
-
-                    if (DLongitudrojo==null){
-                        Toast.makeText(getApplicationContext(), "Esperando Camion Rojo", Toast.LENGTH_SHORT).show();
-
-                    }else{
-
-                        LatLng CamionRojo = new LatLng(DLatitudrojo, DLongitudrojo);
-                        mMap.addMarker(new MarkerOptions().position(CamionRojo).title("Camion Rojo 10").icon(BitmapDescriptorFactory.fromResource(R.drawable.camirojo)));
-
-                    }
-
-
-                    if (DLongitudAzul==null){
-                        Toast.makeText(getApplicationContext(), "Esperando Camion Azul", Toast.LENGTH_SHORT).show();
-
-                    }else{
-
-                        LatLng CamionAzul = new LatLng(DLatitudAzul, DLongitudAzul);
-                        mMap.addMarker(new MarkerOptions().position(CamionAzul).title("Camion Azul 11").icon(BitmapDescriptorFactory.fromResource(R.drawable.camiazul)));
-
-                    }
-
-
-
-                }
-
-                public void onFinish() {
-
-                }
-            }.start();
-
-
-            //Fin rojo
+        Conteo();
 
 
 
 
-
-
-
-        //Ingresar rutas
 
     //Ruta9 Verde
     ruta9();
@@ -942,7 +889,7 @@ public class mapa extends FragmentActivity implements OnMapReadyCallback {
         }, new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError error) {
-                Toast.makeText(getApplicationContext(),"Error en la conexion",Toast.LENGTH_SHORT).show();
+                //Toast.makeText(getApplicationContext(),"Error en la conexion",Toast.LENGTH_SHORT).show();
             }
         }
 
@@ -986,7 +933,7 @@ public class mapa extends FragmentActivity implements OnMapReadyCallback {
         }, new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError error) {
-                Toast.makeText(getApplicationContext(),"Error en la conexion",Toast.LENGTH_SHORT).show();
+               // Toast.makeText(getApplicationContext(),"Error en la conexion",Toast.LENGTH_SHORT).show();
             }
         }
 
@@ -1030,7 +977,7 @@ public class mapa extends FragmentActivity implements OnMapReadyCallback {
         }, new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError error) {
-                Toast.makeText(getApplicationContext(),"Error en la conexion",Toast.LENGTH_SHORT).show();
+                //Toast.makeText(getApplicationContext(),"Error en la conexion",Toast.LENGTH_SHORT).show();
             }
         }
 
@@ -1041,6 +988,61 @@ public class mapa extends FragmentActivity implements OnMapReadyCallback {
 
     }
 
+    public void Conteo(){
+
+
+
+        MapaCountDownTimerr = new CountDownTimer(1000000000, 15000) {
+
+
+
+            public void onTick(long millisUntilFinished) {
+
+
+
+                buscarVerde("http://192.168.23.4:8888/wsbasurapk/bajarCoordenadasVerde.php");
+                buscarRojo("http://192.168.23.4:8888/wsbasurapk/bajarCoordenadasRojo.php");
+                buscarAzul("http://192.168.23.4:8888/wsbasurapk/bajarCoordenadasAzul.php");
+
+                if (DLongitud==null ){
+
+                   Toast.makeText(getApplicationContext(), "Esperando Camion Verde", Toast.LENGTH_SHORT).show();
+
+                }else{
+
+                    LatLng CamionVerde = new LatLng(DLatitud, DLongitud);
+                    mMap.addMarker(new MarkerOptions().position(CamionVerde).title("Camion Verde 9").icon(BitmapDescriptorFactory.fromResource(R.drawable.camiverde)));
+
+                }
+
+                if (DLongitudrojo==null){
+
+                    //Toast.makeText(getApplicationContext(), "Esperando Camion Rojo", Toast.LENGTH_SHORT).show();
+
+                }else{
+
+                    LatLng CamionRojo = new LatLng(DLatitudrojo, DLongitudrojo);
+                    mMap.addMarker(new MarkerOptions().position(CamionRojo).title("Camion Rojo 10").icon(BitmapDescriptorFactory.fromResource(R.drawable.camirojo)));
+
+                }
+                if (DLongitudAzul==null){
+
+                    //Toast.makeText(getApplicationContext(), "Esperando Camion Azul", Toast.LENGTH_SHORT).show();
+
+                }else{
+
+                    LatLng CamionAzul = new LatLng(DLatitudAzul, DLongitudAzul);
+                    mMap.addMarker(new MarkerOptions().position(CamionAzul).title("Camion Azul 11").icon(BitmapDescriptorFactory.fromResource(R.drawable.camiazul)));
+
+                }
+            }
+
+            public void onFinish() {
+
+            }
+        }.start();
+
+    }
 
 
 

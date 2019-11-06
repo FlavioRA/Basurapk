@@ -136,4 +136,23 @@
         android:layout_marginBottom="85dp"
         app:srcCompat="@drawable/communication" />
 
+    <ImageView
+        android:id="@+id/imgSALIR"
+        android:layout_width="54dp"
+        android:layout_height="50dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="50dp"
+        app:srcCompat="@drawable/logout" />
+
+    <TextView
+        android:id="@+id/textView26"
+        android:layout_width="47dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="97dp"
+        android:fontFamily="sans-serif-medium"
+        android:gravity="center"
+        android:text="Salir"
+        android:textColor="@android:color/background_dark" />
+
 </RelativeLayout>
