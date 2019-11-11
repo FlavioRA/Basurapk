@@ -661,12 +661,8 @@ public class mapa extends FragmentActivity implements OnMapReadyCallback {
 
         LatLng Contenedor2 = new LatLng(17.953732, -102.196682);
         mMap.addMarker(new MarkerOptions().position(Contenedor2).title("Ruta 10 Contenedor #079 ").icon(BitmapDescriptorFactory.fromResource(R.drawable.contre)));
-        LatLng Contenedor3 = new LatLng(17.56762, -102.195811);
-        mMap.addMarker(new MarkerOptions().position(Contenedor3).title("Ruta 10 Contenedor #077 ").icon(BitmapDescriptorFactory.fromResource(R.drawable.contre)));
         LatLng Contenedor4 = new LatLng(17.955960, -102.195267);
         mMap.addMarker(new MarkerOptions().position(Contenedor4).title("Ruta 10 Contenedor #074 ").icon(BitmapDescriptorFactory.fromResource(R.drawable.contre)));
-        LatLng Contenedor5 = new LatLng(17.955543, -102.794870);
-        mMap.addMarker(new MarkerOptions().position(Contenedor5).title("Ruta 10 Contenedor #073 ").icon(BitmapDescriptorFactory.fromResource(R.drawable.contre)));
         LatLng Contenedor6 = new LatLng(170954535, -102.194095);
         mMap.addMarker(new MarkerOptions().position(Contenedor6).title("Ruta 10 Contenedor #069 ").icon(BitmapDescriptorFactory.fromResource(R.drawable.contre)));
         LatLng Contenedor7 = new LatLng(17.953593, -102.193411);
@@ -703,39 +699,39 @@ public class mapa extends FragmentActivity implements OnMapReadyCallback {
         LatLng Contenedor21 = new LatLng(17.960694, -102.200234);
         mMap.addMarker(new MarkerOptions().position(Contenedor21).title("Ruta 10 Contenedor # 112").icon(BitmapDescriptorFactory.fromResource(R.drawable.contre)));
         LatLng Contenedor22 = new LatLng(17.953074, -102.193858);
-        mMap.addMarker(new MarkerOptions().position(Contenedor22).title("Ruta 10 Contenedor # 78").icon(BitmapDescriptorFactory.fromResource(R.drawable.contre)));
+        mMap.addMarker(new MarkerOptions().position(Contenedor22).title("Ruta 10 Contenedor # 078").icon(BitmapDescriptorFactory.fromResource(R.drawable.contre)));
         LatLng Contenedor23 = new LatLng(17.955776, -102.195921);
-        mMap.addMarker(new MarkerOptions().position(Contenedor23).title("Ruta 10 Contenedor # 68").icon(BitmapDescriptorFactory.fromResource(R.drawable.contre)));
+        mMap.addMarker(new MarkerOptions().position(Contenedor23).title("Ruta 10 Contenedor # 068").icon(BitmapDescriptorFactory.fromResource(R.drawable.contre)));
 
         LatLng Contenedor24 = new LatLng(17.952125, -102.190677);
-        mMap.addMarker(new MarkerOptions().position(Contenedor24).title("Ruta 10 Contenedor # 13").icon(BitmapDescriptorFactory.fromResource(R.drawable.contre)));
+        mMap.addMarker(new MarkerOptions().position(Contenedor24).title("Ruta 10 Contenedor # 013").icon(BitmapDescriptorFactory.fromResource(R.drawable.contre)));
 
         LatLng Contenedor25 = new LatLng(17.952912, -102.191124);
-        mMap.addMarker(new MarkerOptions().position(Contenedor25).title("Ruta 10 Contenedor # 14").icon(BitmapDescriptorFactory.fromResource(R.drawable.contre)));
+        mMap.addMarker(new MarkerOptions().position(Contenedor25).title("Ruta 10 Contenedor # 014").icon(BitmapDescriptorFactory.fromResource(R.drawable.contre)));
 
         LatLng Contenedor26 = new LatLng(17.953394, -102.190473);
-        mMap.addMarker(new MarkerOptions().position(Contenedor26).title("Ruta 10 Contenedor # 12").icon(BitmapDescriptorFactory.fromResource(R.drawable.contre)));
+        mMap.addMarker(new MarkerOptions().position(Contenedor26).title("Ruta 10 Contenedor # 012").icon(BitmapDescriptorFactory.fromResource(R.drawable.contre)));
 
         LatLng Contenedor27 = new LatLng(17.953616, -102.191447);
-        mMap.addMarker(new MarkerOptions().position(Contenedor27).title("Ruta 10 Contenedor # 32").icon(BitmapDescriptorFactory.fromResource(R.drawable.contre)));
+        mMap.addMarker(new MarkerOptions().position(Contenedor27).title("Ruta 10 Contenedor # 032").icon(BitmapDescriptorFactory.fromResource(R.drawable.contre)));
 
         LatLng Contenedor28 = new LatLng(17.954616, -102.192491);
         mMap.addMarker(new MarkerOptions().position(Contenedor28).title("Ruta 10 Contenedor N/N/V").icon(BitmapDescriptorFactory.fromResource(R.drawable.contre)));
 
         LatLng Contenedor29 = new LatLng(17.954196, -102.190945);
-        mMap.addMarker(new MarkerOptions().position(Contenedor29).title("Ruta 10 Contenedor # 15").icon(BitmapDescriptorFactory.fromResource(R.drawable.contre)));
+        mMap.addMarker(new MarkerOptions().position(Contenedor29).title("Ruta 10 Contenedor # 015").icon(BitmapDescriptorFactory.fromResource(R.drawable.contre)));
 
         LatLng Contenedor30 = new LatLng(17.953862, -102.189439);
-        mMap.addMarker(new MarkerOptions().position(Contenedor30).title("Ruta 10 Contenedor # 11").icon(BitmapDescriptorFactory.fromResource(R.drawable.contre)));
+        mMap.addMarker(new MarkerOptions().position(Contenedor30).title("Ruta 10 Contenedor # 011").icon(BitmapDescriptorFactory.fromResource(R.drawable.contre)));
 
         LatLng Contenedor31 = new LatLng(17.954446, -102.189262);
-        mMap.addMarker(new MarkerOptions().position(Contenedor31).title("Ruta 10 Contenedor # 10").icon(BitmapDescriptorFactory.fromResource(R.drawable.contre)));
+        mMap.addMarker(new MarkerOptions().position(Contenedor31).title("Ruta 10 Contenedor # 010").icon(BitmapDescriptorFactory.fromResource(R.drawable.contre)));
 
         LatLng Contenedor32 = new LatLng(17.954829, -102.190448);
-        mMap.addMarker(new MarkerOptions().position(Contenedor32).title("Ruta 10 Contenedor # 16").icon(BitmapDescriptorFactory.fromResource(R.drawable.contre)));
+        mMap.addMarker(new MarkerOptions().position(Contenedor32).title("Ruta 10 Contenedor # 016").icon(BitmapDescriptorFactory.fromResource(R.drawable.contre)));
 
         LatLng Contenedor33 = new LatLng(17.955207, -102.192057);
-        mMap.addMarker(new MarkerOptions().position(Contenedor33).title("Ruta 10 Contenedor # 28").icon(BitmapDescriptorFactory.fromResource(R.drawable.contre)));
+        mMap.addMarker(new MarkerOptions().position(Contenedor33).title("Ruta 10 Contenedor # 028").icon(BitmapDescriptorFactory.fromResource(R.drawable.contre)));
 
         LatLng Contenedor34 = new LatLng(17.955596, -102.191877);
         mMap.addMarker(new MarkerOptions().position(Contenedor34).title("Ruta 10 Contenedor N/N/V").icon(BitmapDescriptorFactory.fromResource(R.drawable.contre)));
@@ -744,7 +740,7 @@ public class mapa extends FragmentActivity implements OnMapReadyCallback {
         mMap.addMarker(new MarkerOptions().position(Contenedor35).title("Ruta 10 Contenedor N/N/V").icon(BitmapDescriptorFactory.fromResource(R.drawable.contre)));
 
         LatLng Contenedor36 = new LatLng(17.955166, -102.190300);
-        mMap.addMarker(new MarkerOptions().position(Contenedor36).title("Ruta 10 Contenedor # 17").icon(BitmapDescriptorFactory.fromResource(R.drawable.contre)));
+        mMap.addMarker(new MarkerOptions().position(Contenedor36).title("Ruta 10 Contenedor # 017").icon(BitmapDescriptorFactory.fromResource(R.drawable.contre)));
 
         //Nuevos
 
@@ -752,13 +748,13 @@ public class mapa extends FragmentActivity implements OnMapReadyCallback {
         mMap.addMarker(new MarkerOptions().position(Contenedor37).title("Ruta 10 Contenedor #Eti").icon(BitmapDescriptorFactory.fromResource(R.drawable.contre)));
 
         LatLng Contenedor38 = new LatLng(17.956802, -102.195906);
-        mMap.addMarker(new MarkerOptions().position(Contenedor38).title("Ruta 10 Contenedor # 77").icon(BitmapDescriptorFactory.fromResource(R.drawable.contre)));
+        mMap.addMarker(new MarkerOptions().position(Contenedor38).title("Ruta 10 Contenedor # 077").icon(BitmapDescriptorFactory.fromResource(R.drawable.contre)));
 
         LatLng Contenedor39 = new LatLng(17.955559, -102.194880);
-        mMap.addMarker(new MarkerOptions().position(Contenedor39).title("Ruta 10 Contenedor # 73").icon(BitmapDescriptorFactory.fromResource(R.drawable.contre)));
+        mMap.addMarker(new MarkerOptions().position(Contenedor39).title("Ruta 10 Contenedor # 073").icon(BitmapDescriptorFactory.fromResource(R.drawable.contre)));
 
         LatLng Contenedor40 = new LatLng(17.954588, -102.194144);
-        mMap.addMarker(new MarkerOptions().position(Contenedor40).title("Ruta 10 Contenedor # 69").icon(BitmapDescriptorFactory.fromResource(R.drawable.contre)));
+        mMap.addMarker(new MarkerOptions().position(Contenedor40).title("Ruta 10 Contenedor # 069").icon(BitmapDescriptorFactory.fromResource(R.drawable.contre)));
 
 
     }
