@@ -62,13 +62,13 @@ public class notificaciones extends AppCompatActivity {
             public void onClick(View view) {
 
                 openDialogRegresh();
-                String Consulta="http://192.168.43.249:8888/wsbasurapk/bajarNoticias.php";
+                String Consulta="http://basurapk.com/WebServiceAplicacion/bajarNoticias.php";
                 EnviarRecibirDatos(Consulta);
 
             }
         });
 
-        String Consulta="http://192.168.43.249:8888/wsbasurapk/bajarNoticias.php";
+        String Consulta="http://basurapk.com/WebServiceAplicacion/bajarNoticias.php";
         EnviarRecibirDatos(Consulta);
 
 

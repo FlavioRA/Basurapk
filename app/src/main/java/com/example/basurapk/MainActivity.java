@@ -38,15 +38,21 @@ public class MainActivity extends AppCompatActivity {
         imgSalir=findViewById(R.id.imgSALIR);
 
 
+        //.-----SAlir
+
+
         imgSalir.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
-                finish();
-                System.exit(0);
+          finishAffinity();
 
             }
         });
+
+
+
+        //------
 
 
         imgMapa.setOnClickListener(new View.OnClickListener() {

@@ -35,18 +35,7 @@ public class Buzon extends AppCompatActivity {
 
         listaResultado= findViewById(R.id.lvLista1);
 
-        back=findViewById(R.id.imgBack);
 
-
-        back.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-
-                Intent intent4= new Intent(view.getContext(),administrador.class);
-                startActivityForResult(intent4, 0);
-
-            }
-        });
 
 
         ImageView imglogo=(ImageView)findViewById(R.id.imglogo);
@@ -62,7 +51,7 @@ public class Buzon extends AppCompatActivity {
             }
         });
 
-        String consulta="http://192.168.23.2:8888/wsbasurapk/bajarBuzon.php";
+        String consulta="http://basurapk.com/WebServiceAplicacion/bajarBuzon.php";
 
         EnviarRecibirDatos(consulta);
 

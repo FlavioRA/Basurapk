@@ -2,9 +2,11 @@ package com.example.basurapk;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.location.Location;
+import android.location.LocationManager;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.view.View;
@@ -20,6 +22,7 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
+import com.google.android.gms.dynamic.IFragmentWrapper;
 import com.google.android.gms.location.FusedLocationProviderClient;
 import com.google.android.gms.location.LocationServices;
 import com.google.android.gms.tasks.OnSuccessListener;
@@ -31,16 +34,13 @@ import java.util.Map;
 
 public class chofer extends AppCompatActivity {
 
+    Double latitud;
+    Double longitud;
+    String longitudD;
+    String latitudD;
 
-
-Double latitud;
-Double longitud;
-String EquipoCan;
-int i;
-
-    private CountDownTimer MCountDownTimer;
-
-    private FusedLocationProviderClient fusedLocationClient;
+    String EquipoCan;
+    private CountDownTimer MapaCountDownTimerr;
 
 
     @Override
@@ -49,13 +49,9 @@ int i;
         setContentView(R.layout.activity_chofer);
 
 
-        fusedLocationClient = LocationServices.getFusedLocationProviderClient(this);
-
-
         final Bundle extras = getIntent().getExtras();
 
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
-
 
         ImageView imageView12 =(ImageView)findViewById(R.id.imageView12);
 
@@ -83,25 +79,19 @@ int i;
             @Override
             public void onClick(View view) {
 
-                i=1;
-
-
-                mandarDAtos();
 
                 btnCancelar.setEnabled(true);
                 btnFinalizar.setEnabled(true);
                 btnIniciar.setEnabled(false);
 
+
+                bajarCoordenadas();
+
+
             }
         });
 
 
-        //---------------
-
-
-
-
-        //---------------
 
 
         btnCancelar.setOnClickListener(new View.OnClickListener() {
@@ -110,16 +100,35 @@ int i;
 
                 btnIniciar.setEnabled(false);
 
-                cancela();
+                Cancelar();
 
-                latitud=17.961404;
-                longitud=-102.197151;
+                if (EquipoCan.equals("9")) {
 
-                ejecutarServicio("http://192.168.43.249:8888/wsbasurapk/mandarUbicacion.php");
+                    latitud=17.962654;
+                    longitud=-102.198716;
+
+                    ejecutarServicio("http://basurapk.com/WebServiceAplicacion/mandarUbicacion.php");
+                }
+
+                if (EquipoCan.equals("10")) {
+
+                    latitud=17.962899;
+                    longitud=-102.19832;
+
+                    ejecutarServicio("http://basurapk.com/WebServiceAplicacion/mandarUbicacion.php");
+                }
+
+                if (EquipoCan.equals("11")) {
+
+                    latitud=17.963150;
+                    longitud=-102.197943;
+
+                    ejecutarServicio("http://basurapk.com/WebServiceAplicacion/mandarUbicacion.php");
+                }
 
 
 
-                String horaInicio =extras.getString("HoraInicio");
+                    String horaInicio =extras.getString("HoraInicio");
 
 
                 Intent j = new Intent(chofer.this,Formulario.class);
@@ -127,6 +136,7 @@ int i;
                 j.putExtra("EquipoEnv",EquipoCan);
 
                 startActivity(j);
+
 
             }
         });
@@ -137,14 +147,31 @@ int i;
             public void onClick(View view) {
 
                 btnIniciar.setEnabled(false);
+                Cancelar();
 
+                if (EquipoCan.equals("9")) {
 
-                cancela();
+                    latitud=17.962654;
+                    longitud=-102.198716;
 
-                latitud=17.961404;
-                longitud=-102.197151;
+                    ejecutarServicio("http://basurapk.com/WebServiceAplicacion/mandarUbicacion.php");
+                }
 
-                ejecutarServicio("http://192.168.43.249:8888/wsbasurapk/mandarUbicacion.php");
+                if (EquipoCan.equals("10")) {
+
+                    latitud=17.962899;
+                    longitud=-102.19832;
+
+                    ejecutarServicio("http://basurapk.com/WebServiceAplicacion/mandarUbicacion.php");
+                }
+
+                if (EquipoCan.equals("11")) {
+
+                    latitud=17.963150;
+                    longitud=-102.197943;
+
+                    ejecutarServicio("http://basurapk.com/WebServiceAplicacion/mandarUbicacion.php");
+                }
 
 
                 String horaInicio =extras.getString("HoraInicio");
@@ -162,6 +189,39 @@ int i;
 
 
     }
+
+
+
+    public void bajarCoordenadas(){
+
+
+        MapaCountDownTimerr = new CountDownTimer(99999999, 5000) {
+
+            public void onTick(long millisUntilFinished) {
+
+
+
+                Toast.makeText(getApplicationContext(),"Enviando Ubicación..!", Toast.LENGTH_SHORT).show();
+            }
+
+            public void onFinish() {
+
+
+            }
+        }.start();
+
+
+    }
+
+
+
+    public void Cancelar(){
+
+        Toast.makeText(getApplicationContext(),"Dejando de transmitir", Toast.LENGTH_SHORT).show();
+        MapaCountDownTimerr.cancel();
+
+    }
+
 
 
 
@@ -187,16 +247,17 @@ int i;
             protected Map<String, String> getParams() throws AuthFailureError {
                 Map<String,String> parametros = new HashMap<String,String>();
 
-                String longitudD = Double.toString(longitud);
-                String latitudD = Double.toString(latitud);
+                longitudD = Double.toString(longitud);
+                latitudD = Double.toString(latitud);
 
                 parametros.put("longitud",longitudD);
                 parametros.put("latitud",latitudD);
                 parametros.put("camion",EquipoCan);
 
-
                 return parametros;
+
             }
+
         };
 
         RequestQueue requestQueue = Volley.newRequestQueue(this );
@@ -204,49 +265,7 @@ int i;
     }
 
 
-    public void mandarDAtos() {
 
-
-            fusedLocationClient.getLastLocation()
-                    .addOnSuccessListener(this, new OnSuccessListener<Location>() {
-
-
-                        ///Cronometro
-
-                        @Override
-                        public void onSuccess(final Location location) {
-
-
-                            if (location != null) {
-
-                                MCountDownTimer = new CountDownTimer(1000000000, 20000) {
-                                    public void onTick(long millisUntilFinished) {
-
-                                        latitud = location.getLatitude();
-                                        longitud = location.getLongitude();
-                                        ejecutarServicio("http://192.168.43.249:8888/wsbasurapk/mandarUbicacion.php");
-                                        Toast.makeText(getApplicationContext(), "Mandando coordenadas actuales", Toast.LENGTH_SHORT).show();
-                                    }
-                                    public void onFinish() {
-
-                                    }
-                                }.start();
-
-                            }else{
-                                Toast.makeText(getApplicationContext(), "Activa la localización en tu dispositivo y vuelve a entrar", Toast.LENGTH_SHORT).show();
-
-                            }
-    }
-                    });
-
-
-    }
-
-    public void cancela(){
-        MCountDownTimer.cancel();
-        Toast.makeText(getApplicationContext(), "Se ha dejado de mandar posición actual", Toast.LENGTH_SHORT).show();
-
-}
 
 
     @Override
@@ -256,7 +275,6 @@ int i;
         startActivityForResult(intent2, 0);
 
     }
-
 
 
 }

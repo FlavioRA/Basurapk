@@ -73,7 +73,7 @@ public class mapa extends FragmentActivity implements OnMapReadyCallback {
     private FusedLocationProviderClient fusedLocationClient;
     RequestQueue requestQueue;
     private CountDownTimer MapaCountDownTimerr;
-    int cc=0;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -889,7 +889,7 @@ public class mapa extends FragmentActivity implements OnMapReadyCallback {
         }, new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError error) {
-                //Toast.makeText(getApplicationContext(),"Error en la conexion",Toast.LENGTH_SHORT).show();
+                Toast.makeText(getApplicationContext(),"Error en la conexion",Toast.LENGTH_SHORT).show();
             }
         }
 
@@ -998,11 +998,9 @@ public class mapa extends FragmentActivity implements OnMapReadyCallback {
 
             public void onTick(long millisUntilFinished) {
 
-
-
-                buscarVerde("http://192.168.23.4:8888/wsbasurapk/bajarCoordenadasVerde.php");
-                buscarRojo("http://192.168.23.4:8888/wsbasurapk/bajarCoordenadasRojo.php");
-                buscarAzul("http://192.168.23.4:8888/wsbasurapk/bajarCoordenadasAzul.php");
+                buscarVerde("http://basurapk.com/WebServiceAplicacion/bajarCoordenadasVerde.php");
+                buscarRojo("http://basurapk.com/WebServiceAplicacion/bajarCoordenadasRojo.php");
+                buscarAzul("http://basurapk.com/WebServiceAplicacion/bajarCoordenadasAzul.php");
 
                 if (DLongitud==null ){
 
@@ -1017,7 +1015,7 @@ public class mapa extends FragmentActivity implements OnMapReadyCallback {
 
                 if (DLongitudrojo==null){
 
-                    //Toast.makeText(getApplicationContext(), "Esperando Camion Rojo", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(), "Esperando Camion Rojo", Toast.LENGTH_SHORT).show();
 
                 }else{
 
@@ -1027,7 +1025,7 @@ public class mapa extends FragmentActivity implements OnMapReadyCallback {
                 }
                 if (DLongitudAzul==null){
 
-                    //Toast.makeText(getApplicationContext(), "Esperando Camion Azul", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(), "Esperando Camion Azul", Toast.LENGTH_SHORT).show();
 
                 }else{
 

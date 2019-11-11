@@ -107,8 +107,10 @@ public class administrador extends AppCompatActivity{
             public void onClick(View view) {
 
                 idLista = findViewById(R.id.idLista);
-                String consulta="http://192.168.23.4:8888/wsbasurapk/bajarRecorridos.php";
+                String consulta="http://basurapk.com/WebServiceAplicacion/bajarRecorridos.php";
                 EnviarRecibirDatos(consulta);
+
+                Toast.makeText(getApplicationContext(),"Actualizado", Toast.LENGTH_SHORT).show();
 
 
             }
@@ -117,7 +119,7 @@ public class administrador extends AppCompatActivity{
 
 
         idLista = findViewById(R.id.idLista);
-        String consulta="http://192.168.23.4:8888/wsbasurapk/bajarRecorridos.php";
+        String consulta="http://basurapk.com/WebServiceAplicacion/bajarRecorridos.php";
         EnviarRecibirDatos(consulta);
 
 

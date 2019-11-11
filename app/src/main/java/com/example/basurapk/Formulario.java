@@ -35,6 +35,12 @@ public class Formulario extends AppCompatActivity {
     String Hora;
     String EquipoDios;
     String horaInicio;
+
+    Double latitud;
+    Double longitud;
+    String longitudD;
+    String latitudD;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -93,6 +99,10 @@ public class Formulario extends AppCompatActivity {
 
         EquipoDios=extras.getString("EquipoEnv");
 
+
+
+
+
         btnEnviar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -114,7 +124,7 @@ public class Formulario extends AppCompatActivity {
                     CamionDecide="Si";
                 }
 
-                ejecutarServicio("http://192.168.23.2:8888/wsbasurapk/crearRecorrido.php");
+                ejecutarServicio("http://basurapk.com/WebServiceAplicacion/crearRecorrido.php");
 
 
             }
@@ -172,6 +182,7 @@ public class Formulario extends AppCompatActivity {
         RequestQueue requestQueue = Volley.newRequestQueue(this );
         requestQueue.add(stringRequest);
     }
+
 
 
 
