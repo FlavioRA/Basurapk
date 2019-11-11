@@ -47,7 +47,7 @@
         android:layout_marginTop="104dp"
         android:layout_marginEnd="27dp"
         android:fontFamily="sans-serif-black"
-        android:text="Camion Sustituto?"
+        android:text="¿Camión Sustituto?"
         android:textSize="18sp" />
 
     <TextView
@@ -61,7 +61,7 @@
         android:layout_marginTop="194dp"
         android:layout_marginEnd="26dp"
         android:fontFamily="sans-serif-black"
-        android:text="Personal Sustituto?"
+        android:text="¿Personal Sustituto?"
         android:textSize="18sp" />
 
     <TextView
@@ -91,7 +91,7 @@
         android:background="@color/cardview_light_background"
         android:ems="10"
         android:gravity="start|top"
-        android:hint="Comentarios del recorrido ? no es obligatorio poner"
+        android:hint="¿Algún comentarios sobre el recorrido? (opcional)"
         android:inputType="textMultiLine" />
 
     <RadioGroup
