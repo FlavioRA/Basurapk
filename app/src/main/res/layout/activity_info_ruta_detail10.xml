@@ -7,7 +7,9 @@
     android:background="@drawable/fondoo"
     tools:context=".infoRutaDetail10">
 
-
+<ScrollView
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
 
     <com.davemorrissey.labs.subscaleview.SubsamplingScaleImageView
         android:layout_width="348dp"
@@ -168,5 +170,5 @@
         android:layout_marginEnd="48dp"
         android:text="Ir al Mapa" />
 
-
+</ScrollView>
 </RelativeLayout>
