@@ -70,7 +70,7 @@
         android:layout_marginEnd="37dp"
         android:fontFamily="sans-serif-medium"
         android:gravity="center"
-        android:text="Bienvendidos"
+        android:text="Bienvenidos"
         android:textSize="18sp" />
 
     <TextView
@@ -85,7 +85,7 @@
         android:layout_marginEnd="2dp"
         android:fontFamily="sans-serif-medium"
         android:gravity="center"
-        android:text="No olvides tener tu ubicación activada..!"
+        android:text="¡No olvides tener tu ubicación activada!"
         android:textColor="@android:color/holo_red_dark"
         android:textSize="15sp" />
 

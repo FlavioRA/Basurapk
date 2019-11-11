@@ -116,7 +116,7 @@
         android:layout_marginEnd="18dp"
         android:fontFamily="sans-serif-medium"
         android:gravity="center"
-        android:text='En la sección "Mapa" podras ver la ruta con el color especificado, la localización de los contenedores y el camion en tiempo real !!!'
+        android:text='En la sección "Mapa" podrás ver la ruta con el color especificado, la localización de los contenedores y el camión, ¡a tiempo real!'
         android:textColor="@android:color/holo_red_dark" />
 
     <TextView

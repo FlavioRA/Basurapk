@@ -129,7 +129,7 @@
         android:layout_marginEnd="34dp"
         android:fontFamily="sans-serif-medium"
         android:gravity="center"
-        android:text="Al hacer Click en alguna ruta se desplegara información más a detalle"
+        android:text="Al hacer clic en alguna ruta se desplegara información más a detalle"
         android:textColor="@android:color/holo_red_dark" />
 
 </RelativeLayout>

@@ -34,6 +34,7 @@
         android:layout_marginEnd="30dp"
         android:ems="10"
         android:hint="Nombre"
+        android:digits="abcdefghijklmnñopqrstuvwxyzABCDEFGHIJKLMNÑOPQRSTUVWXY"
         android:inputType="textPersonName" />
 
     <EditText
@@ -43,13 +44,13 @@
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
-        android:maxLength="15"
         android:layout_marginStart="30dp"
         android:layout_marginTop="182dp"
         android:layout_marginEnd="30dp"
         android:ems="10"
-        android:hint="Telefono"
-        android:inputType="phone" />
+        android:hint="Teléfono"
+        android:inputType="phone"
+        android:maxLength="15" />
 
     <EditText
         android:id="@+id/edtEmail"
@@ -63,6 +64,7 @@
         android:layout_marginTop="240dp"
         android:layout_marginEnd="30dp"
         android:ems="10"
+        android:digits="abcdefghijklmnñopqrstuv123456789@-_"
         android:hint="Email"
         android:inputType="textEmailAddress" />
 

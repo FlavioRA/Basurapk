@@ -114,7 +114,7 @@
         android:layout_marginEnd="18dp"
         android:fontFamily="sans-serif-medium"
         android:gravity="center"
-        android:text='En la sección "Mapa" podras ver la ruta con el color especificado, la localización de los contenedores y el camion en tiempo real !!!'
+        android:text='En la sección "Mapa" podrás ver la ruta con el color especificado, la localización de los contenedores y el camión, ¡a tiempo real!'
         android:textColor="@android:color/holo_red_dark" />
 
     <TextView
@@ -147,20 +147,20 @@
         android:textColor="@color/cardview_light_background"
         android:textSize="18sp" />
 
-    <TextView
-        android:id="@+id/textView38"
-        android:layout_width="wrap_content"
-        android:layout_height="73dp"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginStart="18dp"
-        android:layout_marginTop="293dp"
-        android:layout_marginEnd="14dp"
-        android:fontFamily="sans-serif-medium"
-        android:text="Av.Lazaro Cardenas - Constitución de 1814 - Nicolas bravo - Manuel Doblado"
-        android:textColor="@color/cardview_light_background"
-        android:textSize="18sp" />
+            <TextView
+                android:id="@+id/textView38"
+                android:layout_width="wrap_content"
+                android:layout_height="73dp"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginStart="18dp"
+                android:layout_marginTop="293dp"
+                android:layout_marginEnd="14dp"
+                android:fontFamily="sans-serif-medium"
+                android:text="Av.Lazaro Cardenas - Constitución de 1814 - Nicolas Bravo - Manuel Doblado"
+                android:textColor="@color/cardview_light_background"
+                android:textSize="18sp" />
 
 
     <Button
