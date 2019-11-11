@@ -161,8 +161,9 @@ public class mapa extends FragmentActivity implements OnMapReadyCallback {
 
 
     //Ruta9 Verde
-    ruta9();
-    contenedorRuta9();
+
+        ruta9();
+        contenedorRuta9();
 
     //Ruta 10
     ruta10();

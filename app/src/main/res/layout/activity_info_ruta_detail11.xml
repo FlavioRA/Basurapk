@@ -7,14 +7,6 @@
     android:background="@drawable/fondoo"
     tools:context=".infoRutaDetail11">
 
-    <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
-
 
 
     <com.davemorrissey.labs.subscaleview.SubsamplingScaleImageView
@@ -29,16 +21,15 @@
         />
 
     <com.zolad.zoominimageview.ZoomInImageView
-        android:layout_width="348dp"
-        android:layout_height="257dp"
+        android:layout_width="327dp"
+        android:layout_height="251dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
-        android:layout_marginStart="35dp"
-        android:layout_marginTop="42dp"
-        android:layout_marginEnd="35dp"
-        android:src="@drawable/azulonce"
-        />
+        android:layout_marginStart="41dp"
+        android:layout_marginTop="77dp"
+        android:layout_marginEnd="42dp"
+        android:src="@drawable/azulonce" />
 
     <ImageView
         android:id="@+id/imgBack"
@@ -53,13 +44,13 @@
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
-        android:layout_marginStart="-1dp"
-        android:layout_marginTop="39dp"
-        android:layout_marginEnd="-1dp"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="34dp"
+        android:layout_marginEnd="-2dp"
         android:fontFamily="sans-serif-black"
         android:gravity="center"
         android:text="Información de Ruta 11"
-        android:textColor="@color/cardview_light_background"
+        android:textColor="@color/colorAccent"
         android:textSize="28sp" />
 
     <TextView
@@ -69,9 +60,9 @@
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
-        android:layout_marginStart="18dp"
-        android:layout_marginTop="367dp"
-        android:layout_marginEnd="155dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="441dp"
+        android:layout_marginEnd="149dp"
         android:fontFamily="sans-serif-black"
         android:text="Horarios :"
         android:textSize="18sp" />
@@ -83,9 +74,9 @@
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
-        android:layout_marginStart="18dp"
-        android:layout_marginTop="267dp"
-        android:layout_marginEnd="161dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="334dp"
+        android:layout_marginEnd="155dp"
         android:fontFamily="sans-serif-black"
         android:text="Calles principales:"
         android:textSize="18sp" />
@@ -97,9 +88,9 @@
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
-        android:layout_marginStart="18dp"
-        android:layout_marginTop="425dp"
-        android:layout_marginEnd="156dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="500dp"
+        android:layout_marginEnd="150dp"
         android:fontFamily="sans-serif-black"
         android:text="Color en el mapa:"
         android:textSize="18sp" />
@@ -111,9 +102,9 @@
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
-        android:layout_marginStart="17dp"
-        android:layout_marginTop="560dp"
-        android:layout_marginEnd="18dp"
+        android:layout_marginStart="18dp"
+        android:layout_marginTop="634dp"
+        android:layout_marginEnd="17dp"
         android:fontFamily="sans-serif-medium"
         android:gravity="center"
         android:text='En la sección "Mapa" podrás ver la ruta con el color especificado, la localización de los contenedores y el camión, ¡a tiempo real!'
@@ -126,9 +117,9 @@
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
-        android:layout_marginStart="18dp"
-        android:layout_marginTop="452dp"
-        android:layout_marginEnd="282dp"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="529dp"
+        android:layout_marginEnd="274dp"
         android:fontFamily="sans-serif-medium"
         android:text="Azul"
         android:textColor="@color/cardview_light_background"
@@ -141,9 +132,9 @@
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
-        android:layout_marginStart="18dp"
-        android:layout_marginTop="395dp"
-        android:layout_marginEnd="9dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="470dp"
+        android:layout_marginEnd="3dp"
         android:fontFamily="sans-serif-medium"
         android:text="Lunes a Viernes de 4 Am a 10 Am"
         android:textColor="@color/cardview_light_background"
@@ -156,9 +147,9 @@
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
-        android:layout_marginStart="18dp"
-        android:layout_marginTop="293dp"
-        android:layout_marginEnd="14dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="363dp"
+        android:layout_marginEnd="8dp"
         android:fontFamily="sans-serif-medium"
         android:text="Av. Lazaro Cardenas - AV Rector Hidalgo - Venustiano Carranza Constitución de 1917"
         android:textColor="@color/cardview_light_background"
@@ -172,11 +163,9 @@
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
-        android:layout_marginStart="49dp"
-        android:layout_marginTop="496dp"
+        android:layout_marginStart="48dp"
+        android:layout_marginTop="574dp"
         android:layout_marginEnd="49dp"
         android:text="Ir al Mapa" />
 
-        </RelativeLayout>
-    </ScrollView>
 </RelativeLayout>
