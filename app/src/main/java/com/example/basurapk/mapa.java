@@ -838,15 +838,15 @@ public class mapa extends FragmentActivity implements OnMapReadyCallback {
         LatLng Contenedor38 = new LatLng(17.959695, -102.190181);
         mMap.addMarker(new MarkerOptions().position(Contenedor38).title("Ruta 11 Contenedor #024 ").icon(BitmapDescriptorFactory.fromResource(R.drawable.contazul)));
         LatLng Contenedor39 = new LatLng(17.965311, -102.198281);
-        mMap.addMarker(new MarkerOptions().position(Contenedor39).title("Ruta 11 Cesto #1 ").icon(BitmapDescriptorFactory.fromResource(R.drawable.contazul)));
+        mMap.addMarker(new MarkerOptions().position(Contenedor39).title("Ruta 11 Cesto #1 ").icon(BitmapDescriptorFactory.fromResource(R.drawable.cesto)));
         LatLng Contenedor40 = new LatLng(17.965463, -102.198638);
-        mMap.addMarker(new MarkerOptions().position(Contenedor40).title("Ruta 11 Cesto #2 ").icon(BitmapDescriptorFactory.fromResource(R.drawable.contazul)));
+        mMap.addMarker(new MarkerOptions().position(Contenedor40).title("Ruta 11 Cesto #2 ").icon(BitmapDescriptorFactory.fromResource(R.drawable.cesto)));
         LatLng Contenedor41 = new LatLng(17.965583, -102.199052);
-        mMap.addMarker(new MarkerOptions().position(Contenedor41).title("Ruta 11 Cesto #3").icon(BitmapDescriptorFactory.fromResource(R.drawable.contazul)));
+        mMap.addMarker(new MarkerOptions().position(Contenedor41).title("Ruta 11 Cesto #3").icon(BitmapDescriptorFactory.fromResource(R.drawable.cesto)));
         LatLng Contenedor42 = new LatLng(17.965244, -102.200842);
-        mMap.addMarker(new MarkerOptions().position(Contenedor42).title("Ruta 11 Cesto #4 ").icon(BitmapDescriptorFactory.fromResource(R.drawable.contazul)));
+        mMap.addMarker(new MarkerOptions().position(Contenedor42).title("Ruta 11 Cesto #4 ").icon(BitmapDescriptorFactory.fromResource(R.drawable.cesto)));
         LatLng Contenedor43 = new LatLng(17.965926, -102.201365);
-        mMap.addMarker(new MarkerOptions().position(Contenedor43).title("Ruta 11 Cesto #5 ").icon(BitmapDescriptorFactory.fromResource(R.drawable.contazul)));
+        mMap.addMarker(new MarkerOptions().position(Contenedor43).title("Ruta 11 Cesto #5 ").icon(BitmapDescriptorFactory.fromResource(R.drawable.cesto)));
 
 
 
