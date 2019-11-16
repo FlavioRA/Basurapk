@@ -107,7 +107,7 @@ public class administrador extends AppCompatActivity{
             public void onClick(View view) {
 
                 idLista = findViewById(R.id.idLista);
-                String consulta="http://basurapk.com/WebServiceAplicacion/bajarRecorridos.php";
+                String consulta="https://basurapp.000webhostapp.com/webss/bajarRecorridos.php";
                 EnviarRecibirDatos(consulta);
 
                 Toast.makeText(getApplicationContext(),"Actualizado", Toast.LENGTH_SHORT).show();
@@ -119,10 +119,8 @@ public class administrador extends AppCompatActivity{
 
 
         idLista = findViewById(R.id.idLista);
-        String consulta="http://basurapk.com/WebServiceAplicacion/bajarRecorridos.php";
+        String consulta="https://basurapp.000webhostapp.com/webss/bajarRecorridos.php";
         EnviarRecibirDatos(consulta);
-
-
 
     }
 
@@ -172,16 +170,25 @@ public class administrador extends AppCompatActivity{
 
         ArrayList<String> lista = new ArrayList<>();
 
-        for(int i=0;i<ja.length();i+=7){
+        for(int i=0;i<ja.length();i+=10){
 
             try {
-
+                //Fecha
                 lista.add("\n"+ja.getString(i)+"\n"+
+
                         "Hrs: "+ja.getString(i+1)+" a "+ja.getString(i+2)+"\n"+
                         "Chofer Sust? "+ja.getString(i+3)+"\n"+
                         "Camion Sust? "+ja.getString(i+4)+"\n"+
-                        "Comentarios: "+ja.getString(i+5)+"\n"+
-                        "Equipo: "+ja.getString(i+6)+"\n" );
+                        "Chofer: "+ja.getString(i+5)+"\n"+
+                        "Telefono: "+ja.getString(i+6)+"\n" +
+                        "Camión: "+ja.getString(i+7)+"\n" +
+                        "Ruta: "+ja.getString(i+8)+"\n" +
+                        "Comentarios: "+ja.getString(i+9)+"\n");
+
+
+
+
+
             } catch (JSONException e) {
                 e.printStackTrace();
             }

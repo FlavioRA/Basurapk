@@ -9,7 +9,7 @@ import java.util.Map;
 
 public class LoginUsuarioRequest2 extends StringRequest {
 
-    private static final String ruta = "http://basurapk.com/WebServiceAplicacion/%20loginChofer.php";
+    private static final String ruta = "https://basurapp.000webhostapp.com/webss/%20loginChofer.php";
 
     private Map<String, String> parametros;
 

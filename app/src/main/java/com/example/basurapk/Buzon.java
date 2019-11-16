@@ -51,7 +51,7 @@ public class Buzon extends AppCompatActivity {
             }
         });
 
-        String consulta="http://basurapk.com/WebServiceAplicacion/bajarBuzon.php";
+        String consulta="https://basurapp.000webhostapp.com/webss/bajarBuzon.php";
 
         EnviarRecibirDatos(consulta);
 

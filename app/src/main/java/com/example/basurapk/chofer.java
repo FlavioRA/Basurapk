@@ -1,17 +1,23 @@
 package com.example.basurapk;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
 
+import android.Manifest;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
+import android.content.pm.PackageManager;
 import android.location.Location;
+import android.location.LocationListener;
 import android.location.LocationManager;
+import android.location.LocationProvider;
 import android.os.Bundle;
 import android.os.CountDownTimer;
+import android.provider.Settings;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Toast;
 
@@ -22,13 +28,7 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
-import com.google.android.gms.dynamic.IFragmentWrapper;
-import com.google.android.gms.location.FusedLocationProviderClient;
-import com.google.android.gms.location.LocationServices;
-import com.google.android.gms.tasks.OnSuccessListener;
 
-import java.text.SimpleDateFormat;
-import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -40,6 +40,7 @@ public class chofer extends AppCompatActivity {
     String latitudD;
 
     String EquipoCan;
+
     private CountDownTimer MapaCountDownTimerr;
 
 
@@ -80,16 +81,18 @@ public class chofer extends AppCompatActivity {
             public void onClick(View view) {
 
 
+                locationStart();
+                Coordenadas();
+
+
                 btnCancelar.setEnabled(true);
                 btnFinalizar.setEnabled(true);
                 btnIniciar.setEnabled(false);
 
-
-                bajarCoordenadas();
-
-
             }
         });
+
+
 
 
 
@@ -98,16 +101,17 @@ public class chofer extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                btnIniciar.setEnabled(false);
 
-                Cancelar();
+                MapaCountDownTimerr.cancel();
+
+                btnIniciar.setEnabled(false);
 
                 if (EquipoCan.equals("9")) {
 
                     latitud=17.962654;
                     longitud=-102.198716;
 
-                    ejecutarServicio("http://basurapk.com/WebServiceAplicacion/mandarUbicacion.php");
+                    ejecutarServicio("https://basurapp.000webhostapp.com/webss/mandarUbicacion.php");
                 }
 
                 if (EquipoCan.equals("10")) {
@@ -115,7 +119,7 @@ public class chofer extends AppCompatActivity {
                     latitud=17.962899;
                     longitud=-102.19832;
 
-                    ejecutarServicio("http://basurapk.com/WebServiceAplicacion/mandarUbicacion.php");
+                    ejecutarServicio("https://basurapp.000webhostapp.com/webss/mandarUbicacion.php");
                 }
 
                 if (EquipoCan.equals("11")) {
@@ -123,7 +127,7 @@ public class chofer extends AppCompatActivity {
                     latitud=17.963150;
                     longitud=-102.197943;
 
-                    ejecutarServicio("http://basurapk.com/WebServiceAplicacion/mandarUbicacion.php");
+                    ejecutarServicio("https://basurapp.000webhostapp.com/webss/mandarUbicacion.php");
                 }
 
 
@@ -147,14 +151,14 @@ public class chofer extends AppCompatActivity {
             public void onClick(View view) {
 
                 btnIniciar.setEnabled(false);
-                Cancelar();
+                MapaCountDownTimerr.cancel();
 
                 if (EquipoCan.equals("9")) {
 
                     latitud=17.962654;
                     longitud=-102.198716;
 
-                    ejecutarServicio("http://basurapk.com/WebServiceAplicacion/mandarUbicacion.php");
+                    ejecutarServicio("https://basurapp.000webhostapp.com/webss/mandarUbicacion.php");
                 }
 
                 if (EquipoCan.equals("10")) {
@@ -162,15 +166,15 @@ public class chofer extends AppCompatActivity {
                     latitud=17.962899;
                     longitud=-102.19832;
 
-                    ejecutarServicio("http://basurapk.com/WebServiceAplicacion/mandarUbicacion.php");
+                    ejecutarServicio("https://basurapp.000webhostapp.com/webss/mandarUbicacion.php");
                 }
 
                 if (EquipoCan.equals("11")) {
 
-                    latitud=17.963150;
+                    latitud=17.96315;
                     longitud=-102.197943;
 
-                    ejecutarServicio("http://basurapk.com/WebServiceAplicacion/mandarUbicacion.php");
+                    ejecutarServicio("https://basurapp.000webhostapp.com/webss/mandarUbicacion.php");
                 }
 
 
@@ -190,18 +194,112 @@ public class chofer extends AppCompatActivity {
 
     }
 
+//-----------------------------NUEVO------------------------------
+
+    private void locationStart() {
+        LocationManager mlocManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
+        Localizacion Local = new Localizacion();
+        Local.setMainActivity(this);
+
+        final boolean gpsEnabled = mlocManager.isProviderEnabled(LocationManager.GPS_PROVIDER);
+        if (!gpsEnabled) {
+            Intent settingsIntent = new Intent(Settings.ACTION_LOCATION_SOURCE_SETTINGS);
+            startActivity(settingsIntent);
+        }
+
+        if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
+            ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.ACCESS_FINE_LOCATION,}, 1000);
+            return;
+        }
+
+        mlocManager.requestLocationUpdates(LocationManager.NETWORK_PROVIDER, 0, 0, (LocationListener) Local);
+        mlocManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 0, 0, (LocationListener) Local);
 
 
-    public void bajarCoordenadas(){
+
+    }
+    public void onRequestPermissionsResult(int requestCode, String[] permissions, int[] grantResults) {
+        if (requestCode == 1000) {
+            if (grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+                locationStart();
+                return;
+            }
+        }
+    }
 
 
-        MapaCountDownTimerr = new CountDownTimer(99999999, 5000) {
+    public class Localizacion implements LocationListener {
+        chofer mainActivity;
+        public chofer getMainActivity() {
+            return mainActivity;
+        }
+        public void setMainActivity(chofer mainActivity) {
+            this.mainActivity = mainActivity;
+        }
+        @Override
+        public void onLocationChanged(Location loc) {
+
+
+            longitud = loc.getLatitude();
+            latitud= loc.getLongitude();
+
+
+
+
+        }
+        @Override
+        public void onProviderDisabled(String provider) {
+            // Este metodo se ejecuta cuando el GPS es desactivado
+            Toast.makeText(getApplicationContext(),"GPS Desactivado" ,Toast.LENGTH_LONG).show();
+        }
+        @Override
+        public void onProviderEnabled(String provider) {
+            // Este metodo se ejecuta cuando el GPS es activado
+            Toast.makeText(getApplicationContext(),"GPS Activado" ,Toast.LENGTH_LONG).show();
+        }
+        @Override
+        public void onStatusChanged(String provider, int status, Bundle extras) {
+            switch (status) {
+                case LocationProvider.AVAILABLE:
+                    Log.d("debug", "LocationProvider.AVAILABLE");
+                    break;
+                case LocationProvider.OUT_OF_SERVICE:
+                    Log.d("debug", "LocationProvider.OUT_OF_SERVICE");
+                    break;
+                case LocationProvider.TEMPORARILY_UNAVAILABLE:
+                    Log.d("debug", "LocationProvider.TEMPORARILY_UNAVAILABLE");
+                    break;
+            }
+        }
+    }
+
+
+
+
+
+
+
+
+    public void Coordenadas(){
+
+
+
+        MapaCountDownTimerr = new CountDownTimer(99999999, 10000) {
 
             public void onTick(long millisUntilFinished) {
 
 
+                if (longitud==null || latitud ==null){
 
-                Toast.makeText(getApplicationContext(),"Enviando Ubicación..!", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(),"CARGANDO....!" ,Toast.LENGTH_LONG).show();
+
+                }else{
+
+                ejecutarServicio("https://basurapp.000webhostapp.com/webss/mandarUbicacion.php");
+                Toast.makeText(getApplicationContext(),"Longitud " + longitud +"  Latitud  " + latitud,Toast.LENGTH_LONG).show();
+
+
+                }
             }
 
             public void onFinish() {
@@ -210,19 +308,10 @@ public class chofer extends AppCompatActivity {
             }
         }.start();
 
-
     }
 
 
-
-    public void Cancelar(){
-
-        Toast.makeText(getApplicationContext(),"Dejando de transmitir", Toast.LENGTH_SHORT).show();
-        MapaCountDownTimerr.cancel();
-
-    }
-
-
+//-----------------------------NUEVOfin------------------------------
 
 
     private void ejecutarServicio(String URL){
@@ -250,8 +339,8 @@ public class chofer extends AppCompatActivity {
                 longitudD = Double.toString(longitud);
                 latitudD = Double.toString(latitud);
 
-                parametros.put("longitud",longitudD);
-                parametros.put("latitud",latitudD);
+                parametros.put("longitud",latitudD);
+                parametros.put("latitud",longitudD);
                 parametros.put("camion",EquipoCan);
 
                 return parametros;
@@ -263,7 +352,6 @@ public class chofer extends AppCompatActivity {
         RequestQueue requestQueue = Volley.newRequestQueue(this );
         requestQueue.add(stringRequest);
     }
-
 
 
 

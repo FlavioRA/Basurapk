@@ -14,7 +14,7 @@ import androidx.appcompat.app.AppCompatActivity;
 public class LoginUsuarioRequest extends StringRequest {
 
 
-        private static final String ruta = "http://basurapk.com/WebServiceAplicacion/loginEncargado.php";
+        private static final String ruta = "https://basurapp.000webhostapp.com/webss/loginEncargado.php";
 
 
         private Map<String, String> parametros;
