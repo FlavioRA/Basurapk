@@ -40,6 +40,9 @@ public class administrador extends AppCompatActivity{
     String Equipo="9";
     String EncargadoI;
 
+    ImageView btnruta9,btnruta10,btnruta11;
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,7 +55,55 @@ public class administrador extends AppCompatActivity{
 
         EncargadoI =extras.getString("EncargadoID");
 
+        btnruta9 = findViewById(R.id.btnruta9);
+        btnruta10 = findViewById(R.id.btnruta10);
+        btnruta11 = findViewById(R.id.btnruta11);
 
+        btnruta9.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                idLista = findViewById(R.id.idLista);
+                String consulta="https://basurapp.000webhostapp.com/webss/bajarRecorridoNueve.php";
+                EnviarRecibirDatos(consulta);
+
+                Toast.makeText(getApplicationContext(),"Info. Ruta 9 Cargada", Toast.LENGTH_SHORT).show();
+
+            }
+        });
+
+
+
+        btnruta10.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                idLista = findViewById(R.id.idLista);
+                String consulta="https://basurapp.000webhostapp.com/webss/bajarRecorridoDiez.php";
+                EnviarRecibirDatos(consulta);
+
+                Toast.makeText(getApplicationContext(),"Info. Ruta 10 Cargada", Toast.LENGTH_SHORT).show();
+
+
+            }
+        });
+
+
+
+        btnruta11.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                idLista = findViewById(R.id.idLista);
+                String consulta="https://basurapp.000webhostapp.com/webss/bajarRecorridoOnce.php";
+                EnviarRecibirDatos(consulta);
+
+                Toast.makeText(getApplicationContext(),"Info. Ruta 11 Cargada", Toast.LENGTH_SHORT).show();
+
+
+
+            }
+        });
 
 
 
@@ -118,6 +169,7 @@ public class administrador extends AppCompatActivity{
 
 
 
+
         idLista = findViewById(R.id.idLista);
         String consulta="https://basurapp.000webhostapp.com/webss/bajarRecorridos.php";
         EnviarRecibirDatos(consulta);
@@ -129,8 +181,6 @@ public class administrador extends AppCompatActivity{
 
 
     public void EnviarRecibirDatos(String URL){
-
-
 
         RequestQueue queue = Volley.newRequestQueue(this);
         StringRequest stringRequest = new StringRequest(Request.Method.GET, URL, new Response.Listener<String>() {
@@ -162,9 +212,6 @@ public class administrador extends AppCompatActivity{
 
         queue.add(stringRequest);
     }
-
-
-
 
     public void CargarListView(JSONArray ja){
 

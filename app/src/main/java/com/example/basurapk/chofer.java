@@ -108,8 +108,10 @@ public class chofer extends AppCompatActivity {
 
                 if (EquipoCan.equals("9")) {
 
-                    latitud=17.962654;
-                    longitud=-102.198716;
+                    latitud=-102.198661;
+                    longitud=17.962697;
+
+
 
                     ejecutarServicio("https://basurapp.000webhostapp.com/webss/mandarUbicacion.php");
                 }
@@ -155,8 +157,9 @@ public class chofer extends AppCompatActivity {
 
                 if (EquipoCan.equals("9")) {
 
-                    latitud=17.962654;
-                    longitud=-102.198716;
+
+                    latitud=-102.198661;
+                    longitud=17.962697;
 
                     ejecutarServicio("https://basurapp.000webhostapp.com/webss/mandarUbicacion.php");
                 }
