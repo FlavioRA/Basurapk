@@ -34,7 +34,7 @@
         android:layout_marginEnd="30dp"
         android:ems="10"
         android:hint="Nombre"
-        android:digits=" abcdefghijklmnñopqrstuvwxyzABCDEFGHIJKLMNÑOPQRSTUVWXY"
+        android:digits=" abcdefghijklmnñopqrstuvwxyzABCDEFGHIJKLMNÑOPQRSTUVWXYZ"
         android:inputType="textPersonName" />
 
     <EditText
@@ -64,7 +64,8 @@
         android:layout_marginTop="240dp"
         android:layout_marginEnd="30dp"
         android:ems="10"
-        android:digits=".abcdefghijklmnñopqrstuv123456789@-_"
+        android:textAllCaps="false"
+        android:digits=".abcdefghijklmnñopqrstuv123456789@-_ABCDEFGHIJKLMNÑOPQRSTUVWXYZ"
         android:hint="Email"
         android:inputType="textEmailAddress" />
 
@@ -138,7 +139,7 @@
         android:layout_marginEnd="35dp"
         android:fontFamily="sans-serif-medium"
         android:gravity="center"
-        android:text="Ojo! Si no escribes tus datos de contacto de forma correcta no podremos contactarte."
+        android:text="¡Ojo!, Si no escribes tus datos personales de forma correcta, no podremos contactarte."
         android:textColor="@android:color/holo_red_dark" />
 
 </RelativeLayout>

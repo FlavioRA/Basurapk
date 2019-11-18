@@ -18,7 +18,7 @@
         android:layout_marginTop="140dp"
         android:layout_marginEnd="14dp"
         android:drawableLeft="@drawable/tracking"
-        android:text="(Zona Centro) Av Lazaro Cardenas - Constitución 1814" />
+        android:text="(Zona Centro) Av. Lázaro Cárdenas - Constitución 1814" />
 
     <Button
         android:id="@+id/btnRuta10"
@@ -31,7 +31,7 @@
         android:layout_marginTop="279dp"
         android:layout_marginEnd="14dp"
         android:drawableLeft="@drawable/tracking"
-        android:text="(Zona centro) Escuela Naval Militar - Av Rio Balsas" />
+        android:text="(Zona centro) Escuela Naval Militar - Av. Río Balsas" />
 
     <Button
         android:id="@+id/btnRuta11"
@@ -44,7 +44,7 @@
         android:layout_marginTop="417dp"
         android:layout_marginEnd="14dp"
         android:drawableLeft="@drawable/tracking"
-        android:text=" (Zona centro) AV RECTOR HIDALGO - AV LAZARO CARDENAS" />
+        android:text=" (Zona centro) AV. RECTOR HIDALGO - AV.LÁZARO CÁRDENAS" />
 
     <ImageView
         android:id="@+id/imageView4"

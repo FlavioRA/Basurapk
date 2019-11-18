@@ -145,20 +145,20 @@
         android:textSize="18sp" />
 
 
-    <TextView
-        android:id="@+id/textView38"
-        android:layout_width="wrap_content"
-        android:layout_height="73dp"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginStart="18dp"
-        android:layout_marginTop="347dp"
-        android:layout_marginEnd="14dp"
-        android:fontFamily="sans-serif-medium"
-        android:text="Av.Lazaro Cardenas - Constitución de 1814 - Nicolas bravo - Manuel Doblado"
-        android:textColor="@color/cardview_light_background"
-        android:textSize="18sp" />
+            <TextView
+                android:id="@+id/textView38"
+                android:layout_width="wrap_content"
+                android:layout_height="73dp"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginStart="18dp"
+                android:layout_marginTop="347dp"
+                android:layout_marginEnd="14dp"
+                android:fontFamily="sans-serif-medium"
+                android:text="Av. Lázaro Cárdenas - Constitución de 1814 - Nicolás Bravo - Manuel Doblado"
+                android:textColor="@color/cardview_light_background"
+                android:textSize="18sp" />
 
     <Button
         android:id="@+id/idMapa"
