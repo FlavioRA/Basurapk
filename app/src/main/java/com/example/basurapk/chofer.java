@@ -108,9 +108,8 @@ public class chofer extends AppCompatActivity {
 
                 if (EquipoCan.equals("9")) {
 
-                    latitud=-102.198661;
-                    longitud=17.962697;
-
+                    latitud=17.962697;
+                    longitud=-102.198661;
 
 
                     ejecutarServicio("https://basurapp.000webhostapp.com/webss/mandarUbicacion.php");
@@ -157,14 +156,15 @@ public class chofer extends AppCompatActivity {
 
                 if (EquipoCan.equals("9")) {
 
+                    latitud=17.962706;
+                    longitud=-102.198680;
 
-                    latitud=-102.198661;
-                    longitud=17.962697;
 
                     ejecutarServicio("https://basurapp.000webhostapp.com/webss/mandarUbicacion.php");
                 }
 
                 if (EquipoCan.equals("10")) {
+
 
                     latitud=17.962899;
                     longitud=-102.19832;
@@ -173,6 +173,7 @@ public class chofer extends AppCompatActivity {
                 }
 
                 if (EquipoCan.equals("11")) {
+
 
                     latitud=17.96315;
                     longitud=-102.197943;
@@ -243,8 +244,9 @@ public class chofer extends AppCompatActivity {
         public void onLocationChanged(Location loc) {
 
 
-            longitud = loc.getLatitude();
-            latitud= loc.getLongitude();
+
+            latitud = loc.getLatitude();
+            longitud= loc.getLongitude();
 
 
 
@@ -299,7 +301,7 @@ public class chofer extends AppCompatActivity {
                 }else{
 
                 ejecutarServicio("https://basurapp.000webhostapp.com/webss/mandarUbicacion.php");
-                Toast.makeText(getApplicationContext(),"Longitud " + longitud +"  Latitud  " + latitud,Toast.LENGTH_LONG).show();
+                Toast.makeText(getApplicationContext(),"Longitud " + latitud +"  Latitud  " + longitud,Toast.LENGTH_LONG).show();
 
 
                 }
@@ -342,8 +344,10 @@ public class chofer extends AppCompatActivity {
                 longitudD = Double.toString(longitud);
                 latitudD = Double.toString(latitud);
 
-                parametros.put("longitud",latitudD);
-                parametros.put("latitud",longitudD);
+
+
+                parametros.put("latitud",latitudD);
+                parametros.put("longitud",longitudD);
                 parametros.put("camion",EquipoCan);
 
                 return parametros;

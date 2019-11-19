@@ -100,8 +100,6 @@ public class administrador extends AppCompatActivity{
 
                 Toast.makeText(getApplicationContext(),"Info. Ruta 11 Cargada", Toast.LENGTH_SHORT).show();
 
-
-
             }
         });
 
