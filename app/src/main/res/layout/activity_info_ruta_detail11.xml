@@ -147,20 +147,20 @@
         android:textColor="@color/cardview_light_background"
         android:textSize="18sp" />
 
-    <TextView
-        android:id="@+id/textView38"
-        android:layout_width="wrap_content"
-        android:layout_height="73dp"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="363dp"
-        android:layout_marginEnd="8dp"
-        android:fontFamily="sans-serif-medium"
-        android:text="Av. Lazaro Cardenas - AV Rector Hidalgo - Venustiano Carranza Constitución de 1917"
-        android:textColor="@color/cardview_light_background"
-        android:textSize="18sp" />
+            <TextView
+                android:id="@+id/textView38"
+                android:layout_width="wrap_content"
+                android:layout_height="73dp"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="363dp"
+                android:layout_marginEnd="8dp"
+                android:fontFamily="sans-serif-medium"
+                android:text="Av. Lázaro Cárdenas - AV Rector Hidalgo - Venustiano Carranza - Constitución de 1917"
+                android:textColor="@color/cardview_light_background"
+                android:textSize="18sp" />
 
     <Button
         android:id="@+id/idMapa"

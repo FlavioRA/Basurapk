@@ -92,7 +92,7 @@
         android:layout_marginEnd="27dp"
         android:fontFamily="sans-serif-medium"
         android:gravity="center"
-        android:text="Bienvenido Al Departamento De Aseo Publico"
+        android:text="Bienvenido Al Departamento De Aseo Público"
         android:textSize="18sp" />
 
     <TextView
