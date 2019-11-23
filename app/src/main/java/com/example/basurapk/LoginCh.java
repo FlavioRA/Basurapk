@@ -34,7 +34,7 @@ import java.util.Map;
 public class LoginCh extends AppCompatActivity {
 
     String HoraInicio;
-
+    boolean rs;
     EditText edtRuta, edtContrasenas;
     ImageView imgContactos;
     String numeroRuta;
@@ -92,14 +92,18 @@ public class LoginCh extends AppCompatActivity {
                 }else{
 
                     if(networkInfo != null && networkInfo.isConnected()){
-                        AccesarUsuarioch();
+
+                            AccesarUsuarioch();
+
                     }else{
 
                         Toast.makeText(getApplicationContext(),"Sin acceso a internet verifique la conexión y vuelva a entrar a la aplcación" , Toast.LENGTH_SHORT).show();
-
                     }
 
+
                 }
+
+
 
 
             }
@@ -146,7 +150,7 @@ public class LoginCh extends AppCompatActivity {
                 try {
                     jsonRespuesta = new JSONObject(response);
                     boolean ok = jsonRespuesta.getBoolean("success");
-
+                    rs=ok;
                     numeroRuta = jsonRespuesta.getString("IDEquipoRT");
 
                     Intent j = new Intent(getApplication(),chofer.class);

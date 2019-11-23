@@ -29,6 +29,7 @@ public class LoginAd extends AppCompatActivity {
     ImageView imgContactos;
     String Encargado;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -85,10 +86,10 @@ public class LoginAd extends AppCompatActivity {
                     }else{
 
                         Toast.makeText(getApplicationContext(),"Sin acceso a internet verifique la conexión y vuelva a entrar a la aplcación" , Toast.LENGTH_SHORT).show();
-
-                    }
+                        }
 
                 }
+
             }
         });
 
@@ -107,7 +108,7 @@ public class LoginAd extends AppCompatActivity {
 
     }
 
-    //Medotodo de login
+    //Metodo de login
 
     private void AccesarUsuario(){
 
@@ -130,18 +131,16 @@ public class LoginAd extends AppCompatActivity {
                     j.putExtra("EncargadoID",Encargado);
 
 
-
-                    if (ok == true){
+                    if (ok){
                         AccesoPerfilSinMantenerSesionIniciada();
-                        startActivity(j);
+                      startActivity(j);
                         Toast.makeText(getApplicationContext(), "Acceso Correcto", Toast.LENGTH_SHORT).show();
 
                     }else{
-                        //validaciodeusercontradb(User,username);
-                        AlertDialog.Builder alerta = new AlertDialog.Builder(LoginAd.this);
-                        alerta.setMessage("Usuario o Contraseña incorrecta").setNegativeButton("Reintentar", null).create().show();
-
+                        Toast.makeText(getApplicationContext(), "USUARIO O CONTRASEÑA INCORRECTO", Toast.LENGTH_SHORT).show();
                     }
+
+
                 } catch (JSONException e) {
                     e.getMessage();
                 }
