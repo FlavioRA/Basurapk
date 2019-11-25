@@ -12,6 +12,7 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
@@ -35,7 +36,7 @@ public class Buzon extends AppCompatActivity {
 
         listaResultado= findViewById(R.id.lvLista1);
 
-
+        Toast.makeText(getApplicationContext(), "Cargando Buzón..!", Toast.LENGTH_SHORT).show();
 
 
         ImageView imglogo=(ImageView)findViewById(R.id.imglogo);

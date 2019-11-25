@@ -53,7 +53,7 @@ public class notificaciones extends AppCompatActivity {
             }
         });
 
-
+        Toast.makeText(getApplicationContext(), "Cargando las noticias mas recientes..!", Toast.LENGTH_SHORT).show();
 
         ImageView imgRefresca =findViewById(R.id.imgRefresca);
 
