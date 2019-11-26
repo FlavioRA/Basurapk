@@ -64,7 +64,7 @@ public class administrador extends AppCompatActivity{
             public void onClick(View view) {
 
                 idLista = findViewById(R.id.idLista);
-                String consulta="https://basurapp.000webhostapp.com/webss/bajarRecorridoNueve.php";
+                String consulta="https://basurapk.com/webservices/bajarRecorridoNueve.php";
                 EnviarRecibirDatos(consulta);
 
                 Toast.makeText(getApplicationContext(),"Info. Ruta 9 Cargada", Toast.LENGTH_SHORT).show();
@@ -79,7 +79,7 @@ public class administrador extends AppCompatActivity{
             public void onClick(View view) {
 
                 idLista = findViewById(R.id.idLista);
-                String consulta="https://basurapp.000webhostapp.com/webss/bajarRecorridoDiez.php";
+                String consulta="https://basurapk.com/webservices/bajarRecorridoDiez.php";
                 EnviarRecibirDatos(consulta);
 
                 Toast.makeText(getApplicationContext(),"Info. Ruta 10 Cargada", Toast.LENGTH_SHORT).show();
@@ -95,7 +95,7 @@ public class administrador extends AppCompatActivity{
             public void onClick(View view) {
 
                 idLista = findViewById(R.id.idLista);
-                String consulta="https://basurapp.000webhostapp.com/webss/bajarRecorridoOnce.php";
+                String consulta="https://basurapk.com/webservices/bajarRecorridoOnce.php";
                 EnviarRecibirDatos(consulta);
 
                 Toast.makeText(getApplicationContext(),"Info. Ruta 11 Cargada", Toast.LENGTH_SHORT).show();
@@ -156,7 +156,7 @@ public class administrador extends AppCompatActivity{
             public void onClick(View view) {
 
                 idLista = findViewById(R.id.idLista);
-                String consulta="https://basurapp.000webhostapp.com/webss/bajarRecorridos.php";
+                String consulta="https://basurapk.com/webservices/bajarRecorridos.php";
                 EnviarRecibirDatos(consulta);
 
                 Toast.makeText(getApplicationContext(),"Actualizado", Toast.LENGTH_SHORT).show();
@@ -169,7 +169,7 @@ public class administrador extends AppCompatActivity{
 
 
         idLista = findViewById(R.id.idLista);
-        String consulta="https://basurapp.000webhostapp.com/webss/bajarRecorridos.php";
+        String consulta="https://basurapk.com/webservices/bajarRecorridos.php";
         EnviarRecibirDatos(consulta);
 
     }

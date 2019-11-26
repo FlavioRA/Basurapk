@@ -71,7 +71,7 @@ public class NuevaNotificacion extends AppCompatActivity {
                      CamposVacios();
 
             }else {
-                ejecutarServicio("https://basurapp.000webhostapp.com/webss/crearNoticia.php");
+                ejecutarServicio("https://basurapk.com/webservices/crearNoticia.php");
             }
             }
         });

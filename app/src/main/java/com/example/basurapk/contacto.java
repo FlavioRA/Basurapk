@@ -63,7 +63,7 @@ public class contacto extends AppCompatActivity {
 
                 }else {
 
-                    ejecutarServicio("https://basurapp.000webhostapp.com/webss/mandarMensaje.php");
+                    ejecutarServicio("https://basurapk.com/webservices/mandarMensaje.php");
                 }
             }
         });

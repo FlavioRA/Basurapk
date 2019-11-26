@@ -112,7 +112,7 @@ public class chofer extends AppCompatActivity {
                     longitud=-102.198661;
 
 
-                    ejecutarServicio("https://basurapp.000webhostapp.com/webss/mandarUbicacion.php");
+                    ejecutarServicio("https://basurapk.com/webservices/mandarUbicacion.php");
                 }
 
                 if (EquipoCan.equals("10")) {
@@ -120,7 +120,7 @@ public class chofer extends AppCompatActivity {
                     latitud=17.962899;
                     longitud=-102.19832;
 
-                    ejecutarServicio("https://basurapp.000webhostapp.com/webss/mandarUbicacion.php");
+                    ejecutarServicio("https://basurapk.com/webservices/mandarUbicacion.php");
                 }
 
                 if (EquipoCan.equals("11")) {
@@ -128,7 +128,7 @@ public class chofer extends AppCompatActivity {
                     latitud=17.963150;
                     longitud=-102.197943;
 
-                    ejecutarServicio("https://basurapp.000webhostapp.com/webss/mandarUbicacion.php");
+                    ejecutarServicio("https://basurapk.com/webservices/mandarUbicacion.php");
                 }
 
 
@@ -160,7 +160,7 @@ public class chofer extends AppCompatActivity {
                     longitud=-102.198680;
 
 
-                    ejecutarServicio("https://basurapp.000webhostapp.com/webss/mandarUbicacion.php");
+                    ejecutarServicio("https://basurapk.com/webservices/mandarUbicacion.php");
                 }
 
                 if (EquipoCan.equals("10")) {
@@ -169,7 +169,7 @@ public class chofer extends AppCompatActivity {
                     latitud=17.962899;
                     longitud=-102.19832;
 
-                    ejecutarServicio("https://basurapp.000webhostapp.com/webss/mandarUbicacion.php");
+                    ejecutarServicio("https://basurapk.com/webservices/mandarUbicacion.php");
                 }
 
                 if (EquipoCan.equals("11")) {
@@ -178,7 +178,7 @@ public class chofer extends AppCompatActivity {
                     latitud=17.96315;
                     longitud=-102.197943;
 
-                    ejecutarServicio("https://basurapp.000webhostapp.com/webss/mandarUbicacion.php");
+                    ejecutarServicio("https://basurapk.com/webservices/mandarUbicacion.php");
                 }
 
 
@@ -300,7 +300,7 @@ public class chofer extends AppCompatActivity {
 
                 }else{
 
-                ejecutarServicio("https://basurapp.000webhostapp.com/webss/mandarUbicacion.php");
+                ejecutarServicio("https://basurapk.com/webservices/mandarUbicacion.php");
                 Toast.makeText(getApplicationContext(),"Longitud " + latitud +"  Latitud  " + longitud,Toast.LENGTH_LONG).show();
 
 

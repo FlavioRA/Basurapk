@@ -995,9 +995,9 @@ public class mapa extends FragmentActivity implements OnMapReadyCallback {
 
             public void onTick(long millisUntilFinished) {
 
-                buscarVerde("https://basurapp.000webhostapp.com/webss/bajarCoordenadasVerde.php");
-                buscarRojo("https://basurapp.000webhostapp.com/webss/bajarCoordenadasRojo.php");
-                buscarAzul("https://basurapp.000webhostapp.com/webss/bajarCoordenadasAzul.php");
+                buscarVerde("https://basurapk.com/webservices/bajarCoordenadasVerde.php");
+                buscarRojo("https://basurapk.com/webservices/bajarCoordenadasRojo.php");
+                buscarAzul("https://basurapk.com/webservices/bajarCoordenadasAzul.php");
 
                 if (DLongitud==null ){
 
