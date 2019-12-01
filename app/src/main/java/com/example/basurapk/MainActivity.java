@@ -10,6 +10,8 @@ import android.net.NetworkInfo;
 import android.os.Bundle;
 import android.view.View;
 import android.view.Window;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.Toast;
@@ -17,7 +19,7 @@ import android.widget.Toast;
 public class MainActivity extends AppCompatActivity {
 
 
-    ImageView imgMapa,imgNoticias,imgRutas,imgContacto,imgSalir;
+    ImageView imgMapa,imgNoticias,imgRutas,imgContacto,imgSalir,imgLogo;
 
 
     @Override
@@ -26,6 +28,19 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
+
+
+
+        //Efecto
+
+        imgLogo=findViewById(R.id.imageView3);
+
+        final Animation zoomAnimation = AnimationUtils.loadAnimation(this, R.anim.zoom);
+        imgLogo.startAnimation(zoomAnimation);
+
+
+        //
+
 
         ConnectivityManager nuevo = (ConnectivityManager) getApplicationContext().getSystemService(Context.CONNECTIVITY_SERVICE);
         final NetworkInfo networkInfo = nuevo.getActiveNetworkInfo();

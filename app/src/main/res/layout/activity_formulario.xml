@@ -8,6 +8,18 @@
     tools:context=".Formulario">
 
 
+    <ImageView
+        android:id="@+id/imageView6"
+        android:layout_width="138dp"
+        android:layout_height="130dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="261dp"
+        android:layout_marginTop="26dp"
+        android:layout_marginEnd="12dp"
+        app:srcCompat="@drawable/logonegro" />
+
     <Button
         android:id="@+id/btnEnviar"
         style="@style/Widget.AppCompat.Button.Colored"
@@ -16,8 +28,8 @@
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
-        android:layout_marginStart="100dp"
-        android:layout_marginTop="492dp"
+        android:layout_marginStart="99dp"
+        android:layout_marginTop="570dp"
         android:layout_marginEnd="99dp"
         android:text="Enviar" />
 
@@ -28,12 +40,12 @@
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
-        android:layout_marginStart="69dp"
-        android:layout_marginTop="17dp"
-        android:layout_marginEnd="69dp"
-        android:fontFamily="sans-serif-medium"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="14dp"
+        android:layout_marginEnd="132dp"
+        android:fontFamily="sans-serif-black"
         android:gravity="center"
-        android:text="Llenar Formulario"
+        android:text="LLENAR FORMULARIO"
         android:textSize="24sp" />
 
     <TextView
@@ -88,7 +100,7 @@
         android:layout_marginStart="7dp"
         android:layout_marginTop="327dp"
         android:layout_marginEnd="36dp"
-        android:background="@color/cardview_light_background"
+        android:background="@android:color/darker_gray"
         android:ems="10"
         android:gravity="start|top"
         android:hint="¿Algún comentarios sobre el recorrido? (opcional)"
@@ -142,6 +154,23 @@
             android:layout_height="wrap_content"
             android:checked="true"
             android:text="No" />
+
     </RadioGroup>
+
+    <TextView
+        android:id="@+id/textView39"
+        android:layout_width="wrap_content"
+        android:layout_height="76dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="21dp"
+        android:layout_marginTop="495dp"
+        android:layout_marginEnd="22dp"
+        android:fontFamily="sans-serif-medium"
+        android:gravity="center"
+        android:text="Recuerda enviar tu formulario si tienes algun comentario sobre el recorrido no te olvides informarlo en la caja...!"
+        android:textColor="@android:color/holo_red_dark"
+        android:textSize="15sp" />
 
 </RelativeLayout>

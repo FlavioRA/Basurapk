@@ -8,8 +8,11 @@ import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 import android.text.format.Time;
 import android.view.View;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.RadioButton;
 import android.widget.Toast;
 
@@ -49,6 +52,12 @@ public class Formulario extends AppCompatActivity {
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
 
 
+            //IMAGEN
+
+        ImageView imageView6;
+        imageView6=findViewById(R.id.imageView6);
+        final Animation zoomAnimation = AnimationUtils.loadAnimation(this, R.anim.zoom);
+        imageView6.startAnimation(zoomAnimation);
 
 
 

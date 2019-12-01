@@ -78,13 +78,13 @@
         android:layout_alignParentEnd="true"
         android:layout_marginStart="15dp"
         android:layout_marginTop="297dp"
-        android:maxLength="100"
         android:layout_marginEnd="15dp"
-        android:background="@color/colorPrimaryDark"
+        android:background="@android:color/darker_gray"
         android:ems="10"
         android:gravity="start|top"
         android:hint="Escribir mensaje..."
-        android:inputType="textMultiLine" />
+        android:inputType="textMultiLine"
+        android:maxLength="100" />
 
     <ImageView
         android:id="@+id/imageView11"

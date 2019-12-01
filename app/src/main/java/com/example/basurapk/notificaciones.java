@@ -7,6 +7,8 @@ import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
@@ -31,6 +33,7 @@ import java.util.Map;
 
 public class notificaciones extends AppCompatActivity {
 
+    ImageView imageView;
 
     ListView listaResultado;
     @Override
@@ -38,6 +41,15 @@ public class notificaciones extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_notificaciones);
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
+
+
+        //----
+
+        imageView=findViewById(R.id.imageView);
+        final Animation zoomAnimation = AnimationUtils.loadAnimation(this, R.anim.zoom);
+        imageView.startAnimation(zoomAnimation);
+
+        //---
 
         listaResultado= findViewById(R.id.lvLista);
 

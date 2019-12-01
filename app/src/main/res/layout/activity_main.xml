@@ -19,6 +19,7 @@
         android:layout_marginStart="91dp"
         android:layout_marginEnd="34dp"
         android:layout_marginBottom="244dp"
+        android:background="@color/colorGreen"
         android:text="Mapa" />
 
     <Button
@@ -32,6 +33,7 @@
         android:layout_marginStart="2dp"
         android:layout_marginEnd="-2dp"
         android:layout_marginBottom="190dp"
+        android:background="@color/colorGreen"
         android:text="Noticias" />
 
     <Button
@@ -45,6 +47,7 @@
         android:layout_marginStart="1dp"
         android:layout_marginEnd="-1dp"
         android:layout_marginBottom="133dp"
+        android:background="@color/colorGreen"
         android:text="Info. Rutas" />
 
     <Button
@@ -58,6 +61,7 @@
         android:layout_marginStart="-1dp"
         android:layout_marginEnd="1dp"
         android:layout_marginBottom="80dp"
+        android:background="@color/colorGreen"
         android:text="Contacto" />
 
     <Button
