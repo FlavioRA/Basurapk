@@ -289,7 +289,7 @@ public class chofer extends AppCompatActivity {
 
 
 
-        MapaCountDownTimerr = new CountDownTimer(999999999, 15000) {
+        MapaCountDownTimerr = new CountDownTimer(29999999, 30000) {
 
             public void onTick(long millisUntilFinished) {
 
