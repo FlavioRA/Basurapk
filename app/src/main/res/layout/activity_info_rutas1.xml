@@ -68,7 +68,7 @@
         android:layout_marginEnd="105dp"
         android:fontFamily="sans-serif-medium"
         android:text="Ruta 9 Verde "
-        android:textColor="@color/cardview_light_background"
+        android:textColor="@android:color/black"
         android:textSize="24sp" />
 
     <TextView
@@ -83,7 +83,7 @@
         android:layout_marginEnd="104dp"
         android:fontFamily="sans-serif-medium"
         android:text="Ruta 10 Roja"
-        android:textColor="@color/cardview_light_background"
+        android:textColor="@color/colorAccent"
         android:textSize="24sp" />
 
     <TextView
@@ -98,7 +98,7 @@
         android:layout_marginEnd="104dp"
         android:fontFamily="sans-serif-medium"
         android:text="Ruta 11 Azul"
-        android:textColor="@color/cardview_light_background"
+        android:textColor="@color/colorAccent"
         android:textSize="24sp" />
 
 

@@ -57,47 +57,50 @@
         android:layout_marginEnd="62dp"
         android:src="@drawable/verdenueve" />
 
-    <TextView
-        android:id="@+id/textView31"
-        android:layout_width="244dp"
-        android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginStart="18dp"
-        android:layout_marginTop="426dp"
-        android:layout_marginEnd="155dp"
-        android:fontFamily="sans-serif-black"
-        android:text="Horarios :"
-        android:textSize="18sp" />
+            <TextView
+                android:id="@+id/textView31"
+                android:layout_width="244dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginStart="18dp"
+                android:layout_marginTop="426dp"
+                android:layout_marginEnd="155dp"
+                android:fontFamily="sans-serif-black"
+                android:text="Horarios :"
+                android:textColor="@color/colorAccent"
+                android:textSize="18sp" />
 
-    <TextView
-        android:id="@+id/textView32"
-        android:layout_width="244dp"
-        android:layout_height="24dp"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="321dp"
-        android:layout_marginEnd="163dp"
-        android:fontFamily="sans-serif-black"
-        android:text="Calles principales:"
-        android:textSize="18sp" />
+            <TextView
+                android:id="@+id/textView32"
+                android:layout_width="244dp"
+                android:layout_height="24dp"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="321dp"
+                android:layout_marginEnd="163dp"
+                android:fontFamily="sans-serif-black"
+                android:text="Calles principales:"
+                android:textColor="@color/colorAccent"
+                android:textSize="18sp" />
 
-    <TextView
-        android:id="@+id/textView33"
-        android:layout_width="244dp"
-        android:layout_height="24dp"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginStart="18dp"
-        android:layout_marginTop="491dp"
-        android:layout_marginEnd="156dp"
-        android:fontFamily="sans-serif-black"
-        android:text="Color en el mapa:"
-        android:textSize="18sp" />
+            <TextView
+                android:id="@+id/textView33"
+                android:layout_width="244dp"
+                android:layout_height="24dp"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginStart="18dp"
+                android:layout_marginTop="491dp"
+                android:layout_marginEnd="156dp"
+                android:fontFamily="sans-serif-black"
+                android:text="Color en el mapa:"
+                android:textColor="@color/colorAccent"
+                android:textSize="18sp" />
 
     <TextView
         android:id="@+id/textView34"
@@ -157,7 +160,7 @@
                 android:layout_marginEnd="14dp"
                 android:fontFamily="sans-serif-medium"
                 android:text="Av. Lázaro Cárdenas - Constitución de 1814 - Nicolás Bravo - Manuel Doblado"
-                android:textColor="@color/cardview_light_background"
+                android:textColor="@color/colorPrimaryDark"
                 android:textSize="18sp" />
 
     <Button

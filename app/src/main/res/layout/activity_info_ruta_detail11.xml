@@ -60,47 +60,50 @@
         android:textColor="@color/colorAccent"
         android:textSize="28sp" />
 
-    <TextView
-        android:id="@+id/textView31"
-        android:layout_width="244dp"
-        android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="441dp"
-        android:layout_marginEnd="149dp"
-        android:fontFamily="sans-serif-black"
-        android:text="Horarios :"
-        android:textSize="18sp" />
+            <TextView
+                android:id="@+id/textView31"
+                android:layout_width="244dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="441dp"
+                android:layout_marginEnd="149dp"
+                android:fontFamily="sans-serif-black"
+                android:text="Horarios :"
+                android:textColor="@color/colorAccent"
+                android:textSize="18sp" />
 
-    <TextView
-        android:id="@+id/textView32"
-        android:layout_width="244dp"
-        android:layout_height="24dp"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="334dp"
-        android:layout_marginEnd="155dp"
-        android:fontFamily="sans-serif-black"
-        android:text="Calles principales:"
-        android:textSize="18sp" />
+            <TextView
+                android:id="@+id/textView32"
+                android:layout_width="244dp"
+                android:layout_height="24dp"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="334dp"
+                android:layout_marginEnd="155dp"
+                android:fontFamily="sans-serif-black"
+                android:text="Calles principales:"
+                android:textColor="@color/colorAccent"
+                android:textSize="18sp" />
 
-    <TextView
-        android:id="@+id/textView33"
-        android:layout_width="244dp"
-        android:layout_height="24dp"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="500dp"
-        android:layout_marginEnd="150dp"
-        android:fontFamily="sans-serif-black"
-        android:text="Color en el mapa:"
-        android:textSize="18sp" />
+            <TextView
+                android:id="@+id/textView33"
+                android:layout_width="244dp"
+                android:layout_height="24dp"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="500dp"
+                android:layout_marginEnd="150dp"
+                android:fontFamily="sans-serif-black"
+                android:text="Color en el mapa:"
+                android:textColor="@color/colorAccent"
+                android:textSize="18sp" />
 
     <TextView
         android:id="@+id/textView34"
