@@ -7,6 +7,16 @@
     android:background="@drawable/fondoo"
     tools:context=".contacto">
 
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+
     <Button
         android:id="@+id/btnEnviar"
         style="@style/Widget.AppCompat.Button.Colored"
@@ -141,5 +151,8 @@
         android:gravity="center"
         android:text="¡Ojo!, Si no escribes tus datos personales de forma correcta, no podremos contactarte, No cuentas con correo electronico? vuelve a escribir tu nombre en el campo email."
         android:textColor="@android:color/holo_red_dark" />
+
+        </RelativeLayout>
+    </ScrollView>
 
 </RelativeLayout>
