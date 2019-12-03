@@ -156,7 +156,7 @@ public class mapa extends FragmentActivity implements OnMapReadyCallback {
 
         Conteo();
 
-
+        Toast.makeText(getApplicationContext(), "Cargando Camiones...!", Toast.LENGTH_SHORT).show();
 
 
 
@@ -1001,7 +1001,7 @@ public class mapa extends FragmentActivity implements OnMapReadyCallback {
 
                 if (DLongitud==null ){
 
-                   Toast.makeText(getApplicationContext(), "Esperando Camion Verde", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(), "Cargando...!", Toast.LENGTH_SHORT).show();
 
                 }else{
 
@@ -1012,7 +1012,7 @@ public class mapa extends FragmentActivity implements OnMapReadyCallback {
 
                 if (DLongitudrojo==null){
 
-                    Toast.makeText(getApplicationContext(), "Esperando Camion Rojo", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(), "Cargando...!", Toast.LENGTH_SHORT).show();
 
                 }else{
 
@@ -1022,7 +1022,7 @@ public class mapa extends FragmentActivity implements OnMapReadyCallback {
                 }
                 if (DLongitudAzul==null){
 
-                    Toast.makeText(getApplicationContext(), "Esperando Camion Azul", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(), "Cargando...!", Toast.LENGTH_SHORT).show();
 
                 }else{
 
