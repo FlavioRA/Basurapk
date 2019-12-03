@@ -115,6 +115,7 @@ public class LoginAd extends AppCompatActivity {
         final  String User = edtUsuario.getText().toString();
         final  String Pw = edtContrasena.getText().toString();
 
+
         Response.Listener<String> respuesta = new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
@@ -124,39 +125,42 @@ public class LoginAd extends AppCompatActivity {
                     jsonRespuesta = new JSONObject(response);
 
                     boolean ok = jsonRespuesta.getBoolean("success");
-                    Encargado = jsonRespuesta.getString("IDEncargado");
 
 
-                    Intent j = new Intent(getApplication(),administrador.class);
-                    j.putExtra("EncargadoID",Encargado);
 
-
-                    if (ok){
-                        AccesoPerfilSinMantenerSesionIniciada();
-                      startActivity(j);
+                    if (ok == true){
+                        Encargado = jsonRespuesta.getString("IDEncargado");
                         Toast.makeText(getApplicationContext(), "Acceso Correcto", Toast.LENGTH_SHORT).show();
-
+                        Intent j = new Intent(getApplication(),administrador.class);
+                        j.putExtra("EncargadoID",Encargado);
+                        startActivity(j);
                     }else{
-                        Toast.makeText(getApplicationContext(), "USUARIO O CONTRASEÑA INCORRECTO", Toast.LENGTH_SHORT).show();
+                        AlertDialog.Builder alerta = new AlertDialog.Builder(LoginAd.this);
+                        alerta.setMessage("Usuario o Contraseña incorrecta").setNegativeButton("Reintentar", null).create().show();
                     }
 
 
                 } catch (JSONException e) {
                     e.getMessage();
                 }
+
+
+
+
             }
         };
+
 
         LoginUsuarioRequest r = new LoginUsuarioRequest(User.trim(),Pw.trim(),respuesta);
         RequestQueue cola = Volley.newRequestQueue(LoginAd.this);
         cola.add(r);
+
+
     }
 
     private void AccesoPerfilSinMantenerSesionIniciada(){
-
         Intent intent3 = new Intent(getApplicationContext(),administrador.class);
         startActivityForResult(intent3, 0);
-
     }
 
     public void openDialogInicio2(){

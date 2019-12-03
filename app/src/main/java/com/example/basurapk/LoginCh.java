@@ -150,16 +150,16 @@ public class LoginCh extends AppCompatActivity {
                 try {
                     jsonRespuesta = new JSONObject(response);
                     boolean ok = jsonRespuesta.getBoolean("success");
-                    rs=ok;
-                    numeroRuta = jsonRespuesta.getString("IDEquipoRT");
 
-                    Intent j = new Intent(getApplication(),chofer.class);
-                    j.putExtra("EquipoAc",numeroRuta);
-                    j.putExtra("HoraInicio",HoraInicio);
+
 
 
                     if (ok == true){
-                        AccesoPerfilSinMantenerSesionIniciada();
+                        numeroRuta = jsonRespuesta.getString("IDEquipoRT");
+                        Intent j = new Intent(getApplication(),chofer.class);
+                        j.putExtra("EquipoAc",numeroRuta);
+                        j.putExtra("HoraInicio",HoraInicio);
+
                         startActivity(j);
 
                     }else{
