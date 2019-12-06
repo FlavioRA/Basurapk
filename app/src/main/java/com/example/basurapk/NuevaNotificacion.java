@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.os.Bundle;
+import android.text.format.Time;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -19,15 +20,15 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 
+import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 
 public class NuevaNotificacion extends AppCompatActivity {
 
 
-    EditText edtFecha;
     EditText edtNuevaNoticia;
-    String Encargados;
+    String Encargados,FechaHoy;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,11 +38,10 @@ public class NuevaNotificacion extends AppCompatActivity {
 
         final Bundle extras = getIntent().getExtras();
 
+
         Encargados =extras.getString("EncargadoIDs");
 
 
-
-        edtFecha=findViewById(R.id.edtFecha);
         edtNuevaNoticia=findViewById(R.id.edtNuevaNoticia);
 
 
@@ -59,6 +59,28 @@ public class NuevaNotificacion extends AppCompatActivity {
             }
         });
 
+
+        //Inicio captura de fecha
+
+        Time today = new Time(Time.getCurrentTimezone());
+        today.setToNow();
+        int monthDay = today.monthDay;
+        int month = (today.month)+1;
+        int Year = today.year;
+
+
+        String dia =String.valueOf(monthDay);
+        String mes=String.valueOf(month);
+        String year=String.valueOf(Year);
+
+
+        FechaHoy=year + "-" + mes +"-" + dia;
+
+        //Fin Captura de fecha
+
+
+        //---->
+
         //inicio Captura de datos
 
         Button btnEnviarN = findViewById(R.id.btnEnviarN);
@@ -67,7 +89,7 @@ public class NuevaNotificacion extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-            if (edtNuevaNoticia.getText().toString().isEmpty() || edtFecha.getText().toString().isEmpty()) {
+            if (edtNuevaNoticia.getText().toString().isEmpty()) {
                      CamposVacios();
 
             }else {
@@ -86,7 +108,6 @@ public class NuevaNotificacion extends AppCompatActivity {
         dialognoticia.show(getSupportFragmentManager(),"Ejemplo Administrador");
 
         edtNuevaNoticia.setText("");
-        edtFecha.setText("");
 
     }
 
@@ -127,7 +148,7 @@ public class NuevaNotificacion extends AppCompatActivity {
             protected Map<String, String> getParams() throws AuthFailureError {
                 Map<String,String> parametros = new HashMap<String,String>();
 
-                parametros.put("Fecha",edtFecha.getText().toString());
+                parametros.put("Fecha",FechaHoy);
                 parametros.put("Noticia",edtNuevaNoticia.getText().toString());
                 parametros.put("Encargado",Encargados);
 

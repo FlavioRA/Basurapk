@@ -989,7 +989,7 @@ public class mapa extends FragmentActivity implements OnMapReadyCallback {
 
 
 
-        MapaCountDownTimerr = new CountDownTimer(25000000, 10000) {
+        MapaCountDownTimerr = new CountDownTimer(25000000, 20000) {
 
 
 
