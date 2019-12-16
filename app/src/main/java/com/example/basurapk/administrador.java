@@ -165,9 +165,6 @@ public class administrador extends AppCompatActivity{
             }
         });
 
-
-
-
         idLista = findViewById(R.id.idLista);
         String consulta="https://basurapk.com/webservices/bajarRecorridos.php";
         EnviarRecibirDatos(consulta);

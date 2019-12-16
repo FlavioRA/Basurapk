@@ -158,6 +158,7 @@ public class mapa extends FragmentActivity implements OnMapReadyCallback {
 
         Toast.makeText(getApplicationContext(), "Cargando Camiones...!", Toast.LENGTH_SHORT).show();
 
+        banderas();
 
 
     //Ruta9 Verde
@@ -174,9 +175,6 @@ public class mapa extends FragmentActivity implements OnMapReadyCallback {
     contenedorRuta11();
 
     }
-
-
-
 
 
     public void ruta9(){
@@ -239,6 +237,37 @@ public class mapa extends FragmentActivity implements OnMapReadyCallback {
                 .add(new LatLng(17.957392, -102.188238), new LatLng(17.957950, -102.188275 ))
                 .width(15)
                 .color(Color.GREEN));
+
+    }
+
+    public void banderas(){
+
+        //Inicio Fin Ruta10 Roja
+
+
+        //LatLng banderair = new LatLng(17.962707, -102.199177);
+        //mMap.addMarker(new MarkerOptions().position(banderair).title("Inicio Ruta ").icon(BitmapDescriptorFactory.fromResource(R.drawable.band)));
+
+        //LatLng banderafr = new LatLng(17.956149, -102.193767);
+        //mMap.addMarker(new MarkerOptions().position(banderafr).title("Fin Ruta ").icon(BitmapDescriptorFactory.fromResource(R.drawable.terminar)));
+
+        //Inicio Fin Ruta 9 verde
+
+        //LatLng banderaiv = new LatLng(17.963199, -102.197814);
+        //mMap.addMarker(new MarkerOptions().position(banderaiv).title("Inicio Ruta ").icon(BitmapDescriptorFactory.fromResource(R.drawable.band)));
+
+        //LatLng banderafv = new LatLng(17.956909, -102.194102);
+        //mMap.addMarker(new MarkerOptions().position(banderafv).title("Fin Ruta ").icon(BitmapDescriptorFactory.fromResource(R.drawable.terminar)));
+
+        //Inicio Fin Ruta11 Azul
+
+        LatLng banderaia = new LatLng(17.959394, -102.190788);
+        mMap.addMarker(new MarkerOptions().position(banderaia).title("Inicio Ruta ").icon(BitmapDescriptorFactory.fromResource(R.drawable.band)));
+
+        LatLng banderafa = new LatLng(17.969325, -102.197535);
+        mMap.addMarker(new MarkerOptions().position(banderafa).title("Fin Ruta ").icon(BitmapDescriptorFactory.fromResource(R.drawable.terminar)));
+
+
 
     }
 

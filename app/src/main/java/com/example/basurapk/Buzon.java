@@ -65,8 +65,6 @@ public class Buzon extends AppCompatActivity {
 
     }
 
-
-
     public void EnviarRecibirDatos(String URL){
 
 
