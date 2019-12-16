@@ -20,6 +20,7 @@ public class MainActivity extends AppCompatActivity {
 
 
     ImageView imgMapa,imgNoticias,imgRutas,imgContacto,imgSalir,imgLogo;
+    ImageView imgAviso;
 
 
     @Override
@@ -28,6 +29,25 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
+
+
+
+        //Aviso de privacidad
+
+        imgAviso=findViewById(R.id.imgAviso);
+
+        imgAviso.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                DialogoAviso();
+
+            }
+        });
+
+
+        //Fin aviso de privacidad
+
 
 
 
@@ -208,4 +228,11 @@ public class MainActivity extends AppCompatActivity {
 
 
     }
+
+    public void DialogoAviso(){
+        dialogoPrivacidad privacidad = new dialogoPrivacidad();
+        privacidad.show(getSupportFragmentManager(),"Ejemplo Administrador");
+
+    }
+
 }
