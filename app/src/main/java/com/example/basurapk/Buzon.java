@@ -2,6 +2,7 @@ package com.example.basurapk;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.method.ScrollingMovementMethod;
@@ -29,6 +30,7 @@ import java.util.ArrayList;
 public class Buzon extends AppCompatActivity {
     ListView listaResultado;
     ImageView back,imgActualizar;
+    private ProgressDialog progressDialog;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -37,8 +39,8 @@ public class Buzon extends AppCompatActivity {
         listaResultado= findViewById(R.id.lvLista1);
 
 
-        Toast.makeText(getApplicationContext(), "Cargando Buzón..!", Toast.LENGTH_SHORT).show();
-
+        init();
+        showPDialog1();
 
         //Img
 
@@ -68,6 +70,20 @@ public class Buzon extends AppCompatActivity {
 
         EnviarRecibirDatos(consulta);
 
+    }
+
+    private void init(){
+
+        this.progressDialog=new ProgressDialog(this);
+
+    }
+
+    private void showPDialog1(){
+
+        progressDialog.setCancelable(false);
+        progressDialog.setTitle("Cargando Mensajes Más Recientes");
+        progressDialog.setMessage("Por Favor Espere Un Momento..!");
+        progressDialog.show();
 
     }
 
@@ -121,6 +137,8 @@ public class Buzon extends AppCompatActivity {
             } catch (JSONException e) {
                 e.printStackTrace();
             }
+
+            progressDialog.dismiss();
 
         }
 

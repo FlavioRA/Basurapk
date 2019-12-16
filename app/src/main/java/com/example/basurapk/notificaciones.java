@@ -2,9 +2,11 @@ package com.example.basurapk;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.os.Bundle;
+import android.os.Handler;
 import android.util.Log;
 import android.view.View;
 import android.view.animation.Animation;
@@ -34,14 +36,16 @@ import java.util.Map;
 public class notificaciones extends AppCompatActivity {
 
     ImageView imageView;
-
     ListView listaResultado;
+    private ProgressDialog progressDialog;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_notificaciones);
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
 
+        init();
+        showPDialog1();
 
         //----
 
@@ -65,8 +69,6 @@ public class notificaciones extends AppCompatActivity {
             }
         });
 
-        Toast.makeText(getApplicationContext(), "Cargando las noticias mas recientes..!", Toast.LENGTH_SHORT).show();
-
         ImageView imgRefresca =findViewById(R.id.imgRefresca);
 
         imgRefresca.setOnClickListener(new View.OnClickListener() {
@@ -80,8 +82,26 @@ public class notificaciones extends AppCompatActivity {
             }
         });
 
+
+
+
         String Consulta="https://basurapk.com/webservices/bajarNoticias.php";
         EnviarRecibirDatos(Consulta);
+
+    }
+
+    private void init(){
+
+        this.progressDialog=new ProgressDialog(this);
+
+    }
+
+    private void showPDialog1(){
+
+        progressDialog.setCancelable(false);
+        progressDialog.setTitle("Cargando Noticias Más Recientes");
+        progressDialog.setMessage("Por Favor Espere Un Momento..!");
+        progressDialog.show();
 
     }
 
@@ -139,7 +159,7 @@ public class notificaciones extends AppCompatActivity {
             }
 
         }
-
+        progressDialog.dismiss();
 
         ArrayAdapter<String> adaptador = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, lista);
         listaResultado.setAdapter(adaptador);
