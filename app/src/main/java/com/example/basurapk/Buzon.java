@@ -28,7 +28,7 @@ import java.util.ArrayList;
 
 public class Buzon extends AppCompatActivity {
     ListView listaResultado;
-    ImageView back;
+    ImageView back,imgActualizar;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -36,7 +36,19 @@ public class Buzon extends AppCompatActivity {
 
         listaResultado= findViewById(R.id.lvLista1);
 
+
         Toast.makeText(getApplicationContext(), "Cargando Buzón..!", Toast.LENGTH_SHORT).show();
+
+
+        //Img
+
+        imgActualizar=findViewById(R.id.btnActualiza);
+        imgActualizar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(getApplicationContext(), "Buzón Actualizado...!", Toast.LENGTH_SHORT).show();
+            }
+        });
 
 
         ImageView imglogo=(ImageView)findViewById(R.id.imglogo);

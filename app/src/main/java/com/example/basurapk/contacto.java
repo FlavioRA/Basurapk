@@ -41,6 +41,7 @@ public class contacto extends AppCompatActivity {
 
 
 
+
         edtNombre=findViewById(R.id.edtNombre);
         edtTelefono=findViewById(R.id.edtTelefono);
         edtEmail=findViewById(R.id.edtEmail);
@@ -48,28 +49,6 @@ public class contacto extends AppCompatActivity {
         btnEnviar=findViewById(R.id.btnEnviar);
 
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
-
-//Envio de datos
-
-
-        btnEnviar.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-
-
-                if(edtNombre.getText().toString().isEmpty() || edtMensaje.getText().toString().isEmpty() || edtTelefono.getText().toString().isEmpty() || edtEmail.getText().toString().isEmpty() ){
-
-                    CamposVacios();
-
-                }else {
-
-                    ejecutarServicio("https://basurapk.com/webservices/mandarMensaje.php");
-                }
-            }
-        });
-
-
-        //Fin envio de datos
 
 
 
@@ -91,6 +70,11 @@ public class contacto extends AppCompatActivity {
         FechaHoy=year + "-" + mes +"-" + dia;
 
         //Fin Sacar Fecha
+
+
+
+
+
 
 
 
@@ -121,6 +105,28 @@ public class contacto extends AppCompatActivity {
             }
         });
 
+        //Envio de datos
+
+
+        btnEnviar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+
+                if(edtNombre.getText().toString().isEmpty() || edtMensaje.getText().toString().isEmpty() || edtTelefono.getText().toString().isEmpty() || edtEmail.getText().toString().isEmpty() ){
+
+                    CamposVacios();
+
+                }else {
+
+                    ejecutarServicio("https://basurapk.com/webservices/mandarMensaje.php");
+                }
+            }
+        });
+
+
+        //Fin envio de datos
+
     }
 
 
@@ -139,8 +145,7 @@ public void openDialog(){
 
 }
 
-
-        public void CamposVacios(){
+public void CamposVacios(){
 
         dialogoCamposVacios dialogoCamposVacios = new dialogoCamposVacios();
         dialogoCamposVacios.show(getSupportFragmentManager(),"Ejemplo Administrador");

@@ -76,7 +76,7 @@
         android:layout_marginEnd="15dp"
         android:fontFamily="sans-serif-medium"
         android:gravity="center"
-        android:text='Recuerda poner la fecha en el formato indicado para que sea subida correctamente la noticia  "2019-12-12"'
+        android:text='Para editar y/o eliminar una noticia puedes hacerlo desde la pagina web que BasurapK tiene para ti..!'
         android:textColor="@android:color/holo_red_dark" />
 
 </RelativeLayout>
