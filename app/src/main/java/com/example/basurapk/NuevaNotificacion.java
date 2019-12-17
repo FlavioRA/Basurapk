@@ -2,6 +2,7 @@ package com.example.basurapk;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.os.Bundle;
@@ -29,6 +30,7 @@ public class NuevaNotificacion extends AppCompatActivity {
 
     EditText edtNuevaNoticia;
     String Encargados,FechaHoy;
+    private ProgressDialog progressDialog;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,12 +40,9 @@ public class NuevaNotificacion extends AppCompatActivity {
 
         final Bundle extras = getIntent().getExtras();
 
-
         Encargados =extras.getString("EncargadoIDs");
 
-
         edtNuevaNoticia=findViewById(R.id.edtNuevaNoticia);
-
 
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
 
@@ -73,11 +72,9 @@ public class NuevaNotificacion extends AppCompatActivity {
         String mes=String.valueOf(month);
         String year=String.valueOf(Year);
 
-
         FechaHoy=year + "-" + mes +"-" + dia;
 
         //Fin Captura de fecha
-
 
         //---->
 
@@ -93,6 +90,9 @@ public class NuevaNotificacion extends AppCompatActivity {
                      CamposVacios();
 
             }else {
+                //Aqui se inicia
+                init();
+                showPDialog1();
                 ejecutarServicio("https://basurapk.com/webservices/crearNoticia.php");
             }
             }
@@ -102,6 +102,20 @@ public class NuevaNotificacion extends AppCompatActivity {
 
     }
 
+    private void init(){
+
+        this.progressDialog=new ProgressDialog(this);
+
+    }
+
+    private void showPDialog1(){
+
+        progressDialog.setCancelable(false);
+        progressDialog.setTitle("Enviando noticia");
+        progressDialog.setMessage("Por Favor Espere Un Momento..!");
+        progressDialog.show();
+
+    }
 
     public void openDialog(){
         DialogNoticia dialognoticia = new DialogNoticia();
@@ -117,20 +131,21 @@ public class NuevaNotificacion extends AppCompatActivity {
         dialogoCamposVacios.show(getSupportFragmentManager(),"Ejemplo Administrador");
 
     }
-
-
+    
     public void dialogonoEnvio(){
 
         MensajeNoEnviado mensajeNoEnviado = new MensajeNoEnviado();
         mensajeNoEnviado.show(getSupportFragmentManager(),"Ejemplo Administrador");
     }
 
-
     private void ejecutarServicio(String URL){
 
         StringRequest stringRequest = new StringRequest(Request.Method.POST, URL, new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
+                //Aqui se detiene
+
+                progressDialog.dismiss();
 
                 openDialog();
 
@@ -155,6 +170,7 @@ public class NuevaNotificacion extends AppCompatActivity {
 
                 return parametros;
             }
+
         };
 
         RequestQueue requestQueue = Volley.newRequestQueue(this );

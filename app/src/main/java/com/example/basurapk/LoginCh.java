@@ -3,6 +3,7 @@ package com.example.basurapk;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
@@ -38,6 +39,7 @@ public class LoginCh extends AppCompatActivity {
     EditText edtRuta, edtContrasenas;
     ImageView imgContactos;
     String numeroRuta;
+    private ProgressDialog progressDialog;
     final Date date = new Date();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -93,7 +95,13 @@ public class LoginCh extends AppCompatActivity {
 
                     if(networkInfo != null && networkInfo.isConnected()){
 
-                            AccesarUsuarioch();
+
+                        //Aqui iniciaria
+
+                        init();
+                        showPDialog1();
+
+                        AccesarUsuarioch();
 
                     }else{
 
@@ -127,6 +135,20 @@ public class LoginCh extends AppCompatActivity {
 
     }
 
+    private void init(){
+
+        this.progressDialog=new ProgressDialog(this);
+
+    }
+
+    private void showPDialog1(){
+
+        progressDialog.setCancelable(false);
+        progressDialog.setTitle("Verificando Sus Datos.");
+        progressDialog.setMessage("Por Favor Espere Un Momento..!");
+        progressDialog.show();
+
+    }
 
     private void AccesarUsuarioch(){
 
@@ -159,11 +181,12 @@ public class LoginCh extends AppCompatActivity {
                         Intent j = new Intent(getApplication(),chofer.class);
                         j.putExtra("EquipoAc",numeroRuta);
                         j.putExtra("HoraInicio",HoraInicio);
-
+                        progressDialog.dismiss();
                         startActivity(j);
 
                     }else{
                         //validaciodeusercontradb(User,username);
+                        progressDialog.dismiss();
                         AlertDialog.Builder alerta = new AlertDialog.Builder(LoginCh.this);
                         alerta.setMessage("Usuario o Contraseña incorrecta").setNegativeButton("Reintentar", null).create().show();
 

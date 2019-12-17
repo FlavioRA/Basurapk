@@ -3,6 +3,7 @@ package com.example.basurapk;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.os.Bundle;
@@ -38,7 +39,7 @@ public class Formulario extends AppCompatActivity {
     String Hora;
     String EquipoDios;
     String horaInicio;
-
+    private ProgressDialog progressDialog;
     Double latitud;
     Double longitud;
     String longitudD;
@@ -109,9 +110,6 @@ public class Formulario extends AppCompatActivity {
         EquipoDios=extras.getString("EquipoEnv");
 
 
-
-
-
         btnEnviar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -133,6 +131,10 @@ public class Formulario extends AppCompatActivity {
                     CamionDecide="Si";
                 }
 
+                init();
+                showPDialog1();
+
+
                 ejecutarServicio("https://basurapk.com/webservices/crearRecorrido.php");
 
 
@@ -142,21 +144,32 @@ public class Formulario extends AppCompatActivity {
 
     }
 
+    private void init(){
+
+        this.progressDialog=new ProgressDialog(this);
+
+    }
+
+    private void showPDialog1(){
+
+        progressDialog.setCancelable(false);
+        progressDialog.setTitle("Cargando Mensajes Más Recientes");
+        progressDialog.setMessage("Por Favor Espere Un Momento..!");
+        progressDialog.show();
+
+    }
 
     public void openDialogInicio(){
         DialogCancelar exampleDialog = new DialogCancelar();
         exampleDialog.show(getSupportFragmentManager(),"Ejemplo Administrador");
     }
 
-
-
-
     private void ejecutarServicio(String URL){
 
         StringRequest stringRequest = new StringRequest(Request.Method.POST, URL, new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
-
+                progressDialog.dismiss();
                 Toast.makeText(getApplicationContext(),"Envio de datos realizados correctamente.", Toast.LENGTH_SHORT).show();
                 Intent intent4= new Intent(getApplicationContext(),MainActivity.class);
                 startActivityForResult(intent4, 0);

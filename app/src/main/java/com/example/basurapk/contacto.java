@@ -2,6 +2,7 @@ package com.example.basurapk;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.os.Bundle;
@@ -33,7 +34,7 @@ public class contacto extends AppCompatActivity {
     EditText edtMensaje;
     Button btnEnviar;
     String FechaHoy;
-
+    private ProgressDialog progressDialog;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -70,13 +71,6 @@ public class contacto extends AppCompatActivity {
         FechaHoy=year + "-" + mes +"-" + dia;
 
         //Fin Sacar Fecha
-
-
-
-
-
-
-
 
 
         ImageView imageView10 = (ImageView)findViewById(R.id.imageView10);
@@ -118,7 +112,8 @@ public class contacto extends AppCompatActivity {
                     CamposVacios();
 
                 }else {
-
+                    init();
+                    showPDialog1();
                     ejecutarServicio("https://basurapk.com/webservices/mandarMensaje.php");
                 }
             }
@@ -132,9 +127,22 @@ public class contacto extends AppCompatActivity {
 
 
 
+    private void init(){
 
+        this.progressDialog=new ProgressDialog(this);
 
-public void openDialog(){
+    }
+
+    private void showPDialog1(){
+
+        progressDialog.setCancelable(false);
+        progressDialog.setTitle("Enviando Mensaje");
+        progressDialog.setMessage("Por Favor Espere Un Momento..!");
+        progressDialog.show();
+
+    }
+
+    public void openDialog(){
 
         ExampleDialog exampleDialog = new ExampleDialog();
         exampleDialog.show(getSupportFragmentManager(),"Ejemplo Administrador");
@@ -145,14 +153,12 @@ public void openDialog(){
 
 }
 
-public void CamposVacios(){
+    public void CamposVacios(){
 
         dialogoCamposVacios dialogoCamposVacios = new dialogoCamposVacios();
         dialogoCamposVacios.show(getSupportFragmentManager(),"Ejemplo Administrador");
 
         }
-
-
 
     public void dialogonoEnvio(){
 
@@ -160,15 +166,12 @@ public void CamposVacios(){
         mensajeNoEnviado.show(getSupportFragmentManager(),"Ejemplo Administrador");
     }
 
-
-
-
     private void ejecutarServicio(String URL){
 
         StringRequest stringRequest = new StringRequest(Request.Method.POST, URL, new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
-
+                progressDialog.dismiss();
                 openDialog();
 
             }

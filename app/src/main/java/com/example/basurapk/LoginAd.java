@@ -3,6 +3,7 @@ package com.example.basurapk;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
@@ -28,7 +29,7 @@ public class LoginAd extends AppCompatActivity {
     EditText edtContrasena;
     ImageView imgContactos;
     String Encargado;
-
+    private ProgressDialog progressDialog;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -82,6 +83,8 @@ public class LoginAd extends AppCompatActivity {
                 }else{
 
                     if(networkInfo != null && networkInfo.isConnected()){
+                        init();
+                        showPDialog1();
                         AccesarUsuario();
                     }else{
 
@@ -110,6 +113,21 @@ public class LoginAd extends AppCompatActivity {
 
     //Metodo de login
 
+    private void init(){
+
+        this.progressDialog=new ProgressDialog(this);
+
+    }
+
+    private void showPDialog1(){
+
+        progressDialog.setCancelable(false);
+        progressDialog.setTitle("Verificando Sus Datos.");
+        progressDialog.setMessage("Por Favor Espere Un Momento..!");
+        progressDialog.show();
+
+    }
+
     private void AccesarUsuario(){
 
         final  String User = edtUsuario.getText().toString();
@@ -133,8 +151,10 @@ public class LoginAd extends AppCompatActivity {
                         Toast.makeText(getApplicationContext(), "Acceso Correcto", Toast.LENGTH_SHORT).show();
                         Intent j = new Intent(getApplication(),administrador.class);
                         j.putExtra("EncargadoID",Encargado);
+                        progressDialog.dismiss();
                         startActivity(j);
                     }else{
+                        progressDialog.dismiss();
                         AlertDialog.Builder alerta = new AlertDialog.Builder(LoginAd.this);
                         alerta.setMessage("Usuario o Contraseña incorrecta").setNegativeButton("Reintentar", null).create().show();
                     }
