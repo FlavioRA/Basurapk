@@ -170,6 +170,7 @@ public class MainActivity extends AppCompatActivity {
                 if(networkInfo != null && networkInfo.isConnected()){
                     Intent intent3 = new Intent(view.getContext(),notificaciones.class);
                     startActivityForResult(intent3, 0);
+
                 }else{
 
                     Toast.makeText(getApplicationContext(),"Verifica tu conexón a internet para obtener las noticias mas recientes" , Toast.LENGTH_SHORT).show();
