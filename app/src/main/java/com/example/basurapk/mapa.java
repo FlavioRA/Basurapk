@@ -261,11 +261,11 @@ public class mapa extends FragmentActivity implements OnMapReadyCallback {
 
         //Inicio Fin Ruta11 Azul
 
-        LatLng banderaia = new LatLng(17.959394, -102.190788);
-        mMap.addMarker(new MarkerOptions().position(banderaia).title("Inicio Ruta ").icon(BitmapDescriptorFactory.fromResource(R.drawable.band)));
+        //LatLng banderaia = new LatLng(17.959394, -102.190788);
+        //mMap.addMarker(new MarkerOptions().position(banderaia).title("Inicio Ruta ").icon(BitmapDescriptorFactory.fromResource(R.drawable.band)));
 
-        LatLng banderafa = new LatLng(17.969325, -102.197535);
-        mMap.addMarker(new MarkerOptions().position(banderafa).title("Fin Ruta ").icon(BitmapDescriptorFactory.fromResource(R.drawable.terminar)));
+        //LatLng banderafa = new LatLng(17.969325, -102.197535);
+        //mMap.addMarker(new MarkerOptions().position(banderafa).title("Fin Ruta ").icon(BitmapDescriptorFactory.fromResource(R.drawable.terminar)));
 
 
 

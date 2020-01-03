@@ -260,7 +260,7 @@ public class chofer extends AppCompatActivity {
         @Override
         public void onProviderEnabled(String provider) {
             // Este metodo se ejecuta cuando el GPS es activado
-            Toast.makeText(getApplicationContext(),"GPS Activado" ,Toast.LENGTH_LONG).show();
+            Toast.makeText(getApplicationContext(),"El GPS a vuelto a tener señal" ,Toast.LENGTH_LONG).show();
         }
         @Override
         public void onStatusChanged(String provider, int status, Bundle extras) {
@@ -280,16 +280,11 @@ public class chofer extends AppCompatActivity {
 
 
 
-
-
-
-
-
     public void Coordenadas(){
 
 
 
-        MapaCountDownTimerr = new CountDownTimer(29999999, 20000) {
+        MapaCountDownTimerr = new CountDownTimer(29999999, 30000) {
 
             public void onTick(long millisUntilFinished) {
 
