@@ -158,7 +158,7 @@ public class mapa extends FragmentActivity implements OnMapReadyCallback {
 
         Toast.makeText(getApplicationContext(), "Cargando Camiones...!", Toast.LENGTH_SHORT).show();
 
-        banderas();
+
 
 
     //Ruta9 Verde
@@ -1018,7 +1018,7 @@ public class mapa extends FragmentActivity implements OnMapReadyCallback {
 
 
 
-        MapaCountDownTimerr = new CountDownTimer(25000000, 20000) {
+        MapaCountDownTimerr = new CountDownTimer(25000000, 15000) {
 
 
 
