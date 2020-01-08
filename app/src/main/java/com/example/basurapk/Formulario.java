@@ -153,7 +153,7 @@ public class Formulario extends AppCompatActivity {
     private void showPDialog1(){
 
         progressDialog.setCancelable(false);
-        progressDialog.setTitle("Cargando Mensajes Más Recientes");
+        progressDialog.setTitle("Enviando los detalles del recorrido");
         progressDialog.setMessage("Por Favor Espere Un Momento..!");
         progressDialog.show();
 

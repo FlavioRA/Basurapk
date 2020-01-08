@@ -2,6 +2,7 @@ package com.example.basurapk;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
 
 import android.Manifest;
 import android.content.Context;
@@ -38,7 +39,7 @@ public class chofer extends AppCompatActivity {
     Double longitud;
     String longitudD;
     String latitudD;
-
+    private Context thisContext=this;
     String EquipoCan;
 
     private CountDownTimer MapaCountDownTimerr;
@@ -74,6 +75,8 @@ public class chofer extends AppCompatActivity {
         btnCancelar.setEnabled(false);
         btnFinalizar.setEnabled(false);
 
+        locationStart();
+
         //----------------
 
         btnIniciar.setOnClickListener(new View.OnClickListener() {
@@ -81,8 +84,14 @@ public class chofer extends AppCompatActivity {
             public void onClick(View view) {
 
 
-                locationStart();
-                Coordenadas();
+                //locationStart();
+                //Coordenadas();
+
+
+
+                Intent serviceIntent = new Intent(thisContext,servicioChofer.class);
+                serviceIntent.putExtra("EquipoPP",EquipoCan);
+                ContextCompat.startForegroundService(thisContext,serviceIntent);
 
 
                 btnCancelar.setEnabled(true);
@@ -101,8 +110,10 @@ public class chofer extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
+                Intent serviceIntent = new Intent(thisContext,servicioChofer.class);
+                stopService(serviceIntent);
 
-                MapaCountDownTimerr.cancel();
+               //MapaCountDownTimerr.cancel();
 
                 btnIniciar.setEnabled(false);
 
@@ -222,6 +233,7 @@ public class chofer extends AppCompatActivity {
 
 
     }
+
     public void onRequestPermissionsResult(int requestCode, String[] permissions, int[] grantResults) {
         if (requestCode == 1000) {
             if (grantResults[0] == PackageManager.PERMISSION_GRANTED) {
@@ -279,12 +291,13 @@ public class chofer extends AppCompatActivity {
     }
 
 
-
     public void Coordenadas(){
 
 
 
         MapaCountDownTimerr = new CountDownTimer(29999999, 15000) {
+
+
 
             public void onTick(long millisUntilFinished) {
 
@@ -309,9 +322,6 @@ public class chofer extends AppCompatActivity {
         }.start();
 
     }
-
-
-//-----------------------------NUEVOfin------------------------------
 
 
     private void ejecutarServicio(String URL){
@@ -354,7 +364,6 @@ public class chofer extends AppCompatActivity {
         RequestQueue requestQueue = Volley.newRequestQueue(this );
         requestQueue.add(stringRequest);
     }
-
 
 
 

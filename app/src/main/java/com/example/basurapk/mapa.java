@@ -52,7 +52,7 @@ public class mapa extends FragmentActivity implements OnMapReadyCallback {
 
     //VerdeCamion
 
-    String LatitudRojo,LongitudRojo;
+    String LatitudRojo, LongitudRojo;
     Double DLatitud;
     Double DLongitud;
 
@@ -60,14 +60,13 @@ public class mapa extends FragmentActivity implements OnMapReadyCallback {
 
     Double DLatitudrojo;
     Double DLongitudrojo;
-    String LatitudRojos,LongitudRojos;
+    String LatitudRojos, LongitudRojos;
 
     //AzulCamion
 
     Double DLatitudAzul;
     Double DLongitudAzul;
-    String LatitudAzul,LongitudAzul;
-
+    String LatitudAzul, LongitudAzul;
 
 
     private FusedLocationProviderClient fusedLocationClient;
@@ -81,17 +80,17 @@ public class mapa extends FragmentActivity implements OnMapReadyCallback {
         setContentView(R.layout.activity_mapa);
 
 
-        int status= GooglePlayServicesUtil.isGooglePlayServicesAvailable(getApplicationContext());
+        int status = GooglePlayServicesUtil.isGooglePlayServicesAvailable(getApplicationContext());
 
-        if(status == ConnectionResult.SUCCESS){
+        if (status == ConnectionResult.SUCCESS) {
 
 
-        SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
-                .findFragmentById(R.id.map);
-        mapFragment.getMapAsync(this);
-        }else{
+            SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
+                    .findFragmentById(R.id.map);
+            mapFragment.getMapAsync(this);
+        } else {
 
-            Dialog dialog = GooglePlayServicesUtil.getErrorDialog(status,(Activity)getApplicationContext(),10);
+            Dialog dialog = GooglePlayServicesUtil.getErrorDialog(status, (Activity) getApplicationContext(), 10);
             dialog.show();
         }
 
@@ -103,12 +102,6 @@ public class mapa extends FragmentActivity implements OnMapReadyCallback {
         mapFrag = (SupportMapFragment) getSupportFragmentManager().findFragmentById(R.id.map);
         mapFrag.getMapAsync(this);
     }
-
-
-
-
-
-
 
 
     /**
@@ -123,11 +116,9 @@ public class mapa extends FragmentActivity implements OnMapReadyCallback {
 
 
     @Override
-    public void onMapReady(GoogleMap googleMap){
+    public void onMapReady(GoogleMap googleMap) {
 
         mMap = googleMap;
-
-
 
 
         if (android.os.Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
@@ -141,7 +132,7 @@ public class mapa extends FragmentActivity implements OnMapReadyCallback {
             mMap.setMyLocationEnabled(true);
 
 
-}
+        }
 
         mMap.setMapType(GoogleMap.MAP_TYPE_NORMAL);
 
@@ -151,96 +142,97 @@ public class mapa extends FragmentActivity implements OnMapReadyCallback {
         fusedLocationClient = LocationServices.getFusedLocationProviderClient(this);
 
         LatLng ContenedorI = new LatLng(17.961532, -102.196813);
-        float zoomlevelR2=14;
-        mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(ContenedorI,zoomlevelR2));
+        float zoomlevelR2 = 14;
+        mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(ContenedorI, zoomlevelR2));
 
         Conteo();
 
         Toast.makeText(getApplicationContext(), "Cargando Camiones...!", Toast.LENGTH_SHORT).show();
 
 
+        //Buscar de una
 
 
-    //Ruta9 Verde
+        //Ruta9 Verde
 
         ruta9();
         contenedorRuta9();
 
-    //Ruta 10
-    ruta10();
-    contenedorRuta10();
+        //Ruta 10
+        ruta10();
+        contenedorRuta10();
 
-    //Ruta11
-    ruta11();
-    contenedorRuta11();
+        //Ruta11
+        ruta11();
+        contenedorRuta11();
 
     }
 
 
-    public void ruta9(){
+    public void ruta9() {
         Polyline r9 = mMap.addPolyline(new PolylineOptions()
 
-                .add(new LatLng(17.956919, -102.194146), new LatLng(17.956550, -102.192714 ))
-                .add(new LatLng(17.956550, -102.192714), new LatLng(17.955735, -102.189651 ))
-                .add(new LatLng(17.955735, -102.189651), new LatLng(17.955513, -102.188605 ))
-                .add(new LatLng(17.955513, -102.188605), new LatLng(17.956054, -102.188506 ))
-                .add(new LatLng(17.956054, -102.188506), new LatLng(17.956526, -102.190123 ))
-                .add(new LatLng(17.956526, -102.190123), new LatLng(17.957439, -102.193476 ))
-                .add(new LatLng(17.957439, -102.193476), new LatLng(17.957938, -102.192789 ))
-                .add(new LatLng(17.957938, -102.192789), new LatLng(17.957637, -102.191685 ))
-                .add(new LatLng(17.957637, -102.191685), new LatLng(17.957134, -102.189976 ))
-                .add(new LatLng(17.957134, -102.189976), new LatLng(17.956973, -102.189295 ))
-                .add(new LatLng(17.956973, -102.189295), new LatLng(17.956700, -102.188318 ))
-                .add(new LatLng(17.956700, -102.188318), new LatLng(17.956983, -102.188238 ))
-                .add(new LatLng(17.956983, -102.188238), new LatLng(17.957394, -102.188235 ))
-                .add(new LatLng(17.957394, -102.188235), new LatLng(17.957738, -102.189783 ))
-                .add(new LatLng(17.957738, -102.189783), new LatLng(17.958363, -102.192119 ))
-                .add(new LatLng(17.958563, -102.191907), new LatLng(17.963603, -102.195843 ))
-                .add(new LatLng(17.963455, -102.194814), new LatLng(17.958974, -102.191333 ))
-                 .width(15)
+                .add(new LatLng(17.956919, -102.194146), new LatLng(17.956550, -102.192714))
+                .add(new LatLng(17.956550, -102.192714), new LatLng(17.955735, -102.189651))
+                .add(new LatLng(17.955735, -102.189651), new LatLng(17.955513, -102.188605))
+                .add(new LatLng(17.955513, -102.188605), new LatLng(17.956054, -102.188506))
+                .add(new LatLng(17.956054, -102.188506), new LatLng(17.956526, -102.190123))
+                .add(new LatLng(17.956526, -102.190123), new LatLng(17.957439, -102.193476))
+                .add(new LatLng(17.957439, -102.193476), new LatLng(17.957938, -102.192789))
+                .add(new LatLng(17.957938, -102.192789), new LatLng(17.957637, -102.191685))
+                .add(new LatLng(17.957637, -102.191685), new LatLng(17.957134, -102.189976))
+                .add(new LatLng(17.957134, -102.189976), new LatLng(17.956973, -102.189295))
+                .add(new LatLng(17.956973, -102.189295), new LatLng(17.956700, -102.188318))
+                .add(new LatLng(17.956700, -102.188318), new LatLng(17.956983, -102.188238))
+                .add(new LatLng(17.956983, -102.188238), new LatLng(17.957394, -102.188235))
+                .add(new LatLng(17.957394, -102.188235), new LatLng(17.957738, -102.189783))
+                .add(new LatLng(17.957738, -102.189783), new LatLng(17.958363, -102.192119))
+                .add(new LatLng(17.958563, -102.191907), new LatLng(17.963603, -102.195843))
+                .add(new LatLng(17.963455, -102.194814), new LatLng(17.958974, -102.191333))
+                .width(15)
                 .color(Color.GREEN));
 
 
         Polyline r91 = mMap.addPolyline(new PolylineOptions()
-                .add(new LatLng(17.963679, -102.196993), new LatLng(17.958085, -102.192636 ))
+                .add(new LatLng(17.963679, -102.196993), new LatLng(17.958085, -102.192636))
                 .width(15)
                 .color(Color.GREEN));
 
         Polyline r92 = mMap.addPolyline(new PolylineOptions()
-                .add(new LatLng(17.959296, -102.194395), new LatLng(17.957713, -102.193160 ))
+                .add(new LatLng(17.959296, -102.194395), new LatLng(17.957713, -102.193160))
                 .width(15)
                 .color(Color.GREEN));
 
         Polyline r93 = mMap.addPolyline(new PolylineOptions()
-                .add(new LatLng(17.958877, -102.194997), new LatLng(17.957301, -102.193735 ))
+                .add(new LatLng(17.958877, -102.194997), new LatLng(17.957301, -102.193735))
                 .width(15)
                 .color(Color.GREEN));
 
         Polyline r94 = mMap.addPolyline(new PolylineOptions()
-                .add(new LatLng(17.963204, -102.197816), new LatLng(17.959137, -102.194711 ))
+                .add(new LatLng(17.963204, -102.197816), new LatLng(17.959137, -102.194711))
                 .width(15)
                 .color(Color.GREEN));
         //
 
         Polyline r95 = mMap.addPolyline(new PolylineOptions()
-                .add(new LatLng(17.958007, -102.190809), new LatLng(17.959011, -102.190529 ))
+                .add(new LatLng(17.958007, -102.190809), new LatLng(17.959011, -102.190529))
                 .width(15)
                 .color(Color.GREEN));
 
         Polyline r96 = mMap.addPolyline(new PolylineOptions()
-                .add(new LatLng(17.957745, -102.189781), new LatLng(17.958785, -102.189489 ))
+                .add(new LatLng(17.957745, -102.189781), new LatLng(17.958785, -102.189489))
                 .width(15)
                 .color(Color.GREEN));
 
 
         Polyline r97 = mMap.addPolyline(new PolylineOptions()
-                .add(new LatLng(17.957392, -102.188238), new LatLng(17.957950, -102.188275 ))
+                .add(new LatLng(17.957392, -102.188238), new LatLng(17.957950, -102.188275))
                 .width(15)
                 .color(Color.GREEN));
 
     }
 
-    public void banderas(){
+    public void banderas() {
 
         //Inicio Fin Ruta10 Roja
 
@@ -268,66 +260,65 @@ public class mapa extends FragmentActivity implements OnMapReadyCallback {
         //mMap.addMarker(new MarkerOptions().position(banderafa).title("Fin Ruta ").icon(BitmapDescriptorFactory.fromResource(R.drawable.terminar)));
 
 
-
     }
 
-    public void ruta10(){
-       Polyline r10 = mMap.addPolyline(new PolylineOptions()
-               .add(new LatLng(17.962845, -102.199289), new LatLng(17.962445, -102.198956 ))
-               .add(new LatLng(17.962445, -102.198956), new LatLng(17.962195, -102.198735 ))
-               .add(new LatLng(17.962195, -102.198735), new LatLng(17.962145, -102.198687 ))
-               .add(new LatLng(17.962145, -102.198687), new LatLng(17.959746, -102.196780 ))
-               .add(new LatLng(17.959746, -102.196780), new LatLng(17.958396, -102.195735 ))
-               .add(new LatLng(17.958396, -102.195735), new LatLng(17.957624, -102.195109 ))
-               .add(new LatLng(17.957624, -102.195109), new LatLng(17.956744, -102.194444 ))
-               .add(new LatLng(17.956744, -102.194444), new LatLng(17.955681, -102.193655 ))
-               .add(new LatLng(17.955681, -102.193655), new LatLng(17.955597, -102.193603 ))
-               .add(new LatLng(17.955597, -102.193603), new LatLng(17.954506, -102.192782 ))
-               .add(new LatLng(17.954506, -102.192782), new LatLng(17.954029, -102.192355 ))
-               .add(new LatLng(17.954029, -102.192355), new LatLng(17.954029, -102.192355 ))
-               .add(new LatLng(17.954029, -102.192355), new LatLng(17.953670, -102.192112 ))
-               .add(new LatLng(17.953670, -102.192112), new LatLng(17.951674, -102.190537 ))
+    public void ruta10() {
+        Polyline r10 = mMap.addPolyline(new PolylineOptions()
+                .add(new LatLng(17.962845, -102.199289), new LatLng(17.962445, -102.198956))
+                .add(new LatLng(17.962445, -102.198956), new LatLng(17.962195, -102.198735))
+                .add(new LatLng(17.962195, -102.198735), new LatLng(17.962145, -102.198687))
+                .add(new LatLng(17.962145, -102.198687), new LatLng(17.959746, -102.196780))
+                .add(new LatLng(17.959746, -102.196780), new LatLng(17.958396, -102.195735))
+                .add(new LatLng(17.958396, -102.195735), new LatLng(17.957624, -102.195109))
+                .add(new LatLng(17.957624, -102.195109), new LatLng(17.956744, -102.194444))
+                .add(new LatLng(17.956744, -102.194444), new LatLng(17.955681, -102.193655))
+                .add(new LatLng(17.955681, -102.193655), new LatLng(17.955597, -102.193603))
+                .add(new LatLng(17.955597, -102.193603), new LatLng(17.954506, -102.192782))
+                .add(new LatLng(17.954506, -102.192782), new LatLng(17.954029, -102.192355))
+                .add(new LatLng(17.954029, -102.192355), new LatLng(17.954029, -102.192355))
+                .add(new LatLng(17.954029, -102.192355), new LatLng(17.953670, -102.192112))
+                .add(new LatLng(17.953670, -102.192112), new LatLng(17.951674, -102.190537))
 
 
-               //Venustiano Carranza
-               .add(new LatLng(17.951674, -102.190537), new LatLng(17.951719, -102.190867 ))
-               .add(new LatLng(17.951719, -102.190867), new LatLng(17.951786, -102.191013 ))
-               .add(new LatLng(17.951786, -102.191013), new LatLng(17.952035, -102.192154 ))
-               .add(new LatLng(17.952035, -102.192154), new LatLng(17.952118, -102.193028 ))
-               .add(new LatLng(17.952118, -102.193028), new LatLng(17.952040, -102.193786 ))
-               .add(new LatLng(17.952040, -102.193786), new LatLng(17.952016, -102.194713 ))
-               .add(new LatLng(17.952016, -102.194713), new LatLng(17.952042, -102.195368 ))
+                //Venustiano Carranza
+                .add(new LatLng(17.951674, -102.190537), new LatLng(17.951719, -102.190867))
+                .add(new LatLng(17.951719, -102.190867), new LatLng(17.951786, -102.191013))
+                .add(new LatLng(17.951786, -102.191013), new LatLng(17.952035, -102.192154))
+                .add(new LatLng(17.952035, -102.192154), new LatLng(17.952118, -102.193028))
+                .add(new LatLng(17.952118, -102.193028), new LatLng(17.952040, -102.193786))
+                .add(new LatLng(17.952040, -102.193786), new LatLng(17.952016, -102.194713))
+                .add(new LatLng(17.952016, -102.194713), new LatLng(17.952042, -102.195368))
 
 
-               //Rector Hidalgo
-               .add(new LatLng(17.952042, -102.195368), new LatLng(17.952503, -102.195725 ))
-               .add(new LatLng(17.952503, -102.195725), new LatLng(17.953030, -102.196137 ))
-               .add(new LatLng(17.953030, -102.196137), new LatLng(17.953556, -102.196529 ))
-               .add(new LatLng(17.953556, -102.196529), new LatLng(17.953919, -102.196835 ))
-               .add(new LatLng(17.953919, -102.196835), new LatLng(17.954197, -102.197017 ))
-               .add(new LatLng(17.954197, -102.197017), new LatLng(17.954647, -102.197354 ))
-               .add(new LatLng(17.954647, -102.197354), new LatLng(17.955202, -102.197801 ))
-               .add(new LatLng(17.955202, -102.197801), new LatLng(17.956285, -102.198639 ))
-               .add(new LatLng(17.956285, -102.198639), new LatLng(17.957214, -102.199357 ))
-               .add(new LatLng(17.957214, -102.199357), new LatLng(17.959250, -102.200915 ))
-               .add(new LatLng(17.959250, -102.200915), new LatLng(17.960444, -102.201845 ))
+                //Rector Hidalgo
+                .add(new LatLng(17.952042, -102.195368), new LatLng(17.952503, -102.195725))
+                .add(new LatLng(17.952503, -102.195725), new LatLng(17.953030, -102.196137))
+                .add(new LatLng(17.953030, -102.196137), new LatLng(17.953556, -102.196529))
+                .add(new LatLng(17.953556, -102.196529), new LatLng(17.953919, -102.196835))
+                .add(new LatLng(17.953919, -102.196835), new LatLng(17.954197, -102.197017))
+                .add(new LatLng(17.954197, -102.197017), new LatLng(17.954647, -102.197354))
+                .add(new LatLng(17.954647, -102.197354), new LatLng(17.955202, -102.197801))
+                .add(new LatLng(17.955202, -102.197801), new LatLng(17.956285, -102.198639))
+                .add(new LatLng(17.956285, -102.198639), new LatLng(17.957214, -102.199357))
+                .add(new LatLng(17.957214, -102.199357), new LatLng(17.959250, -102.200915))
+                .add(new LatLng(17.959250, -102.200915), new LatLng(17.960444, -102.201845))
 
-       //Heroica naval
+                //Heroica naval
 
-               .add(new LatLng(17.960444, -102.201845), new LatLng(17.961891, -102.199846 ))
-               .add(new LatLng(17.961891, -102.199846), new LatLng(17.962462, -102.198981 ))
-               .width(15)
-               .color(Color.RED));
+                .add(new LatLng(17.960444, -102.201845), new LatLng(17.961891, -102.199846))
+                .add(new LatLng(17.961891, -102.199846), new LatLng(17.962462, -102.198981))
+                .width(15)
+                .color(Color.RED));
 
-       //Constitucion
+        //Constitucion
 
 
         Polyline r101 = mMap.addPolyline(new PolylineOptions()
-                .add(new LatLng(17.953713, -102.192151), new LatLng(17.953203, -102.193083 ))
-                .add(new LatLng(17.953203, -102.193083), new LatLng(17.953203, -102.193083 ))
-                .add(new LatLng(17.953203, -102.193083), new LatLng(17.952917, -102.193738 ))
-                .add(new LatLng(17.952917, -102.193738), new LatLng(17.952596, -102.194273 ))
-                .add(new LatLng(17.952596, -102.194273), new LatLng(17.952046, -102.195367 ))
+                .add(new LatLng(17.953713, -102.192151), new LatLng(17.953203, -102.193083))
+                .add(new LatLng(17.953203, -102.193083), new LatLng(17.953203, -102.193083))
+                .add(new LatLng(17.953203, -102.193083), new LatLng(17.952917, -102.193738))
+                .add(new LatLng(17.952917, -102.193738), new LatLng(17.952596, -102.194273))
+                .add(new LatLng(17.952596, -102.194273), new LatLng(17.952046, -102.195367))
                 .width(15)
                 .color(Color.RED));
 
@@ -336,16 +327,16 @@ public class mapa extends FragmentActivity implements OnMapReadyCallback {
 
         Polyline r102 = mMap.addPolyline(new PolylineOptions()
 
-                .add(new LatLng(17.952209, -102.190947), new LatLng(17.952629, -102.192468 ))
-                .add(new LatLng(17.952629, -102.192468), new LatLng(17.952791, -102.192775 ))
-                .add(new LatLng(17.952791, -102.192775), new LatLng(17.953202, -102.193083 ))
-                .add(new LatLng(17.953202, -102.193083), new LatLng(17.953925, -102.193670 ))
-                .add(new LatLng(17.953925, -102.193670), new LatLng(17.954472, -102.194068 ))
-                .add(new LatLng(17.954472, -102.194068), new LatLng(17.955651, -102.194979 ))
-                .add(new LatLng(17.955651, -102.194979), new LatLng(17.957771, -102.196589 ))
-                .add(new LatLng(17.957771, -102.196589), new LatLng(17.957723, -102.196676 ))
-                .add(new LatLng(17.957723, -102.196676), new LatLng(17.961252, -102.199422 ))
-                .add(new LatLng(17.961252, -102.199422), new LatLng(17.959845, -102.201364 ))
+                .add(new LatLng(17.952209, -102.190947), new LatLng(17.952629, -102.192468))
+                .add(new LatLng(17.952629, -102.192468), new LatLng(17.952791, -102.192775))
+                .add(new LatLng(17.952791, -102.192775), new LatLng(17.953202, -102.193083))
+                .add(new LatLng(17.953202, -102.193083), new LatLng(17.953925, -102.193670))
+                .add(new LatLng(17.953925, -102.193670), new LatLng(17.954472, -102.194068))
+                .add(new LatLng(17.954472, -102.194068), new LatLng(17.955651, -102.194979))
+                .add(new LatLng(17.955651, -102.194979), new LatLng(17.957771, -102.196589))
+                .add(new LatLng(17.957771, -102.196589), new LatLng(17.957723, -102.196676))
+                .add(new LatLng(17.957723, -102.196676), new LatLng(17.961252, -102.199422))
+                .add(new LatLng(17.961252, -102.199422), new LatLng(17.959845, -102.201364))
 
                 .width(15)
                 .color(Color.RED));
@@ -354,15 +345,15 @@ public class mapa extends FragmentActivity implements OnMapReadyCallback {
 
         Polyline r103 = mMap.addPolyline(new PolylineOptions()
 
-                .add(new LatLng(17.952039, -102.193813), new LatLng(17.952603, -102.194273 ))
-                .add(new LatLng(17.952603, -102.194273), new LatLng(17.954241, -102.195526 ))
-                .add(new LatLng(17.954241, -102.195526), new LatLng(17.954881, -102.196060 ))
-                .add(new LatLng(17.954881, -102.196060), new LatLng(17.955301, -102.196379 ))
-                .add(new LatLng(17.955301, -102.196379), new LatLng(17.956161, -102.197106 ))
-                .add(new LatLng(17.956161, -102.197106), new LatLng(17.957869, -102.198462 ))
-                .add(new LatLng(17.957869, -102.198462), new LatLng(17.957929, -102.198382 ))
-                .add(new LatLng(17.957929, -102.198382), new LatLng(17.958353, -102.198731 ))
-                .add(new LatLng(17.958353, -102.198731), new LatLng(17.960528, -102.200422 ))
+                .add(new LatLng(17.952039, -102.193813), new LatLng(17.952603, -102.194273))
+                .add(new LatLng(17.952603, -102.194273), new LatLng(17.954241, -102.195526))
+                .add(new LatLng(17.954241, -102.195526), new LatLng(17.954881, -102.196060))
+                .add(new LatLng(17.954881, -102.196060), new LatLng(17.955301, -102.196379))
+                .add(new LatLng(17.955301, -102.196379), new LatLng(17.956161, -102.197106))
+                .add(new LatLng(17.956161, -102.197106), new LatLng(17.957869, -102.198462))
+                .add(new LatLng(17.957869, -102.198462), new LatLng(17.957929, -102.198382))
+                .add(new LatLng(17.957929, -102.198382), new LatLng(17.958353, -102.198731))
+                .add(new LatLng(17.958353, -102.198731), new LatLng(17.960528, -102.200422))
 
                 .width(15)
                 .color(Color.RED));
@@ -371,12 +362,12 @@ public class mapa extends FragmentActivity implements OnMapReadyCallback {
         //Francisco Villa
         Polyline r104 = mMap.addPolyline(new PolylineOptions()
 
-                .add(new LatLng(17.952925, -102.193742), new LatLng(17.953537, -102.194216 ))
-                .add(new LatLng(17.953537, -102.194216), new LatLng(17.954227, -102.194728 ))
-                .add(new LatLng(17.954227, -102.194728), new LatLng(17.954608, -102.195037 ))
-                .add(new LatLng(17.954608, -102.195037), new LatLng(17.955272, -102.195512 ))
-                .add(new LatLng(17.955272, -102.195512), new LatLng(17.956574, -102.196572 ))
-                .add(new LatLng(17.956574, -102.196572), new LatLng(17.957013, -102.196032 ))
+                .add(new LatLng(17.952925, -102.193742), new LatLng(17.953537, -102.194216))
+                .add(new LatLng(17.953537, -102.194216), new LatLng(17.954227, -102.194728))
+                .add(new LatLng(17.954227, -102.194728), new LatLng(17.954608, -102.195037))
+                .add(new LatLng(17.954608, -102.195037), new LatLng(17.955272, -102.195512))
+                .add(new LatLng(17.955272, -102.195512), new LatLng(17.956574, -102.196572))
+                .add(new LatLng(17.956574, -102.196572), new LatLng(17.957013, -102.196032))
 
                 .width(15)
                 .color(Color.RED));
@@ -384,7 +375,7 @@ public class mapa extends FragmentActivity implements OnMapReadyCallback {
         //Verdusco
         Polyline r105 = mMap.addPolyline(new PolylineOptions()
 
-                .add(new LatLng(17.958621, -102.197392), new LatLng(17.957216, -102.199364 ))
+                .add(new LatLng(17.958621, -102.197392), new LatLng(17.957216, -102.199364))
 
                 .width(15)
                 .color(Color.RED));
@@ -394,7 +385,7 @@ public class mapa extends FragmentActivity implements OnMapReadyCallback {
 
         Polyline r106 = mMap.addPolyline(new PolylineOptions()
 
-                .add(new LatLng(17.956151, -102.193810), new LatLng(17.954818, -102.188857 ))
+                .add(new LatLng(17.956151, -102.193810), new LatLng(17.954818, -102.188857))
 
                 .width(15)
                 .color(Color.RED));
@@ -402,8 +393,8 @@ public class mapa extends FragmentActivity implements OnMapReadyCallback {
         //Guillermo Prieto
         Polyline r107 = mMap.addPolyline(new PolylineOptions()
 
-                .add(new LatLng(17.954365, -102.188917), new LatLng(17.955080, -102.191664 ))
-                .add(new LatLng(17.955080, -102.191664), new LatLng(17.955477, -102.193280 ))
+                .add(new LatLng(17.954365, -102.188917), new LatLng(17.955080, -102.191664))
+                .add(new LatLng(17.955080, -102.191664), new LatLng(17.955477, -102.193280))
                 .width(15)
                 .color(Color.RED));
 
@@ -411,9 +402,9 @@ public class mapa extends FragmentActivity implements OnMapReadyCallback {
 
         Polyline r108 = mMap.addPolyline(new PolylineOptions()
 
-                .add(new LatLng(17.953739, -102.189114), new LatLng(17.954046, -102.190189 ))
-                .add(new LatLng(17.954046, -102.190189), new LatLng(17.954437, -102.191844 ))
-                .add(new LatLng(17.954437, -102.191844), new LatLng(17.954650, -102.192522 ))
+                .add(new LatLng(17.953739, -102.189114), new LatLng(17.954046, -102.190189))
+                .add(new LatLng(17.954046, -102.190189), new LatLng(17.954437, -102.191844))
+                .add(new LatLng(17.954437, -102.191844), new LatLng(17.954650, -102.192522))
                 .width(15)
                 .color(Color.RED));
 
@@ -421,15 +412,15 @@ public class mapa extends FragmentActivity implements OnMapReadyCallback {
 
         Polyline r109 = mMap.addPolyline(new PolylineOptions()
 
-                .add(new LatLng(17.953125, -102.189188), new LatLng(17.953780, -102.192000 ))
+                .add(new LatLng(17.953125, -102.189188), new LatLng(17.953780, -102.192000))
                 .width(15)
                 .color(Color.RED));
 
         //Lerdo de Tejada
         Polyline r110 = mMap.addPolyline(new PolylineOptions()
 
-                .add(new LatLng(17.953527, -102.190956), new LatLng(17.953057, -102.191138 ))
-                .add(new LatLng(17.953057, -102.191138), new LatLng(17.952751, -102.191225 ))
+                .add(new LatLng(17.953527, -102.190956), new LatLng(17.953057, -102.191138))
+                .add(new LatLng(17.953057, -102.191138), new LatLng(17.952751, -102.191225))
                 .width(15)
                 .color(Color.RED));
 
@@ -437,16 +428,14 @@ public class mapa extends FragmentActivity implements OnMapReadyCallback {
         // Ignacio Comfort
         Polyline r111 = mMap.addPolyline(new PolylineOptions()
 
-                .add(new LatLng(17.953399, -102.190341), new LatLng(17.952111, -102.190743 ))
+                .add(new LatLng(17.953399, -102.190341), new LatLng(17.952111, -102.190743))
                 .width(15)
                 .color(Color.RED));
 
 
-
-
     }
 
-    public void ruta11(){
+    public void ruta11() {
         Polyline line = mMap.addPolyline(new PolylineOptions()
                 .add(new LatLng(17.962718, -102.190656), new LatLng(17.960490, -102.189021))
                 .add(new LatLng(17.960490, -102.189021), new LatLng(17.960329, -102.189042))
@@ -506,7 +495,6 @@ public class mapa extends FragmentActivity implements OnMapReadyCallback {
 
                 .width(15)
                 .color(Color.BLUE));
-
 
 
         Polyline r115 = mMap.addPolyline(new PolylineOptions()
@@ -571,7 +559,7 @@ public class mapa extends FragmentActivity implements OnMapReadyCallback {
 
     }
 
-    public void contenedorRuta9(){
+    public void contenedorRuta9() {
 
         LatLng Contenedor1 = new LatLng(17.962334, -102.197274);
         mMap.addMarker(new MarkerOptions().position(Contenedor1).title("Ruta 9 Contenedor #063 ").icon(BitmapDescriptorFactory.fromResource(R.drawable.contverde)));
@@ -683,7 +671,7 @@ public class mapa extends FragmentActivity implements OnMapReadyCallback {
 
     }
 
-    public void contenedorRuta10(){
+    public void contenedorRuta10() {
 
         LatLng Contenedor1 = new LatLng(17.953134, -102.195945);
         mMap.addMarker(new MarkerOptions().position(Contenedor1).title("Ruta 10 Contenedor #067 ").icon(BitmapDescriptorFactory.fromResource(R.drawable.contre)));
@@ -723,7 +711,7 @@ public class mapa extends FragmentActivity implements OnMapReadyCallback {
         LatLng Contenedor20 = new LatLng(17.960363, -102.200586);
         mMap.addMarker(new MarkerOptions().position(Contenedor20).title("Ruta 10 Contenedor #086 ").icon(BitmapDescriptorFactory.fromResource(R.drawable.contre)));
 
-       //----Sin numero
+        //----Sin numero
 
         LatLng Contenedor21 = new LatLng(17.960694, -102.200234);
         mMap.addMarker(new MarkerOptions().position(Contenedor21).title("Ruta 10 Contenedor # 112").icon(BitmapDescriptorFactory.fromResource(R.drawable.contre)));
@@ -788,7 +776,7 @@ public class mapa extends FragmentActivity implements OnMapReadyCallback {
 
     }
 
-    public void contenedorRuta11(){
+    public void contenedorRuta11() {
 
         LatLng Contenedor1 = new LatLng(17.963257, -102.193779);
         mMap.addMarker(new MarkerOptions().position(Contenedor1).title("Ruta 11 Contenedor #061 ").icon(BitmapDescriptorFactory.fromResource(R.drawable.contazul)));
@@ -878,11 +866,9 @@ public class mapa extends FragmentActivity implements OnMapReadyCallback {
         mMap.addMarker(new MarkerOptions().position(Contenedor43).title("Ruta 11 Cesto #5 ").icon(BitmapDescriptorFactory.fromResource(R.drawable.cesto)));
 
 
-
-
     }
 
-    public void buscarVerde (String URL){
+    public void buscarVerde(String URL) {
 
 
         JsonArrayRequest jsonArrayRequest = new JsonArrayRequest(URL, new Response.Listener<JSONArray>() {
@@ -898,8 +884,8 @@ public class mapa extends FragmentActivity implements OnMapReadyCallback {
                         LatitudRojo = jsonObject.getString("PLatitud");
                         LongitudRojo = jsonObject.getString("PLongitud");
 
-                       DLatitud = Double.parseDouble(LatitudRojo);
-                       DLongitud =Double.parseDouble(LongitudRojo);
+                        DLatitud = Double.parseDouble(LatitudRojo);
+                        DLongitud = Double.parseDouble(LongitudRojo);
 
 
                     } catch (JSONException e) {
@@ -915,18 +901,18 @@ public class mapa extends FragmentActivity implements OnMapReadyCallback {
         }, new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError error) {
-                Toast.makeText(getApplicationContext(),"Error en la conexion",Toast.LENGTH_SHORT).show();
+                Toast.makeText(getApplicationContext(), "Error en la conexion", Toast.LENGTH_SHORT).show();
             }
         }
 
         );
 
-        requestQueue= Volley.newRequestQueue(this);
+        requestQueue = Volley.newRequestQueue(this);
         requestQueue.add(jsonArrayRequest);
 
     }
 
-    public void buscarRojo (String URL){
+    public void buscarRojo(String URL) {
 
 
         JsonArrayRequest jsonArrayRequest = new JsonArrayRequest(URL, new Response.Listener<JSONArray>() {
@@ -943,7 +929,7 @@ public class mapa extends FragmentActivity implements OnMapReadyCallback {
                         LongitudRojos = jsonObject.getString("PLongitud");
 
                         DLatitudrojo = Double.parseDouble(LatitudRojos);
-                        DLongitudrojo =Double.parseDouble(LongitudRojos);
+                        DLongitudrojo = Double.parseDouble(LongitudRojos);
 
 
                     } catch (JSONException e) {
@@ -959,18 +945,18 @@ public class mapa extends FragmentActivity implements OnMapReadyCallback {
         }, new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError error) {
-               // Toast.makeText(getApplicationContext(),"Error en la conexion",Toast.LENGTH_SHORT).show();
+                // Toast.makeText(getApplicationContext(),"Error en la conexion",Toast.LENGTH_SHORT).show();
             }
         }
 
         );
 
-        requestQueue= Volley.newRequestQueue(this);
+        requestQueue = Volley.newRequestQueue(this);
         requestQueue.add(jsonArrayRequest);
 
     }
 
-    public void buscarAzul (String URL){
+    public void buscarAzul(String URL) {
 
 
         JsonArrayRequest jsonArrayRequest = new JsonArrayRequest(URL, new Response.Listener<JSONArray>() {
@@ -987,7 +973,7 @@ public class mapa extends FragmentActivity implements OnMapReadyCallback {
                         LongitudAzul = jsonObject.getString("PLongitud");
 
                         DLatitudAzul = Double.parseDouble(LatitudAzul);
-                        DLongitudAzul =Double.parseDouble(LongitudAzul);
+                        DLongitudAzul = Double.parseDouble(LongitudAzul);
 
 
                     } catch (JSONException e) {
@@ -1009,17 +995,15 @@ public class mapa extends FragmentActivity implements OnMapReadyCallback {
 
         );
 
-        requestQueue= Volley.newRequestQueue(this);
+        requestQueue = Volley.newRequestQueue(this);
         requestQueue.add(jsonArrayRequest);
 
     }
 
-    public void Conteo(){
+    public void Conteo() {
 
 
-
-        MapaCountDownTimerr = new CountDownTimer(25000000, 15000) {
-
+        MapaCountDownTimerr = new CountDownTimer(25000000, 10000) {
 
 
             public void onTick(long millisUntilFinished) {
@@ -1028,32 +1012,32 @@ public class mapa extends FragmentActivity implements OnMapReadyCallback {
                 buscarRojo("https://basurapk.com/webservices/bajarCoordenadasRojo.php");
                 buscarAzul("https://basurapk.com/webservices/bajarCoordenadasAzul.php");
 
-                if (DLongitud==null ){
+                if (DLongitud == null) {
 
                     Toast.makeText(getApplicationContext(), "Cargando...!", Toast.LENGTH_SHORT).show();
 
-                }else{
+                } else {
 
                     LatLng CamionVerde = new LatLng(DLatitud, DLongitud);
                     mMap.addMarker(new MarkerOptions().position(CamionVerde).title("Camion Verde 9").icon(BitmapDescriptorFactory.fromResource(R.drawable.camiverde)));
 
                 }
 
-                if (DLongitudrojo==null){
+                if (DLongitudrojo == null) {
 
                     Toast.makeText(getApplicationContext(), "Cargando...!", Toast.LENGTH_SHORT).show();
 
-                }else{
+                } else {
 
                     LatLng CamionRojo = new LatLng(DLatitudrojo, DLongitudrojo);
                     mMap.addMarker(new MarkerOptions().position(CamionRojo).title("Camion Rojo 10").icon(BitmapDescriptorFactory.fromResource(R.drawable.camirojo)));
 
                 }
-                if (DLongitudAzul==null){
+                if (DLongitudAzul == null) {
 
                     Toast.makeText(getApplicationContext(), "Cargando...!", Toast.LENGTH_SHORT).show();
 
-                }else{
+                } else {
 
                     LatLng CamionAzul = new LatLng(DLatitudAzul, DLongitudAzul);
                     mMap.addMarker(new MarkerOptions().position(CamionAzul).title("Camion Azul 11").icon(BitmapDescriptorFactory.fromResource(R.drawable.camiazul)));
@@ -1067,7 +1051,6 @@ public class mapa extends FragmentActivity implements OnMapReadyCallback {
         }.start();
 
     }
-
 
 
     public static final int MY_PERMISSIONS_REQUEST_LOCATION = 99;
@@ -1128,7 +1111,8 @@ public class mapa extends FragmentActivity implements OnMapReadyCallback {
         }
     }
 
-    }
+
+}
 
 
 
