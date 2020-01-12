@@ -179,7 +179,7 @@ public class servicioChofer extends Service {
 
 
 
-        MapaCountDownTimerr = new CountDownTimer(29999999, 7000) {
+        MapaCountDownTimerr = new CountDownTimer(29999999, 8000) {
 
 
 
