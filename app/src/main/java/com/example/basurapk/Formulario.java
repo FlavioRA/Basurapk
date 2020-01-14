@@ -44,6 +44,8 @@ public class Formulario extends AppCompatActivity {
     Double longitud;
     String longitudD;
     String latitudD;
+    String kilometros;
+    String gasolina;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -109,6 +111,14 @@ public class Formulario extends AppCompatActivity {
 
         EquipoDios=extras.getString("EquipoEnv");
 
+
+        //Gasolina
+
+
+
+
+        kilometros="12";
+        gasolina = "12";
 
         btnEnviar.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -195,6 +205,8 @@ public class Formulario extends AppCompatActivity {
                 parametros.put("HoraFinal",Hora);
                 parametros.put("HoraInicio",horaInicio);
                 parametros.put("EquipoRT",EquipoDios);
+                parametros.put("kilometros",kilometros);
+                parametros.put("gasolina",gasolina);
 
 
                 return parametros;

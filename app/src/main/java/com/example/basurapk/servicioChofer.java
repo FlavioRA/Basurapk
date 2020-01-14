@@ -38,19 +38,23 @@ import androidx.core.content.ContextCompat;
 
 import static com.example.basurapk.notifi.CHANNEL_ID;
 
-public class servicioChofer extends Service {
 
+
+public class servicioChofer extends Service {
+    double distance=0;
 
     private Context thisContext=this;
 
     private CountDownTimer MapaCountDownTimerr;
+    private CountDownTimer MapaCountDownTimerrs;
 
     Double latitud;
     Double longitud;
     String longitudD;
     String latitudD;
     String EquipoCan;
-
+    Double longitud1,latitud1;
+    Double kilometros;
 
     @Override
     public void onCreate() {
@@ -75,7 +79,6 @@ public class servicioChofer extends Service {
 
         startForeground(1,notification);
 
-
         return START_NOT_STICKY;
     }
 
@@ -85,7 +88,12 @@ public class servicioChofer extends Service {
     @Override
     public void onDestroy() {
         super.onDestroy();
+
         MapaCountDownTimerr.cancel();
+        MapaCountDownTimerrs.cancel();
+
+        Toast.makeText(this, "Km:  " + kilometros, Toast.LENGTH_SHORT).show();
+
     }
 
     @Nullable
@@ -93,8 +101,6 @@ public class servicioChofer extends Service {
     public IBinder onBind(Intent intent) {
         return null;
     }
-
-    //Metoos
 
 
     private void locationStart() {
@@ -141,11 +147,8 @@ public class servicioChofer extends Service {
         public void onLocationChanged(Location loc) {
 
 
-
             latitud = loc.getLatitude();
             longitud= loc.getLongitude();
-
-
 
 
         }
@@ -179,7 +182,7 @@ public class servicioChofer extends Service {
 
 
 
-        MapaCountDownTimerr = new CountDownTimer(29999999, 8000) {
+        MapaCountDownTimerr = new CountDownTimer(29999999, 25000) {
 
 
 
@@ -204,6 +207,46 @@ public class servicioChofer extends Service {
 
             }
         }.start();
+
+        MapaCountDownTimerrs = new CountDownTimer(29999999, 3000) {
+
+                 public void onTick(long millisUntilFinished) {
+
+                     if (longitud==null || latitud ==null ){
+
+                }else{
+
+                         Location location2 = new Location("localizacion 2");
+                         location2.setLatitude(latitud);
+                         location2.setLongitude(longitud);
+
+                         if (longitud1==null || latitud1 ==null ) {
+
+                             latitud1=latitud;
+                             longitud1=longitud;
+
+                         }
+
+                         Location location = new Location("localizacion 1");
+                         location.setLatitude(latitud1);
+                         location.setLongitude(longitud1);
+
+
+                         latitud1=latitud;
+                         longitud1=longitud;
+
+                         distance = distance + location.distanceTo(location2);
+                         kilometros=(distance/1000);
+
+                     }
+            }
+
+            public void onFinish() {
+
+
+            }
+        }.start();
+
 
     }
 
@@ -247,6 +290,7 @@ public class servicioChofer extends Service {
         RequestQueue requestQueue = Volley.newRequestQueue(this );
         requestQueue.add(stringRequest);
     }
+
 
 
 

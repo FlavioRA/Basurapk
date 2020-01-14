@@ -41,6 +41,7 @@ public class chofer extends AppCompatActivity {
     String latitudD;
     private Context thisContext=this;
     String EquipoCan;
+    String kilometros;
 
     private CountDownTimer MapaCountDownTimerr;
 
@@ -144,13 +145,10 @@ public class chofer extends AppCompatActivity {
 
 
 
-                    String horaInicio =extras.getString("HoraInicio");
-
-
+                String horaInicio =extras.getString("HoraInicio");
                 Intent j = new Intent(chofer.this,Formulario.class);
                 j.putExtra("HoraInicios",horaInicio);
                 j.putExtra("EquipoEnv",EquipoCan);
-
                 startActivity(j);
 
 
@@ -320,6 +318,7 @@ public class chofer extends AppCompatActivity {
 
             }
         }.start();
+
 
     }
 
