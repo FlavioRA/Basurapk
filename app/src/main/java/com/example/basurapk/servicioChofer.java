@@ -87,12 +87,23 @@ public class servicioChofer extends Service {
 
     @Override
     public void onDestroy() {
+
         super.onDestroy();
+
+        if (kilometros==null){
+
+            Global.kilometrosd=0.0;//0.0
+
+        }else{
+
+        Global.kilometrosd=kilometros;//kilometros
+
+        }
 
         MapaCountDownTimerr.cancel();
         MapaCountDownTimerrs.cancel();
 
-        Toast.makeText(this, "Km:  " + kilometros, Toast.LENGTH_SHORT).show();
+
 
     }
 
@@ -182,7 +193,7 @@ public class servicioChofer extends Service {
 
 
 
-        MapaCountDownTimerr = new CountDownTimer(29999999, 25000) {
+        MapaCountDownTimerr = new CountDownTimer(14699999, 23000) {
 
 
 
@@ -208,7 +219,7 @@ public class servicioChofer extends Service {
             }
         }.start();
 
-        MapaCountDownTimerrs = new CountDownTimer(29999999, 3000) {
+        MapaCountDownTimerrs = new CountDownTimer(14699999, 2700) {
 
                  public void onTick(long millisUntilFinished) {
 
@@ -291,7 +302,11 @@ public class servicioChofer extends Service {
         requestQueue.add(stringRequest);
     }
 
+    public static class Global {
 
+        public static Double kilometrosd;
+
+    }
 
 
 }

@@ -212,7 +212,7 @@ public class administrador extends AppCompatActivity{
 
         ArrayList<String> lista = new ArrayList<>();
 
-        for(int i=0;i<ja.length();i+=10){
+        for(int i=0;i<ja.length();i+=12){
 
             try {
                 //Fecha
@@ -224,10 +224,10 @@ public class administrador extends AppCompatActivity{
                         "Chofer: "+ja.getString(i+5)+"\n"+
                         "Telefono: "+ja.getString(i+6)+"\n" +
                         "Camión: "+ja.getString(i+7)+"\n" +
-                        "Ruta: "+ja.getString(i+8)+"\n" +
-                        "Comentarios: "+ja.getString(i+9)+"\n");
-
-
+                        "Ruta: : "+ja.getString(i+8)+"\n" +
+                        "Km Aprox: "+ja.getString(i+9)+" Km.\n" +
+                        "Litros Aprox: "+ja.getString(i+10)+" Lts. \n" +
+                        "Comentarios: "+ja.getString(i+11)+"\n");
 
 
 

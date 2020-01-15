@@ -25,6 +25,7 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 
+import java.text.DecimalFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.HashMap;
@@ -46,6 +47,11 @@ public class Formulario extends AppCompatActivity {
     String latitudD;
     String kilometros;
     String gasolina;
+    String consumoStr;
+
+    Double kilometrosFormato;
+    Double gasolinaFormato;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -54,7 +60,6 @@ public class Formulario extends AppCompatActivity {
 
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
 
-
             //IMAGEN
 
         ImageView imageView6;
@@ -62,6 +67,26 @@ public class Formulario extends AppCompatActivity {
         final Animation zoomAnimation = AnimationUtils.loadAnimation(this, R.anim.zoom);
         imageView6.startAnimation(zoomAnimation);
 
+        //Sacar Kilometros y gasolina Doubles
+
+       Double variablekm = servicioChofer.Global.kilometrosd;
+
+       Double consumo = variablekm * .60;
+
+
+       kilometrosFormato=(double)Math.round(variablekm * 100d) / 100d;
+       gasolinaFormato=(double)Math.round(consumo * 100d) / 100d;
+
+       //STRINGS
+
+        consumoStr = Double.toString(gasolinaFormato);
+        kilometros =Double.toString(kilometrosFormato);
+
+        gasolina = consumoStr;
+
+        //Ver que
+
+        //Fin sacar kilometros
 
 
         final Date date = new Date();
@@ -112,13 +137,7 @@ public class Formulario extends AppCompatActivity {
         EquipoDios=extras.getString("EquipoEnv");
 
 
-        //Gasolina
 
-
-
-
-        kilometros="12";
-        gasolina = "12";
 
         btnEnviar.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -216,7 +235,6 @@ public class Formulario extends AppCompatActivity {
         RequestQueue requestQueue = Volley.newRequestQueue(this );
         requestQueue.add(stringRequest);
     }
-
 
 
 

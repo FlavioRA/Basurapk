@@ -41,7 +41,7 @@ public class chofer extends AppCompatActivity {
     String latitudD;
     private Context thisContext=this;
     String EquipoCan;
-    String kilometros;
+    Double kilometros;
 
     private CountDownTimer MapaCountDownTimerr;
 
@@ -114,7 +114,56 @@ public class chofer extends AppCompatActivity {
                 Intent serviceIntent = new Intent(thisContext,servicioChofer.class);
                 stopService(serviceIntent);
 
-               //MapaCountDownTimerr.cancel();
+
+                btnIniciar.setEnabled(false);
+
+                if (EquipoCan.equals("9")) {
+
+                    latitud=17.962697;
+                    longitud=-102.198661;
+
+
+                    ejecutarServicio("https://basurapk.com/webservices/mandarUbicacion.php");
+                }
+
+                if (EquipoCan.equals("10")) {
+
+                    latitud=17.962899;
+                    longitud=-102.19832;
+
+                    ejecutarServicio("https://basurapk.com/webservices/mandarUbicacion.php");
+                }
+
+                if (EquipoCan.equals("11")) {
+
+                    latitud=17.963150;
+                    longitud=-102.197943;
+
+                    ejecutarServicio("https://basurapk.com/webservices/mandarUbicacion.php");
+                }
+
+                String horaInicio =extras.getString("HoraInicio");
+                Intent j = new Intent(chofer.this,Formulario.class);
+                j.putExtra("HoraInicios",horaInicio);
+                j.putExtra("EquipoEnv",EquipoCan);
+                startActivity(j);
+
+
+            }
+        });
+
+
+        btnFinalizar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                Intent serviceIntent = new Intent(thisContext,servicioChofer.class);
+                stopService(serviceIntent);
+
+
+                Double variablekm = servicioChofer.Global.kilometrosd;
+
+                Toast.makeText(getApplicationContext(),"mis km son " +  variablekm,Toast.LENGTH_LONG).show();
 
                 btnIniciar.setEnabled(false);
 
@@ -149,55 +198,6 @@ public class chofer extends AppCompatActivity {
                 Intent j = new Intent(chofer.this,Formulario.class);
                 j.putExtra("HoraInicios",horaInicio);
                 j.putExtra("EquipoEnv",EquipoCan);
-                startActivity(j);
-
-
-            }
-        });
-
-
-        btnFinalizar.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-
-                btnIniciar.setEnabled(false);
-                MapaCountDownTimerr.cancel();
-
-                if (EquipoCan.equals("9")) {
-
-                    latitud=17.962706;
-                    longitud=-102.198680;
-
-
-                    ejecutarServicio("https://basurapk.com/webservices/mandarUbicacion.php");
-                }
-
-                if (EquipoCan.equals("10")) {
-
-
-                    latitud=17.962899;
-                    longitud=-102.19832;
-
-                    ejecutarServicio("https://basurapk.com/webservices/mandarUbicacion.php");
-                }
-
-                if (EquipoCan.equals("11")) {
-
-
-                    latitud=17.96315;
-                    longitud=-102.197943;
-
-                    ejecutarServicio("https://basurapk.com/webservices/mandarUbicacion.php");
-                }
-
-
-                String horaInicio =extras.getString("HoraInicio");
-
-
-                Intent j = new Intent(chofer.this,Formulario.class);
-                j.putExtra("HoraInicios",horaInicio);
-                j.putExtra("EquipoEnv",EquipoCan);
-
                 startActivity(j);
 
 

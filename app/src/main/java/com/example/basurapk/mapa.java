@@ -1003,7 +1003,7 @@ public class mapa extends FragmentActivity implements OnMapReadyCallback {
     public void Conteo() {
 
 
-        MapaCountDownTimerr = new CountDownTimer(25000000, 10000) {
+        MapaCountDownTimerr = new CountDownTimer(14699999, 25000) {
 
 
             public void onTick(long millisUntilFinished) {
