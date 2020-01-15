@@ -161,10 +161,6 @@ public class chofer extends AppCompatActivity {
                 stopService(serviceIntent);
 
 
-                Double variablekm = servicioChofer.Global.kilometrosd;
-
-                Toast.makeText(getApplicationContext(),"mis km son " +  variablekm,Toast.LENGTH_LONG).show();
-
                 btnIniciar.setEnabled(false);
 
                 if (EquipoCan.equals("9")) {
@@ -191,8 +187,6 @@ public class chofer extends AppCompatActivity {
 
                     ejecutarServicio("https://basurapk.com/webservices/mandarUbicacion.php");
                 }
-
-
 
                 String horaInicio =extras.getString("HoraInicio");
                 Intent j = new Intent(chofer.this,Formulario.class);

@@ -42,8 +42,6 @@ public class administrador extends AppCompatActivity{
 
     ImageView btnruta9,btnruta10,btnruta11;
 
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -172,9 +170,6 @@ public class administrador extends AppCompatActivity{
     }
 
 
-
-
-
     public void EnviarRecibirDatos(String URL){
 
         RequestQueue queue = Volley.newRequestQueue(this);
@@ -243,8 +238,6 @@ public class administrador extends AppCompatActivity{
 
 
     }
-
-
 
 
     @Override

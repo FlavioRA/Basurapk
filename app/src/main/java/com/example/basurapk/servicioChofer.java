@@ -219,7 +219,7 @@ public class servicioChofer extends Service {
             }
         }.start();
 
-        MapaCountDownTimerrs = new CountDownTimer(14699999, 2700) {
+        MapaCountDownTimerrs = new CountDownTimer(14699999, 3000) {
 
                  public void onTick(long millisUntilFinished) {
 
