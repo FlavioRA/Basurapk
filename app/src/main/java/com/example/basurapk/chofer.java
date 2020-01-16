@@ -121,8 +121,7 @@ public class chofer extends AppCompatActivity {
 
                     latitud=17.962697;
                     longitud=-102.198661;
-
-
+                    
                     ejecutarServicio("https://basurapk.com/webservices/mandarUbicacion.php");
                 }
 
