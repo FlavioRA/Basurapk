@@ -200,8 +200,9 @@ public class Formulario extends AppCompatActivity {
             public void onResponse(String response) {
                 progressDialog.dismiss();
                 Toast.makeText(getApplicationContext(),"Envio de datos realizados correctamente.", Toast.LENGTH_SHORT).show();
-                Intent intent4= new Intent(getApplicationContext(),MainActivity.class);
-                startActivityForResult(intent4, 0);
+                //Intent intent4= new Intent(getApplicationContext(),MainActivity.class);
+                //startActivityForResult(intent4, 0);
+                finishAffinity();
 
             }
         }, new Response.ErrorListener() {
